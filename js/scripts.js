@@ -162,3 +162,9 @@ $('a[href="#top"]').on('click',function(){
     $('html, body').animate({scrollTop: 0}, 'slow');
     return false;
 });
+ // Закрытие меню на мобильных устройствах
+  $('.navbar-nav a').on('click', function(){
+    if($('.navbar-toggle').css('display') != 'none'){
+      $(".navbar-toggle").trigger( "click" );
+    }
+  });
