@@ -1099,6 +1099,7 @@ font-size: 32px;
 }
 
 .footer-widgets .office-1 p:first-child,
+
 .footer-widgets .office-2 p:first-child {
   color: #fff;
 }
@@ -1191,7 +1192,7 @@ ul.recent-works {
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-   background-color: #808080; /* средний серый */
+  background-color: #25272a;
   text-decoration: none;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
