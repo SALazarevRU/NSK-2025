@@ -3878,7 +3878,7 @@ h3.cta-subheading22.text-center {
 
 
 #back-to-top {
-  border: 1px solid #ffffff; /* 1px рамка, белый цвет */
+  border: 1px solid #808080; /* 1px рамка, белый цвет */
   border-radius: 4px;        /* скругление углов (как в вашем JS) */
   padding: 5px;              /* отступы внутри (как в вашем JS) */
 }
