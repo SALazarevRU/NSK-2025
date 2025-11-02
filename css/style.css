@@ -3878,35 +3878,19 @@ h3.cta-subheading22.text-center {
 
 
 #back-to-top {
-    border: 1px solid #ffffff; /* белая рамка толщиной 1 px */
-
-}
-@media (max-width: 575px) {
-    #back-to-top {
-        border: 2px solid #ffffff;
-        border-radius: 4px;
-        padding: 5px;
-    }
+  border: 1px solid #ffffff; /* 1px рамка, белый цвет */
+  border-radius: 4px;        /* скругление углов (как в вашем JS) */
+  padding: 5px;              /* отступы внутри (как в вашем JS) */
 }
 
-@media (min-width: 576px) and (max-width: 767px) {
-    #back-to-top {
-        border: 2px solid #ffffff;
-        border-radius: 4px;
-        padding: 5px;
-    }
+/* Адаптация для мобильных (пример) */
+@media (max-width: 768px) {
+  #back-to-top {
+    border-width: 1px; /* сохраняем 1px на мобильных */
+    /* Здесь можно добавить другие мобильные стили, например: */
+    padding: 3px;
+  }
 }
-
-/* Для десктопов */
-@media (min-width: 768px) {
-    #back-to-top {
-        border: 2px solid #ffffff;
-        border-radius: 4px;
-        padding: 5px;
-    }
-}
-
-
 
 
 
