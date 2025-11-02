@@ -1191,7 +1191,7 @@ ul.recent-works {
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #25272a;
+   background-color: #808080; /* средний серый */
   text-decoration: none;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -3872,30 +3872,6 @@ h3.cta-subheading22.text-center {
     margin-bottom: 5px;
   }
 }
-
-
-
-
-
-#back-to-top {
-  border: 1px solid #808080; /* 1px рамка, белый цвет */
-  border-radius: 4px;        /* скругление углов (как в вашем JS) */
-  padding: 5px;              /* отступы внутри (как в вашем JS) */
-}
-
-/* Адаптация для мобильных (пример) */
-@media (max-width: 768px) {
-  #back-to-top {
-    border-width: 1px; /* сохраняем 1px на мобильных */
-    /* Здесь можно добавить другие мобильные стили, например: */
-    padding: 3px;
-  }
-}
-
-
-
-
-
 
 
 

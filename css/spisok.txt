@@ -1,4 +1,4 @@
-28.10.2025 18:11:58,42 
+
 animate.css
 bootstrap.min.css
 elegant-icons.css
@@ -6,7 +6,5 @@ font-awesome.css
 pe-icon-7-stroke.css
 responsive.css
 slider.css
-spisok.txt
 stroke-gap-icons.css
 style.css
-список.bat
