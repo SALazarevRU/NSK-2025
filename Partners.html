@@ -23,8 +23,67 @@
 	<link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="css/animate.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="css/slider.css">
-	</head>
-	<body class="loading">
+</head>
+  <body class="loading">
+
+<!-- Preloader  Устройство предварительной загрузки-->
+	<div id="preloader">
+	    <div id="status">&nbsp;</div>
+	</div>
+
+	<header>
+	<!-- Navbar -->
+	    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	    	<nav class="navigation">
+		      	<div class="container">
+			        <div class="navbar-header">
+			        	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+				            <span class="sr-only">Открыть меню</span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>				            
+			        	</button>	        	 
+						<!-- Logo -->
+						<div class="logo">
+				        	<a href="index.html">
+				        		АРХИВ<i>чик</i>
+				          	</a>
+			        	        </div>         
+			        </div> <!-- end navbar-header -->
+
+			        <div class="collapse navbar-collapse" id="navbar-collapse">			          
+			        	<ul class="nav navbar-nav navbar-right">
+				            <li class="active"><a href="index.html">Главная</a></li>
+				            <li><a href="#footer">О Компании</a></li>				            
+				            <li><a href="#">Архив</a></li>
+				            <li><a href="#team">Команда</a></li>				            
+				            <li><a href="#">IT Проекты</a></li>
+				            <li><a href="#Связька">Связь</a></li>				            
+				            <li><a href="Partners.html">Партнёры</a></li>                                             
+				            <li><div id="search"><i class="pe-7s-search search-trigger"></i></div>
+				            	<div class="search-bar">
+					            	<div class="search-wrap">
+										<form role="form">
+										    <div class="form-group">
+											<input type="search" class="form-control searchbox" placeholder="Search">
+									    	    </div>
+									    	<button type="submit" class="search-button"><i class="pe-7s-search"></i></button>
+									    </form>
+								      </div>
+								</div>
+				            </li>
+			        	</ul> <!-- end menu -->
+			        </div> <!-- end collapse -->    
+	      		</div> <!-- end container -->
+	      	</nav> <!-- end navigation -->
+	    </nav> <!-- End Navbar -->
+	</header>
+	
+	
+<div class="main-wrapper основная оболочка">	
+
+
+
 
 	<!-- Наши партнёры -->
 		<ul id="partners" class="clearfix">
@@ -32,9 +91,20 @@
 			<div class="container">
 			<br>	<!-- пустая строка -->
 				<h2 class="text-center">Наши партнеры</h2>
-				<p class="subheading text-center">Какие есть</p>
+				<p class="subheading text-center">Такие, какие есть 😉</p>
 				<div class="main-border blue"></div>
-                                  <br>				
+                                  <br>	
+
+                 <div class="container">                    
+                                       <div class="logo">
+				        	<a href="#partners-33">
+				        		ГАЗПРОМ<i>банк, когда мы его спрашиваем - "а где остальные досье"?</i>
+				          	</a>                                             
+			        	        </div> 	
+			               </div>
+	
+
+			
 					<li class="team-member">
 						<div class="team-img">
 							<img src="upload/Partner1.png" alt="team member 1">
@@ -47,21 +117,45 @@
 						</div>						
 					</li> <!-- end team member -->
 			</div>	
-			<div class="container">	
-                <br>
-     				<h5 class="team-title">Газпромбанк, когда его спросили - "а где остальные досье"?</h5>			
-			</div>	
+			
 
 <!-- Call to Action -->
 <br><br>
 		<section class="call-to-action">
 			<div class="container center;">			
 				
-					<a href="#" id="cta-button-solid" class="btn btn-large btn-rounded btn-light-solid">Лайк!</a>
-					<a href="index.html" id="cta-button-stroke" class="btn btn-large btn-rounded btn-light-transparent">На главную</a>
+					 <a href="index.html#partners33" id="cta-button-stroke" class="btn btn-large btn-rounded btn-light-transparent">Вернуться</a>
+					<a href="index.html#preloader" id="cta-button-stroke" class="btn btn-large btn-rounded btn-light-transparent">На главную</a>
 				</div>
 			</div> <!-- end container -->
-		</section> <!-- end call to action -->			
+		</section> <!-- end call to action -->	
+
+
+
+<!-- Call to Возврат на верх -->
+                <div id="back-to-top">
+			<a href="#top"><i class="fa fa-angle-up"></i></a>
+		</div>
+
+</div> <!-- end main-wrapper конечная основная оболочка-->
+
+<!-- jQuery Scripts -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/snap.svg-min.js"></script>
+	<script src="js/main.js"></script> <!-- Resource jQuery -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.countTo.js"></script>
+	<script type="text/javascript" src="js/jquery.appear.js"></script>
+	<script type="text/javascript" src="js/plugins-scroll.js"></script>
+	<script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+	<script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/wow.min.js"></script>
+
+	<!-- Custom Theme JavaScript  Пользовательская тема JavaScript -->
+    <script src="js/scripts.js"></script>
+
+		
 					  
 </body>
 
