@@ -3881,6 +3881,30 @@ h3.cta-subheading22.text-center {
     border: 1px solid #ffffff; /* белая рамка толщиной 1 px */
 
 }
+@media (max-width: 575px) {
+    #back-to-top {
+        border: 2px solid #ffffff;
+        border-radius: 4px;
+        padding: 5px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    #back-to-top {
+        border: 2px solid #ffffff;
+        border-radius: 4px;
+        padding: 5px;
+    }
+}
+
+/* Для десктопов */
+@media (min-width: 768px) {
+    #back-to-top {
+        border: 2px solid #ffffff;
+        border-radius: 4px;
+        padding: 5px;
+    }
+}
 
 
 
