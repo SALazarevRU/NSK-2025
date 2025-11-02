@@ -3766,7 +3766,7 @@ ol.numbers {
 /* =  Блок для кнопки поддержки
 /*-------------------------------------------------*/
 .call-to-action22 {
-  padding: 40px 20px;
+  padding: 30px 20px;
   background-color: #00ADB5; /* Светлый фон */
   text-align: center;
 }
@@ -3775,8 +3775,13 @@ ol.numbers {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
- min-height: 15vh; /* Минимум на весь экран */
+  min-height: 7vh;
+  /* Добавляем flex для центрирования */
+  display: flex;
+  justify-content: center;  /* по горизонтали */
+  align-items: center;      /* по вертикали */
 }
+
 
 .call-to-action22 h2 {
   font-size: 18px;
