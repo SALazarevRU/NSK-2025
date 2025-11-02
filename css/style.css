@@ -3792,7 +3792,7 @@ ol.numbers {
   margin-bottom: 0;
 }
 
-h3.cta-subheading22 {
+h3.cta-subheading22.text-center {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   font-size: 38px;
@@ -3824,10 +3824,10 @@ h3.cta-subheading22 {
     margin-bottom: 8px;
   }
   
-  h2.cta-subheading22 text-center {
-    font-size: 28px;
-    margin-bottom: 15px;
-  }
+ h2.cta-subheading22.text-center {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
   
   .mt30 {
     margin-top: 20px !important;
@@ -3857,7 +3857,7 @@ h3.cta-subheading22 {
     margin-bottom: 5px;
   }
 
-h3.cta-subheading22 {
+h3.cta-subheading22.text-center {
     font-size: 14px;
     margin-bottom: 5px;
   }
