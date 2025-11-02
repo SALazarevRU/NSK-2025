@@ -3833,6 +3833,9 @@ h3.cta-subheading22.text-center {
     flex-direction: column;
     align-items: center;
   }
+.button {
+    transform: translateY(3px); /* именно +3px, чтобы сдвинуть вниз */
+  }
   
   h3.cta-subheading22.text-center {
     font-size: 28px;
@@ -3851,6 +3854,9 @@ h3.cta-subheading22.text-center {
     flex-direction: column;
     width: 100%;
     padding: 0 10px;
+  }
+.button {
+    transform: translateY(3px); /* именно +3px, чтобы сдвинуть вниз */
   }
   
   #cta-button-solid {
