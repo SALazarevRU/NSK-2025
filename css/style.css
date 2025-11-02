@@ -3843,10 +3843,28 @@ h3.cta-subheading22.text-center {
   }
 }
 
-@media (max-width: 480px) {
-  .call-to-action22 {
-    padding: 15px 10px;
+.button-container {
+  display: flex;
+  justify-content: center;
+  /* Если нужно вертикальное центрирование: align-items: center; */
+ align-items: center;
+}
+
+@media (max-width: 768px) {
+  #cta-button-solid {
+    padding: 12px 24px;
+    font-size: 14px;
   }
+}
+
+@media (max-width: 480px) {
+  #cta-button-solid {
+    padding: 10px 20px;
+    font-size: 13px;
+    width: 100%;
+    max-width: 280px;
+  }
+}
   
   .cta-subheading {
     font-size: 14px;
