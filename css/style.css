@@ -3765,7 +3765,7 @@ ol.numbers {
 /*-------------------------------------------------*/
 /* =  Блок для кнопки поддержки
 /*-------------------------------------------------*/
-/* Основной блок — оставляем как есть */
+
 .call-to-action22 {
   padding: 30px 20px;
   background-color: #00ADB5;
@@ -3803,9 +3803,10 @@ h3.cta-subheading22.text-center {
   margin-bottom: 0;
 }
 
-#cta-button-solid,
-#cta-button-stroke {
-  margin: 0 5px;
+#cta-button-solid {
+  color: #00ADB5;
+  padding: 11px 35px;
+  font-size: 16px;
 }
 
 #cta-button-stroke {
@@ -3816,39 +3817,26 @@ h3.cta-subheading22.text-center {
   color: #00ADB5;
 }
 
-/* Контейнер для кнопок — центрируем через flex */
+/* Контейнер для кнопок */
 .button-container {
   display: flex;
-  justify-content: center;  /* Центрируем кнопки по горизонтали */
-  align-items: center;     /* Центрируем по вертикали */
-  width: 100%;             /* Занимаем всю ширину родителя */
-  gap: 10px;              /* Расстояние между кнопками */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
 }
 
-/* Адаптация для мобильных устройств */
+/* Адаптация для планшетов (768px и меньше) */
 @media (max-width: 768px) {
   .call-to-action22 {
     padding: 20px 15px;
-    flex-direction: column;  /* Вертикальная компоновка на мобильных */
+    flex-direction: column;
     align-items: center;
   }
   
-  .cta-subheading {
-    font-size: 16px;
-    margin-bottom: 8px;
-  }
-  
-  h2.cta-subheading22.text-center {
+  h3.cta-subheading22.text-center {
     font-size: 28px;
     margin-bottom: 15px;
-  }
-  
-  .mt30 {
-    margin-top: 20px !important;
-  }
-  
-  .mt40 {
-    margin-top: 30px !important;
   }
   
   #cta-button-solid {
@@ -3857,42 +3845,25 @@ h3.cta-subheading22.text-center {
   }
 }
 
+/* Адаптация для смартфонов (480px и меньше) */
 @media (max-width: 480px) {
   .button-container {
-    flex-direction: column;  /* Кнопки друг под другом на очень узких экранах */
-    align-items: center;    /* Центрируем вертикально */
+    flex-direction: column;
     width: 100%;
-    padding: 0 10px;         /* Отступы по краям */
+    padding: 0 10px;
   }
   
   #cta-button-solid {
+    width: 100%;
+    max-width: 280px;
     padding: 10px 20px;
     font-size: 13px;
-    width: 100%;           /* Занимают всю ширину */
-    max-width: 280px;     /* Ограничиваем максимальную ширину */
-    margin: 5px 0;       /* Отступы между кнопками */
+    margin: 5px 0;
   }
   
-  .cta-subheading {
-    font-size: 14px;
-    margin-bottom: 6px;
-  }
-  
-  .call-to-action22 h2 {
-    margin-bottom: 5px;
-  }
-
   h3.cta-subheading22.text-center {
     font-size: 14px;
     margin-bottom: 5px;
-  }
-  
-  .mt30 {
-    margin-top: 15px !important;
-  }
-  
-  .mt40 {
-    margin-top: 25px !important;
   }
 }
 
