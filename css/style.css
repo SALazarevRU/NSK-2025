@@ -3767,8 +3767,11 @@ ol.numbers {
 /*-------------------------------------------------*/
 .call-to-action22 {
   padding: 30px 20px;
-  background-color: #00ADB5; /* Светлый фон */
+  background-color: #00ADB5;
   text-align: center;
+  min-height: 7vh;
+  max-height: 80vh;
+  overflow: hidden;
 }
 
 .container22 {
@@ -3776,10 +3779,10 @@ ol.numbers {
   margin: 0 auto;
   padding: 0 15px;
   min-height: 7vh;
-  /* Добавляем flex для центрирования */
   display: flex;
-  justify-content: center;  /* по горизонтали */
-  align-items: center;      /* по вертикали */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 
@@ -3813,7 +3816,7 @@ h3.cta-subheading22 {
 /* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
   .call-to-action22 {
-    padding: 30px 15px;
+    padding: 20px 15px;
   }
   
   .cta-subheading {
@@ -3821,7 +3824,7 @@ h3.cta-subheading22 {
     margin-bottom: 8px;
   }
   
-  h2.text-center {
+  h2.cta-subheading22 text-center {
     font-size: 28px;
     margin-bottom: 15px;
   }
@@ -3842,7 +3845,7 @@ h3.cta-subheading22 {
 
 @media (max-width: 480px) {
   .call-to-action22 {
-    padding: 25px 10px;
+    padding: 15px 10px;
   }
   
   .cta-subheading {
@@ -3850,9 +3853,13 @@ h3.cta-subheading22 {
     margin-bottom: 6px;
   }
   
-  h2.text-center {
-    font-size: 24px;
-    margin-bottom: 12px;
+ .call-to-action22 h2 {
+    margin-bottom: 5px;
+  }
+
+h3.cta-subheading22 {
+    font-size: 14px;
+    margin-bottom: 5px;
   }
   
   .mt30 {
