@@ -651,6 +651,7 @@ p {
 .call-to-action {
   background-color: #00ADB5;
   padding: 110px 0;
+
 }
 
 .call-to-action h2 {
@@ -909,7 +910,22 @@ h3.cta-subheading {
 
 .partners-dark {
   background-color: #222831;
-  padding: 60px 0;
+  padding: 40px 0;
+
+}
+
+.partners-heading {
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 1rem 0;
+
+font-size: 32px;
+}
+
+@media (max-width: 768px) {
+  .partners-heading {
+    color: #ffffff;
+  }
 }
 
 .partners-dark img,
@@ -1019,7 +1035,7 @@ h3.cta-subheading {
 }
 
 .footer-widgets {
-  padding: 120px 0;
+  padding: 60px 0;
 }
 
 .social-icons {
@@ -1136,10 +1152,14 @@ ul.recent-works {
   opacity: 0.5;
 }
 
+
+
 .bottom-footer {
   background-color: #16171a;
-  padding: 53px 0;
+  padding: 10px 0; /* оставляем как было */
+ 
 }
+
 
 .copyright {
   color: #98a2a4;
@@ -3739,3 +3759,129 @@ ol.numbers {
   webkit-box-shadow: none;
   box-shadow: none;
 }
+
+
+
+/*-------------------------------------------------*/
+/* =  Блок для кнопки поддержки
+/*-------------------------------------------------*/
+.call-to-action22 {
+  padding: 40px 20px;
+  background-color: #00ADB5; /* Светлый фон */
+  text-align: center;
+}
+
+.container22 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+ min-height: 15vh; /* Минимум на весь экран */
+}
+
+.call-to-action22 h2 {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+h3.cta-subheading22 {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 38px;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+#cta-button-solid,
+#cta-button-stroke {
+  margin: 0 5px;
+}
+
+#cta-button-stroke {
+  padding: 11px 35px;
+}  
+
+#cta-button-solid {
+  color: #00ADB5;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .call-to-action22 {
+    padding: 30px 15px;
+  }
+  
+  .cta-subheading {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  h2.text-center {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  
+  .mt30 {
+    margin-top: 20px !important;
+  }
+  
+  .mt40 {
+    margin-top: 30px !important;
+  }
+  
+  #cta-button-solid {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .call-to-action22 {
+    padding: 25px 10px;
+  }
+  
+  .cta-subheading {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  
+  h2.text-center {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  
+  .mt30 {
+    margin-top: 15px !important;
+  }
+  
+  .mt40 {
+    margin-top: 25px !important;
+  }
+  
+  #cta-button-solid {
+    padding: 10px 20px;
+    font-size: 13px;
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
