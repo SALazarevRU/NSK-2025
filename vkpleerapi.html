@@ -47,7 +47,7 @@
             background-color: #3a5f88;
         }
     </style>
-    <!-- Исправлен URL: добавлено "p" в "https" -->
+    <!-- Исправлен URL: добавлена "p" в "https" -->
     <script src="https://vk.com/js/api/videoplayer.js"></script>
 </head>
 <body>
@@ -72,8 +72,8 @@
                 return;
             }
 
-            // Инициализация плеера
-            player = new VK.VideoPlayer('player', {
+            // Инициализация плеера (без "new")
+            player = VK.VideoPlayer('player', {
                 oid: -233678672,  // ID сообщества (с минусом!)
                 id: 456239018,     // ID видео
                 hash: 'ln-Gp8tvGJZt6th5EQ9kH', // hash из ссылки
