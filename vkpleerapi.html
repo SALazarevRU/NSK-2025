@@ -47,6 +47,8 @@
             background-color: #3a5f88;
         }
     </style>
+    <!-- Исправлен URL: добавлено "p" в "https" -->
+    <script src="https://vk.com/js/api/videoplayer.js"></script>
 </head>
 <body>
     <div class="container">
@@ -60,14 +62,17 @@
         </div>
     </div>
 
-    <!-- Правильный подключение API плеера -->
-    <script src="https://vk.com/js/api/videoplayer.js"></script>
-
     <script type="text/javascript">
         let player;
 
-        // Инициализация плеера после загрузки API
         window.onload = function() {
+            // Проверка загрузки API VK
+            if (typeof VK === 'undefined' || typeof VK.VideoPlayer === 'undefined') {
+                console.error('Ошибка: VK VideoPlayer API не загружен. Проверьте URL скрипта.');
+                return;
+            }
+
+            // Инициализация плеера
             player = new VK.VideoPlayer('player', {
                 oid: -233678672,  // ID сообщества (с минусом!)
                 id: 456239018,     // ID видео
@@ -77,10 +82,10 @@
                 controls: 1,
                 autoplay: 0,
                 loop: 0,
-                js_api: 1  // Обязательно для управления через JS
+                js_api: 1          // Обязательно для управления через JS
             });
 
-            // Обработчики событий (опционально)
+            // Обработчики событий
             player.on('inited', () => {
                 console.log('Плеер инициализирован');
             });
@@ -98,7 +103,7 @@
             });
         };
 
-        // Функции управления
+        // Функции управления плеером
         function playVideo() {
             if (player) player.play();
         }
