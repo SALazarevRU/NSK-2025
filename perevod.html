@@ -2,107 +2,110 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Поддержка</title>
-   <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 20px;
-        display: flex;
-        justify-content: center;
-    }
-    
-   .container {
-  width: 400px;
-  height: 200px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 15px;
-  box-sizing: border-box;
-  text-align: center;
-  background-color: #DCDCDC; /* Зелёный фон контейнера */
-}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
 
-    
-    .title {
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
-    
-    .label {
-  display: block;
-  margin-bottom: 15px;
-  margin-top: -3px;
-  margin-left: -295px; /* Сдвигает влево на 10px */
-  font-weight: bold;
-}
+        .container {
+            width: calc(100vw - 3px); /* Ширина экрана минус 3 пикселя */
+            max-width: 400px; /* Максимум 400px на больших экранах */
+            height: 220px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: #DCDCDC;
+        }
 
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #00ADB5;
+        }
 
-    
-    /* Контейнер для поля ввода и символа валюты */
-    .input-container {
-        position: relative;
-        margin-bottom: 20px;
+        .label {
+            display: block;
+            margin-bottom: 15px;
+            margin-top: -3px;
+            margin-left: -295px;
+            font-weight: bold;
+            color: #808080;
+        }
 
-    }
-    
-    /* Поле ввода с увеличенным правым padding */
-    input[type="text"] {
-        width: 100%;
-        padding: 8px 32px 8px 8px; /* справа 32px — место для символа ₽ */
-        font-size: 18px;
-        text-align: center;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-    
-    /* Символ ₽ — жёстко привязан к правому краю */
-   .currency {
-    position: absolute;
-    right: 12px;           /* отступ от правого края поля */
-    top: 44px;             /* отступ от верхнего края поля (вместо вертикального центрирования) */
-    color: #666;
-    font-size: 16px;
-    pointer-events: none;   /* не мешает кликам по input */
-    z-index: 1;          /* гарантия видимости поверх input */
-}
+        /* Контейнер для поля ввода и символа валюты */
+        .input-container {
+            position: relative;
+            margin-bottom: 25px; /* Увеличено на 5px */
+        }
 
-</style>
+        /* Поле ввода с увеличенным правым padding */
+        input[type="text"] {
+            width: 100%;
+            padding: 8px 32px 8px 8px;
+            font-size: 18px;
+            text-align: center;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
 
+        /* Цвет рамки при фокусе */
+        input[type="text"]:focus {
+            border-color: #00ADB5;
+            outline: none;
+        }
+
+        /* Символ ₽ — жёстко привязан к правому краю */
+        .currency {
+            position: absolute;
+            right: 12px;
+            top: 44px;
+            color: #666;
+            font-size: 16px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Кнопка "Поддержать" */
+        .support-button {
+            display: inline-block;
+            width: 280px;
+            padding: 12px 44px;
+            background-color: #00ADB5;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-   <div class="title" style="color: #00ADB5;">Перевод</div>
-    <div class="input-container">
-     <span class="label" style="color: #808080;">Сколько</span>
-      <div class="input-wrapper">
-        <input type="text" value="200">
-        <span class="currency">₽</span>
-
-<div style="margin-top: 10px; text-align: center;">
-    <a href="https://example.com" style="
-      display: inline-block;
-      width: 280px;
-      padding: 12px 44px;
-      background-color: #00ADB5;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      text-align: center;
-    ">
-      Поддержать
-    </a>
-  </div>
-
-      </div>
+    <div class="container">
+        <div class="title">Перевод</div>
+        <div class="input-container">
+            <span class="label">Сколько</span>
+            <div class="input-wrapper">
+                <input type="text" value="200">
+                <span class="currency">₽</span>
+            </div>
+        </div>
+        <div style="margin-top: 10px; text-align: center;">
+            <a href="https://example.com" class="support-button">
+                Поддержать
+            </a>
+        </div>
     </div>
-  </div>
-
-  
 </body>
-
 </html>
