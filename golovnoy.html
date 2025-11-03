@@ -65,33 +65,28 @@
     height: 40px;           /* Пример высоты (можно убрать, если не нужно) */
 }
 
-
-
-.container333 {
-  width: 100%;
-  max-width: 100%;
-  padding: 0 15px;
-  box-sizing: border-box;
+/* Замена <br> на на отступы через CSS */
+.team-title {
+  margin-top: 20px;
 }
 
-.image-wrapper {
-  position: relative;
+video {
+  display: block;
   width: 100%;
-  /* Убираем жёсткое ограничение max-width */
-  padding-bottom: 177.78%; /* 16:9 вместо 9:16, если нужно горизонтальное видео */
-  /* Для вертикального видео 9:16 используйте: padding-bottom: 177.78%; */
-  height: 0;
-  overflow: hidden;
+  height: auto;
+  max-width: 75%;
+  position: relative;
+  overflow: visible;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 800px;
   margin: 0 auto;
 }
-
-.image-wrapper video {
-  position: absolute;
-  top: 0;
-  left: 0;
+.video-container video {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
 }
 
 
@@ -159,8 +154,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	        	 
 					      <!-- Logo -->
-
-
 						 <div class="logo">
     <a href="#" class="open-popup" data-target="popup2">
         ГЛАВНЫЙ<i>офис</i>
@@ -203,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	</header>
 	
 	
-<div class="main-wrapper основная оболочка">	
+<div class="main-wrapper main-wrapper-main ">	<!-- основная оболочка -->
 
 <!-- Приложение -->
 		<ul id="789" class="clearfix">
@@ -215,21 +208,21 @@ document.addEventListener('DOMContentLoaded', function() {
 			</div>						
 	  </li> <!-- end team member -->          
 
-<section class="call-to-action227">
-  <div class="container333">
-    <div class="image-wrapper">
-      <video controls poster="placeholder.jpg">
-        <source src="video/видео_чучук.mp4" type="video/mp4">
-       
-        Ваш браузер не поддерживает тег video.
-      </video>
-    </div>
-  </div>
-</section>      
- 
+
+
+
+             <!-- video -->
+                     <div class="video-container">
+                        <video width="640" height="360" controls autoplay muted loop poster="placeholder.jpg" alt="Превью видео">
+                            <source src="video/chuchuk.mp4" type="video/mp4">
+                                Ваш браузер не поддерживает воспроизведение видео.
+                        </video>    
+                     </div>   
+             <!-- end video --> 
 
     </div>
   </div>
+</ul>
 </section>
 <br><br>
 
