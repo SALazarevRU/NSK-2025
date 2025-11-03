@@ -73,17 +73,17 @@
             }
 
             // Инициализация плеера (без оператора new)
-            player = VK.VideoPlayer('player', {
-                oid: -233678672,      // ID сообщества (с минусом)
-                id: 456239018,       // ID видео
-                hash: '2e8238b14598e353', // hash из ссылки (исправлен)
-                width: '100%',
-                height: '100%',
-                controls: 1,
-                autoplay: 0,
-                loop: 0,
-                js_api: 1             // Обязательно для управления через JS
-            });
+           player = VK.VideoPlayer('player', {
+    oid: -233678672,
+    id: 456239018,
+    hash: '2e8238b14598e353',
+    width: '100%',
+    height: '100%',
+    controls: 1,
+    autoplay: 0,
+    loop: 0,
+    js_api: 1  // Обязательно!
+});
 
             // Обработчики событий
             player.on('inited', () => {
