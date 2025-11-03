@@ -70,15 +70,16 @@
 .container333 {
   width: 100%;
   max-width: 100%;
-  padding: 0 15px; /* отступы по краям на мобильных */
+  padding: 0 15px;
   box-sizing: border-box;
 }
 
 .image-wrapper {
   position: relative;
   width: 100%;
-  max-width: 320px;
-  padding-bottom: 53%; /* 9:16 */
+  /* Убираем жёсткое ограничение max-width */
+  padding-bottom: 177.78%; /* 16:9 вместо 9:16, если нужно горизонтальное видео */
+  /* Для вертикального видео 9:16 используйте: padding-bottom: 177.78%; */
   height: 0;
   overflow: hidden;
   margin: 0 auto;
@@ -92,6 +93,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 
 </style>
 
