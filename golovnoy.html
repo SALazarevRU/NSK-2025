@@ -66,8 +66,31 @@
 
 
 
+.container333 {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 15px; /* отступы по краям на мобильных */
+  box-sizing: border-box;
+}
 
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  padding-bottom: 53%; /* 9:16 */
+  height: 0;
+  overflow: hidden;
+  margin: 0 auto;
+}
 
+.image-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 </style>
 
@@ -179,20 +202,36 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 <div class="main-wrapper основная оболочка">	
 
-	<!-- Приложение -->
+<!-- Приложение -->
 		<ul id="789" class="clearfix">
 		<section class="section-wrap our-team bg-light">
 			<div class="container">							
 			 <li class="team-member">
 			<div class="team-img">
-			<img src="upload/офисе.jpeg" alt="офисе.jpeg"> <!--БЛЯ СЮДА СМОТРИ upload/рамка.jpg--->
+			<img src="upload/office.jpeg" alt="офисе.jpeg"> <!--БЛЯ СЮДА СМОТРИ upload/office.jpeg--->
 			</div>						
-	  </li> <!-- end team member --> 	  			
-		<div class="container">	             
-     		   			
-		</div>	
-          <br>
-          
+	  </li> <!-- end team member -->          
+
+<section class="call-to-action227">
+  <div class="container333">
+    <div class="image-wrapper">
+      <video controls poster="placeholder.jpg">
+        <source src="video/видео_чучук.mp4" type="video/mp4">
+        <source src="video/видео_чучук.webm" type="video/webm">
+        Ваш браузер не поддерживает тег video.
+      </video>
+    </div>
+  </div>
+</section>      
+ 
+
+    </div>
+  </div>
+</section>
+<br><br>
+
+
+
 
           
 <h2 class="team-title">Текст</h2>
@@ -201,7 +240,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </li>
 </ul>
-  <!-- end Приложение -->
 
 
 <!-- Call to Action -->
