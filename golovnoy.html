@@ -70,24 +70,33 @@
   margin-top: 20px;
 }
 
-video {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: 75%;
-  position: relative;
-  overflow: visible;
-}
-
 .video-container {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
 }
+
 .video-container video {
   width: 100%;
   height: auto;
+  display: block;
 }
+
+/* Медиа‑запрос для мобильных устройств */
+@media (max-width: 767px) {
+  .video-container {
+    width: 100%;
+    max-width: none; /* Убираем ограничение максимальной ширины на мобильных */
+    margin: 0; /* Убираем отступы по краям */
+  }
+  
+  .video-container video {
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* Гарантируем, что видео не выйдет за границы экрана */
+  }
+}
+
 
 
 </style>
