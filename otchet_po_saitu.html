@@ -65,11 +65,6 @@
     height: 40px;           /* Пример высоты (можно убрать, если не нужно) */
 }
 
-/* Замена <br> на на отступы через CSS */
-.team-title {
-  margin-top: 20px;
-}
-
 video {
   display: block;
   width: 100%;
@@ -154,9 +149,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	        	 
 					      <!-- Logo -->
+
+
 						 <div class="logo">
     <a href="#" class="open-popup" data-target="popup2">
-        ГЛАВНЫЙ<i>офис</i>
+        АРХИВ<i>чик</i>
     </a>
 </div>
 
@@ -172,10 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 			        <div class="collapse navbar-collapse" id="navbar-collapse">			          
 			        	<ul class="nav navbar-nav navbar-right">
-				            <li class="active"><a href="index.html#preloader">Главная</a></li>
-				            <li><a href="index.html#222">Команда</a></li>				            
-				            <li><a href="ITProjects.html">IT Проекты</a></li>
-				            <li><a href="LazarevSA.html#LazarevSA-33">Разработчик</a></li>                                        
+				            <li class="active"><a href="index.html#preloader">Главная</a></li>                                     
 				            <li><div id="search"><i class="pe-7s-search search-trigger"></i></div>
 				            	<div class="search-bar">
 					            	<div class="search-wrap">
@@ -196,60 +190,92 @@ document.addEventListener('DOMContentLoaded', function() {
 	</header>
 	
 	
-<div class="main-wrapper main-wrapper-main ">	<!-- основная оболочка -->
+<div class="main-wrapper основная оболочка">	
 
 <!-- Приложение -->
 		<ul id="789" class="clearfix">
 		<section class="section-wrap our-team bg-light">
 			<div class="container">							
-			 <li class="team-member">
-			<div class="team-img">
-			<img src="upload/kontora.jpg" alt="kontora.jpg"> 
-			</div>						
-	  </li> <!-- end team member -->          
+			<h2>Итоговый отчёт по сайту</h2>
+<h3><br />1. Общая характеристика</h3>
+<p>Сайт представляет собой самописное статическое веб‑приложение на базе HTML/CSS/JavaScript. <br />Не использует CMS &mdash; реализован &laquo;с нуля&raquo; с привлечением фреймворков и библиотек.</p>
+<h3>2. Технологический стек</h3>
+<h4>Основа:</h4>
+<p>HTML5, CSS3, JavaScript (ES5/ES6).</p>
+<p>Bootstrap 3 (фронтенд‑фреймворк: сетка, компоненты, адаптивность).</p>
+<p>jQuery 3.x (универсальный инструмент для DOM‑манипуляций и событий).</p>
+<h4>Шрифты и иконки:</h4>
+<p>Google Fonts: Arimo, Noto Serif (с поддержкой кириллицы).</p>
+<p>Наборы иконок: Font Awesome, PE Icon 7 Stroke, Elegant Icons, Stroke Gap Icons.</p>
+<p>JavaScript‑библиотеки и плагины:</p>
+<p>Snap.svg &mdash; работа с векторной графикой (SVG).</p>
+<p>WOW.js + Animate.css &mdash; анимации при прокрутке.</p>
+<p>jQuery Easing &mdash; плавные переходы и тайминги.</p>
+<p>jQuery countTo &mdash; анимированные счётчики чисел.</p>
+<p>jQuery Appear &mdash; отслеживание появления элементов в зоне видимости.</p>
+<p>Isotope &mdash; сортировка и фильтрация элементов с анимацией.</p>
+<p>ImagesLoaded &mdash; контроль загрузки изображений.</p>
+<p>Bootstrap JS &mdash; интерактивные компоненты (меню, модалы, карусели).</p>
+<h4>Кастомные скрипты:</h4>
+<p>main.js &mdash; основная логика сайта (инициализация плагинов, обработчики событий).</p>
+<p>scripts.js &mdash; дополнительные функции для специфических разделов.</p>
+<p>plugins-scroll.js &mdash; кастомные скролл‑эффекты (параллакс, фиксация элементов).</p>
+<h3>3. Ключевые особенности</h3>
+<p>Адаптивность<br /> Реализована через Bootstrap 3 и отдельный файл responsive.css. Корректно отображается на мобильных и десктопах.</p>
+<p>Анимации и интерактивность</p>
+<p>Появление элементов при прокрутке (WOW.js + jQuery Appear).</p>
+<p>Анимированные счётчики (countTo).</p>
+<p>SVG‑графика с интерактивными эффектами (Snap.svg).</p>
+<p>Плавные переходы (jQuery Easing).</p>
+<p>Оптимизация загрузки</p>
+<p>Прелоадер (#preloader) для скрытия незавершённой отрисовки.</p>
+<p>Скрипты подключены в конце &lt;body&gt; (ускорение первичной загрузки).</p>
+<p>Поддержка старых браузеров<br /> Условный комментарий для IE (&lt;!--[if IE]&gt;...&lt;![endif]--&gt;).</p>
+<p>Кастомизация<br /> Значительная доля уникального кода (main.js, scripts.js), не сводимая к стандартным решениям.</p>
+<h3>4. Структура и компоненты</h3>
+<p>Шапка (header)<br /> Фиксированное навигационное меню с логотипом (&laquo;АРХИВчик&raquo;), бургер‑меню для мобильных.</p>
+<p>Прелоадер<br /> Анимация загрузки страницы (#preloader).</p>
+<p>Контентные блоки<br /> Вероятно, включают галереи (Isotope), статистические счётчики, SVG‑иллюстрации.</p>
+<p>Фавикон<br /> Пользовательский значок (/upload/favicon.png).</p>
+<h4>5. Плюсы реализации</h4>
+<p>Чистый код<br /> Логичная структура HTML, разделение стилей на базовые и адаптивные.</p>
+<p>Богатая интерактивность<br /> Сочетание анимаций, SVG и динамической загрузки контента.</p>
+<p>Кросс‑браузерность<br /> Поддержка IE и современных браузеров.</p>
+<p>Масштабируемость<br /> Модульность JS‑кода позволяет легко добавлять новые функции.</p>
+<h3>6. Потенциальные зоны оптимизации</h3>
+<p>Обновление зависимостей</p>
+<p>Bootstrap 3 устарел (актуальная версия &mdash; 5.x).</p>
+<p>Проверить актуальность jQuery и плагинов (некоторые могут не поддерживаться).</p>
+<p>Производительность</p>
+<p>Объединить и минифицировать JS/CSS‑файлы (уменьшит число запросов).</p>
+<p>Использовать async/defer для некритичных скриптов (например, WOW.js).</p>
+<p>Оптимизировать изображения (сжатие, lazy loading).</p>
+<p>Безопасность</p>
+<p>Убедиться, что все подключаемые библиотеки загружены локально (не через CDN с ненадёжных источников).</p>
+<p>Проверить наличие CSP‑заголовков (Content Security Policy).</p>
+<p>SEO и доступность</p>
+<p>Добавить семантические теги (&lt;header&gt;, &lt;main&gt;, &lt;footer&gt;).</p>
+<p>Проверить атрибуты alt для изображений.</p>
+<p>Убедиться в корректности заголовков (&lt;h1&gt;&ndash;&lt;h6&gt;).</p>
+<p>Поддержка</p>
+<p>Документировать кастомные скрипты (main.js, scripts.js).</p>
+<p>Рассмотреть переход на современные инструменты сборки (Webpack, Vite) для упрощения поддержки.</p>
+<h3>7. Итоговые выводы</h3>
+<p>Сайт демонстрирует высокий уровень проработки с акцентом на визуальную привлекательность и интерактивность. Основные сильные стороны:</p>
+<p>Грамотное использование Bootstrap и jQuery.</p>
+<p>Разнообразие анимационных эффектов.</p>
+<p>Адаптивность и кросс‑браузерность.</p>
+<p>Для долгосрочного развития рекомендуется:</p>
+<p>Обновить технологический стек (Bootstrap 5, современные JS‑фреймворки).</p>
+<p>Оптимизировать производительность (минификация, асинхронная загрузка).</p>
+<p>Усилить SEO‑ и accessibility‑параметры.</p>
+<p>Сайт готов к эксплуатации, но имеет потенциал для улучшения скорости и поддерживаемости.</p>
+<div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root mui-1lzrz6c" data-qa="amount-input">&nbsp;</div>      
 
 
 
-
-            <!-- video -->
-<div class="video-container">
-  <video width="640" height="360" controls muted loop poster="placeholder.jpg" alt="Превью видео">
-    <source src="video/chuchuk.mp4" type="video/mp4">
-    Ваш браузер не поддерживает воспроизведение видео.
-  </video>    
-</div>   
-
-
-<br><br><br>
-
-<h2 style="position: relative; top: 10px; left: 20px; margin: 0; margin-bottom: 20px; padding: 5px 10px; text-align: center; ">Летний Корпоратив 2025</h2>   <!--  margin-bottom: 20px вместо br -->
-
-
-<!-- video -->
-<iframe src="https://vkvideo.ru/video_ext.php?oid=-233678672&id=456239018&hash=2e8238b14598e353&hd=3" 
-width="1280" height="720" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" 
-allowfullscreen  style="max-width: 100%;
- height: 643px;"> <!-- Здесь задаём высоту через style -->></iframe>
-
-
-<script src="https://vk.com/js/api/videoplayer.js"></script>
-<!-- end video -->
-
-
-    </div>
-  </div>
-</ul>
 </section>
-<br><br>
-
-
-
-
- <br>
-
-          
-
-
+<br><br>   
 
 </li>
 </ul>
@@ -259,7 +285,7 @@ allowfullscreen  style="max-width: 100%;
 		<section class="call-to-action22">
 			<div class="container22">			
 				<div>
-					<a href="#" id="cta-button-solid" class="btn btn-large btn-rounded btn-light-solid">Поддержать проект</a>					
+                                        <a href="index.html" id="cta-button-solid" class="btn btn-large btn-rounded btn-light-solid">На главную</a>					
 				</div>
 			</div> <!-- end container -->
 		</section> <!-- end call to action -->
