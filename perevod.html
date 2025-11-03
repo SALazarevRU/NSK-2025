@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Поддержка</title>
+   <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    
+   .container {
+  width: 400px;
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #DCDCDC; /* Зелёный фон контейнера */
+}
+
+    
+    .title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    
+    .label {
+  display: block;
+  margin-bottom: 15px;
+  margin-top: -3px;
+  margin-left: -295px; /* Сдвигает влево на 10px */
+  font-weight: bold;
+}
+
+
+    
+    /* Контейнер для поля ввода и символа валюты */
+    .input-container {
+        position: relative;
+        margin-bottom: 20px;
+
+    }
+    
+    /* Поле ввода с увеличенным правым padding */
+    input[type="text"] {
+        width: 100%;
+        padding: 8px 32px 8px 8px; /* справа 32px — место для символа ₽ */
+        font-size: 18px;
+        text-align: center;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    /* Символ ₽ — жёстко привязан к правому краю */
+   .currency {
+    position: absolute;
+    right: 12px;           /* отступ от правого края поля */
+    top: 44px;             /* отступ от верхнего края поля (вместо вертикального центрирования) */
+    color: #666;
+    font-size: 16px;
+    pointer-events: none;   /* не мешает кликам по input */
+    z-index: 1;          /* гарантия видимости поверх input */
+}
+
+</style>
+
+</head>
+<body>
+  <div class="container">
+   <div class="title" style="color: #00ADB5;">Перевод</div>
+    <div class="input-container">
+     <span class="label" style="color: #808080;">Сколько</span>
+      <div class="input-wrapper">
+        <input type="text" value="200">
+        <span class="currency">₽</span>
+
+<div style="margin-top: 10px; text-align: center;">
+    <a href="https://example.com" style="
+      display: inline-block;
+      width: 280px;
+      padding: 12px 44px;
+      background-color: #00ADB5;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      text-align: center;
+    ">
+      Поддержать
+    </a>
+  </div>
+
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+
+</html>
