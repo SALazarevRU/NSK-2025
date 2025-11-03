@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>   
 <!--Выберите «Кодировка» «Преобразовать в UTF8 без BOM» (в Notepad++)-->  <!--ЭТО ШАБЛОН-->
-<html lang="ru">
+<html>
 	<head>
-		 <title>App Android</title>
+		 <title>Корпоративная жизнь</title>
 		<meta charset="utf-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -24,15 +24,8 @@
 	<link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="css/animate.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="css/slider.css">
- <link rel="icon" type="image/png" href="/upload/favicon.png">
+        <link rel="icon" type="image/png" href="/upload/favicon.png">
 <style>
-
-h3, p {
-  display: inline;
-  margin: 0;
-  padding: 0;
-}
-
 /* Скрываем окно по умолчанию */
 .popup {
     display: none;
@@ -72,33 +65,29 @@ h3, p {
     height: 40px;           /* Пример высоты (можно убрать, если не нужно) */
 }
 
-/* заполнить контейнер фото */
-.container666 {
-  max-width: 100%;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 15%; /* 16:9 */
-  height: 0;
+/* Замена <br> на на отступы через CSS */
+.team-title {
+  margin-top: 20px;
 }
 
-.image-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.image-wrapper video,
-.image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+video {
   display: block;
+  width: 100%;
+  height: auto;
+  max-width: 75%;
+  position: relative;
+  overflow: visible;
 }
-/* конец заполнить контейнер фото */
+
+.video-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.video-container video {
+  width: 100%;
+  height: auto;
+}
 
 
 </style>
@@ -165,30 +154,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	        	 
 					      <!-- Logo -->
-
-
 						 <div class="logo">
     <a href="#" class="open-popup" data-target="popup2">
-        Проекты<i> IT</i>
+        ГЛАВНЫЙ<i>офис</i>
     </a>
 </div>
 
 <div class="popup" id="popup2">
     <div class="popup-content">
-        <h3>IT-проект — </h3>
-        <p> это процесс создания, внедрения и поддержки информационных технологий или цифровых продуктов. IT-проекты отличаются по масштабу и сложности, а также направлению и сфере деятельности — в данном случае это разработка ПО, создание веб-сайтов и приложений, облачные проекты, автоматизация бизнес-процессов, интернет вещей (IoT)</p>
+        <h3>ООО БСВ</h3>
+        <p>Россия, Новосибирск  Офис ул. Добролюбова  Телефон: 8‒800‒600‒48‒87 Email: info@bsv.legal</p>
         <button class="close-popup">Закрыть или клик на серое поле</button>
     </div>
 </div>
-
                                               <!-- Logo конец -->
 			        </div> <!-- end navbar-header -->
 
 			        <div class="collapse navbar-collapse" id="navbar-collapse">			          
 			        	<ul class="nav navbar-nav navbar-right">
 				            <li class="active"><a href="index.html#preloader">Главная</a></li>
-				            <li><a href="index.html#222">Команда</a></li>		            
-				            <li><a href="LazarevSA.html#LazarevSA-33">Разработчик</a></li>                                        
+				            <li><a href="#789">Фото</a></li>				            
+				            <li><a href="#790">Видео</a></li>
+				             
+                                      
 				            <li><div id="search"><i class="pe-7s-search search-trigger"></i></div>
 				            	<div class="search-bar">
 					            	<div class="search-wrap">
@@ -209,89 +197,77 @@ document.addEventListener('DOMContentLoaded', function() {
 	</header>
 	
 	
-<div class="main-wrapper основная оболочка">	
+<div class="main-wrapper main-wrapper-main ">	<!-- основная оболочка -->
+
+<!-- Приложение -->
+		<ul id="789" class="clearfix">
+		<section class="section-wrap our-team bg-light">
+			<div class="container">							
+			 <li class="team-member">
+			<div class="team-img">
+			<img src="upload/carskiydvor.jpg" alt="carskiydvor.jpg"> 
+			</div> 						
+	  </li> <!-- end team member -->          
+
+<!-- Приложение -->
+		<ul     class="clearfix">
+		<section class="section-wrap our-team bg-light">
+			<div class="container">							
+			 <li class="team-member">
+			<div class="team-img">
+			<img src="upload/carskiydvor2.jpg" alt="carskiydvor2.jpg"> 
+			</div> 						
+	  </li> <!-- end team member -->          
 
 
-<section class="call-to-action227">
-  <div class="container666">
-    <div class="image-wrapper">
-      <img src="upload/code222.jpg" alt="Описание изображения">
+
+         
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<h4 style="position: relative; top: 10px; left: 20px; margin: 0; margin-bottom: 20px; padding: 5px 10px; text-align: center; ">Летний Корпоратив 2025</h4>   <!--  margin-bottom: 20px вместо br -->
+
+
+<!-- video -->
+<iframe id="790" src="https://vkvideo.ru/video_ext.php?oid=-233678672&id=456239018&hash=2e8238b14598e353&hd=3" 
+width="1280" height="720" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" 
+allowfullscreen  style="max-width: 100%;
+ height: 643px;"> <!-- Здесь задаём высоту через style -->></iframe>
+
+
+<script src="https://vk.com/js/api/videoplayer.js"></script>
+<!-- end video -->
+
+
     </div>
   </div>
+</ul>
 </section>
 <br><br>
 
-			<div class="container">
-<h3>IT-проект — </h3><p>это процесс создания, внедрения и поддержки информационных технологий или цифровых продуктов. IT-проекты отличаются по масштабу и сложности, а также направлению и сфере деятельности.</p>
-</span></p>
-<ul 
- <p><span style="color: #999999;">В нашем случае это:</span></p>
+
+
+
+ <br>
+
+          
+
+
+
+</li>
 </ul>
-<ul style="list-style-type: disc;">
-<li><span style="color: #999999;">в первую очередь — автоматизация задач на уровне специалиста отдела (позволяет сократить время на выполнение, снизить количество ошибок и повысить общую эффективность работы),</span></li>
-<li><span style="color: #999999;"> разработка настольных программ для  Windows (C#), утилит, читов (фич, ботов, кликеров, инжекторов)</span></li>
-<li><span style="color: #999999;">создание веб-сайтов и приложений,</span></li>
-<li><span style="color: #999999;">создание мобильных приложений,</span></li>
-<li><span style="color: #999999;">облачные проекты,</span></li>
-<li><span style="color: #999999;">интернет вещей (IoT)</span></li>
-</ul>
-<p>&nbsp;</p>
-</ul>
-<p>&nbsp;</p>
-<br><br>
-				<div class="row">
-					<div class="col-sm-4">
-						<div class="service-item icon-effect-1 icon-blue icon-effect-1a">
-							<a href="#">
-								<i class="hi-icon icon icon-Click"></i>
-							</a>
-							<h5 class="text-center">Для Web</h5>
-							<div class="main-border blue"></div>
-							<p class="text-center">Веб-приложения, сайты и Базы данных.</p>	
-												
-						</div>						
-					</div> <!-- end service item -->
-
-
-
-
-
-                                         <div class="col-sm-4">
-						<div class="service-item icon-effect-1 icon-blue icon-effect-1a">
-							<a href="App.html">
-								<i class="hi-icon icon icon-Umbrella"></i>
-							</a>
-							<h5 class="text-center">Для Андроид, iOS</h5>
-							<div class="main-border blue"></div>
-							<p class="text-center">Кроссплатформенное приложение для Android, iOS и Windows 10 Скачать приложение: APK‑файл Разработчик: Сергей Лазарев Среда разработки: IDE Visual Studio Community 2022 (17.14.16) в Windows. Платформа разработки: Xamarin.Forms Version 5.0.0.2196. Xamarin.Essentials Version 1.7.0 Шаблон MVVM (Model-View-ViewModel) Xamarin.Android SDK 13.2.2.0 Xamarin Templates 17.13.0.94 Single-project MSIX Packaging Tools for VS 2022 Целевая версия Android Android 13.0 ПАКЕТ SDK ДЛЯ .NET: Version: 9.0.305 Commit: 3fc74f3529 Workload version: 9.0.300-manifests.6fcb754b MSBuild version: 17.14.21+8929ca9e3</p>	
-												
-						</div>						
-					</div> <!-- end service item -->
-
-					<div class="col-sm-4">
-						<div class="service-item icon-effect-1 icon-orange icon-effect-1a last">							
-							<a href="#">
-								<i class="hi-icon icon icon-Dollars"></i>
-							</a>
-							<h5 class="text-center">Для Windows</h5>
-							<div class="main-border orange"></div>
-							<p class="text-center">Программы, утилиты, надстройки, VBA macro, VBScript, Batch (CMD/BAT) и т.п.</p>							
-						</div>						
-					</div><!-- end service item -->
-				</div> <!-- end row -->
-			</div> <!-- end container -->
-		</section> <!-- end services -->
 
 
 <!-- Call to Action -->
 		<section class="call-to-action22">
 			<div class="container22">			
 				<div>
-					<a href="LazarevSA.html" id="cta-button-stroke" class="btn btn-large btn-rounded btn-light-transparent">Вернуться</a>
-                                        <a href="index.html#preloader" id="cta-button-solid" class="btn btn-large btn-rounded btn-light-solid">На главную</a>					
+<a href="index.html#preloader" id="cta-button-stroke" class="btn btn-large btn-rounded btn-light-transparent">На главную</a>
+					<a href="#" id="cta-button-solid" class="btn btn-large btn-rounded btn-light-solid">Поддержать проект</a>					
 				</div>
 			</div> <!-- end container -->
 		</section> <!-- end call to action -->
+<!-- end Call to Action -->
 
 
 <footer>
