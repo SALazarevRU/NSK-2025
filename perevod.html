@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Поддержка</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,8 +15,8 @@
         }
 
         .container {
-            width: calc(100vw - 3px); /* Ширина экрана минус 3 пикселя */
-            max-width: 400px; /* Максимум 400px на больших экранах */
+            width: calc(100vw - 3px);
+            max-width: 400px;
             height: 220px;
             border: 1px solid #ccc;
             border-radius: 8px;
@@ -41,13 +42,11 @@
             color: #808080;
         }
 
-        /* Контейнер для поля ввода и символа валюты */
         .input-container {
             position: relative;
-            margin-bottom: 25px; /* Увеличено на 5px */
+            margin-bottom: 25px;
         }
 
-        /* Поле ввода с увеличенным правым padding */
         input[type="text"] {
             width: 100%;
             padding: 8px 32px 8px 8px;
@@ -59,13 +58,11 @@
             transition: border-color 0.3s ease;
         }
 
-        /* Цвет рамки при фокусе */
         input[type="text"]:focus {
             border-color: #00ADB5;
             outline: none;
         }
 
-        /* Символ ₽ — жёстко привязан к правому краю */
         .currency {
             position: absolute;
             right: 12px;
@@ -76,7 +73,6 @@
             z-index: 1;
         }
 
-        /* Кнопка "Поддержать" */
         .support-button {
             display: inline-block;
             width: 280px;
@@ -88,6 +84,33 @@
             font-family: Arial, sans-serif;
             font-size: 14px;
             text-align: center;
+        }
+
+        /* Стили для блока с кнопками навигации */
+        .navigation-buttons {
+            margin-top: 500px; /* Расстояние от формы — 500px */
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* Отступ между кнопками */
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .btn-light-transparent {
+            background-color: transparent;
+            border: 1px solid #00ADB5;
+            color: #00ADB5;
+        }
+
+        .btn-light-solid {
+            background-color: #00ADB5;
+            color: white;
         }
     </style>
 </head>
@@ -105,6 +128,12 @@
             <a href="https://example.com" class="support-button">
                 Поддержать
             </a>
+        </div>
+
+        <!-- Блок с кнопками ниже формы (отступ 500px) -->
+        <div class="navigation-buttons">
+            <a href="LazarevSA.html" class="btn btn-light-transparent">Вернуться</a>
+            <a href="index.html" class="btn btn-light-solid">На главную</a>
         </div>
     </div>
 </body>
