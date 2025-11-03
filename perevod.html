@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Поддержка</title>
-
+ <script src="https://widget.cloudpayments.ru/bundles/cloudpayments.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -73,22 +73,23 @@
             z-index: 1;
         }
 
-        .support-button {
-            display: inline-block;
-            width: 280px;
-            padding: 12px 44px;
-            background-color: #00ADB5;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            text-align: center;
-        }
+       .support-button {
+    display: inline-block;
+    width: 366px;
+    padding: 12px 44px;
+    background-color: #00ADB5;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    border: none; /* Убирает рамку */
+}
 
         /* Стили для блока с кнопками навигации */
         .navigation-buttons {
-            margin-top: 500px; /* Расстояние от формы — 500px */
+            margin-top: 400px; /* Расстояние от формы — 500px */
             display: flex;
             justify-content: center;
             gap: 15px; /* Отступ между кнопками */
@@ -113,6 +114,58 @@
             color: white;
         }
     </style>
+
+
+<script>
+  // Инициализация виджета
+  var payments = new cp.CloudPayments({
+    language: 'ru-RU',
+    email: '', // email плательщика (можно оставить пустым)
+    applePaySupport: false,
+    googlePaySupport: true,
+    yandexPaySupport: true
+  });
+
+  // Функция для обработки клика
+  function initiatePayment() {
+    // Получаем сумму из поля ввода
+    var amount = document.querySelector('input[type="text"]').value;
+    
+    // Проверяем корректность суммы
+    if (!amount || isNaN(amount) || amount <= 0) {
+      alert('Укажите корректную сумму!');
+      return;
+    }
+
+    // Открываем виджет оплаты
+    payments.pay('charge', {
+      publicId: 'ВАШ_PUBLIC_ID', // ваш ID от CloudPayments
+      description: 'Поддержка проекта',
+      amount: parseFloat(amount),
+      currency: 'RUB',
+      invoiceId: '', // можно оставить пустым
+      accountId: '', // можно оставить пустым
+      email: '', // можно оставить пустым
+      skin: 'classic',
+      requireEmail: false
+    }).then(function(result) {
+      // Успешный платёж
+      alert('Платёж успешен! Спасибо за поддержку.');
+    }).catch(function(error) {
+      // Ошибка платежа
+      alert('Ошибка платежа: ' + error.message);
+    });
+  }
+
+  // Привязываем функцию к кнопке
+  document.querySelector('.support-button').addEventListener('click', function(e) {
+    e.preventDefault(); // отменяем переход по ссылке
+    initiatePayment();
+  });
+</script>
+
+
+
 </head>
 <body>
     <div class="container">
@@ -120,15 +173,21 @@
         <div class="input-container">
             <span class="label">Сколько</span>
             <div class="input-wrapper">
-                <input type="text" value="200">
+                <input type="text" value="250">
                 <span class="currency">₽</span>
             </div>
         </div>
         <div style="margin-top: 10px; text-align: center;">
-            <a href="https://example.com" class="support-button">
-                Поддержать
-            </a>
-        </div>
+    <button type="button" class="support-button" id="supportBtn">Поддержать</button>
+</div>
+
+<script>
+    const button = document.getElementById('supportBtn');
+
+    button.addEventListener('click', function() {
+        alert('В разработке');
+    });
+</script>
 
         <!-- Блок с кнопками ниже формы (отступ 500px) -->
         <div class="navigation-buttons">
