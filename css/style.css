@@ -327,11 +327,21 @@ p {
   overflow-y: auto;
 }
 
-.navbar-default .navbar-nav > li > a {
+/* Изменение цвета ссылок в навигационном меню */
+.navbar-default .navbar-nav > li > a,
+.navigation.overlay .navbar-nav > li > a,
+.navigation.overlay.sticky .navbar-nav > li > a {
+  color: #00ADB5;
   font-family: 'Noto Serif';
   text-transform: uppercase;
-  color: #45464b;
   font-size: 12px;
+  transition: color 0.3s ease; /* Плавный переход (опционально) */
+}
+/* Эффект при наведении (опционально) */
+.navbar-default .navbar-nav > li > a:hover,
+.navigation.overlay .navbar-nav > li > a:hover,
+.navigation.overlay.sticky .navbar-nav > li > a:hover {
+  color: #FF0000; /* Темнее при наведении */
 }
 
 .navigation.overlay .navbar-nav > li > a {
@@ -1699,6 +1709,16 @@ ul.recent-works {
 
 .blog-col-3 .entry-content a {
   margin-top: 18px;
+}
+                                                                     /*ДОБАВИЛ ЦВЕТНУЮ ТЕНЬ ПРИ НАВЕДЕНИИ*/
+.partners-dark .col-md-2.col-sm-4.col-xs-6 a img {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0.1); /* Белая тень (прозрачная) */
+}
+
+.partners-dark .col-md-2.col-sm-4.col-xs-6 a img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 50px rgba(0, 255, 255, 0.8); /* Белая тень с большей интенсивностью */
 }
 
 /*Contact Parallax*/

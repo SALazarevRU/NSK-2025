@@ -25,16 +25,21 @@
 	<link rel="stylesheet" type="text/css" href="css/animate.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="css/slider.css">
         <link rel="icon" type="image/png" href="/upload/favicon.png">
-<style>
-.highlight-link {
-  color: #00ADB5; /* Базовый цвет */
-  transition: color 0.3s ease;
+ <style>
+   .highlight-link {
+  color: #00ADB5;
+  transition: color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  /* Убрали box-shadow из основного состояния */
+  padding: 2px 4px; /* Необязательно: отступы для красоты фона */
+  border-radius: 4px; /* Необязательно: скругление углов фона */
 }
 
 .highlight-link:hover {
-  color: #FF5733; /* Цвет при наведении */
+  color: #00ADB5;
+  box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
+  background-color: rgba(0, 255, 255, 0.1); /* Полупрозрачный фон, согласующийся с цветом тени */
 }
-</style>
+  </style>
 </head>
 
 <body>
