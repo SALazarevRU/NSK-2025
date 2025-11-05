@@ -3898,6 +3898,159 @@ h3.cta-subheading22.text-center {
 
 
 
+/* создай мне секцию с оригинальными названиями блоков добавив что то типа "for-glavniyofis" и пропиши стили с целю расположения в секции сетки - для фото размером 2 на 4 и ниже ячейку для 1 видео. Изолируем секцию по ID, чтобы не конфликтовать с другими стилями */
+/* Изолируем секцию по ID, чтобы не конфликтовать с другими стилями */
+#for-glavniyofis {
+  padding: 40px 0;
+  background-color: #f8f9fa;
+  font-family: 'Arial', sans-serif;
+}
+
+.glavniyofis-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.glavniyofis-title {
+  font-size: 3.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.glavniyofis-subtitle {
+  font-size: 2.2rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.glavniyofis-divider {
+  width: 80px;
+  height: 4px;
+  background-color: #00ADB5;
+  margin: 0 auto 30px;
+  border-radius: 2px;
+}
+
+/* Сетка: фото + видео */
+.glavniyofis-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 колонки для фото */
+  grid-auto-rows: minmax(200px, auto);
+  gap: 20px;
+  margin-bottom: 20px; /* Отступ под фото перед видео */
+}
+
+/* Фото (4 штуки) */
+.glavniyofis-photo {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  outline: 4px solid #ffffff; /* Белая обводка */
+  outline-offset: -4px;
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.99),
+    inset 0 2px 4px rgba(0, 173, 181, 0.2);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.glavniyofis-photo:hover {
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.35),
+    inset 0 2px 4px rgba(0, 173, 181, 0.2);
+  transform: translateY(-4px);
+}
+
+.glavniyofis-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Основной стиль видеоконтейнера */
+.glavniyofis-video {
+  position: relative;
+  grid-column: 1 / -1; /* На всю ширину сетки */
+  width: 100%;
+  max-width: 550px; /* Максимальная ширина */
+  margin: 40px auto 0 auto; /* Отступ сверху 20px, по бокам авто */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.94); /* Основная тень */
+  border: 4px solid #fff; /* Белая обводка */
+  background-color: #000; /* Чёрный фон контейнера */
+
+  
+  /* Дополнительная тень поверх обводки для объёмного эффекта */
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.99));
+}
+
+/* Стиль видео внутри контейнера */
+.glavniyofis-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Заполняет контейнер без искажений */
+  background-color: #000; /* Фон видео */
+}
+
+/* Для случаев, когда видео не загрузилось */
+.glavniyofis-video::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* Адаптивность: на мобильных — вертикальный стек */
+@media (max-width: 768px) {
+  .glavniyofis-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .glavniyofis-photo,
+  .glavniyofis-video {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .glavniyofis-video {
+    width: 100%;
+    max-width: none;
+    margin: 15px 0 0 0; /* Уменьшаем отступ сверху на мобильных */
+    border-radius: 0;
+    border: 1px solid #fff; /* Сохраняем обводку на мобильных */
+    filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.8));
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
