@@ -71,26 +71,43 @@ button:hover {
     </p>
   </div>
 
-  <script src="auth.js"></script>
-  <script>
-    // Дополнительный код для входа (добавить в auth.js)
+ <!-- Импорты Firebase и инициализация -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCFSCfI1DbxAtnue8xvBLMuUED-0z_0YSs",
+      authDomain: "arhiv-14cbd.firebaseapp.com",
+      projectId: "arhiv-14cbd",
+      storageBucket: "arhiv-14cbd.firebasestorage.app",
+      messagingSenderId: "707420099995",
+      appId: "1:707420099995:web:b438031ea7b1588713bd3e",
+      measurementId: "G-0N51KMF3J9"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Логика формы
     const loginForm = document.getElementById('loginForm');
+    const errorMessage = document.getElementById('error');
 
-loginForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
 
-  try {
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    console.log('Вход выполнен:', userCredential.user);
-    alert('Вы успешно вошли!');
-  } catch (error) {
-    console.error('Ошибка входа:', error);
-    errorMessage.textContent = `Ошибка: ${error.message}`;
-  }
-});
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        console.log('Вход выполнен:', userCredential.user);
+        alert('Вы успешно вошли!');
+      } catch (error) {
+        console.error('Ошибка входа:', error);
+        errorMessage.textContent = `Ошибка: ${error.message}`;
+      }
+    });
   </script>
 </body>
 </html>
