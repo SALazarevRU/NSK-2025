@@ -61,108 +61,68 @@
             font-size: 0.9em;
         }
     </style>
-
-<!-- Firebase SDK -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
-  // Ваша конфигурация Firebase (получите в консоли Firebase)
-  const firebaseConfig = {
-  apiKey: "AIzaSyCFSCfI1DbxAtnue8xvBLMuUED-0z_0YSs",
-  authDomain: "arhiv-14cbd.firebaseapp.com",
-  projectId: "arhiv-14cbd",
-  storageBucket: "arhiv-14cbd.firebasestorage.app",
-  messagingSenderId: "707420099995",
-  appId: "1:707420099995:web:b438031ea7b1588713bd3e",
-  measurementId: "G-0N51KMF3J9"
-};
-
-  // Инициализация
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-</script>
-
-
 </head>
 <body>
     <div class="container">
         <h2>Регистрация</h2>
-        <form action="/register" method="post" id="registrationForm">
+        <form id="registerForm">
             <div class="form-group">
-                <label for="username">Имя пользователя:</label>
-                <input type="text" id="username" name="username" placeholder="Введите имя пользователя" required>
-                <div class="error" id="usernameError"></div>
+                <label for="name">Имя</label>
+                <input type="text" id="name" name="name" required>
             </div>
-
             <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Введите email" required>
-                <div class="error" id="emailError"></div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
             </div>
-
             <div class="form-group">
-                <label for="password">Пароль:</label>
-                <input type="password" id="password" name="password" placeholder="Введите пароль" required minlength="6">
-                <div class="error" id="passwordError"></div>
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" required>
             </div>
-
-            <div class="form-group">
-                <label for="confirmPassword">Подтвердите пароль:</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Повторите пароль" required>
-                <div class="error" id="confirmPasswordError"></div>
-            </div>
-
             <button type="submit" class="btn">Зарегистрироваться</button>
-
-            <div class="links">
-                <p>Уже есть аккаунт? <a href="login.html">Войдите</a></p>
-            </div>
+            <div id="errorMessage" class="error"></div>
         </form>
     </div>
 
-    <script>
-        document.getElementById('registrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-            // Очищаем сообщения об ошибках
-            document.querySelectorAll('.error').forEach(el => el.textContent = '');
+        // Ваша конфигурация Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCFSCfI1DbxAtnue8xvBLMuUED-0z_0YSs",
+            authDomain: "arhiv-14cbd.firebaseapp.com",
+            projectId: "arhiv-14cbd",
+            storageBucket: "arhiv-14cbd.firebasestorage.app",
+            messagingSenderId: "707420099995",
+            appId: "1:707420099995:web:b438031ea7b1588713bd3e",
+            measurementId: "G-0N51KMF3J9"
+        };
 
-            let isValid = true;
+        // Инициализация Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
 
-            // Проверка имени пользователя
-            const username = document.getElementById('username').value;
-            if (username.length < 3) {
-                document.getElementById('usernameError').textContent = 'Имя пользователя должно быть не менее 3 символов.';
-                isValid = false;
-            }
+        // Обработчик отправки формы
+        const registerForm = document.getElementById('registerForm');
+        const errorMessage = document.getElementById('errorMessage');
 
-            // Проверка email
+        registerForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Отменяем стандартное поведение формы
+
+            // Получаем значения полей
             const email = document.getElementById('email').value;
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email)) {
-                document.getElementById('emailError').textContent = 'Введите корректный email.';
-                isValid = false;
-            }
-
-            // Проверка пароля
             const password = document.getElementById('password').value;
-            if (password.length < 6) {
-                document.getElementById('passwordError').textContent = 'Пароль должен быть не менее 6 символов.';
-                isValid = false;
-            }
 
-            // Подтверждение пароля
-            const confirmPassword = document.getElementById('confirmPassword').value;
-            if (password !== confirmPassword) {
-                document.getElementById('confirmPasswordError').textContent = 'Пароли не совпадают.';
-                isValid = false;
-            }
-
-            if (isValid) {
-                // Здесь можно отправить данные на сервер
-                alert('Форма успешно отправлена!');
-                // this.submit(); // Раскомментировать для реальной отправки
+            try {
+                // Регистрируем пользователя
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                console.log('Пользователь успешно создан:', userCredential.user);
+                errorMessage.textContent = '';
+                alert('Регистрация успешна!');
+            } catch (error) {
+                console.error('Ошибка регистрации:', error);
+                errorMessage.textContent = `Ошибка: ${error.message}`;
             }
         });
     </script>
