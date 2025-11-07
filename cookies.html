@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Работа с куки</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .container { max-width: 600px; margin: 0 auto; }
+    input, button { margin: 5px 0; padding: 8px; width: 100%; }
+    .result { margin-top: 20px; padding: 10px; border: 1px solid #ddd; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Работа с куки</h1>
+
+    <div>
+      <label>Имя куки:<br>
+        <input type="text" id="cookieName" placeholder="Введите имя куки">
+      </label>
+      <label>Значение:<br>
+        <input type="text" id="cookieValue" placeholder="Введите значение">
+      </label>
+      <label>Срок жизни (дни):<br>
+        <input type="number" id="cookieDays" value="7" min="0">
+      </label>
+      <button onclick="setCookie()">Установить куки</button>
+    </div>
+
+    <div>
+      <button onclick="showCookies()">Показать все куки</button>
+      <button onclick="deleteCookie()">Удалить куки</button>
+    </div>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    // Функция: установить куки
+    function setCookie() {
+      const name = document.getElementById('cookieName').value;
+      const value = document.getElementById('cookieValue').value;
+      const days = parseInt(document.getElementById('cookieDays').value);
+
+      if (!name) {
+        alert('Введите имя куки!');
+        return;
+      }
+
+      let expires = '';
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        expires = '; expires=' + date.toUTCString();
+      }
+      document.cookie = name + '=' + encodeURIComponent(value) + expires + '; path=/';
+      document.getElementById('result').textContent = `Куки "${name}" установлено!`;
+    }
+
+    // Функция: показать все куки
+    function showCookies() {
+      const cookies = document.cookie;
+      if (cookies) {
+        document.getElementById('result').textContent = 'Все куки:\n' + cookies;
+      } else {
+        document.getElementById('result').textContent = 'Куки не найдены.';
+      }
+    }
+
+    // Функция: удалить куки
+    function deleteCookie() {
+      const name = document.getElementById('cookieName').value;
+      if (!name) {
+        alert('Введите имя куки для удаления!');
+        return;
+      }
+      document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+      document.getElementById('result').textContent = `Куки "${name}" удалено!`;
+    }
+  </script>
+</body>
+</html>

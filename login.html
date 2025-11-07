@@ -79,7 +79,7 @@
   </div>
 
   <!-- Импорты Firebase и инициализация -->
-  <script type="module">
+<script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
   import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
@@ -96,7 +96,7 @@
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
-  // Функция для установки куки
+  // Функция для установки куки (теперь принимает имя пользователя)
   function setCookie(name, value, days) {
     let expires = "";
     if (days) {
@@ -104,19 +104,34 @@
       date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
       expires = "; expires=" + date.toUTCString();
     }
-    document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
+    document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/; SameSite=Lax";
   }
 
-  // Проверка состояния авторизации при загрузке страницы
+  // Функция для чтения куки
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+  }
+
+  // При загрузке страницы: проверяем куки и состояние авторизации
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      // Пользователь уже авторизован
-      setCookie("userEmail", user.email, 30); // Сохраняем в куки на 30 дней
+      // Получаем имя пользователя из профиля Firebase
+      const username = user.displayName || user.email.split('@')[0]; // Если имени нет — берём часть email
+      setCookie("username", username, 30);
       window.location.href = "dashboard.html";
+    } else {
+      // Если пользователь не авторизован, но куки есть — можно очистить
+      const savedUsername = getCookie("username");
+      if (savedUsername) {
+        document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+      }
     }
   });
 
-  // Логика формы
+  // Логика формы входа
   const loginForm = document.getElementById("loginForm");
   const errorMessage = document.getElementById("error");
 
@@ -129,13 +144,16 @@
 
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      console.log("Вход выполнен:", userCredential.user);
+      const user = userCredential.user;
 
-      // Сохраняем email в куки
+      // Получаем имя пользователя
+      const username = user.displayName || email.split('@')[0];
+
+      // Сохраняем имя в куки
       if (rememberMe) {
-        setCookie("userEmail", email, 30); // На 30 дней
+        setCookie("username", username, 30); // На 30 дней
       } else {
-        setCookie("userEmail", email, null); // Сеансовые куки (до закрытия браузера)
+        setCookie("username", username, null); // Сеансовые куки
       }
 
       alert("Вы успешно вошли!");
