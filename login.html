@@ -90,24 +90,25 @@ button:hover {
     const auth = getAuth(app);
 
     // Логика формы
-    const loginForm = document.getElementById('loginForm');
-    const errorMessage = document.getElementById('error');
-
     loginForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
+  e.preventDefault();
 
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
 
-      try {
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        console.log('Вход выполнен:', userCredential.user);
-        alert('Вы успешно вошли!');
-      } catch (error) {
-        console.error('Ошибка входа:', error);
-        errorMessage.textContent = `Ошибка: ${error.message}`;
-      }
-    });
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    console.log('Вход выполнен:', userCredential.user);
+    alert('Вы успешно вошли!');
+
+    // Редирект на страницу личного кабинета
+    window.location.href = '/dashboard.html'; // или другой путь
+
+  } catch (error) {
+    console.error('Ошибка входа:', error);
+    errorMessage.textContent = `Ошибка: ${error.message}`;
+  }
+});
   </script>
 </body>
 </html>

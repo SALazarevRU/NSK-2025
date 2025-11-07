@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+ <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    background: #42b983;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar {
+    width: 200px;
+    background: #294C6C;
+    color: white;
+    padding: 15px;
+    flex-shrink: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33% - 20px);
+}
+
+.footer {
+    background: #42b983;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+ </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Dashboard</h1>
+            <p>Your data at a glance</p>
+        </header>
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Analytics</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <section class="card">
+                <h2>Sales Overview</h2>
+                <p>Current Sales: $10,000</p>
+            </section>
+            <section class="card">
+                <h2>Visitors</h2>
+                <p>Current Visitors: 450</p>
+            </section>
+            <section class="card">
+                <h2>Tasks</h2>
+                <p>Completed Tasks: 30</p>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>© 2023 Codewithrandom. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
