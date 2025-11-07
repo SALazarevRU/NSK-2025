@@ -4,51 +4,54 @@
   <meta charset="UTF-8">
   <title>Вход</title>
   <link rel="stylesheet" href="styles.css">
- <style>
-.auth-container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
+  <style>
+    .auth-container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
 
-.form-group {
-  margin-bottom: 15px;
-}
+    .form-group {
+      margin-bottom: 15px;
+    }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
 
-input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
 
-button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
 
-button:hover {
-  background-color: #0056b3;
-}
+    button:hover {
+      background-color: #0056b3;
+    }
 
-.error-message {
-  color: red;
-  margin-top: 10px;
-}
+    .error-message {
+      color: red;
+      margin-top: 10px;
+    }
 
- </style>
+    .remember-me {
+      margin: 15px 0;
+    }
+  </style>
 </head>
 <body>
   <div class="auth-container">
@@ -62,6 +65,10 @@ button:hover {
         <label for="password">Пароль</label>
         <input type="password" id="password" required>
       </div>
+      <div class="remember-me">
+        <input type="checkbox" id="rememberMe">
+        <label for="rememberMe">Запомнить меня</label>
+      </div>
       <button type="submit">Войти</button>
       <p class="error-message" id="error"></p>
     </form>
@@ -71,44 +78,74 @@ button:hover {
     </p>
   </div>
 
- <!-- Импорты Firebase и инициализация -->
+  <!-- Импорты Firebase и инициализация -->
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyCFSCfI1DbxAtnue8xvBLMuUED-0z_0YSs",
-      authDomain: "arhiv-14cbd.firebaseapp.com",
-      projectId: "arhiv-14cbd",
-      storageBucket: "arhiv-14cbd.firebasestorage.app",
-      messagingSenderId: "707420099995",
-      appId: "1:707420099995:web:b438031ea7b1588713bd3e",
-      measurementId: "G-0N51KMF3J9"
-    };
+  const firebaseConfig = {
+    apiKey: "AIzaSyCFSCfI1DbxAtnue8xvBLMuUED-0z_0YSs",
+    authDomain: "arhiv-14cbd.firebaseapp.com",
+    projectId: "arhiv-14cbd",
+    storageBucket: "arhiv-14cbd.firebasestorage.app",
+    messagingSenderId: "707420099995",
+    appId: "1:707420099995:web:b438031ea7b1588713bd3e",
+    measurementId: "G-0N51KMF3J9"
+  };
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
 
-    // Логика формы
-    loginForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-
-  try {
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    console.log('Вход выполнен:', userCredential.user);
-    alert('Вы успешно вошли!');
-
-    // Редирект на страницу
-    window.location.href = 'dashboard.html';
-
-  } catch (error) {
-    console.error('Ошибка входа:', error);
-    errorMessage.textContent = `Ошибка: ${error.message}`;
+  // Функция для установки куки
+  function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+      const date = new Date();
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
   }
-});
-  </script>
+
+  // Проверка состояния авторизации при загрузке страницы
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // Пользователь уже авторизован
+      setCookie("userEmail", user.email, 30); // Сохраняем в куки на 30 дней
+      window.location.href = "dashboard.html";
+    }
+  });
+
+  // Логика формы
+  const loginForm = document.getElementById("loginForm");
+  const errorMessage = document.getElementById("error");
+
+  loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const rememberMe = document.getElementById("rememberMe").checked;
+
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      console.log("Вход выполнен:", userCredential.user);
+
+      // Сохраняем email в куки
+      if (rememberMe) {
+        setCookie("userEmail", email, 30); // На 30 дней
+      } else {
+        setCookie("userEmail", email, null); // Сеансовые куки (до закрытия браузера)
+      }
+
+      alert("Вы успешно вошли!");
+      window.location.href = "dashboard.html";
+
+    } catch (error) {
+      console.error("Ошибка входа:", error);
+      errorMessage.textContent = `Ошибка: ${error.message}`;
+    }
+  });
+</script>
 </body>
 </html>
