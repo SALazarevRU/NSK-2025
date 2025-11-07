@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+  // Ваша конфигурация Firebase (получите в консоли Firebase)
+  const firebaseConfig = {
+  apiKey: "AIzaSyCFSCfI1DbxAtnue8xvBLMuUED-0z_0YSs",
+  authDomain: "arhiv-14cbd.firebaseapp.com",
+  projectId: "arhiv-14cbd",
+  storageBucket: "arhiv-14cbd.firebasestorage.app",
+  messagingSenderId: "707420099995",
+  appId: "1:707420099995:web:b438031ea7b1588713bd3e",
+  measurementId: "G-0N51KMF3J9"
+};
+
+  // Инициализация
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+</script>
+
+
+</head>
+<body>
+    <div class="container">
+        <h2>Регистрация</h2>
+        <form action="/register" method="post" id="registrationForm">
+            <div class="form-group">
+                <label for="username">Имя пользователя:</label>
+                <input type="text" id="username" name="username" placeholder="Введите имя пользователя" required>
+                <div class="error" id="usernameError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Введите email" required>
+                <div class="error" id="emailError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" placeholder="Введите пароль" required minlength="6">
+                <div class="error" id="passwordError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Подтвердите пароль:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Повторите пароль" required>
+                <div class="error" id="confirmPasswordError"></div>
+            </div>
+
+            <button type="submit" class="btn">Зарегистрироваться</button>
+
+            <div class="links">
+                <p>Уже есть аккаунт? <a href="login.html">Войдите</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Очищаем сообщения об ошибках
+            document.querySelectorAll('.error').forEach(el => el.textContent = '');
+
+            let isValid = true;
+
+            // Проверка имени пользователя
+            const username = document.getElementById('username').value;
+            if (username.length < 3) {
+                document.getElementById('usernameError').textContent = 'Имя пользователя должно быть не менее 3 символов.';
+                isValid = false;
+            }
+
+            // Проверка email
+            const email = document.getElementById('email').value;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('emailError').textContent = 'Введите корректный email.';
+                isValid = false;
+            }
+
+            // Проверка пароля
+            const password = document.getElementById('password').value;
+            if (password.length < 6) {
+                document.getElementById('passwordError').textContent = 'Пароль должен быть не менее 6 символов.';
+                isValid = false;
+            }
+
+            // Подтверждение пароля
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').textContent = 'Пароли не совпадают.';
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Здесь можно отправить данные на сервер
+                alert('Форма успешно отправлена!');
+                // this.submit(); // Раскомментировать для реальной отправки
+            }
+        });
+    </script>
+</body>
+</html>
