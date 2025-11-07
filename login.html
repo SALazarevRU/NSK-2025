@@ -74,20 +74,23 @@ button:hover {
   <script src="auth.js"></script>
   <script>
     // Дополнительный код для входа (добавить в auth.js)
-    document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      const errorEl = document.getElementById('error');
+    const loginForm = document.getElementById('loginForm');
 
-      try {
-        await signInWithEmailAndPassword(auth, email, password);
-        alert('Вход выполнен!');
-        window.location.href = 'index.html';
-      } catch (error) {
-        errorEl.textContent = 'Ошибка: ' + error.message;
-      }
-    });
+loginForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    console.log('Вход выполнен:', userCredential.user);
+    alert('Вы успешно вошли!');
+  } catch (error) {
+    console.error('Ошибка входа:', error);
+    errorMessage.textContent = `Ошибка: ${error.message}`;
+  }
+});
   </script>
 </body>
 </html>
