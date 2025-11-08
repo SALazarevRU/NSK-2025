@@ -14,6 +14,10 @@ jQuery(document).ready(function(){
 		initSlider($(this));
 	});
 
+
+
+
+
 	function initSlider(sliderWrapper) {
 		//cache jQuery objects
 		var slider = sliderWrapper.find('.cd-slider'),

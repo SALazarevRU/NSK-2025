@@ -1,30 +1,27 @@
 <!DOCTYPE HTML>   
-<!--Выберите «Кодировка» «Преобразовать в UTF8 без BOM» (в Notepad++)-->  <!--ЭТО ШАБЛОН-->
+
 <html lang="ru">
 	<head>
-		 <title>App Android</title>
-		<meta charset="utf-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>App Android</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
-	<!-- Google Fonts -->
-	<link href='https://fonts.googleapis.com/css?family=Arimo&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Noto+Serif&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+<!-- Google Fonts -->
+<link href="//fonts.googleapis.com/css?family=Arimo&subset=latin,cyrillic" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Noto+Serif&subset=latin,cyrillic" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">
-	
-	
-	<link rel="stylesheet" type="text/css" href="css/stroke-gap-icons.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/pe-icon-7-stroke.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/elegant-icons.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/animate.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/slider.css">
- <link rel="icon" type="image/png" href="/upload/favicon.png">
+<!-- CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/stroke-gap-icons.css">
+<link rel="stylesheet" href="css/pe-icon-7-stroke.css">
+<link rel="stylesheet" href="css/elegant-icons.css">
+<link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/upload/favicon.png">
 <style>
 
 h3, p {
@@ -100,7 +97,6 @@ h3, p {
 }
 /* конец заполнить контейнер фото */
 
-
 </style>
 
 <script>
@@ -140,7 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-
 	</head>
 
 	<body class="loading">
@@ -161,17 +156,13 @@ document.addEventListener('DOMContentLoaded', function() {
 				            <span class="icon-bar"></span>
 				            <span class="icon-bar"></span>
 				            <span class="icon-bar"></span>				            
-			        	</button>
-
-	        	 
-					      <!-- Logo -->
-
-
-						 <div class="logo">
+			        	</button>	    
+ <!-- Logo -->
+   <div class="logo">
     <a href="#" class="open-popup" data-target="popup2">
         Проекты<i> IT</i>
     </a>
-</div>
+  </div>
 
 <div class="popup" id="popup2">
     <div class="popup-content">
@@ -212,13 +203,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="main-wrapper основная оболочка">	
 
 
-<section class="call-to-action227">
-  <div class="container666">
-    <div class="image-wrapper">
-      <img src="upload/code222.jpg" alt="Описание изображения">
-    </div>
-  </div>
-</section>
+
+    <div id="bg-19"><div class="loading-message">Загрузка анимации...</div></div> 
+
 <br><br>
 
 			<div class="container">
@@ -252,10 +239,6 @@ document.addEventListener('DOMContentLoaded', function() {
 												
 						</div>						
 					</div> <!-- end service item -->
-
-
-
-
 
                                          <div class="col-sm-4">
 						<div class="service-item icon-effect-1 icon-blue icon-effect-1a">
@@ -294,7 +277,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			</div> <!-- end container -->
 		</section> <!-- end call to action -->
 
-
 <footer>
   <div class="bottom-footer">
     <div class="container">
@@ -310,20 +292,12 @@ document.addEventListener('DOMContentLoaded', function() {
   </div> <!-- end bottom footer -->
 </footer> <!-- end footer -->
 
-
-
-
-
-
-
 <!-- Call to Возврат на верх -->
                 <div id="back-to-top">
 			<a href="#top"><i class="fa fa-angle-up"></i></a>
 		</div>
      
 </div> <!-- end main-wrapper конечная основная оболочка-->
-
-
 
 <!-- jQuery Scripts -->
 	<script src="js/jquery.min.js"></script>
@@ -339,8 +313,48 @@ document.addEventListener('DOMContentLoaded', function() {
 	<script src="js/wow.min.js"></script>
 
 	<!-- Custom Theme JavaScript  Пользовательская тема JavaScript -->
-    <script src="js/scripts.js"></script>		
-					  
+
+    <script src="js/scripts.js"></script>
+<!-- Scripts (в конце body) -->
+<script src="js/three.min.js"></script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Сначала скрываем preloader (если есть)
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.style.display = 'none';
+    }
+
+    // 2. Теперь загружаем скрипт анимации
+
+const timeout = setTimeout(() => {
+    console.warn('Анимация не загрузилась за 10 сек');
+    // Здесь можно скрыть #bg-19 или показать альтернативный фон
+}, 10000);
+
+    const script = document.createElement('script');
+
+    script.src = 'js/bg-19.js';
+    script.defer = true;  // Не блокирует рендеринг
+script.onerror = function() {
+    clearTimeout(timeout);
+    console.error('Ошибка загрузки анимации');
+    // Здесь можно показать запасной фон или сообщение
+};
+
+    script.onload = function() {
+clearTimeout(timeout);
+    const loader = document.querySelector('#bg-19 .loading-message');
+    if (loader) loader.style.display = 'none';
+        console.log('Анимация загружена и запущена');
+        // Здесь можно добавить код, который должен выполниться после загрузки анимации
+    };
+    document.body.appendChild(script);
+});
+</script>
+				  
 </body>
 
 </html>

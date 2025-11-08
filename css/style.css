@@ -3781,8 +3781,6 @@ ol.numbers {
   box-shadow: none;
 }
 
-
-
 /*-------------------------------------------------*/
 /* =  Блок для кнопки поддержки
 /*-------------------------------------------------*/
@@ -3893,10 +3891,6 @@ h3.cta-subheading22.text-center {
     margin-bottom: 5px;
   }
 }
-
-
-
-
 
 /* создай мне секцию с оригинальными названиями блоков добавив что то типа "for-glavniyofis" и пропиши стили с целю расположения в секции сетки - для фото размером 2 на 4 и ниже ячейку для 1 видео. Изолируем секцию по ID, чтобы не конфликтовать с другими стилями */
 /* Изолируем секцию по ID, чтобы не конфликтовать с другими стилями */
@@ -4031,114 +4025,18 @@ h3.cta-subheading22.text-center {
     filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.8));
   }
 }
-
-
-/*-------------------------------------------------*/
-/* =  Accordion
-/*-------------------------------------------------*/
-
-
-* {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-            padding: 20px;
-        }
-
-        .accordion {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-
-        .accordion-item {
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .accordion-button {
-            width: 100%;
-            text-align: left;
-            padding: 16px 20px;
-            font-size: 16px;
-            font-weight: 600;
-            color: #2c3e50;
-            background-color: #f8f9fa;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .accordion-button:hover {
-            background-color: #ecf0f1;
-        }
-
-        .accordion-button::after {
-            content: '+';
-            font-size: 20px;
-            color: #3498db;
-        }
-
-        .accordion-button[aria-expanded="true"]::after {
-            content: '−';
-        }
-
-        .accordion-content {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-        }
-
-        .accordion-content p {
-            margin: 12px 0;
-            color: #555;
-        }
-
-        .accordion-button[aria-expanded="true"] + .accordion-content {
-            max-height: 1000px;
-            padding: 20px;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-
-            .accordion {
-                max-width: 100%;
-            }
-
-            .accordion-button {
-                font-size: 15px;
-                padding: 14px 16px;
-            }
-        }
-
-/*--------------- End Accordion--------------------*/
-
-
-
-
-
 /*-------------------------------------------------*/
 /* =  Accordion с несколькими открытыми вкладками
 /*-------------------------------------------------*/
-
+.graphite-text {
+  color: #474a51;
+}
 .acor-container {
     margin: 20px 0;
+}
+.acor-container .acor-body p {
+  margin: 0 0 10px;
+  color: #474a51; /* Переопределяем здесь */
 }
 .acor-container .acor-body {
     width: calc(100% - 40px);
@@ -4199,15 +4097,3 @@ h3.cta-subheading22.text-center {
     padding: 20px 30px 10px;
 }
 /*--------------- End Accordion acor-container--------------------*/
-
-
-
-
-
-
-
-
-
-
-
-
