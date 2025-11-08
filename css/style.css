@@ -4033,15 +4033,172 @@ h3.cta-subheading22.text-center {
 }
 
 
+/*-------------------------------------------------*/
+/* =  Accordion
+/*-------------------------------------------------*/
+
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .accordion {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .accordion-button {
+            width: 100%;
+            text-align: left;
+            padding: 16px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            background-color: #f8f9fa;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-button:hover {
+            background-color: #ecf0f1;
+        }
+
+        .accordion-button::after {
+            content: '+';
+            font-size: 20px;
+            color: #3498db;
+        }
+
+        .accordion-button[aria-expanded="true"]::after {
+            content: '−';
+        }
+
+        .accordion-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .accordion-content p {
+            margin: 12px 0;
+            color: #555;
+        }
+
+        .accordion-button[aria-expanded="true"] + .accordion-content {
+            max-height: 1000px;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .accordion {
+                max-width: 100%;
+            }
+
+            .accordion-button {
+                font-size: 15px;
+                padding: 14px 16px;
+            }
+        }
+
+/*--------------- End Accordion--------------------*/
 
 
 
 
 
+/*-------------------------------------------------*/
+/* =  Accordion с несколькими открытыми вкладками
+/*-------------------------------------------------*/
 
-
-
-
+.acor-container {
+    margin: 20px 0;
+}
+.acor-container .acor-body {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    height: 0;
+    color: rgba(0, 0, 0, 0);
+    background-color: #BFE2FF;
+    line-height: 18px;
+    padding: 0 30px;
+    box-sizing: border-box;
+    transition: color 0.5s, padding 0.5s;
+    overflow: hidden;
+    font-family: Verdana, sans-serif; 
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 10px 16px rgba(0,0,0,0.2);
+}
+.acor-container .acor-body p {
+    margin: 0 0 10px;
+}
+.acor-container label {
+    cursor: pointer;
+    background-color: #337AB7;
+    display: block;
+    padding: 15px 20px;
+    width: 100%;
+    color: #BFE2FF;
+    font-weight: 300;
+    box-sizing: border-box;
+    z-index: 100;
+    font-family: Verdana, sans-serif;   
+    font-size: 18px;
+    margin: 0 0 5px;
+    transition: color .35s;
+}
+.acor-container label:hover {
+    color: #FFF;
+}
+.acor-container input{
+    display: none;
+}
+.acor-container label:before {
+    content: '\276F';
+    float: right;
+}
+.acor-container input:checked + label {
+    background-color: #285f8f;
+    color: #FFF;
+    box-shadow: 0 8px 26px rgba(0,0,0,0.4), 0 28px 30px rgba(0,0,0,0.3);
+}
+.acor-container input:checked + label:before {
+    transition: transform .35s;
+    transform: rotate(90deg);
+}
+.acor-container input:checked + label + .acor-body {
+    height: auto;
+    margin-top: -5px;
+    color: #000;
+    padding: 20px 30px 10px;
+}
+/*--------------- End Accordion acor-container--------------------*/
 
 
 

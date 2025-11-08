@@ -3,28 +3,30 @@
 
 <head>
 	<title>Мой сайтик</title>
+    <!-- Адаптивность -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<meta charset="utf-8">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Arimo&subset=latin,cyrillic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif&subset=latin,cyrillic" rel="stylesheet">
 
-	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
-	<!-- Google Fonts -->
-	<link href='https://fonts.googleapis.com/css?family=Arimo&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Noto+Serif&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <!-- Фреймворк -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">
-	
-	
-	<link rel="stylesheet" type="text/css" href="css/stroke-gap-icons.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/pe-icon-7-stroke.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/elegant-icons.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/animate.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/slider.css">
-        <link rel="icon" type="image/png" href="/upload/favicon.png">
+  <!-- Иконочные шрифты -->
+  <link rel="stylesheet" href="css/stroke-gap-icons.css">
+  <link rel="stylesheet" href="css/pe-icon-7-stroke.css">
+  <link rel="stylesheet" href="css/elegant-icons.css">
+  <link rel="stylesheet" href="css/font-awesome.css">
+
+  <!-- Пользовательские стили -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/slider.css">
+
+  <!-- Фавикон -->
+  <link rel="icon" type="image/png" href="/upload/favicon.png" sizes="32x32">
  <style>
    .highlight-link {
   color: #00ADB5;
@@ -40,6 +42,27 @@
   background-color: rgba(0, 255, 255, 0.1); /* Полупрозрачный фон, согласующийся с цветом тени */
 }
   </style>
+
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+  // Ваша конфигурация Firebase (получите в консоли Firebase)
+  const firebaseConfig = {
+  apiKey: "AIzaSyCFSCfI1DbxAtnue8xvBLMuUED-0z_0YSs",
+  authDomain: "arhiv-14cbd.firebaseapp.com",
+  projectId: "arhiv-14cbd",
+  storageBucket: "arhiv-14cbd.firebasestorage.app",
+  messagingSenderId: "707420099995",
+  appId: "1:707420099995:web:b438031ea7b1588713bd3e",
+  measurementId: "G-0N51KMF3J9"
+};
+
+  // Инициализация
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+</script>
 </head>
 
 <body>
@@ -176,6 +199,70 @@
 <p>Значение отдела архива длительного хранения &mdash; принципиально важное: он формирует базу для стратегического планирования и обеспечения преемственности корпоративных знаний.</p>
 <p>Роль отдела архива длительного хранения можно охарактеризовать как системообразующую: он обеспечивает основу для принятия управленческих решений и соблюдения нормативных требований.</p> 
 				<div class="main-border blue"></div>
+
+
+
+<!-- Основные характеристики Аккордион -->
+<div class="accordion">
+        <div class="accordion-item">
+            <button class="accordion-button" type="button" aria-expanded="true">
+                Отдел архива длительного хранения
+            </button>
+            <div class="accordion-content" style="max-height: 1000px; padding: 20px;">
+                <p>— представляет собой фундамент корпоративной памяти и является неотъемлемым элементом организационной структуры.</p>
+                <p>— обладает приоритетным значением в системе управления компанией, выступая ключевым звеном в обеспечении сохранности стратегически важной информации.</p>
+                <p>— базовая составляющая инфраструктуры компании, без которой невозможно стабильное функционирование и долгосрочное развитие бизнеса.</p>
+                <p>— занимает центральное место в корпоративной архитектуре, выполняя критически важные функции по сохранению исторического и документального наследия организации.</p>
+                <p>— является опорным элементом структуры компании, гарантирующим непрерывность бизнес‑процессов и юридическую защищённость организации.</p>
+                <p>— занимает ведущее положение в структуре компании, обеспечивая базовую потребность в надёжном хранении и систематизации информации.</p>
+                <p>— выполняет первостепенные функции в организационной системе, являясь основным хранителем корпоративных данных и документов.</p>
+                <p>— ключевое подразделение, чья деятельность составляет основу информационной безопасности и устойчивого развития организации.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-button" type="button" aria-expanded="false">
+                Значение отдела архива длительного хранения
+            </button>
+            <div class="accordion-content">
+                <p>Значение отдела архива длительного хранения — принципиально важное: он формирует базу для стратегического планирования и обеспечения преемственности корпоративных знаний.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-button" type="button" aria-expanded="false">
+                Роль отдела архива длительного хранения
+            </button>
+            <div class="accordion-content">
+                <p>Роль отдела архива длительного хранения можно охарактеризовать как системообразующую: он обеспечивает основу для принятия управленческих решений и соблюдения нормативных требований.</p>
+            </div>
+        </div>
+    </div>
+<!-- энд Основные характеристики Аккордион -->
+
+
+<div class="acor-container">          
+    
+    <input type="checkbox" name="chacor" id="chacor1" checked="checked" />
+    <label for="chacor1">Заголовок вкладки</label>
+    <div class="acor-body">
+        <p>Описание вкладки</p>
+    </div>
+    
+    <input type="checkbox" name="chacor" id="chacor2" />
+    <label for="chacor2">Заголовок вкладки</label>
+    <div class="acor-body">
+        <p>Описание вкладки</p>
+    </div>
+    
+    <input type="checkbox" name="chacor" id="chacor3" />
+    <label for="chacor3">Заголовок вкладки</label>
+    <div class="acor-body">
+        <p>Описание вкладки</p>
+    </div>
+ 
+</div>
+
 
 				<div class="features-promo mt70">
 					<div class="row">
@@ -549,6 +636,30 @@
 
 	<!-- Custom Theme JavaScript  Пользовательская тема JavaScript -->
     <script src="js/scripts.js"></script>
+
+<!-- Custom Theme accordion -->
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.accordion-button');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const current = button.nextElementSibling;
+                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+                    buttons.forEach(btn => {
+                        btn.setAttribute('aria-expanded', 'false');
+                        btn.nextElementSibling.style.maxHeight = '0';
+                    });
+
+                    if (!isExpanded) {
+                        button.setAttribute('aria-expanded', 'true');
+                        current.style.maxHeight = current.scrollHeight + 'px';
+                    }
+                });
+            });
+        });
+    </script>
 
 	  
 </body>
