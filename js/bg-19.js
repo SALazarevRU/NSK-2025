@@ -1,3 +1,6 @@
+const texture = new THREE.TextureLoader().load('textures/heavy-texture.jpg', function() {
+    // Текстура загружена — продолжаем
+});
 const shader = {
 	vertex: `void main() {
 	gl_Position = vec4( position, 1.0 );
