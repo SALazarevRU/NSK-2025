@@ -6,13 +6,20 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 
 html {
-    font-family: sans-serif;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%
+  font-family: sans-serif;
+
+  /* 
+   * -webkit-text-size-adjust: для Safari и старых Android-браузеров.
+   * text-size-adjust: стандартизированное свойство (поддерживается в Firefox 66+, Chrome, Edge, Safari).
+   */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
+
 body {
-    margin: 0
+  margin: 0; /* Точка с запятой добавлена */
 }
+
 article,
 aside,
 details,
