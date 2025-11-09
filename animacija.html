@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Поддержка</title>
+<!-- Google Fonts -->
+<link 
+  href="https://fonts.googleapis.com/css?family=Arimo&display=swap&subset=latin,cyrillic"  rel="stylesheet"><link
+  href="https://fonts.googleapis.com/css?family=Noto+Serif&display=swap&subset=latin,cyrillic"  rel="stylesheet">
+<!-- CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/stroke-gap-icons.css">
+<link rel="stylesheet" href="css/pe-icon-7-stroke.css">
+<link rel="stylesheet" href="css/elegant-icons.css">
+<link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<script src="js/three.min.js"></script>
+
+ 
+   
+</head>
+<body>
+  
+  
+ <div id="bg-19"><div class="loading-message">Загрузка анимации...</div></div> 
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Сначала скрываем preloader (если есть)
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.style.display = 'none';
+    }
+
+    // 2. Теперь загружаем скрипт анимации
+
+const timeout = setTimeout(() => {
+    console.warn('Анимация не загрузилась за 10 сек');
+    // Здесь можно скрыть #bg-19 или показать альтернативный фон
+}, 10000);
+
+    const script = document.createElement('script');
+
+    script.src = 'js/bg-19.js';
+    script.defer = true;  // Не блокирует рендеринг
+script.onerror = function() {
+    clearTimeout(timeout);
+    console.error('Ошибка загрузки анимации');
+    // Здесь можно показать запасной фон или сообщение
+};
+
+    script.onload = function() {
+clearTimeout(timeout);
+    const loader = document.querySelector('#bg-19 .loading-message');
+    if (loader) loader.style.display = 'none';
+        console.log('Анимация загружена и запущена');
+        // Здесь можно добавить код, который должен выполниться после загрузки анимации
+    };
+    document.body.appendChild(script);
+});
+</script>
+
+</body>
+</html>
