@@ -83,14 +83,14 @@ v = sin(time * 0.2 + uv.x * 4.0) * 0.3;  // просто присваивани�
       xy += time * 0.12;
 
       float a = 0.7, f = 1.0;
-     for(int i = 0; i < 2; i++) {  // меньше вычислений
+      for(int i = 0; i < 3; i++) {
         float v1 = voronoi(xy * f + 5.0);
         float v2 = 0.0;
 
         if(i > 0) {
           float va = 0.0, vb = 0.0;
           if (i == 1) {
-            va = v1 < 0.12 ? 1.0 - v1 / 0.12 : 0.0;
+            va = 1.0 - smoothstep(0.0, 0.12, v1);
             v2 = voronoi(xy * f * 0.5 / 5.0 + 8694.0 + time / 7.0);
             vb = 1.0 - smoothstep(0.0, 0.1, v2);
           } else {
@@ -110,8 +110,7 @@ v = sin(time * 0.2 + uv.x * 4.0) * 0.3;  // просто присваивани�
         a *= 0.7 + abs(sin(time / 3.0)) / 3.0;
       }
 
-      float dist = length(xy2);
-v *= max(0.0, 1.0 - 0.4 * dist);  // линейное затухание
+      v *= exp(-0.4 * length(xy2)) * 1.0;
       vec3 cexp = vec3(4.0, 1.5, 1.2);
       cexp *= 1.012;
       vec3 col = vec3(
