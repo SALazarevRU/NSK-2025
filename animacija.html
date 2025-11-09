@@ -2,51 +2,17 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <title>Анимация</title>
-  <link rel="stylesheet" href="css/style.css"> <!-- Исправлено -->
+  <link rel="stylesheet" href="css/styleS.css">
 </head>
 <body>
   <div id="bg-19">
-    
+    <canvas id="webgl-canvas"></canvas>
     <div class="loading-message">Загрузка анимации...</div>
   </div>
 
-  <!-- Подключаем Three.js -->
   <script src="js/three.min.js"></script>
-
-
-  <!-- Загрузка bg-19.js -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const preloader = document.getElementById('preloader');
-      if (preloader) {
-        preloader.style.display = 'none';
-      }
-
-      const timeout = setTimeout(() => {
-        console.warn('Анимация не загрузилась за 10 сек');
-      }, 10000);
-
-      const script = document.createElement('script');
-      script.src = 'js/bg-19.js';
-      script.defer = true;
-      script.onerror = function() {
-        clearTimeout(timeout);
-        console.error('Ошибка загрузки анимации');
-        const bg = document.getElementById('bg-19');
-        if (bg) {
-          bg.innerHTML = '<p>Анимация недоступна.</p>';
-        }
-      };
-      script.onload = function() {
-        clearTimeout(timeout);
-        const loader = document.querySelector('#bg-19 .loading-message');
-        if (loader) loader.style.display = 'none';
-        console.log('Анимация загружена и запущена');
-      };
-      document.body.appendChild(script);
-    });
-  </script>
+  <script src="js/bg-19.js"></script>
 </body>
 </html>
