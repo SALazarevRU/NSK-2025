@@ -8,6 +8,8 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+touch-action: pan-y pinch-zoom; /* Разрешает вертикальную прокрутку, но блокирует масштабирование */
+  overscroll-behavior: none; /* Блокирует эффект "отскока" при прокрутке */
 }
 
 #bg-19 {
