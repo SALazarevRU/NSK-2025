@@ -137,16 +137,19 @@ margin-top: 15px; /* Внешний отступ сверху — 10px */
   line-height: 1.5;
 }
 
-.main article img {
-  margin-top: 12px;
-  max-height: 200px;
-  width: auto;
-  object-fit: cover;
+
+
+
+.responsive-img {
+  height: 600px;    /* Фиксированная высота */
+  width: auto;     /* Ширина вычисляется автоматически */
 }
+
 
 /* Для мобильных */
 @media (max-width: 768px) {
    .page {
     padding-left: 12px;
     padding-right: 12px;
+    padding-bottom: 9px; /* Новый отступ снизу */
   }
