@@ -1,8 +1,9 @@
 *, :after, :before {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
-body{
+
+body {
   font-family: 'Open Sans';
   background-color: #C5CAE9;
   background-image: url(../img/bg.jpg);
@@ -12,54 +13,82 @@ body{
   background-size: cover;
   background-attachment: fixed;
 }
-a{
+
+.text-link {
   color: #3b7cd8;
   text-decoration: none;
+  cursor: default;
+  padding: 10px 0;
+  transition: color ease 0.25s;
 }
-a:hover{
+
+.text-link:hover {
   color: #599eff;
 }
+
 .header,
 .main,
-.footer{
+.footer {
   position: relative;
   z-index: 1;
 }
-.page{
+
+.page {
   max-width: 1100px;
   margin: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+  /* Расстояние между дочерними блоками */
+  gap: 35px;
 }
-.header{
+
+.header {
   position: relative;
-  padding: 20px 30px 20px;
-  background-color: #3b7cd8;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  height: 35px;
+  padding: 0px 0px;
+margin-top: 15px; /* Внешний отступ сверху — 10px */
+  box-sizing: border-box; /* Учитываем padding в высоте */
+  background-color: rgba(15, 124, 216, 0.01);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.header nav{
+.header a {
+  font-size: 38px;
+  margin-left: 0; /* Убираем отступ слева */
+  padding-left: 0; /* Если есть внутренний отступ — тоже обнуляем */
+}
+
+.header nav {
   display: inline-block;
   vertical-align: middle;
 }
-.header nav ul{
+
+.header nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.header nav li{
+
+.header nav li {
   display: inline-block;
   vertical-align: middle;
   margin-right: 30px;
 }
-.header nav li a{
+
+.header nav li a {
   display: block;
   padding: 10px 0;
   color: #fff;
   text-decoration: none;
   transition: all ease 0.25s;
 }
-.header nav li a:hover{
-  color: #D1C4E9;
-}
-.logo{
+
+
+.logo {
   display: inline-block;
   vertical-align: middle;
   color: #fff;
@@ -67,30 +96,57 @@ a:hover{
   text-decoration: none;
   margin-right: 30px;
 }
-.main{
+
+.main {
   background: #fff;
   padding: 30px 0 20px;
+  
+  /* Новая часть: */
+  height: 85vh;           /* 85 % от высоты viewport */
+  overflow-y: auto;       /* Вертикальная прокрутка при переполнении */
+  margin: 0 auto;         /* Центрирование по горизонтали */
 }
-.main section{
+
+.main section {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  gap: 15px;
 }
-.main article{
-  width: 50%;
+
+.main article {
+  width: 100%;
   padding: 0 30px;
-  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
 }
-.footer{
-  color: #fff;
-  background-color: #305284;
-  padding: 20px 30px;
+
+.main article h3,
+.main article p,
+.main article img {
+  margin: 0;
+  padding: 0;
 }
-.footer a{
-  color: #fff;
+
+.main article h3 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
 }
-@media(max-width: 560px){
-  .main article{
-    width: 100%;
+
+.main article p {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.main article img {
+  margin-top: 12px;
+  max-height: 200px;
+  width: auto;
+  object-fit: cover;
+}
+
+/* Для мобильных */
+@media (max-width: 768px) {
+   .page {
+    padding-left: 12px;
+    padding-right: 12px;
   }
-}
