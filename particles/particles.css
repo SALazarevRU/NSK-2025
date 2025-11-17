@@ -3,7 +3,7 @@
 
 body {
   margin: 0;
-  background-color: #333333; /* Графитовый цвет */
+  /* background-color: #333333; /* Графитовый цвет */
 }
 
 canvas {
@@ -98,6 +98,6 @@ canvas {
 
 .image-container img:active,
 .image-container img:hover {
-    transform: scale(1.29); /* увеличение на 15% */
+    transform: scale(1.22); /* увеличение на 15% */
 }
 
