@@ -1,0 +1,103 @@
+
+
+
+body {
+  margin: 0;
+  background-color: #333333; /* Графитовый цвет */
+}
+
+canvas {
+  background-color: #222222; /* Графитовый цвет только для canvas */
+}
+
+.particles {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.particles div {
+    position: absolute;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 40px;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    animation: neon-1 .1s ease-in-out infinite alternate;
+}
+@keyframes neon-1 {
+    from {
+        text-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(191, 226, 255, 0.52), 0 0 21px rgba(191, 226, 255, 0.92), 0 0 34px rgba(191, 226, 255, 0.78), 0 0 54px rgba(191, 226, 255, 0.92);
+    }
+    to {
+        text-shadow: 0 0 6px rgba(202, 228, 225, 0.98), 0 0 30px rgba(202, 228, 225, 0.42), 0 0 12px rgba(191, 226, 255, 0.58), 0 0 22px rgba(191, 226, 255, 0.84), 0 0 38px rgba(191, 226, 255, 0.88), 0 0 60px #FFF;
+    }
+}
+.particles canvas {
+    width: 100%;
+    height: 500px;
+    background-image: url('background.jpg');
+    background-position: center center;
+    background-size: cover;
+}
+
+
+
+
+body {
+    color: #ffffff; /* Белый цвет текста */
+    font-family: Arial, Helvetica, sans-serif; /* Самые популярные шрифты без засечек */
+    font-size: 20px; /* Заданный размер шрифта */
+    line-height: 1.2; /* Оптимальный межстрочный интервал */
+}
+
+/* Для заголовков можно использовать более выразительные шрифты */
+h1, h2, h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+}
+
+/* Для основного текста рекомендуется выравнивание по левому краю */
+p {
+    text-align: left;
+}
+
+
+
+
+
+/* Создание отступа между элементами */
+canvas {
+    margin-bottom: 50px; /* Отступ снизу canvas в 50px */
+    display: block; /* Делаем элемент блочным для корректной работы margin */
+}
+
+/* 
+.content {
+    margin-top: 50px; /* Альтернативный вариант - отступ сверху content в 50px */
+}*/
+
+
+
+
+/* Создание увеличения изображения */
+.image-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.image-container img {
+    transition: transform 0.3s ease;
+ transform-origin: center; /* точка масштабирования */
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.image-container img:active,
+.image-container img:hover {
+    transform: scale(1.29); /* увеличение на 15% */
+}
+
