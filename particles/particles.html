@@ -7,60 +7,84 @@
     
     <!-- Подключение стилей -->
     <link rel="stylesheet" href="particles.css">
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="../css/bootstrap.min.css" rel="stylesheet">-->
     
     <!-- Подключение скриптов -->
     <script src="particles.js" defer></script>
-    <script src="../js/bootstrap.min.js"></script>
+    <!--<script src="../js/bootstrap.min.js"></script>-->
 </head>
 <body>
+
+<!-- Раздел с хлебными крошками -->
+<ul class="breadcrumb-3">
+    <li>
+        <a href="../index.html#preloader">Главная</a>
+    </li>    
+    <li>
+        <a href="../LazarevSA.html">Разработчик</a>
+    </li>
+    <li>
+        <a href="../ITProjects.html">IT Проекты</a>
+    </li>    
+    <li>
+        <a href="#canvas">Для Windows</a>
+ <li>
+        <a href="#nadstroyki">Надстройки</a>
+    </li>
+    </li>
+</ul>   
+
+
     <!-- Раздел с частицами -->
-    <div class="particles">    
+    <div id="canvas" class="particles"> 
+
         <canvas></canvas>
+
         <div>Надстройки Excel</div>
     </div>
     
     <!-- Центральный раздел -->
     <div class="container centrovoy">
-        <div class="content">
+        <div id="nadstroyki" class="content">
+
+              <p>Демо версии надстроек ограничены 24 часами, после чего они самоудаляются без возможности восстановления.</p>
+
             <!-- Заголовок -->
             <h1>Надстройка "Отличка"</h1>
             
             <!-- Основное содержимое -->
-            <p>Здесь размещается основной контент страницы. Можно добавить текст, изображения или другие элементы.</p>
+           
             
             <!-- Пример изображения -->
                 <div class="image-container">
                     <img src="otlichka.png" alt="Надстройка Отличка">
                 </div>
             
-        
+        <p>Скачать и установить надстройку</p>
+           <h1>Надстройка "ГПБ"</h1>
+                 <div class="image-container">
+                    <img src="gpb.png" alt="Надстройка ГПБ">
+                </div>
+        <p>Скачать и установить надстройку</p>
+
         <!-- Список примеров -->
         <ul>
             <li>Первый пункт списка</li>
             <li>Второй пункт списка</li>
-            <li>Третий пункт списка</li>
-             <li>Первый пункт списка</li>
-            <li>Второй пункт списка</li>
-            <li>Третий пункт списка</li>
-             <li>Первый пункт списка</li>
-            <li>Второй пункт списка</li>
-            <li>Третий пункт списка</li>
-             <li>Первый пункт списка</li>
-            <li>Второй пункт списка</li>
-            <li>Третий пункт списка</li>
+            <li>Третий пункт списка</li>         
         </ul>
     </div>
     
     <!-- Стили для центрирования -->
      <style>
         .centrovoy {
-            width: 80%; /* Увеличенный размер для лучшей читаемости */
+            width: 60%; /* Увеличенный размер для лучшей читаемости */
             margin: 20px auto; /* Отступы сверху/снизу и центрирование */
             padding: 20px;
             border: 1px solid #ccc;
+             background-color: #F8F8FF;
             border-radius: 8px; /* Скругленные углы */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Легкая тень */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Легкая тень */
         }
         
         .content {

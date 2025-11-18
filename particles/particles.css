@@ -3,7 +3,7 @@
 
 body {
   margin: 0;
-  /* background-color: #333333; /* Графитовый цвет */
+  background-color: #ffffff; /* Графитовый цвет */
 }
 
 canvas {
@@ -47,7 +47,7 @@ canvas {
 
 
 body {
-    color: #ffffff; /* Белый цвет текста */
+    color: #444444; /* #ffffff Белый цвет текста */
     font-family: Arial, Helvetica, sans-serif; /* Самые популярные шрифты без засечек */
     font-size: 20px; /* Заданный размер шрифта */
     line-height: 1.2; /* Оптимальный межстрочный интервал */
@@ -86,6 +86,7 @@ canvas {
 .image-container {
     overflow: hidden;
     position: relative;
+    margin: 50px 50px 70px; /* сверху: 50px, справа и слева: 50px, снизу: 70px */
 }
 
 .image-container img {
@@ -101,3 +102,122 @@ canvas {
     transform: scale(1.22); /* увеличение на 15% */
 }
 
+
+
+/* «Хлебные крошки» – это цепочка из ссылок от главной страницы сайта до текущей */
+
+ul.breadcrumb-3 {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    padding: 0;
+    position: fixed; /* Фиксируем на экране */
+    top: 0;         /* Прижимаем к верхнему краю */
+    left: 10;        /* Прижимаем к левому краю */
+    right: 0;       /* Растягиваем на всю ширину */
+    z-index: 1000;  /* Чтобы не перекрывались другими элементами */
+    background-color: transparent; /* Фон для чёткости */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+}
+
+ul.breadcrumb-3 li {
+    margin: 2px 0;
+}
+
+ul.breadcrumb-3 li a {
+    color: #FFF;
+    display: block;
+    background: #337AB7;
+    text-decoration: none;
+    position: relative;
+    height: 30px;           /* Текущая высота */
+    line-height: 30px;      /* Высота строки = высоте блока */
+    padding: 0 10px 0 5px;
+    text-align: center;
+    margin-right: 23px;
+    font-size: 13px;
+    font-family: Verdana, sans-serif;   
+    transition: all 0.3s;
+}
+
+/* Остальные стили (цвета, псевдоэлементы, ховер) остаются без изменений */
+ul.breadcrumb-3 li:nth-child(even) a {
+    background-color: #2d6b9f;
+}
+
+ul.breadcrumb-3 li:nth-child(even) a:before {
+    border-color: #2d6b9f;
+    border-left-color: transparent;
+}
+
+ul.breadcrumb-3 li:nth-child(even) a:after {
+    border-left-color: #2d6b9f;
+}
+
+ul.breadcrumb-3 li:first-child a {
+    padding-left: 15px;
+    border-radius: 4px 0 0 4px;
+}
+
+ul.breadcrumb-3 li:first-child a:before {
+    border: none;
+}
+
+ul.breadcrumb-3 li:last-child a {
+    padding-right: 15px;
+    border-radius: 0 4px 4px 0;
+}
+
+ul.breadcrumb-3 li:last-child a:after {
+    border: none;
+}
+
+ul.breadcrumb-3 li a:before,
+ul.breadcrumb-3 li a:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    border: 0 solid #337AB7;
+    border-width: 15px 10px;
+    width: 0;
+    height: 0;
+    transition: all 0.3s;    
+}
+
+ul.breadcrumb-3 li a:before {
+    left: -20px;
+    border-left-color: transparent;
+}
+
+ul.breadcrumb-3 li a:after {
+    left: 100%;
+    border-color: transparent;
+    border-left-color: #337AB7;
+}
+
+ul.breadcrumb-3 li a:hover {
+    background-color: #BFE2FF;
+    color: #000;
+}
+
+ul.breadcrumb-3 li a:hover:before {
+    border-color: #BFE2FF;
+    border-left-color: transparent;
+}
+
+ul.breadcrumb-3 li a:hover:after {
+    border-left-color: #BFE2FF;
+}
+
+
+ /*  Адаптивная высота (для мобильных): */
+
+@media (max-width: 768px) {
+    ul.breadcrumb-3 li a {
+        height: 25px;
+        line-height: 25px;
+        font-size: 11px;
+    }
+}
+/* конец «Хлебные крошки» – это цепочка из ссылок от главной страницы сайта до текущей */
