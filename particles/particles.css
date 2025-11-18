@@ -65,28 +65,28 @@ p {
 }
 
 
-/* стили для центрирования Блока по центру */
+/* Стили для центрирования блока по центру */
 .centrovoy {
-            width: 60%; /* Увеличенный размер для лучшей читаемости */
-            margin: 20px auto; /* Отступы сверху/снизу и центрирование */
-            padding: 20px;
-            border: 1px solid #ccc;
-             background-color: #F8F8FF;
-            border-radius: 8px; /* Скругленные углы */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Легкая тень */
-        }
-        
-        .content {
-            text-align: center;
-        }
-        
-        .center-image {
-            display: block;
-            max-width: 100%;
-            height: auto;
-        }
+    width: 60%; /* Увеличенный размер для лучшей читаемости */
+    margin: 20px auto; /* Отступы сверху/снизу и центрирование */
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #F8F8FF;
+    border-radius: 8px; /* Скруглённые углы */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Лёгкая тень */
+}
 
-/* конец стили для Блока по центру */
+.content {
+    text-align: center;
+}
+
+.center-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Конец стилей для блока по центру */
 
 
 
@@ -241,23 +241,24 @@ ul.breadcrumb-3 li a:hover:after {
         line-height: 25px;
         font-size: 11px;
     }
- .particles {
-    background-image: url('mobile-background.jpg');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height:280px;
-  }
 
-  .particles div,
-  .particles canvas {
-    display: none;
-  }
+    .particles {
+        background-image: url('mobile-background.jpg');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 280px;
+    }
 
-.centrovoy {
-        width: calc(100% - 16px); /* Полная ширина минус 6 px (по 3 px с каждой стороны) */
-        margin: 20px 13px; /* Отступы по 3 px слева и справа */
+    .particles div,
+    .particles canvas {
+        display: none;
+    }
+
+    .centrovoy {
+        width: calc(100% - 6px); /* 100% минус 3px слева и 3px справа */
+        margin: 20px 3px; /* Отступы 20px сверху/снизу, 3px по бокам */
+        box-sizing: border-box; /* Важно: учитывает padding и border в общей ширине */
     }
 }
-
