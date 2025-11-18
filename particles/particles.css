@@ -256,8 +256,8 @@ ul.breadcrumb-3 li a:hover:after {
   }
 
 .centrovoy {
-        width: calc(100% - 6px); /* Полная ширина минус 6 px (по 3 px с каждой стороны) */
-        margin: 20px 3px; /* Отступы по 3 px слева и справа */
+        width: calc(100% - 16px); /* Полная ширина минус 6 px (по 3 px с каждой стороны) */
+        margin: 20px 13px; /* Отступы по 3 px слева и справа */
     }
 }
 
