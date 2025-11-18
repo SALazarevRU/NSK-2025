@@ -264,41 +264,34 @@ ul.breadcrumb-3 li a:hover:after {
 
  /*хлебные крошки */
 
-  ul.breadcrumb-3 {
-    position: relative;          /* Убираем фиксацию */
-    top: auto;
+ul.breadcrumb-3 {
+    position: fixed; /* оставляем фиксацию */
+    top: 0;        /* прижимаем к верху окна */
     left: 0;
-    margin: 10px 0;             /* Уменьшаем отступы */
-    box-shadow: none;           /* Убираем тень */
+    right: 0;      /* растягиваем на всю ширину */
+    z-index: 1000; /* выше основного контента */
+    margin: 0;   /* убираем внешние отступы */
+    padding: 5px 10px; /* компактные внутренние отступы */
+    background-color: #fff; /* фон, чтобы не сливалось с контентом */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* лёгкая тень */
+    box-sizing: border-box;
   }
 
-  ul.breadcrumb-3 li {
-    margin: 5px 0;              /* Больше вертикального отступа */
+  /* Основной контент — с отступом сверху, чтобы не перекрывался */
+  body {
+    padding-top: 50px; /* высота хлебных крошек + небольшой запас */
   }
 
   ul.breadcrumb-3 li a {
-    height: auto;               /* Гибкая высота */
-    line-height: 1.4;         /* Относительная высота строки */
-    padding: 8px 12px;        /* Компактнее */
-    font-size: 14px;          /* Чуть больше для тач-элементов */
-    margin-right: 10px;       /* Уменьшаем горизонтальный отступ */
-    border-radius: 4px;       /* Округляем все углы */
+    height: auto;
+    line-height: 1.4;
+    padding: 6px 10px; /* ещё компактнее */
+    font-size: 13px; /* чуть меньше для экономии места */
+    margin-right: 8px;
+    border-radius: 3px;
   }
 
-  /* Убираем треугольные псевдоэлементы на мобилках */
-  ul.breadcrumb-3 li a:before,
-  ul.breadcrumb-3 li a:after {
-    display: none;
-  }
-
-  /* Для первого и последнего элемента — стандартные скругления */
-  ul.breadcrumb-3 li:first-child a,
-  ul.breadcrumb-3 li:last-child a {
-    border-radius: 4px;
-  }
-}
-
- /*хлебные крошки */
+ /* конец хлебные крошки */
 
 
 }
