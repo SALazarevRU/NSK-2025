@@ -3,11 +3,11 @@
 
 body {
   margin: 0;
-  background-color: #ffffff; /* Графитовый цвет */
+  background-color: #ffffff; /* мой цвет */
 }
 
 canvas {
-  background-color: #000000; /* Графитовый цвет только для canvas */
+  background-color: #000000; /* мой цвет только для canvas */
 }
 
 .particles {
@@ -213,11 +213,24 @@ ul.breadcrumb-3 li a:hover:after {
 
  /*  Адаптивная высота (для мобильных): */
 
-@media (max-width: 768px) {
+@media (max-width: 575px) {
     ul.breadcrumb-3 li a {
         height: 25px;
         line-height: 25px;
         font-size: 11px;
     }
+ .particles {
+    background-image: url('mobile-background.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+  }
+
+  .particles div,
+  .particles canvas {
+    display: none;
+  }
 }
 /* конец «Хлебные крошки» – это цепочка из ссылок от главной страницы сайта до текущей */
