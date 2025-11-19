@@ -118,10 +118,12 @@ p {
 /* Контейнер для адаптации опроса*/
 
 .responsive-iframe-container {
+ background-color: #00000030;
   position: relative;
-  width: 100%;
+  width: 35%;
   overflow: hidden;
   padding-top: 56.25%; /* Соотношение 16:9 (можно подкорректировать) */
+  margin: auto; /* Центрирует блок по горизонтали */
 }
 
 .responsive-iframe-container iframe {
