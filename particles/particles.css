@@ -89,6 +89,30 @@ p {
 /* Конец стилей для блока по центру */
 
 
+/* Стили для центрирования второго блока (опроса) по центру */
+.centrovoy-dva {
+    width: 35%; /* Увеличенный размер для лучшей читаемости */
+    margin: 20px auto; /* Отступы сверху/снизу и центрирование */
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #00000030;
+    border-radius: 8px; /* Скруглённые углы */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Лёгкая тень */
+}
+
+.content {
+    text-align: center;
+}
+
+.center-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Конец стилей для второго блока (опроса) по центру */
+
+
 
 /* Создание отступа между элементами */
 canvas {
@@ -233,6 +257,26 @@ ul.breadcrumb-3 li a:hover:after {
 }
 /* конец «Хлебные крошки» – это цепочка из ссылок от главной страницы сайта до текущей */
 
+
+.knopka {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+.knopka:hover {
+      background-color: #0056b3;
+   }
+
+
+
+
+
  /*  Адаптивная высота (для мобильных): */
 
 @media (max-width: 767px) {
@@ -292,6 +336,7 @@ ul.breadcrumb-3 {
   }
 
  /* конец хлебные крошки */
+
 
 
 }
