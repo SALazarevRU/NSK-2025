@@ -122,10 +122,10 @@ p {
   position: relative;
   width: 95%;
   overflow: hidden;
-  padding-top: 112.5%; /* Было 56.25% /* 16:9 */ , стало в 2 раза больше */
+  padding-top: 155.5%; /* Было 56.25% /* 16:9 */ , стало в 2 раза больше */
   margin: auto;
   border-radius: 8px;
-  border: 10px solid #ccc;
+ 
 }
 
 .responsive-iframe-container iframe {
