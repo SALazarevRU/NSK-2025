@@ -120,10 +120,11 @@ p {
 .responsive-iframe-container {
  background-color: #00000030;
   position: relative;
-  width: 35%;
+  width: 40%;
   overflow: hidden;
   padding-top: 56.25%; /* Соотношение 16:9 (можно подкорректировать) */
   margin: auto; /* Центрирует блок по горизонтали */
+border-radius: 8px; /* Скруглённые углы */
 }
 
 .responsive-iframe-container iframe {
