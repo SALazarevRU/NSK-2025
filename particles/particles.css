@@ -114,6 +114,32 @@ p {
 
 
 
+
+/* Контейнер для адаптации опроса*/
+
+.responsive-iframe-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%; /* Соотношение 16:9 (можно подкорректировать) */
+}
+
+.responsive-iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+/* энд Контейнер для адаптации опроса*/
+
+
+
+
+
 /* Создание отступа между элементами */
 canvas {
     margin-bottom: 50px; /* Отступ снизу canvas в 50px */
