@@ -71,7 +71,7 @@
         // Функция для загрузки текста из файла
         async function loadTextFromFile() {
             try {
-                const response = await fetch('example.txt');
+                const response = await fetch('primer.txt');
                 
                 if (!response.ok) {
                     throw new Error(`Ошибка загрузки: ${response.status}`);
