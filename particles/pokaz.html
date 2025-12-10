@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Просмотр текста из файла</title>
+    
+    <!-- Подключение внешнего CSS-файла -->
+    <link href="pokazatescho.css" rel="stylesheet">
+    
+     <!-- Подключение jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,8 +40,37 @@
         <h1>Текст из файла</h1>
         <div id="text-container" class="loading">Загружается...</div>
     </div>
+    
+    
+<div class="content-block-fix">
+    <div class="content-block-text">
+        <p>Текст</p>
+    </div>
+    <div class="show-all-container">
+        <button class="show-all">Показать полностью</button>    
+    </div>
+</div>  
 
+
+
+  
     <script>
+$(".content-block-text").each(function() {
+    let th = $(this);
+    if (th.prop('scrollHeight') > th.height()) {
+        let more = th.next(".show-all-container").find(".show-all");    
+        th.next(".show-all-container").show();    
+        th.addClass("content-block-text-shadow");
+        more.click(function() {
+            th.toggleClass("content-block-text-shadow content-block-text-open");
+            more.text(more.text() == "Скрыть" ? "Показать полностью" : "Скрыть");
+        });
+    }
+});
+
+    
+
+ 
         // Функция для загрузки текста из файла
         async function loadTextFromFile() {
             try {

@@ -1,0 +1,34 @@
+.content-block-fix {
+    margin: 20px 0;
+    padding: 20px;
+    background: #FFF;
+    font-size: 16px;
+    border: 2px solid #BFE2FF;
+    position: relative;
+}
+.content-block-text {
+    height: 150px;
+    overflow: hidden;    
+    position: relative;
+    transition: margin 0.3s;
+}
+.content-block-text-open {
+    height: auto;
+    margin-bottom: 50px;
+}
+.content-block-text-shadow:after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #FFF 75%)    
+}
+.show-all-container {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    display: none;
+}
