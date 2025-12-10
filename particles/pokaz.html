@@ -7,9 +7,9 @@
     <!-- Подключение внешнего CSS-файла -->
     <link href="pokazatescho.css" rel="stylesheet">
     
-     <!-- Подключение jQuery -->
+    <!-- Подключение jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
-    <style>
+     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
@@ -28,6 +28,10 @@
             overflow-y: auto;
             background-color: #f9f9f9;
             border-radius: 5px;
+            
+            /* Ключевое правило для сохранения форматирования */
+            white-space: pre-line; /* сохраняет переносы строк */
+            font-family: monospace; /* моноширинный шрифт как в редакторе */
         }
         .loading {
             color: #666;
@@ -41,41 +45,33 @@
         <div id="text-container" class="loading">Загружается...</div>
     </div>
     
-    
-<div class="content-block-fix">
-    <div class="content-block-text">
-        <p>Текст</p>
-    </div>
-    <div class="show-all-container">
-        <button class="show-all">Показать полностью</button>    
-    </div>
-</div>  
+    <div class="content-block-fix">
+        <div class="content-block-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="show-all-container">
+            <button class="show-all">Показать полностью</button>    
+        </div>
+    </div>  
 
-
-
-  
     <script>
-$(".content-block-text").each(function() {
-    let th = $(this);
-    if (th.prop('scrollHeight') > th.height()) {
-        let more = th.next(".show-all-container").find(".show-all");    
-        th.next(".show-all-container").show();    
-        th.addClass("content-block-text-shadow");
-        more.click(function() {
-            th.toggleClass("content-block-text-shadow content-block-text-open");
-            more.text(more.text() == "Скрыть" ? "Показать полностью" : "Скрыть");
-        });
-    }
-});
+        $(".content-block-text").each(function() {
+            let th = $(this);
+            if (th.prop('scrollHeight') > th.height()) {
+                let more = th.next(".show-all-container").find(".show-all");    
+                th.next(".show-all-container").show();    
+                th.addClass("content-block-text-shadow");
+                more.click(function() {
+                    th.toggleClass("content-block-text-shadow content-block-text-open");
+                    more.text(more.text() == "Скрыть" ? "Показать полностью" : "Скрыть");
+                });
+            }
+        });   
 
-    
-
- 
         // Функция для загрузки текста из файла
         async function loadTextFromFile() {
             try {
-                // Укажите путь к вашему текстовому файлу
-                const response = await fetch('primer.txt');
+                const response = await fetch('example.txt');
                 
                 if (!response.ok) {
                     throw new Error(`Ошибка загрузки: ${response.status}`);
@@ -89,7 +85,6 @@ $(".content-block-text").each(function() {
             }
         }
 
-        // Вызываем функцию при загрузке страницы
         window.addEventListener('load', loadTextFromFile);
     </script>
 </body>
