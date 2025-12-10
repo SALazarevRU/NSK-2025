@@ -1,0 +1,538 @@
+<?xml version="1.0" standalone="yes"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" xmlns:МПИ="Надстройка2" onLoad="RibbonLoaded">
+	<ribbon startFromScratch="false">
+		<tabs>
+			<tab idQ="МПИ:Tab1" label="Задачи">
+				<group id="groupe_0">
+					<button id="Backup" size="large" image="A3Dx32" label="Редактор" onAction="ОткрытьРедактор"/>
+				</group>
+				<group id="groupe_2" image="ШАРх32">
+					<button id="change_cell" size="large" image="лалала32" label="Авто валидация" onAction="Test" screentip="Кнопка запуска работы с ПО Коллекшен" supertip="Начало валидации ПД 20.05.2025"/>
+				</group>
+				<group id="groupe_2_2" image="ШАРх32">
+					<splitButton id="MySplitButton2" size="large">
+						<button id="Button5" label="Добавить документы" image="ШАРик_32х32" onAction="Добавить_2_Дока"/>
+						<menu id="Menu2" itemSize="normal">
+							<button id="Button6" label="График" imageMso="GroupSparklinesInsert"/>
+							<button id="Button7" label="Общие условия" imageMso="GroupDocumentLibraryNew"/>
+							<button id="Button888" label="График+Общие условия" imageMso="GroupCopy"/>
+						</menu>
+					</splitButton>
+				</group>
+				<group id="groupe_3" label="Результаты" image="ШАРх32">
+					<editBox id="Бокс_1" label="Валидировано документов сегодня:" getText="dokumentov"/>
+					<editBox id="Бокс_3" label="Сумма" sizeString="WWWWWWWWWWW" getText="Summa"/>
+					<dropDown id="dropDown" label="Элементы">
+						<item id="item1" label="Элемент 1" imageMso="FindText"/>
+						<item id="item2" label="Элемент 2"/>
+						<item id="item3" label="Элемент 3"/>
+					</dropDown>
+				</group>
+				<group id="groupe_4">
+					<menu id="groupe_4_1" label="ФКБ" size="large" image="A777_32" supertip="Пояснительная бригада" screentip="Сканирование Быстроденьги (ФКБ)">
+						<menu id="groupe_4_2" label="Открыть папки" image="A777_32" supertip="Пояснительная бригада" screentip="Сканирование Быстроденьги (ФКБ)">
+							<button id="groupe_4_1_button_1" image="A777_32" label="Открыть папку сканирования ФКБ" onAction="ОткрытьПапкуСканированияФКБ"/>
+							<button id="groupe_4_1_button_2" image="A777_32" label="Открыть папку на Q для слива сканов" onAction="ОткрытьПапкуСканыФКБнаQ" screentip="Q:\LP2\Результаты сверки портфелей с августа 2020\Быстроденьги ФКБ\сканы на бумаге"/>
+							<button id="groupe_4_1_button_3" image="A777_32" label="Открыть папку  слитых сканов ФКБ на диске D" onAction="ОткрытьПапкуСлилСканыФКБнаD"/>
+						</menu>
+						<button id="groupe_4_1_button_5" label="Автозаполнить отчет по Клаймам (сканирование ФКБ)" imageMso="Drawing1ColorPickerLineStyles" onAction="ЗаполнитьОтчетПоСканированиюФКБ"/>
+						<button id="groupe_4_1_button_4" label="Автозаполнить файл Динамики ФКБ" imageMso="GroupSparklinesInsert" onAction="ЗаполнитьДинамикуФКБ"/>
+					</menu>
+				</group>
+				<group id="ГПБ">
+					<menu id="menuГПБ" label="ГПБ" size="large" image="A888_32" supertip="Пояснительная бригада" screentip="Сканирование ГПБ">
+						<button id="buttonГПБ1s" image="A777_32" label="Открыть папку сканигна ГПБ" onAction="ОткрытьПапкуРабочийСтол"/>
+						<button id="buttonГПБ2s" image="A777_32" label="Открыть папку слива сканов ГПБ на Q" onAction="ОткрытьПапкуСливаСкановГПБНаQ"/>
+						<button id="buttonГПБ3s" image="A777_32" label="Открыть папку Архив\Лазарев" onAction="ОткрытьПапкуАрхивЛазарев"/>
+						<button id="buttonГПБ4s" image="лалала32" label="Копировать-Слить папки с файлами ГПБ " onAction="КопированиеСливПапокСФайламиГПБ" supertip="Копирование указанного количества папок с файлами ГПБ из исходного каталога (C) в целевой (Q) с добавлением к имени файлов цифры, если имена одинаковые."/>
+						<button id="buttonГПБ5s" image="A777_32" label="Переместить несколько папок по дате" onAction="ПереместитьНесколькоПапокПоДате" supertip="Переместить определенное количество папок по критерию дата создания папки."/>
+					</menu>
+				</group>
+				<group id="Data_1" label="Начало валидации ПД 20.05.2025" image="ШАРх32">
+					<box id="Data_1_1" boxStyle="vertical">
+						<editBox id="Бокс_2" label="Сегодня" sizeString="WWWWWWWWW" imageMso="HeaderFooterCurrentDate" getText="Segodnja"/>
+						<box id="ContentGroup2" boxStyle="horizontal">
+							<button id="button_TVozduha" size="normal" label="t Воздуха   ." imageMso="GroupWrite" onAction="TVozduha"/>
+							<editBox id="Бокс_Градусы" sizeString="WWWWWWWWW" getText="Градусы"/>
+						</box>
+						<box id="Бокс_2_1" boxStyle="horizontal">
+							<button id="button_Dollar" size="normal" label="Курс долл.." imageMso="DollarSign" onAction="ПолучитьКурсДоллара"/>
+							<editBox id="editBox_Dollar" sizeString="WWWWWWWWW" getText="Деньги"/>
+						</box>
+					</box>
+				</group>
+				<group id="группа_Бэкапы_Z">
+					<menu id="menuБэки_Z" label="Бэкапы" size="large" image="A888_32">
+						<menu id="MyMenu_88_ZZ" label="Выбрать файлы" imageMso="SaveItem" screentip="Выбор файлов для резервного копирования" supertip="БЭКАПЫ">
+							<button id="Button881_Z" label="Эта книга" imageMso="SaveAndClose" onAction="БэкапЭтойКниги"/>
+							<button id="Button882_Z" label="Динамика" imageMso="SaveAndClose" onAction="БэкапДинамики_2025"/>
+							<button id="Button883_Z" label="Надстройка2" imageMso="SaveAndClose" onAction="БэкапНадстроки" supertip="Сохраняет файл Надстройки на диск Е и на диск Q"/>
+							<button id="Button884_Z" label="Все выше указанные" imageMso="SaveAll" onAction="ВсеБэкапы"/>
+						</menu>
+						<menu id="MyMenu_981_Z" label="Открыть папки" imageMso="GroupTaskFormFieldsEdit" screentip="ооо" supertip="лллоооо">
+							<button id="Button981_Z" label="Бэкапы" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуБэкапы"/>
+							<button id="Button985_Z" label="Папка Бэкапы рабочих книг на Архиве" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуБэкапыРабочКнигНаАрхиве"/>
+							<button id="Button982_Z" label="Папка Custom UI" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуБэкапНадстройки2_на_Е"/>
+							<button id="Button983_Z" label="Папка Temp" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуTemp"/>
+							<button id="Button984_Z" label="Папка Бэкапы Всех Модулей По Датам" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуБэкапыВсехМодулейПоДатам"/>
+						</menu>
+						<menu id="MyMenu_98_1_Z" label="Delete Old Files" imageMso="RecycleBin" screentip="Удалить Old Files" supertip="Очистка папок">
+							<button id="Button98_1_1_Z" label="В папке Бэкапы" imageMso="GroupTaskFormFieldsEdit" onAction="УдалитьСтарыеФайлыБэкап"/>
+							<button id="Button98_1_2_Z" label="В папке Надстройка2" imageMso="GroupTaskFormFieldsEdit" onAction="УдалитьСтарыеФайлыПанели"/>
+							<button id="Button98_1_3_Z" label="В папке Temp" imageMso="GroupTaskFormFieldsEdit" onAction="УдалитьСтарыеФайлыTemp"/>
+							<button id="Button98_1_4_Z" label="В папке Temp удалить файлы .JPG и очистить корзину" imageMso="GroupTaskFormFieldsEdit" onAction="Удалить_файлы_в_папке_ТЕМП_по_маске"/>
+						</menu>
+						<button id="Button_БЭКИ_Z" label="Отправить Надстройку2 на почту" imageMso="GoToMail" onAction="Отправить_Надстройку2_по_почте"/>
+					</menu>
+				</group>
+				<!-- <group id="Grp3" label="Macro Call Dynamic Menu">
+					<dynamicMenu id="Grp3DMenu1" label="Project Macros" image="КУБ_32" size="large" getContent="RibbonControl.GetContent"/>
+				</group> -->
+				<group id="groupe_9" image="ШАРх32">
+					<menu id="MyMenu_9" label="Отчёты" image="ШАРх32" size="large">
+						<menu id="MySubMenu_9" label="Отчёт по клаймам" imageMso="ShowAppointmentPage">
+							<button id="Button91" label="Открыть Отчет по клаймам" imageMso="FormulaMoreFunctionsMenu" onAction="ОткрытьОтчетПоКлаймам"/>
+							<menuSeparator id="Separ_91"/>
+							<button id="Button92" label="Открыть папку Отчета по клаймам" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуОтчетПоКлаймамНаQ"/>
+							<menuSeparator id="Separ_92" title="Выбор автозаполнения отчёта по задаче:"/>
+							<button id="Button90" label="Выбрать папку с папками сканов" imageMso="FolderScopeGallery" onAction="ВыборПапкиСПапкамиСканов"/>
+							<button id="Button93" label="Автозаполнить отчет по Клаймам (сканирование ФКБ)" imageMso="Drawing1ColorPickerLineStyles" onAction="ЗаполнитьОтчетПоСканированиюФКБ"/>
+							<menuSeparator id="Separ_93"/>
+							<button id="Button94" label="Автозаполнить отчет по  Клаймам (сканирование ГПБ)" imageMso="Drawing1ColorPickerLineStyles" onAction="ЗаполнитьОтчетПоГазпрому"/>
+						</menu>
+						<menu id="MySubMenu_10" label="Динамика" imageMso="ShowAppointmentPage">
+							<button id="Button_10_1" label="Открыть папку динамики" image="A777_32" onAction="ОткрытьПапкуДинамика"/>
+							<button id="Button_10_2" label="Открыть файл динамики" image="A888_32" supertip="Пояснительная бригада" screentip="Открыть Файл Динамика 2025" onAction="ОткрытьФайлДинамика2025"/>
+							<button id="Button_10_3" label="Автозаполнить файл динамики ФКБ" imageMso="GroupSparklinesInsert" onAction="ЗаполнитьДинамикуФКБ"/>
+							<button id="Button_10_4" label="Автозаполнить файл динамики ГПБ" imageMso="GroupSparklinesInsert" onAction="ЗаполнитьДинамикуГПБ"/>
+						</menu>
+						<menu id="MySubMenu_12" label="Отчет по фабрике" imageMso="ShowAppointmentPage">
+							<button id="Button_12_1" label="Открыть папку Отчета по фабрике" image="A777_32" onAction="ОткрытьПапкуОтчетФабрика"/>
+							<button id="Button_12_2" label="Открыть файл Отчета по фабрике" image="A888_32" supertip="Пояснительная бригада" screentip="Открыть Файл Отчета по фабрике" onAction="ОткрытьФайлОтчетаФабрика"/>
+							<button id="Button_12_3" label="Автозаполнить сейчас файл Отчета по фабрике" imageMso="GroupSparklinesInsert" onAction="ЗаполнитьСейчасОтчетФабрика"/>
+							<button id="Button_12_4" label="Автозапуск На Выходные" imageMso="GroupSparklinesInsert" onAction="АвтозапускНаВыходные"/>
+						</menu>
+						<button id="Button_AZ" label="Автозаполнить все отчеты ночью" imageMso="GroupSparklinesInsert"/>
+					</menu>
+				</group>
+				<group id="groupe_10" image="КУБ_32">
+					<menu id="MyMenu_10" label="Админ" image="A555_32" size="large">
+						<menu id="Bitrix24" label="Bitrix" imageMso="CatalogMergeGoToNextRecord">
+							<button id="Button_BTR_1" label="Получить рабочее время" imageMso="CatalogMergeGoToNextRecord" onAction="БитриксРабочееВремя"/>
+							<button id="Button_BTR_2" label="Поставить на автозавершение" imageMso="CatalogMergeGoToNextRecord"/>
+							<button id="Button_BTR_3" label="Завершение, Отчет по фабрике, Запуск" imageMso="CatalogMergeGoToNextRecord" onAction="Авто_на_ночь"/>
+							<button id="Button_BTR_4" label="Запуск BTR" imageMso="CatalogMergeGoToNextRecord" onAction="ЗапускBTR"/>
+						</menu>
+						<menu id="MySubMenu_10_1" label="Обновление панели" imageMso="CatalogMergeGoToNextRecord">
+							<button id="Button10_1" label="Проверить" imageMso="FormulaMoreFunctionsMenu" onAction="ПроверкаОбновленияUI"/>
+							<menuSeparator id="Separ_10_1"/>
+							<button id="Button102" label="Текущая версия" imageMso="GroupTaskFormFieldsEdit" onAction="Идентик_панели"/>
+							<menuSeparator id="Separ_10_2" title="Шаблон:"/>
+							<button id="Button10_3" label="Шаблон" imageMso="FolderScopeGallery" onAction="Шаблон"/>
+							<button id="Button10_4" label="Шаблон" imageMso="Drawing1ColorPickerLineStyles" onAction="ЗапускКода"/>
+							<menuSeparator id="Separ_10_3"/>
+							<button id="Button10_5" label="Программирование интерфейса" imageMso="Drawing1ColorPickerLineStyles" onAction="Шаблон"/>
+						</menu>
+						<menu id="MySubMenu_10_2" label="Управление" imageMso="CatalogMergeGoToNextRecord">
+							<button id="Button106" label="Удалить процедуру" imageMso="PageDelete" onAction="УдалитьПроцедуру" supertip="Удаляет прцедуру с введённым в поле именем"/>
+						</menu>
+						<menu id="MySubMenu_10_3" label="Аддоны" imageMso="CatalogMergeGoToNextRecord">
+							<button id="Button107" label="Открыть папку Аддоны" imageMso="CatalogMergeGoToNextRecord" onAction="ОткрытьПапкуАддоны"/>
+							<button id="Button108" label="DialogAddIns" imageMso="CatalogMergeGoToNextRecord" onAction="ДоступныеНадстройки"/>
+						</menu>
+						<menuSeparator id="Separ_10_4"/>
+						<button id="ButtonMeny_10_6" label="Записная книжка" imageMso="LocalShareNotebook" onAction="ОткрытьMyБлокнот"/>
+						<button id="ButtonMeny_10_9" label="Авторизация" imageMso="LocalShareNotebook" onAction="ОткрытьАвторизация"/>
+						<button id="ButtonMeny_10_7" label="Restart этой книги" imageMso="RecurrenceEdit" onAction="Restart_этой_книги"/>
+						<button id="ButtonMeny_10_8" label="Экспорт всех модулей" imageMso="RecurrenceEdit" onAction="СохранитьВсеМодули"/>
+						<button id="ButtonMeny_10_1" label="Отправить эту книгу на e-mail" imageMso="MailMergeStartEmail" onAction="ОтправитьФайлПоПочте"/>
+					</menu>
+				</group>
+				<group id="groupe_11" image="КУБ_32">
+					<menu id="MyMenu_11" label="Справка" image="ВОПРОС_32_14215" size="large">
+						<button id="Button_11_4" label="Инструкция по валидации ПД" imageMso="FunctionsLogicalInsertGallery" onAction="ИнструкцияПоВалидации"/>
+						<menuSeparator id="Separ_11_3"/>
+						<button id="Button_11_1" label="Гайд по кодингу" imageMso="FunctionsLogicalInsertGallery" onAction="ОткрытьГайдПоКодингу"/>
+						<menuSeparator id="Separ_11_1"/>
+						<button id="Button_11_2" label="Вводый курс" imageMso="FunctionsLogicalInsertGallery" onAction="ВводныйКурсВ_VB"/>
+						<menuSeparator id="Separ_11_2"/>
+						<button id="Button_11_3" label="О программе" imageMso="FunctionsLogicalInsertGallery" onAction="ОПрограмме"/>
+					</menu>
+				</group>
+				<group id="ДинамическиеМеню">
+					<!-- <menu id="Меню1" label="Обычное меню" itemSize="normal"> -->
+					<!-- <button id="Кнопка1" label="Пункт 1" onAction="Сообщение1"/>
+						<button id="Кнопка2" label="Пункт 2" onAction="Сообщение2"/>
+						<button id="Кнопка3" label="Пункт 3" onAction="Сообщение3"/> -->
+					<!-- </menu> -->
+					<dynamicMenu id="ДинамическоеМеню1" label="Ссылки" image="ИНТЕРНЕТ" size="large" getContent="ВернутьДинамическоеМеню"/>
+				</group>
+				<group id="GroupA" label=" " image="КУБ_32">
+					<!-- <checkBox id="Checkbox00" label="AutoDispley UI" getPressed="checkbox00_startup" onAction="checkbox00_startup"/> -->
+					<toggleButton id="toggleButton_236" imageMso="DistributeMiddle" size="normal" label="Панель" getPressed="GetPressed" onAction="ToggleButton1_OnAction" supertip="Если кнопка нажата (серый цвет) - то при загрузке эта вкладка будет открываться автоматически"/>
+					<button id="GroupA_Button_2" label="Wallpaper" imageMso="ControlImage" onAction="Смена_Обоев"/>
+					<checkBox id="Checkbox01" label="Сетка" getPressed="checkbox01_startup" onAction="checkbox01_clicked"/>
+				</group>
+				<group id="Прочее_1" image="КУБ_32">
+					<box id="Бокс_Прочее_1" boxStyle="vertical">
+						<box id="Бокс_Почта_1" boxStyle="horizontal">
+							<button id="button_Почта_1" size="normal" label="Почта" imageMso="ToggleMarkAsRead" onAction="ПроверкаПочты"/>
+							<editBox id="editBox_Почта" sizeString="WWWWWWWWW" getText="Сообщение"/>
+						</box>
+						<box id="Бокс_Праздники" boxStyle="horizontal">
+							<button id="button_Праздники" size="normal" label="Праздники" imageMso="CalendarInsert" onAction="ПраздникиСегодня" screentip="Получить список праздников на сегодняшнюю дату с сайта https://calend-online.com/holiday"/>
+						</box>
+						<menu id="Гороскопы" label="Гороскопы" imageMso="GroupEditing">
+							<button id="button_ГороскопТелец" label="Гороскоп Телец" imageMso="ButtonTaskSelfSupport" onAction="ГороскопСегодняТелец" screentip="дату"/>
+							<button id="button_ГороскопЗнак" label="Гороскоп Знак" imageMso="ButtonTaskSelfSupport" onAction="ГороскопСегодняЗнак" screentip="дату"/>
+						</menu>
+					</box>
+				</group>
+				<group id="Group235" image="Word32">
+					<box id="box_1_Group235" boxStyle="vertical">
+						<editBox id="editBoxForStartEXE" sizeString="ффффффффффф" onChange="Синхронизация" getText="ИмяПрограммыEXE"/>
+						<splitButton id="MySplitButton_235" size="normal">
+							<button id="Button1_235" label="Start exe" imageMso="PublishToAccessServices" onAction="START_EXE"/>
+							<menu id="Menu1" itemSize="normal">
+								<button id="Button2_235" label="AdobeFireworksCS6" image="ФОТОШОП" onAction="AdobeFireworks"/>
+								<button id="Button3_235" label="Калькулятор" image="Калькулятор" onAction="Калькулятор"/>
+								<button id="Button4_235" label="Acrobat" image="Adobe" onAction="Acrobat"/>
+								<button id="Button5_235" label="Outlook" image="Outlook" onAction="Оутлук"/>
+								<button id="Button7_235" label="Сканер" imageMso="ReportPrint" onAction="Сканер"/>
+								<button id="Button8_235" label="RidNacs" image="RidNacs" onAction="RidNacs"/>
+								<button id="Button9_235" label="TotalCommander" image="Total_Commander" onAction="TotalCommander"/>
+							</menu>
+						</splitButton>
+						<button id="Button6_235" label="Напоминание" imageMso="AnimationGallery" onAction="Напоминание"/>
+					</box>
+				</group>
+				<group id="Group236">
+					<button id="GroupA_Button_1" label="Скролл UP" image="КУБ_32" size="large" supertip="Для прокрутки рабочего листа в верхнюю строку" onAction="СкроллВверх"/>
+				</group>
+			</tab>
+			<tab idQ="МПИ:Tab2" label="ГПБ">
+			    <group id="groupe_Справка_ГПБ">
+					<button id="Справка_ГПБ" size="large" image="A777_32" label="Справка" onAction="ОткрытьГайдПоКодингу"/>
+				</group>
+				<group id="groupe_Редактор_2">
+					<button id="Редактор_2" size="large" image="A3Dx32" label="VBEditor" onAction="ОткрытьРедактор"/>
+				</group>
+				<group id="ГПБанк">
+					<menu id="menuГПБанк" label="Папки" size="large" image="бн0" supertip="Пояснительная бригада" screentip="Сканирование ГПБ">
+						<button id="buttonГПБ1" image="A777_32" label="Открыть папку сканигна ГПБ" onAction="ОткрытьПапкуРабочийСтол"/>
+						<button id="buttonГПБ2" image="A777_32" label="Открыть папку слива сканов ГПБ на Q" onAction="ОткрытьПапкуСливаСкановГПБНаQ"/>
+						<button id="buttonГПБ3" image="A777_32" label="Открыть папку Архив\Лазарев" onAction="ОткрытьПапкуАрхивЛазарев"/>
+						<button id="buttonГПБ4" image="лалала32" label="Копировать-Слить папки с файлами ГПБ " onAction="КопированиеСливПапокСФайламиГПБ" supertip="Копирование указанного количества папок с файлами ГПБ из исходного каталога (C) в целевой (Q) с добавлением к имени файлов цифры, если имена одинаковые."/>
+						<button id="buttonГПБ5" image="A777_32" label="Переместить несколько папок по дате" onAction="ПереместитьНесколькоПапокПоДате" supertip="Переместить определенное количество папок по критерию дата создания папки."/>
+					</menu>
+				</group>
+				<group id="ГПБ_2">
+					<button id="button_1_ГПБ_2" size="large" image="ТТТ_64" label="Старт сканинга" onAction="СканингГПБ"/>
+				</group>
+				<group id="ГПБ_3">
+					<button id="button_1_ГПБ_3" size="large" image="бн_64" label="Форма вариантов" onAction="Показать_Форму_Выбор_варианта_заполнения"/>
+				</group>
+				<group id="Прочее_2" image="КУБ_32">
+					<box id="Бокс_Прочее_2" boxStyle="vertical">
+						<editBox id="editBox_Строк" label="Строк" sizeString="WWWWWWWWW" getText="Строчек" onChange="Строчек"/>
+						<editBox id="editBox_папок" label="Папок" sizeString="WWWWWWWWW" getText="Папок" onChange="Папок"/>
+						<editBox id="editBox_файлов" label="Файлов" sizeString="WWWWWWWWW" getText="Файлов" onChange="Файлов"/>
+					</box>
+				</group>
+				<group id="Прочее_2_1" image="ТТТ_64">
+					<box id="Бокс_Прочее_2_1" boxStyle="vertical">
+						<editBox id="editBox_Номер_коробки" label="№ коробки" sizeString="WWWWWWWWW" getText="НомерКоробки"/>
+						<editBox id="editBox_ВремяСканирования" label="Время скан" sizeString="WWWWWWWWW" getText="ВремяСканирования" onChange="ВремяСканирования"/>
+						<editBox id="editBox_666" label="Иное" sizeString="WWWWWWWWW" getText="CaptureText" onChange="CaptureText"/>
+					</box>
+				</group>
+				<group id="Прочее_3">
+					<button id="ButtonПрочее_3" label="Restart Add-on" image="бн14_64" size="large" onAction="Restart_этой_книги"/>
+				</group>
+				<group id="группа_Бэкапы_XX">
+					<menu id="menuБэки_XX" label="Бэкапы" size="large" image="A888_32">
+						<menu id="MyMenu_88_XX" label="Выбрать файлы" imageMso="SaveItem" screentip="Выбор файлов для резервного копирования" supertip="БЭКАПЫ">
+							<button id="Button881_XX" label="Эта книга" imageMso="SaveAndClose" onAction="БэкапЭтойКниги"/>
+							<button id="Button882_XX" label="Динамика" imageMso="SaveAndClose" onAction="БэкапДинамики_2025"/>
+							<button id="Button883_XX" label="Надстройка2" imageMso="SaveAndClose" onAction="БэкапНадстроки" supertip="Сохраняет файл Надстройки на диск Е и на диск Q"/>
+							<button id="Button884_XX" label="Все выше указанные" imageMso="SaveAll" onAction="ВсеБэкапы"/>
+						</menu>
+						<menu id="MyMenu_981_XX" label="Открыть папки" imageMso="GroupTaskFormFieldsEdit" screentip="ооо" supertip="лллоооо">
+							<button id="Button981_XX" label="Бэкапы" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуБэкапы"/>
+							<button id="Button985_XX" label="Папка Бэкапы рабочих книг на Архиве" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуБэкапыРабочКнигНаАрхиве"/>
+							<button id="Button982_XX" label="Папка Custom UI" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуБэкапНадстройки2_на_Е"/>
+							<button id="Button983_XX" label="Папка Temp" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуTemp"/>
+							<button id="Button984_XX" label="Папка Бэкапы Всех Модулей По Датам" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуБэкапыВсехМодулейПоДатам"/>
+						</menu>
+						<menu id="MyMenu_98_1_XX" label="Delete Old Files" imageMso="RecycleBin" screentip="Удалить Old Files" supertip="Очистка папок">
+							<button id="Button98_1_1_XX" label="В папке Бэкапы" imageMso="GroupTaskFormFieldsEdit" onAction="УдалитьСтарыеФайлыБэкап"/>
+							<button id="Button98_1_2_XX" label="В папке Надстройка2" imageMso="GroupTaskFormFieldsEdit" onAction="УдалитьСтарыеФайлыПанели"/>
+							<button id="Button98_1_3_XX" label="В папке Temp" imageMso="GroupTaskFormFieldsEdit" onAction="УдалитьСтарыеФайлыTemp"/>
+							<button id="Button98_1_4_XX" label="В папке Temp удалить файлы .JPG и очистить корзину" imageMso="GroupTaskFormFieldsEdit" onAction="Удалить_файлы_в_папке_ТЕМП_по_маске"/>
+						</menu>
+						<button id="Button_БЭКИ_XX" label="Отправить Надстройку2 на почту" imageMso="GoToMail" onAction="Отправить_Надстройку2_по_почте"/>
+					</menu>
+				</group>
+				<group id="groupСписокПапок">
+					<button id="Папкахххххх73" image="БН_1_64" size="large" label="Список папок" onAction="ПоказатьСписокПапокВДиректории"/>
+				</group>
+				<group id="groupФОРМАТИРОВАНИЕ">
+					<button id="форматирование" image="ШАРик_32х32" size="large" label="Снять УФ" onAction="СНЯТЬУСЛОВНОЕФОРМАТИРОВАНИЕ"/>
+				</group>
+				<group id="MyGroup_9a">
+					<menu id="MyMenu_9a" label="Отчёты" image="ШАРх32" size="large">
+						<menu id="MySubMenu_9a" label="Отчёт по клаймам" imageMso="ShowAppointmentPage">
+							<button id="Button91a" label="Открыть Отчет по клаймам" imageMso="FormulaMoreFunctionsMenu" onAction="ОткрытьОтчетПоКлаймам"/>
+							<button id="Button92a" label="Открыть папку Отчета по клаймам" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуОтчетПоКлаймамНаQ"/>
+							<button id="Button93a" label="Автозаполнить отчет по Клаймам (сканирование ФКБ)" imageMso="Drawing1ColorPickerLineStyles" onAction="ЗаполнитьОтчетПоСканированиюФКБ"/>
+							<button id="Button94a" label="Автозаполнить отчет по  Клаймам (сканирование ГПБ)" imageMso="Drawing1ColorPickerLineStyles" onAction="ЗаполнитьОтчетПоГазпрому"/>
+						</menu>
+						<menu id="MySubMenu_10a" label="Динамика" imageMso="ShowAppointmentPage">
+							<button id="Button_10_1a" label="Открыть папку динамики" image="A777_32" onAction="ОткрытьПапкуДинамика"/>
+							<button id="Button_10_2a" label="Открыть файл динамики" image="A888_32" supertip="Пояснительная бригада" onAction="ОткрытьФайлДинамика2025"/>
+							<button id="Button_10_3a" label="Автозаполнить файл динамики ФКБ" imageMso="GroupSparklinesInsert" onAction="ЗаполнитьДинамикуФКБ"/>
+							<button id="Button_10_4a" label="Автозаполнить файл динамики ГПБ" imageMso="GroupSparklinesInsert" onAction="ЗаполнитьДинамикуГПБ"/>
+						</menu>
+						<menu id="MySubMenu_12a" label="Отчет по фабрике" imageMso="ShowAppointmentPage">
+							<button id="Button_12_1a" label="Открыть папку Отчета по фабрике" image="A777_32" onAction="ОткрытьПапкуОтчетФабрика"/>
+							<button id="Button_12_2a" label="Открыть файл Отчета по фабрике" image="A888_32" supertip="Пояснительная бригада" onAction="ОткрытьФайлОтчетаФабрика"/>
+							<button id="Button_12_3a" label="Автозаполнить сейчас файл Отчета по фабрике" imageMso="GroupSparklinesInsert" onAction="ЗаполнитьСейчасОтчетФабрика"/>
+							<button id="Button_12_4a" label="Автозапуск На Выходные" imageMso="GroupSparklinesInsert" onAction="АвтозапускНаВыходные"/>
+						</menu>
+						<button id="Button_AZ_a" label="Автозаполнить все отчеты ночью" imageMso="GroupSparklinesInsert"/>
+					</menu>
+				</group>
+				<group id="GroupСкролл">
+					<button id="Button_скролл" label="Скролл UP" image="png-c2" size="large" onAction="СкроллВверх"/>
+				</group>
+			</tab>
+			<tab idQ="МПИ:Tab3" label="Отличка">
+			    <group id="groupe_Справка_ОН">
+					<button id="Справка_ОН" size="large" image="A777_32" label="Справка-" onAction="ОткрытьГайдПоКодингу"/>
+				</group>
+				<group id="groupe_Редактор_3_ОН">
+					<button id="Редактор_3_ОН" size="large" image="A3Dx32" label="VBEditor" onAction="ОткрытьРедактор"/>
+				</group>
+				<group id="GroupОбновить_ОН">
+					<button id="Button_обновить_ОН" label="Обновить" image="Обновить.fw" size="large" onAction="ОбновитьБоксы"/>
+				</group>
+				<group id="Отличка_ОН">
+					<menu id="menuОтличка_ОН" label="Папки" size="large" image="бн0" screentip="Отличка">
+						<button id="Папкахххххх33_ОН" image="A777_32" label="Открыть папку слива сканов ОН на LP2" onAction="ОткрытьПапкуСливаСкановОТЛИЧКИ_НаQ"/>
+						<button id="Папкахххххх34_ОН" image="A777_32" label="Переместить Попдпапки в заданном количестве" onAction="ПереместитьПопдпапкиВ_Количестве" supertip="Из ПОИСК первички\СКАНЫ в ПОИСК первички\СКАНЫ для подготовки к сливу"/>
+						<button id="Папкахххххх35_ОН" image="A777_32" label="Открыть папку Архив\Лазарев" onAction="ОткрытьПапкуАрхивЛазарев"/>
+						<button id="Папкахххххх36_ОН" image="A777_32" label="Переместить пустые или с ZeroFile подпапки" onAction="ПереместитьПустыеИлиZeroFileПодпапки" supertip="Из СКАНЫ для подготовки к сливу в СКАНЫ для вырезки\СЕГОДНЯ()"/>
+						<button id="Папкахххххх37_ОН" image="A777_32" label="Переместить несколько папок по дате" onAction="ПереместитьНесколькоПапокПоДате" supertip="Переместить определенное количество папок по критерию дата создания папки."/>
+					</menu>
+				</group>
+				
+				<group id="Прочее_2_3_ОН" label="План на сегодня" image="ТТТ_64">
+					<box id="Бокс_Прочее_2_3_ОН" boxStyle="vertical">
+						<editBox id="editBox_ПланЗапросов" label="Запросов" sizeString="WWWB" getText="ПланЗапросов" onChange="ПланЗапросов"/>
+						<editBox id="editBox_Даннные1" label="Электронн" sizeString="WWWB" getText="ЭлектроннЗапросов" onChange="ЭлектроннЗапросов"/>
+						<editBox id="editBox_Даннные2" label="Бумажных" sizeString="WWWB" getText="БумажныхЗапросов" onChange="БумажныхЗапросов"/>
+					</box>
+				</group>
+				<group id="Прочее_2_ОН" label="Сделано сегодня" image="КУБ_32">
+					<box id="Бокс_Прочее_2_ОН" boxStyle="vertical">
+						<editBox id="editBox_Запросов" label="Запросов" sizeString="WWWB" getText="Запросов" onChange="Запросов"/>
+						<editBox id="editBox_Клаймов" label="Клаймов" sizeString="WWWB" getText="Клаймов" onChange="Клаймов"/>
+					</box>
+				</group>
+				<group id="Прочее_2_1_ОН" label="Доделать сегодня" image="ТТТ_64">
+					<box id="Бокс_Прочее_2_1_ОН" boxStyle="vertical">
+						<editBox id="editBox_ЗапросовОсталось" label="Запросов" sizeString="WWWB" getText="ЗапросовОсталось" onChange="ЗапросовОсталось"/>
+						<editBox id="editBox_КлаймовОсталось" label="Клаймов" sizeString="WWWB" getText="КлаймовОсталось" onChange="КлаймовОсталось"/>
+					</box>
+				</group>
+				<group id="Прочее_2_2_ОН" label="Запасы" image="ТТТ_64">
+					<box id="Бокс_Прочее_2_2_ОН" boxStyle="vertical">
+						<editBox id="editBox_ЗапросовВЗапасе" label="Запросов" sizeString="WWWB" getText="ЗапросовВЗапасе" onChange="ЗапросовВЗапасе"/>
+						<editBox id="editBox_КлаймовВЗапасе" label="Клаймов" sizeString="WWWB" getText="КлаймовВЗапасе" onChange="КлаймовВЗапасе"/>
+					</box>
+				</group>
+				<group id="groupНетТранша_ОН">
+					<button id="нетТранша_ОН" image="БН_1_64" size="large" label="Нет транша" onAction="НетТранша"/>
+				</group>
+				<group id="groupНетРКО_ОН">
+					<button id="нетРКО_ОН" image="БН_1_64" size="large" label="Нет рко/рнко" onAction="НетРКО"/>
+				</group>
+				<group id="groupНет_ОН">
+					<button id="нет_ОН" image="БН_1_64" size="large" label="Нет" onAction="Нет"/>
+				</group>
+				<group id="Прочее_3_ОН">
+					<button id="ButtonПрочее_3_ОН" label="ReStart Add-on" image="бн14_64" size="large" onAction="Restart_этой_книги"/>
+				</group>
+				<group id="Прочее_3_ОНZZ" label="Работа с папками">
+					<button id="ButtonТекстовыйФайл" label="Create File.txt" image="ТТТ_64" size="large" onAction="СоздатьТекстовыйФайлВDownloads" supertip="Создать Текстовый Файл В папке Загрузки"/>
+					<button id="ButtonПереместитьПустые" label="Переместить пустые" image="бн_64" size="large" onAction="ПереместитьПустыеИлиZeroFileПодпапки" supertip="Переместить Пустые Или Zero File Попдпапки в каталог"/>
+				</group>
+				<group id="группа_Бэкапы_ОН">
+					<menu id="menuБэки_ОН" label="Бэкапы" size="large" image="A888_32">
+						<menu id="MyMenu_88_ОН" label="Выбрать файлы" imageMso="SaveItem" screentip="Выбор файлов для резервного копирования" supertip="БЭКАПЫ">
+							<button id="Button881_ОН" label="Эта книга" imageMso="SaveAndClose" onAction="БэкапЭтойКниги"/>
+							<button id="Button882_ОН" label="Динамика" imageMso="SaveAndClose" onAction="БэкапДинамики_2025"/>
+							<button id="Button883_ОН" label="Надстройка2" imageMso="SaveAndClose" onAction="БэкапНадстроки" screentip="Хуле блять" supertip="Сохраняет файл Надстройки на диск Е и на диск Q"/>
+							<button id="Button884_ОН" label="Все выше указанные" imageMso="SaveAll" onAction="ВсеБэкапы"/>
+						</menu>
+						<menu id="MyMenu_981_ОН" label="Открыть папки" imageMso="GroupTaskFormFieldsEdit" screentip="ооо" supertip="лллоооо">
+							<button id="Button981_ОН" label="Бэкапы" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуБэкапы"/>
+							<button id="Button985_ОН" label="Папка Бэкапы рабочих книг на Архиве" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуБэкапыРабочКнигНаАрхиве"/>
+							<button id="Button982_ОН" label="Папка Custom UI" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуБэкапНадстройки2_на_Е"/>
+							<button id="Button983_ОН" label="Папка Temp" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуTemp"/>
+							<button id="Button984_ОН" label="Папка Бэкапы Всех Модулей По Датам" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуБэкапыВсехМодулейПоДатам"/>
+						</menu>
+						<menu id="MyMenu_98_1_ОН" label="Delete Old Files" imageMso="RecycleBin" screentip="Удалить Old Files" supertip="Очистка папок">
+							<button id="Button98_1_1_ОН" label="В папке Бэкапы" imageMso="GroupTaskFormFieldsEdit" onAction="УдалитьСтарыеФайлыБэкап"/>
+							<button id="Button98_1_2_ОН" label="В папке Надстройка2" imageMso="GroupTaskFormFieldsEdit" onAction="УдалитьСтарыеФайлыПанели"/>
+							<button id="Button98_1_3_ОН" label="В папке Temp" imageMso="GroupTaskFormFieldsEdit" onAction="УдалитьСтарыеФайлыTemp"/>
+							<button id="Button98_1_4_ОН" label="В папке Temp удалить файлы .JPG и очистить корзину" imageMso="GroupTaskFormFieldsEdit" onAction="Удалить_файлы_в_папке_ТЕМП_по_маске"/>
+						</menu>
+						<button id="Button_БЭКИ_ОН" label="Отправить Надстройку2 на почту" imageMso="GoToMail" onAction="Отправить_Надстройку2_по_почте"/>
+					</menu>
+				</group>
+				<group id="MyGroup_9a_ОН">
+					<menu id="MyMenu_9a_ОН" label="Отчёты" image="ШАРх32" size="large">
+						<menu id="MySubMenu_9S" label="Отчёт по клаймам" imageMso="ShowAppointmentPage">
+							<button id="Button91S" label="Открыть Отчет по клаймам" imageMso="FormulaMoreFunctionsMenu" onAction="ОткрытьОтчетПоКлаймам"/>
+							<button id="Button92S" label="Открыть папку Отчета по клаймам" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуОтчетПоКлаймамНаQ"/>
+							<button id="Button90S" label="Выбрать папку с папками сканов" imageMso="FolderScopeGallery" onAction="ВыборПапкиСПапкамиСканов"/>
+							<button id="Button93S" label="Автозаполнить отчет по Клаймам (сканирование ФКБ)" imageMso="Drawing1ColorPickerLineStyles" onAction="ЗаполнитьОтчетПоСканированиюФКБ"/>
+							<button id="Button94S" label="Автозаполнить отчет по  Клаймам (сканирование ГПБ)" imageMso="Drawing1ColorPickerLineStyles" onAction="ЗаполнитьОтчетПоГазпрому"/>
+							<button id="Button94a_ОН" label="Автозаполнить отчет по  Клаймам (Поиск ОН)" imageMso="Drawing1ColorPickerLineStyles" onAction="СоздатьСписокКлаймов"/>
+						</menu>
+						<menu id="MySubMenu_10S" label="Динамика" imageMso="ShowAppointmentPage">
+							<button id="Button_10_1S" label="Открыть папку динамики" image="A777_32" onAction="ОткрытьПапкуДинамика"/>
+							<button id="Button_10_2S" label="Открыть файл динамики" image="A888_32" supertip="Пояснительная бригада" screentip="Открыть Файл Динамика 2025" onAction="ОткрытьФайлДинамика2025"/>
+							<button id="Button_10_3S" label="Автозаполнить файл динамики ФКБ" imageMso="GroupSparklinesInsert" onAction="ЗаполнитьДинамикуФКБ"/>
+							<button id="Button_10_4S" label="Автозаполнить файл динамики ГПБ" imageMso="GroupSparklinesInsert" onAction="ЗаполнитьДинамикуГПБ" supertip="БЛА БЛА БЛА"/>
+							<button id="Button_10_5S" label="Автозаполнить файл динамики ОН" imageMso="GroupSparklinesInsert" onAction="ЗаполнитьДинамикуОН"/>
+						</menu>
+						<menu id="MySubMenu_12S" label="Отчет по фабрике" imageMso="ShowAppointmentPage">
+							<button id="Button_12_1S" label="Открыть папку Отчета по фабрике" image="A777_32" onAction="ОткрытьПапкуОтчетФабрика"/>
+							<button id="Button_12_2S" label="Открыть файл Отчета по фабрике" image="A888_32" supertip="Пояснительная бригада" screentip="Открыть Файл Отчета по фабрике" onAction="ОткрытьФайлОтчетаФабрика"/>
+							<button id="Button_12_3S" label="Автозаполнить сейчас файл Отчета по фабрике" imageMso="GroupSparklinesInsert" onAction="ЗаполнитьСейчасОтчетФабрика"/>
+							<button id="Button_12_4S" label="Автозапуск На Выходные" imageMso="GroupSparklinesInsert" onAction="АвтозапускНаВыходные"/>
+						</menu>
+					</menu>
+				</group>
+				<group id="GroupСкролл_ОН">
+					<button id="Button_скролл_ОН" label="Скролл UP" image="png-c2" size="large" onAction="СкроллВверх"/>
+				</group>
+			</tab>
+			<tab idQ="МПИ:Tab4" label="ФКБ">
+			    <group id="groupe_Справка_ФКБ">
+					<button id="Справка_ФКБ" size="large" image="A777_32" label="Справка" onAction="ОткрытьГайдПоКодингу"/>
+				</group>
+				<group id="groupe_Редактор_ФКБ">
+					<button id="Редактор_ФКБ" size="large" image="A3Dx32" label="VBEditor" onAction="ОткрытьРедактор"/>
+				</group>
+				<group id="ФКБанк">
+					<menu id="menuФКБанк" label="Папки" size="large" image="бн0" supertip="Пояснительная бригада" screentip="Сканирование ФКБ">
+						<button id="buttonФКБ1" image="A777_32" label="Открыть папку сканигна ФКБ" onAction="ОткрытьПапкуРабочийСтол"/>
+						<button id="buttonФКБ2" image="A777_32" label="Открыть папку на Q для слива сканов" onAction="ОткрытьПапкуСканыФКБнаQ" screentip="Q:\LP2\Результаты сверки портфелей с августа 2020\Быстроденьги ФКБ\сканы на бумаге"/>
+						<button id="buttonФКБ3" image="A777_32" label="Открыть папку Архив\Лазарев" onAction="ОткрытьПапкуАрхивЛазарев"/>
+						<button id="buttonФКБ4" image="лалала32" label="Копировать-Слить папки с файлами ГПБ " onAction="КопированиеСливПапокСФайламиГПБ" supertip="Копирование указанного количества папок с файлами ГПБ из исходного каталога (C) в целевой (Q) с добавлением к имени файлов цифры, если имена одинаковые."/>
+						<button id="buttonФКБ5" image="A777_32" label="Переместить несколько папок по дате" onAction="ПереместитьНесколькоПапокПоДате" supertip="Переместить определенное количество папок по критерию дата создания папки."/>
+					</menu>
+				</group>
+				
+				<group id="groupe_2_2ФКБ" image="ТТТ_64">
+					<splitButton id="MySplitButton_ФКБ" size="large">
+						<button id="Button5ФКБ" label="Поиск по ФИО" image="ШАРик_32х32" onAction="Поиск_от_Angry_Old_Man_ФКБ" supertip="Поиск_от_Angry_Old_Man_ФКБ."/>
+						<menu id="Menu2ФКБ" itemSize="normal">
+							<button id="Button6ФКБ" label="Поиск Ямайка" imageMso="GroupSparklinesInsert"/>
+							<button id="Button7ФКБ" label="Поиск Ямайка" imageMso="GroupDocumentLibraryNew"/>
+							<button id="Button888ФКБ" label="Поиск Ямайка" imageMso="GroupCopy"/>
+						</menu>
+					</splitButton>
+				</group>
+				<group id="План_сегодня_ФКБ" label="План на сегодня:" image="КУБ_32">
+					<box id="Бокс_План_сегодня_ФКБ" boxStyle="vertical">
+						<editBox id="editBox_План_ФКБ" label="Строк" sizeString="WWWWW" getText="ПланФКБ" onChange="ПланФКБ"/>	
+				    </box>
+				</group>
+				<group id="Сделано_сегодня_ФКБ" label="Сделано сегодня:" image="КУБ_32">
+					<box id="Бокс_Сделано_сегодня_ФКБ" boxStyle="vertical">
+						<editBox id="editBox_СделаноЗаСегодняСтрокФКБ" label="Строк" sizeString="WWWWWW" getText="СделаноЗаСегодняСтрокФКБ" onChange="СделаноЗаСегодняСтрокФКБ"/>
+						<editBox id="editBox_СделаноЗаСегодняПапокФКБ" label="Папок" sizeString="WWWWWW" getText="СделаноЗаСегодняПапокФКБ" onChange="СделаноЗаСегодняПапокФКБ"/>
+						<editBox id="editBox_СделаноЗаСегодняФайловФКБ" label="Файлов" sizeString="WWWWWW" getText="СделаноЗаСегодняФайловФКБ" onChange="СделаноЗаСегодняФайловФКБ"/>
+					</box>
+				</group>
+				<group id="Сделано_запасов_ФКБ" label="Запасы:" image="КУБ_32">
+					<box id="Бокс_Сделано_запасов_ФКБ" boxStyle="vertical">						
+						<editBox id="editBox_папокФКБ_запас" label="Папок" sizeString="WWWWWW2" getText="ЗапасыПапокФКБ" onChange="ЗапасыПапокФКБ"/>
+						<editBox id="editBox_файловФКБ_запас" label="Файлов" sizeString="WWWWWW2" getText="ЗапасыФайловФКБ" onChange="ЗапасыФайловФКБ"/>
+					</box>
+				</group>
+				<group id="Прочее_ФКБ_2_1" label="Параметры сканирования:"  image="ТТТ_64">
+					<box id="Бокс_Прочее_ФКБ_2_1" boxStyle="vertical">
+						<editBox id="editBox_Номер_коробкиФКБ" label="№ коробки" sizeString="WWWWWWWWWW2" getText="НомерКоробкиФКБ"/>
+						<editBox id="editBox_ВремяСканированияФКБ" label="Время сканирования" sizeString="WWWWWWWWWW2" getText="ВремяСканированияФКБ" onChange="ВремяСканированияФКБ"/>
+						<editBox id="editBox_СкоростьСканированияФКБ" label="Скорость сканирования" sizeString="WWWWWWWWWW2" getText="СкоростьСканированияФКБ" onChange="СкоростьСканированияФКБ"/>
+					</box>
+				</group>
+				<group id="Прочее_ФКБ_3">
+				    <button id="Button_Обновить_ФКБ_3" label="Обновить" image="Обновить.fw" size="large" onAction="ОбновитьБоксыФКБ"/>
+					<button id="ButtonПрочее_ФКБ_3" label="Restart Add-on" image="бн14_64" size="large" onAction="Restart_этой_книги"/>
+				</group>
+				<group id="группа_Бэкапы_XXФКБ">
+					<menu id="menuБэки_XXФКБ" label="Бэкапы" size="large" image="A888_32">
+						<menu id="MyMenu_88_XXФКБ" label="Выбрать файлы" imageMso="SaveItem" screentip="Выбор файлов для резервного копирования" supertip="БЭКАПЫ">
+							<button id="Button881_XXФКБ" label="Эта книга" imageMso="SaveAndClose" onAction="БэкапЭтойКниги"/>
+							<button id="Button882_XXФКБ" label="Динамика" imageMso="SaveAndClose" onAction="БэкапДинамики_2025"/>
+							<button id="Button883_XXФКБ" label="Надстройка2" imageMso="SaveAndClose" onAction="БэкапНадстроки" supertip="Сохраняет файл Надстройки на диск Е и на диск Q"/>
+							<button id="Button884_XXФКБ" label="Все выше указанные" imageMso="SaveAll" onAction="ВсеБэкапы"/>
+						</menu>
+						<menu id="MyMenu_981_XXФКБ" label="Открыть папки" imageMso="GroupTaskFormFieldsEdit" screentip="ооо" supertip="лллоооо">
+							<button id="Button981_XXФКБ" label="Бэкапы" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуБэкапы"/>
+							<button id="Button985_XXФКБ" label="Папка Бэкапы рабочих книг на Архиве" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуБэкапыРабочКнигНаАрхиве"/>
+							<button id="Button982_XXФКБ" label="Папка Custom UI" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуБэкапНадстройки2_на_Е"/>
+							<button id="Button983_XXФКБ" label="Папка Temp" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуTemp"/>
+							<button id="Button984_XXФКБ" label="Папка Бэкапы Всех Модулей По Датам" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуБэкапыВсехМодулейПоДатам"/>
+						</menu>
+						<menu id="MyMenu_98_1_XXФКБ" label="Delete Old Files" imageMso="RecycleBin" screentip="Удалить Old Files" supertip="Очистка папок">
+							<button id="Button98_1_1_XXФКБ" label="В папке Бэкапы" imageMso="GroupTaskFormFieldsEdit" onAction="УдалитьСтарыеФайлыБэкап"/>
+							<button id="Button98_1_2_XXФКБ" label="В папке Надстройка2" imageMso="GroupTaskFormFieldsEdit" onAction="УдалитьСтарыеФайлыПанели"/>
+							<button id="Button98_1_3_XXФКБ" label="В папке Temp" imageMso="GroupTaskFormFieldsEdit" onAction="УдалитьСтарыеФайлыTemp"/>
+							<button id="Button98_1_4_XXФКБ" label="В папке Temp удалить файлы .JPG и очистить корзину" imageMso="GroupTaskFormFieldsEdit" onAction="Удалить_файлы_в_папке_ТЕМП_по_маске"/>
+						</menu>
+						<button id="Button_БЭКИ_XX_ФКБ" label="Отправить Надстройку2 на почту" imageMso="GoToMail" onAction="Отправить_Надстройку2_по_почте"/>
+					</menu>
+				</group>
+				<group id="groupСписокПапок_ФКБ">
+					<button id="Папкахххххх73_ФКБ" image="БН_1_64" size="large" label="Список папок" onAction="ПоказатьСписокПапокВДиректории"/>
+				</group>
+				<group id="groupФОРМАТИРОВАНИЕ_ФКБ">
+					<button id="форматирование_ФКБ" image="ШАРик_32х32" size="large" label="Снять УФ" onAction="СНЯТЬУСЛОВНОЕФОРМАТИРОВАНИЕ"/>
+				</group>
+				<group id="MyGroup_9a_ФКБ">
+					<menu id="MyMenu_9a_ФКБ" label="Отчёты" image="ШАРх32" size="large">
+						<menu id="MySubMenu_9a_ФКБ" label="Отчёт по клаймам" imageMso="ShowAppointmentPage">
+							<button id="Button91a_ФКБ" label="Открыть Отчет по клаймам" imageMso="FormulaMoreFunctionsMenu" onAction="ОткрытьОтчетПоКлаймам"/>
+							<button id="Button92a_ФКБ" label="Открыть папку Отчета по клаймам" imageMso="GroupTaskFormFieldsEdit" onAction="ОткрытьПапкуОтчетПоКлаймамНаQ"/>
+							<button id="Button93a_ФКБ" label="Автозаполнить отчет по Клаймам (сканирование ФКБ)" imageMso="Drawing1ColorPickerLineStyles" onAction="ЗаполнитьОтчетПоСканированиюФКБ"/>
+							<button id="Button94a_ФКБ" label="Автозаполнить отчет по  Клаймам (сканирование ГПБ)" imageMso="Drawing1ColorPickerLineStyles" onAction="ЗаполнитьОтчетПоГазпрому"/>
+						</menu>
+						<menu id="MySubMenu_10a_ФКБ" label="Динамика" imageMso="ShowAppointmentPage">
+							<button id="Button_10_1a_ФКБ" label="Открыть папку динамики" image="A777_32" onAction="ОткрытьПапкуДинамика"/>
+							<button id="Button_10_2a_ФКБ" label="Открыть файл динамики" image="A888_32" supertip="Пояснительная бригада" onAction="ОткрытьФайлДинамика2025"/>
+							<button id="Button_10_3a_ФКБ" label="Автозаполнить файл динамики ФКБ" imageMso="GroupSparklinesInsert" onAction="ЗаполнитьДинамикуФКБ"/>
+							<button id="Button_10_4a_ФКБ" label="Автозаполнить файл динамики ГПБ" imageMso="GroupSparklinesInsert" onAction="ЗаполнитьДинамикуГПБ"/>
+						</menu>
+						<menu id="MySubMenu_12a_ФКБ" label="Отчет по фабрике" imageMso="ShowAppointmentPage">
+							<button id="Button_12_1a_ФКБ" label="Открыть папку Отчета по фабрике" image="A777_32" onAction="ОткрытьПапкуОтчетФабрика"/>
+							<button id="Button_12_2a_ФКБ" label="Открыть файл Отчета по фабрике" image="A888_32" supertip="Пояснительная бригада" onAction="ОткрытьФайлОтчетаФабрика"/>
+							<button id="Button_12_3a_ФКБ" label="Автозаполнить сейчас файл Отчета по фабрике" imageMso="GroupSparklinesInsert" onAction="ЗаполнитьСейчасОтчетФабрика"/>
+							<button id="Button_12_4a_ФКБ" label="Автозапуск На Выходные" imageMso="GroupSparklinesInsert" onAction="АвтозапускНаВыходные"/>
+						</menu>
+						<button id="Button_AZ_a_ФКБ" label="Автозаполнить все отчеты ночью" imageMso="GroupSparklinesInsert"/>
+					</menu>
+				</group>
+				<group id="GroupСкролл_ФКБ">
+					<button id="Button_скролл_ФКБ" label="Скролл UP" image="png-c2" size="large" onAction="СкроллВверх"/>
+				</group>
+			</tab>
+		</tabs>
+	</ribbon>
+</customUI>
