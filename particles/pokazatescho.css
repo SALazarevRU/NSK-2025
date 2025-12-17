@@ -1,11 +1,14 @@
 .content-block-fix {
- 
     margin: 20px 0;
     padding: 20px;
     background: #FFF;
     font-size: 16px;
     border: 2px solid #BFE2FF;
     position: relative;
+    max-width: 1250px; /* Ограничиваем максимальную ширину */
+    margin-left: auto;  /* Центрируем блок */
+    margin-right: auto; /* Центрируем блок */
+    width: calc(100% - 40px); /* Отступы по 20 px с каждой стороны */
 }
 .content-block-text {
     height: 150px;
@@ -82,4 +85,10 @@
 .show-all:active:before,
 .show-all:focus:before{
     transform: translateX(0);
+
+@media (max-width: 1240px) {
+    .content-block-fix {
+        width: calc(100% - 40px);
+    }
+
 }

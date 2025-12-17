@@ -2,13 +2,23 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Просмотр текста из файла</title>
+    <!-- Фавикон -->
+   <link rel="icon" type="image/png" sizes="192x192" href="/NSK-2025/favicon-192.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="/NSK-2025/favicon-16.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="/NSK-2025/favicon-32.png">
+   <link rel="icon" type="image/x-icon" href="/NSK-2025/favicon.ico">
+   
+    <title>Просмотр XML кода кастомной панели</title>
     
     <!-- Подключение внешнего CSS-файла -->
     <link href="pokazatescho.css" rel="stylesheet">
     
     <!-- Подключение jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    
+    
+     
+    
      <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,20 +50,54 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Код Надстройки</h1>
-        <div id="text-container" class="loading">Загружается...</div>
-    </div>
-    
-    <div class="content-block-fix">
+	
+
+<div class="content-block-fix">
         <div class="content-block-text">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <h3>Программа для работы с Ribbon итерфейсом</h3>
+            <p>Основные возможности RibbonXMLEditor:
+
+Быстрое построение xml-описания интерфейса ленты (ribbon), закулисья (backstage), команд (command), контекстных меню (contextMenus) и панели быстрого доступа (qat) путём нажатия на кнопки, соответствующие различным элементам интерфейса или путём вставки этих элементов из списка контекстно-чувствительного автодополнения.
+Импорт внешних изображений для значков элементов интерфейса.
+Внедрение интерфейса в документы Word, Excel, PowerPoint или Access.
+Импорт/экспорт xml-макета интерфейса в файл настроек ленты, поддерживаемый офисом начиная с 2010-й версии.
+Генерация на основе построенного xml-кода модуля ".bas" для VBA с шаблонами процедур обратного вызова и внедрение его в документ.
+Редактор имеет много полезных функций, таких как:
+
+Контекстно-чувствительное автодополнение
+Всплывающие подсказки по коду
+Встроенная галерея офисных иконок, содержащая несколько тысяч изображений
+Автоформатирование кода
+Валидация кода
+Запуск документа в родном приложении не выходя из редактора с возможностью выбора версии офиса, если у вас установлено несколько версий одновременно.
+Система поиска, в том числе с помощью регулярных выражений
+Система быстрого поиска по идентификатору
+Фолдинг (сворачивание содержимого тегов)
+Удобство работы с редактором обеспечивается следующими свойствами редактора:
+
+Подсветка синтаксиса
+Подсветка парных тегов и текущей строки
+Возможность быстрого перехода к началу и к концу ближайшего тега (Ctrl+< и Ctrl+>)
+Мощная система настраиваемых стилей подсветки кода
+Откат и отмена отката
+Встраивание пункта «Открыть в Ribbon XML Editor» в контекстное меню проводника операционной системы
+Запоминание списка последних документов и возможность автоматически открывать последний
+Доступ к связанным с интерфейсом структурам документа (файлу корневых ссылок, файлу ссылок на изображения, файлу типов файлов)
+Информативные всплывающие подсказки кнопок элементов с указанием дочерних элементов
+Справка со схемами иерархии корневых элементов commands, ribbon, backstage и contextMenus, списками идентификаторов вкладок и групп и описанием приёмов работы с программой</p>
         </div>
         <div class="show-all-container">
             <button class="show-all">Показать полностью</button>    
         </div>
     </div>  
+    
+    
 
+    <div class="container">
+        <h1>XML код Надстройки</h1>
+        <div id="text-container" class="loading">Загружается...</div>
+    </div>  
+        
     <script>
         $(".content-block-text").each(function() {
             let th = $(this);
@@ -87,5 +131,8 @@
 
         window.addEventListener('load', loadTextFromFile);
     </script>
+    
+   
+    
 </body>
 </html>
