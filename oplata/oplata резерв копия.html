@@ -103,7 +103,7 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin-bottom: 8px;
+            margin-bottom: 20px;
         }
         .pay-btn {
             width: 100%;
@@ -125,7 +125,7 @@
         }
         .card {
             background-color: #6c757d;
-            color: white;        
+            color: white;
         }
         .pay-btn:hover {
             opacity: 0.9;
@@ -134,8 +134,7 @@
             font-size: 12px;
             color: #666;
             text-align: center;
-            margin-top: 3px;
-            margin-bottom: 10px;
+            margin-top: 10px;
         }
         
                                          /* Стили для блока с кнопками навигации */
@@ -199,17 +198,20 @@
             <button type="button" class="pay-btn t-pay" onclick="pay('t-pay')">Оплатить через T-Pay</button>
             <button type="button" class="pay-btn sbp" onclick="pay('sbp')">Оплатить через СБП</button>
             <button type="button" class="pay-btn card" onclick="pay('card')">Оплатить банковской картой</button>
-        </div>
-
-        <div class="agreement">
-            Нажимая кнопку оплаты, вы соглашаетесь с условиями
-        </div>
-      
-        <div class="navigation-buttons">           
+              <div class="navigation-buttons">           
             <a href="../index.html#preloader" class="btn btn-light-transparent">На главную</a>
         </div>
+        </div>
+             
+        <div class="agreement">
+            Нажимая кнопку оплаты, вы соглашаетесь с условиями
+      
+        </div>
+       
+       
     </div>
 
+       
         
 
     <script src="oplata.js"></script>
