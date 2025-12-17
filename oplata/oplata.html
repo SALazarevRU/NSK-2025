@@ -162,15 +162,51 @@
         }
 
         .btn-light-transparent {
-            background-color: transparent;
+            
+             /* Запрещаем перенос текста */
+  white-space: nowrap;
+  
+  /* Обрезаем текст, если он слишком длинный (опционально) */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  /* Фиксируем минимальную ширину (подберите значение под ваш дизайн) */
+  min-width: 120px;
+  
+  /* Выравниваем содержимое по центру */
+  text-align: center;
+  
+  /* Убираем лишние отступы, если они есть */
+  padding: 0.5rem 1rem;
+  
+  /* Гарантируем строчно‑блочное отображение */
+  display: inline-block;
+  
+  /* Сохраняем стандартные стили кнопки */
+  background-color: transparent;
             border: 1px solid #6c757d;
             color: #6c757d;
+ 
+  border-radius: 6px;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-decoration: none;
+}
         }
 
         .btn-light-solid {
             background-color: #6c757d;
             color: white;
         }
+        
+        
+        
+        @media (max-width: 768px) {
+  .btn {
+    min-width: 100px; /* Уменьшите для маленьких экранов */
+    padding: 0.4rem 0.8rem;
+  }
+}
     </style>
 </head>
 <body>
@@ -212,8 +248,7 @@
         </div>
       
         <div class="payment-buttons"> 
-            <a href="../index.html#preloader" class="btn btn-light-transparent">На главную</a> 
-            
+            <a href="../index.html#preloader" class="btn btn-light-transparent">На Главную</a>             
         </div>
     </div>
 
