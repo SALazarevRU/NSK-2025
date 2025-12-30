@@ -401,7 +401,7 @@
 <input name="email" id="mail" type="email" class="form-control" placeholder="E-mail*">
 <input name="subject" id="subject" type="text" class="form-control" placeholder="Тема">
 <textarea name="comment" id="comment" class="form-control" placeholder="Сообщение"></textarea>
-<input type="submit" value="Отправить" id="submit-message">
+<input type="button" value="Отправить" id="submit-message">
 <input type="text" name="_honey" style="display:none">
 <div id="msg" class="message"></div>
 </form>
@@ -588,29 +588,33 @@
 
 
 <script>
-/* 1. отключаем старые обработчики */
-$('#submit-message').off();
-$('#contact-form').off('submit');
+/* 1. отключаем старые обработчики (после jQuery) */
+$(function () {
+  $('#submit-message').off();
+  $('#contact-form').off('submit');
+});
 
-/* 2. вешаем свой */
-document.getElementById('contact-form').addEventListener('submit', async e => {
-  e.preventDefault();
-  const btn = e.target.querySelector('[type="submit"]');
-  const msg = document.getElementById('msg');
+/* 2. вешаем собственный обработчик на КНОПКУ */
+document.getElementById('submit-message').addEventListener('click', async () => {
+  const form = document.getElementById('contact-form');
+  const msg  = document.getElementById('msg');
+  const btn  = document.getElementById('submit-message');
+
   btn.disabled = true;
   btn.textContent = 'Отправляем…';
 
   try {
     const r = await fetch('https://formspree.io/f/xaqyvkrg', {
       method: 'POST',
-      body: new FormData(e.target),
+      body: new FormData(form),          // ← данные всей формы
       headers: { Accept: 'application/json' }
     });
 
     if (r.ok || r.status === 302) {
       msg.innerHTML = '<p style="color:green">✓ Сообщение отправлено!</p>';
+      setTimeout(() => form.reset(), 500); // очистим поля через 0.5 с
     } else {
-      throw new Error('Status '+r.status);
+      throw new Error('Status ' + r.status);
     }
   } catch (err) {
     msg.innerHTML = '<p style="color:red">× Ошибка: ' + err.message + '</p>';
