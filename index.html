@@ -407,33 +407,17 @@
 </form>
 			  			
 			  	           <script>
-			  	           
-form.addEventListener('submit', async e => {
-  e.preventDefault();
-  // принудительно устанавливаем правильный endpoint
-  const ENDPOINT = 'https://formspree.io/f/xaqyvkrg';
-  btn.disabled = true;
-  ...
-  const r = await fetch(ENDPOINT, {   // <-- берём свой URL
-        method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' }
-  });
-  ...
-});			  	           
-			  	           
-			  	           
   const form = document.getElementById('contact-form');
   const msg  = document.getElementById('msg');
   const btn  = form.querySelector('[type="submit"]');
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
-    btn.disabled = true;          // блокируем ПОСЛЕ клика
+    btn.disabled = true;
     btn.textContent = 'Отправляем…';
 
     try {
-      const r = await fetch(form.action, {
+      const r = await fetch('https://formspree.io/f/xaqyvkrg', {
         method: 'POST',
         body: new FormData(form),
         headers: { Accept: 'application/json' }
@@ -442,12 +426,12 @@ form.addEventListener('submit', async e => {
         msg.innerHTML = '<p style="color:green">✓ Сообщение отправлено!</p>';
         form.reset();
       } else {
-        throw new Error('сетевая ошибка');
+        throw new Error('Network error');
       }
     } catch (err) {
       msg.innerHTML = '<p style="color:red">× Произошла ошибка, попробуйте позже.</p>';
     } finally {
-      btn.disabled = false;       // разблокировать в любом случае
+      btn.disabled = false;
       btn.textContent = 'Отправить';
     }
   });
