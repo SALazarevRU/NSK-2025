@@ -609,7 +609,7 @@ document.getElementById('submit-message').addEventListener('click', async () => 
       body: new FormData(form),          // ← данные всей формы
       headers: { Accept: 'application/json' }
     });
-
+console.log('статус:', r.status, 'content-type:', r.headers.get('content-type'));
     if (r.ok || r.status === 302) {
       msg.innerHTML = '<p style="color:green">✓ Сообщение отправлено!</p>';
       setTimeout(() => form.reset(), 500); // очистим поля через 0.5 с
