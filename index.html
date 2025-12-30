@@ -406,35 +406,38 @@
 <div id="msg" class="message"></div>
 </form>
 			  			
-			  	           <script>
-  const form = document.getElementById('contact-form');
-  const msg  = document.getElementById('msg');
-  const btn  = form.querySelector('[type="submit"]');
+			  	          <script>
+/* 1. отключаем старые обработчики */
+$('#submit-message').off();
+$('#contact-form').off('submit');
 
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    btn.disabled = true;
-    btn.textContent = 'Отправляем…';
+/* 2. вешаем свой */
+document.getElementById('contact-form').addEventListener('submit', async e => {
+  e.preventDefault();
+  const btn = e.target.querySelector('[type="submit"]');
+  const msg = document.getElementById('msg');
+  btn.disabled = true;
+  btn.textContent = 'Отправляем…';
 
-    try {
-      const r = await fetch('https://formspree.io/f/xaqyvkrg', {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' }
-      });
-      if (r.ok) {
-  msg.innerHTML = '<p style="color:green">✓ Сообщение отправлено!</p>';
+  try {
+    const r = await fetch('https://formspree.io/f/xaqyvkrg', {
+      method: 'POST',
+      body: new FormData(e.target),
+      headers: { Accept: 'application/json' }
+    });
 
-} else {
-  throw new Error('сетевая ошибка');
-}
-    } catch (err) {
-      msg.innerHTML = '<p style="color:red">× Произошла ошибка, попробуйте позже.</p>';
-    } finally {
-      btn.disabled = false;
-      btn.textContent = 'Отправить';
+    if (r.ok || r.status === 302) {
+      msg.innerHTML = '<p style="color:green">✓ Сообщение отправлено!</p>';
+    } else {
+      throw new Error('Status '+r.status);
     }
-  });
+  } catch (err) {
+    msg.innerHTML = '<p style="color:red">× Ошибка: ' + err.message + '</p>';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Отправить';
+  }
+});
 </script>
                                                    
 					</div> <!-- end col -->
