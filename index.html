@@ -401,7 +401,7 @@
 <input name="email" id="mail" type="email" class="form-control" placeholder="E-mail*">
 <input name="subject" id="subject" type="text" class="form-control" placeholder="Тема">
 <textarea name="comment" id="comment" class="form-control" placeholder="Сообщение"></textarea>
-<input type="button" value="Отправить" id="submit-message">
+<input type="button" value="Отправить сейчас" id="submit-message">
 <input type="text" name="_honey" style="display:none">
 <div id="msg" class="message"></div>
 </form>
@@ -588,7 +588,7 @@
 
 
 <script>
-/* 1. отключаем старые обработчики (после jQuery) */
+/* 1. отключаем старые обработчики (после jQuery)  в проекте уже есть «глобальный» обработчик submit, который летит на PHP, и менять разметку (type="submit") нельзя */
 $(function () {
   $('#submit-message').off();
   $('#contact-form').off('submit');
@@ -603,33 +603,37 @@ document.getElementById('submit-message').addEventListener('click', async () => 
   btn.disabled = true;
   btn.textContent = 'Отправляем…';
 
+  /* 1. собираем поля вручную, как это делает браузер */
+  const data = new FormData();                 // ← пустой объект
+  Array.from(form.elements)                    // ← все input/textarea/select
+    .filter(el => el.name && !el.disabled)     // ← только именованные и активные
+    .forEach(el => data.append(el.name, el.value));
+
   try {
     console.log('① до fetch');
     const r = await fetch('https://formspree.io/f/xaqyvkrg', {
       method: 'POST',
-      body: new FormData(form),
+      body: data,                              // ← теперь точно есть поля
       headers: { Accept: 'application/json' }
     });
-    console.log('② после fetch, статус:', r.status, 'content-type:', r.headers.get('content-type'));
+    console.log('② после fetch, статус:', r.status);
 
-    // считаем успехом 200 / 302 / 204
-    if (r.ok || r.status === 302 || r.status === 204) {
+    if (r.ok) {
       console.log('③ условие верно');
-      console.log('msg-element:', msg);        // должен быть <div id="msg">
-msg.style.display = 'block';             // на всякий случай раскроем
       msg.innerHTML = '<p style="color:green">✓ Сообщение отправлено!</p>';
-      setTimeout(() => form.reset(), 600);
+      form.reset();
     } else {
       throw new Error('Status ' + r.status);
     }
   } catch (err) {
-    console.log('④ catch сработал:', err);    
+    console.log('④ catch:', err);
     msg.innerHTML = '<p style="color:red">× Ошибка: ' + err.message + '</p>';
   } finally {
     btn.disabled = false;
-    btn.textContent = 'Отправить';
+    btn.textContent = 'Отправить сейчас';
   }
 });
+
 </script>
 
 </body>
