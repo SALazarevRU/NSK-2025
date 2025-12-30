@@ -615,6 +615,8 @@ document.getElementById('submit-message').addEventListener('click', async () => 
     // считаем успехом 200 / 302 / 204
     if (r.ok || r.status === 302 || r.status === 204) {
       console.log('③ условие верно');
+      console.log('msg-element:', msg);        // должен быть <div id="msg">
+msg.style.display = 'block';             // на всякий случай раскроем
       msg.innerHTML = '<p style="color:green">✓ Сообщение отправлено!</p>';
       setTimeout(() => form.reset(), 600);
     } else {
@@ -622,6 +624,7 @@ document.getElementById('submit-message').addEventListener('click', async () => 
     }
   } catch (err) {
     console.log('④ catch сработал:', err);
+    
     msg.innerHTML = '<p style="color:red">× Ошибка: ' + err.message + '</p>';
   } finally {
     btn.disabled = false;
