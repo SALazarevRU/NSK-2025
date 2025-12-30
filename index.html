@@ -403,6 +403,31 @@
                                                         <textarea name="comment" placeholder="Сообщение"></textarea>
                                                         <button type="submit">Отправить</button>
 			  			</form>
+			  	            <script>
+                                                  const form = document.getElementById('contact-form');
+                                                     const msg  = document.getElementById('msg');
+
+                                                        form.addEventListener('submit', async e => {
+                                                         e.preventDefault();                          // глушим стандартный переход
+                                                         const body = new FormData(form);
+                                                           try {
+                                                          const r = await fetch(form.action, {
+                                                          method: 'POST',
+                                                             body,
+                                                           headers: { Accept: 'application/json' }
+                                                                });
+                                                           if (r.ok) {
+                                                         msg.innerHTML = '<p style="color:green">✓ Сообщение отправлено!</p>';
+                                                         form.reset();                            // очистить поля
+                                                        } else {
+                                                        throw new Error('Ошибка сети');
+                                                             }
+                                                       } catch (err) {
+                                                       msg.innerHTML = '<p style="color:red">× Произошла ошибка, попробуйте позже.</p>';
+                                                        }
+                                                         });
+                                               </script>
+                                                   
 					</div> <!-- end col -->
 
 					<div class="col-md-4 col-md-offset-1 col-sm-5">
