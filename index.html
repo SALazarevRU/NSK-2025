@@ -407,6 +407,22 @@
 </form>
 			  			
 			  	           <script>
+			  	           
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  // принудительно устанавливаем правильный endpoint
+  const ENDPOINT = 'https://formspree.io/f/xaqyvkrg';
+  btn.disabled = true;
+  ...
+  const r = await fetch(ENDPOINT, {   // <-- берём свой URL
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+  });
+  ...
+});			  	           
+			  	           
+			  	           
   const form = document.getElementById('contact-form');
   const msg  = document.getElementById('msg');
   const btn  = form.querySelector('[type="submit"]');
