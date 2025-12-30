@@ -402,33 +402,40 @@
 <input name="subject" id="subject" type="text" class="form-control" placeholder="Тема">
 <textarea name="comment" id="comment" class="form-control" placeholder="Сообщение"></textarea>
 <input type="submit" value="Отправить" id="submit-message">
+<input type="text" name="_honey" style="display:none">
 <div id="msg" class="message"></div>
 </form>
 			  			
-			  	            <script>
-                                                  const form = document.getElementById('contact-form');
-                                                     const msg  = document.getElementById('msg');
+			  	           <script>
+  const form = document.getElementById('contact-form');
+  const msg  = document.getElementById('msg');
+  const btn  = form.querySelector('[type="submit"]');
 
-                                                        form.addEventListener('submit', async e => {
-                                                         e.preventDefault();                          // глушим стандартный переход
-                                                         const body = new FormData(form);
-                                                           try {
-                                                          const r = await fetch(form.action, {
-                                                          method: 'POST',
-                                                             body,
-                                                           headers: { Accept: 'application/json' }
-                                                                });
-                                                           if (r.ok) {
-                                                         msg.innerHTML = '<p style="color:green">✓ Сообщение отправлено!</p>';
-                                                         form.reset();                            // очистить поля
-                                                        } else {
-                                                        throw new Error('Ошибка сети');
-                                                             }
-                                                       } catch (err) {
-                                                       msg.innerHTML = '<p style="color:red">× Произошла ошибка, попробуйте позже.</p>';
-                                                        }
-                                                         });
-                                               </script>
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    btn.disabled = true;          // блокируем ПОСЛЕ клика
+    btn.textContent = 'Отправляем…';
+
+    try {
+      const r = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+      if (r.ok) {
+        msg.innerHTML = '<p style="color:green">✓ Сообщение отправлено!</p>';
+        form.reset();
+      } else {
+        throw new Error('сетевая ошибка');
+      }
+    } catch (err) {
+      msg.innerHTML = '<p style="color:red">× Произошла ошибка, попробуйте позже.</p>';
+    } finally {
+      btn.disabled = false;       // разблокировать в любом случае
+      btn.textContent = 'Отправить';
+    }
+  });
+</script>
                                                    
 					</div> <!-- end col -->
 
