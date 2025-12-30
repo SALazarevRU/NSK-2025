@@ -604,31 +604,24 @@ document.getElementById('submit-message').addEventListener('click', async () => 
   btn.textContent = 'Отправляем…';
 
   try {
+    console.log('① до fetch');
     const r = await fetch('https://formspree.io/f/xaqyvkrg', {
       method: 'POST',
-      body: new FormData(form),          // ← данные всей формы
+      body: new FormData(form),
       headers: { Accept: 'application/json' }
     });
-console.log('статус:', r.status, 'content-type:', r.headers.get('content-type'));
+    console.log('② после fetch, статус:', r.status, 'content-type:', r.headers.get('content-type'));
 
-  console.log('① до fetch');
-  const r = await fetch(...);
-  console.log('② после fetch', r);
-  if (r.ok || r.status === 302 || r.status === 200) {
-    console.log('③ условие верно');
-    msg.innerHTML = '<p style="color:green">✓ Сообщение отправлено!</p>';
-  } else { ... }
-} catch (err) {
-  console.log('④ catch сработал:', err);
-  msg.innerHTML = '<p style="color:red">× Ошибка: ' + err.message + '</p>';
-
-    if (r.ok || r.status === 302) {
+    // считаем успехом 200 / 302 / 204
+    if (r.ok || r.status === 302 || r.status === 204) {
+      console.log('③ условие верно');
       msg.innerHTML = '<p style="color:green">✓ Сообщение отправлено!</p>';
-      setTimeout(() => form.reset(), 500); // очистим поля через 0.5 с
+      setTimeout(() => form.reset(), 600);
     } else {
       throw new Error('Status ' + r.status);
     }
   } catch (err) {
+    console.log('④ catch сработал:', err);
     msg.innerHTML = '<p style="color:red">× Ошибка: ' + err.message + '</p>';
   } finally {
     btn.disabled = false;
