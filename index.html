@@ -423,11 +423,11 @@
         headers: { Accept: 'application/json' }
       });
       if (r.ok) {
-        msg.innerHTML = '<p style="color:green">✓ Сообщение отправлено!</p>';
-        form.reset();
-      } else {
-        throw new Error('Network error');
-      }
+  msg.innerHTML = '<p style="color:green">✓ Сообщение отправлено!</p>';
+  form.reset();
+} else {
+  throw new Error('сетевая ошибка');
+}
     } catch (err) {
       msg.innerHTML = '<p style="color:red">× Произошла ошибка, попробуйте позже.</p>';
     } finally {
