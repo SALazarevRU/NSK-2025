@@ -396,7 +396,7 @@
 					<div class="col-md-7 col-sm-7">
 						<form id="contact-form" action="https://formspree.io/f/xaqyvkrg" 
 						method="POST">
-						        <input type="hidden" name="_subject" value="Новое сообщение с сайта Архивчик">
+						        <input type="hidden" name="_subject" value="Новое сообщение с нашего сайта 'Архивчик'">
 							<input name="name" id="name" type="text" class="form-control" placeholder="Имя*">
 <input name="email" id="mail" type="email" class="form-control" placeholder="E-mail*">
 <input name="subject" id="subject" type="text" class="form-control" placeholder="Тема">
@@ -611,16 +611,6 @@ document.getElementById('submit-message').addEventListener('click', async () => 
       headers: { Accept: 'application/json' }
     });
     console.log('② после fetch, статус:', r.status, 'content-type:', r.headers.get('content-type'));
-
-  /*  специально ловим 422  */
-  if (r.status === 422) {
-    const data = await r.json();
-    const reason = data.errors?.email || 'Некорректный e-mail';
-    msg.innerHTML = `<p style="color:red">✗ ${reason}</p>`;
-    btn.disabled = false;
-    btn.textContent = 'Отправить';
-    return;                       // дальше не идём
-  }
 
     // считаем успехом 200 / 302 / 204
     if (r.ok || r.status === 302 || r.status === 204) {
