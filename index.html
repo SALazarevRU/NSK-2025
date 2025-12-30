@@ -397,11 +397,13 @@
 						<form id="contact-form" action="https://formspree.io/f/xaqyvkrg" 
 						method="POST">
 						        <input type="hidden" name="_subject" value="Новое сообщение с сайта Архивчик">
-							<input name="name"    type="text"    required placeholder="Имя*">
-                                                        <input name="mail"    type="email"   required placeholder="E-mail*">
-                                                        <input name="subject" type="text"             placeholder="Тема">
-                                                        <textarea name="comment" placeholder="Сообщение"></textarea>
-                                                        <button type="submit">Отправить</button>
+							<input name="name" id="name" type="text" class="form-control" placeholder="Имя*">
+<input name="mail" id="mail" type="email" class="form-control" placeholder="E-mail*">
+<input name="subject" id="subject" type="text" class="form-control" placeholder="Тема">
+<textarea name="comment" id="comment" class="form-control" placeholder="Сообщение"></textarea>
+<input type="submit" value="Отправить" id="submit-message">
+<div id="msg" class="message"></div>
+</form>
 			  			</form>
 			  	            <script>
                                                   const form = document.getElementById('contact-form');
