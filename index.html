@@ -626,12 +626,14 @@ document.getElementById('submit-message').addEventListener('click', async () => 
     });
 
     if (r.ok) {
+      msg.style.display = 'block';
       msg.innerHTML = '<p style="color:green">✓ Сообщение отправлено!</p>';
       form.reset();
     } else {
       throw new Error('Status ' + r.status);
     }
   } catch (err) {
+    msg.style.display = 'block';
     msg.innerHTML = '<p style="color:red">× Ошибка: ' + err.message + '</p>';
   } finally {
     btn.disabled = false;
