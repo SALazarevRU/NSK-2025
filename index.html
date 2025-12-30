@@ -594,45 +594,50 @@ $(function () {
   $('#contact-form').off('submit');
 });
 
-/* 2. вешаем собственный обработчик на КНОПКУ */
+/* 2. вешаем собственный обработчик клика на КНОПКУ */
 document.getElementById('submit-message').addEventListener('click', async () => {
   const form = document.getElementById('contact-form');
   const msg  = document.getElementById('msg');
   const btn  = document.getElementById('submit-message');
 
+  /* 0. проверяем обязательные поля */
+  const required = form.querySelectorAll('[name="name"],[name="email"],[name="comment"]');
+  let empty = [...required].some(el => !el.value.trim());
+  if (empty) {
+    msg.innerHTML = '<p style="color:red">Заполните, пожалуйста, имя, e-mail и сообщение.</p>';
+    return;                     // уходим, не ломая ничего
+  }
+
   btn.disabled = true;
   btn.textContent = 'Отправляем…';
 
-  /* 1. собираем поля вручную, как это делает браузер */
-  const data = new FormData();                 // ← пустой объект
-  Array.from(form.elements)                    // ← все input/textarea/select
-    .filter(el => el.name && !el.disabled)     // ← только именованные и активные
+  /* 1. собираем данные, пропуская пустые */
+  const data = new FormData();
+  Array.from(form.elements)
+    .filter(el => el.name && !el.disabled && el.value.trim() !== '')
     .forEach(el => data.append(el.name, el.value));
 
   try {
-    console.log('① до fetch');
     const r = await fetch('https://formspree.io/f/xaqyvkrg', {
       method: 'POST',
-      body: data,                              // ← теперь точно есть поля
+      body: data,
       headers: { Accept: 'application/json' }
     });
-    console.log('② после fetch, статус:', r.status);
 
     if (r.ok) {
-      console.log('③ условие верно');
       msg.innerHTML = '<p style="color:green">✓ Сообщение отправлено!</p>';
       form.reset();
     } else {
       throw new Error('Status ' + r.status);
     }
   } catch (err) {
-    console.log('④ catch:', err);
     msg.innerHTML = '<p style="color:red">× Ошибка: ' + err.message + '</p>';
   } finally {
     btn.disabled = false;
     btn.textContent = 'Отправить сейчас';
   }
 });
+
 
 </script>
 
