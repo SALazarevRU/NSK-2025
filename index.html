@@ -594,7 +594,7 @@ $(function () {
   $('#contact-form').off('submit');
 });
 
-/* 2. вешаем собственный обработчик клика на КНОПКУ */
+/* 2. вешаем собственный обработчик КЛИКА на КНОПКУ */
 document.getElementById('submit-message').addEventListener('click', async () => {
   const form = document.getElementById('contact-form');
   const msg  = document.getElementById('msg');
@@ -604,6 +604,7 @@ document.getElementById('submit-message').addEventListener('click', async () => 
   const required = form.querySelectorAll('[name="name"],[name="email"],[name="comment"]');
   let empty = [...required].some(el => !el.value.trim());
   if (empty) {
+   msg.style.display = 'block';
     msg.innerHTML = '<p style="color:red">Заполните, пожалуйста, имя, e-mail и сообщение.</p>';
     return;                     // уходим, не ломая ничего
   }
