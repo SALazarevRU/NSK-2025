@@ -612,6 +612,16 @@ document.getElementById('submit-message').addEventListener('click', async () => 
     });
     console.log('② после fetch, статус:', r.status, 'content-type:', r.headers.get('content-type'));
 
+  /*  специально ловим 422  */
+  if (r.status === 422) {
+    const data = await r.json();
+    const reason = data.errors?.email || 'Некорректный e-mail';
+    msg.innerHTML = `<p style="color:red">✗ ${reason}</p>`;
+    btn.disabled = false;
+    btn.textContent = 'Отправить';
+    return;                       // дальше не идём
+  }
+
     // считаем успехом 200 / 302 / 204
     if (r.ok || r.status === 302 || r.status === 204) {
       console.log('③ условие верно');
@@ -623,8 +633,7 @@ msg.style.display = 'block';             // на всякий случай ра�
       throw new Error('Status ' + r.status);
     }
   } catch (err) {
-    console.log('④ catch сработал:', err);
-    
+    console.log('④ catch сработал:', err);    
     msg.innerHTML = '<p style="color:red">× Ошибка: ' + err.message + '</p>';
   } finally {
     btn.disabled = false;
