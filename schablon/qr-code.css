@@ -93,6 +93,7 @@
   display: flex;
   justify-content: center;
   margin: 20px 0; /* Отступы вокруг контейнера */
+ display: none; /* Скрываем контейнер с кнопкой на мобильных */
 }
 .qrcodebtn {
     display: inline-flex;
