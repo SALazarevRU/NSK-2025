@@ -1,0 +1,62 @@
+.map-container {
+  width: 600px;           /* Ширина окна (настройте под свой дизайн) */
+  height: 400px;          /* Высота окна */
+  overflow: hidden;        /* Скрываем выходящие за границы части изображения */
+  position: relative;
+  border: 1px solid #ccc;
+  background: #f0f0f0;
+}
+
+
+
+.map-draggable {
+position: absolute;
+cursor: grab;
+/* Начальные координаты (можно задать через JS) */
+left: 0;
+top: 0;
+
+  /* Плавность при перемещении */
+  transition: left 0.3s ease, top 0.3s ease;
+}
+
+.map-draggable:active {
+  cursor: grabbing;
+}
+
+.map-draggable img {
+  /* Убираем стандартное поведение браузера при drag */
+  pointer-events: none;
+  /* Можно увеличить для детального просмотра */
+  /* transform: scale(1.5); */
+}
+.map-hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  pointer-events: none; /* Чтобы не мешала кликам */
+  z-index: 5;
+
+}
+
+.parent-container {
+  display: flex;
+  justify-content: center; /* Горизонтальное центрирование */
+  align-items: center;    /* Вертикальное центрирование (если нужно) */
+  /* height: 100vh; — если нужно занять всю высоту экрана */
+}
+
+
+@media (max-width: 480px) {
+  .map-hint {
+    font-size: 12px;
+    padding: 6px 10px;
+    bottom: 10px; /* Ближе к краю */
+  }
+}

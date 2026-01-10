@@ -1,0 +1,357 @@
+
+
+/* Адаптивное мега-меню */
+
+.menu-container {
+    width: 100%;
+    margin: 20px auto;
+    background: #337AB7;
+}
+.menu-mobile:after {
+    content: "\f0c9";
+    font-family: "FontAwesome";
+    font-size: 38px;
+    line-height: 38px;
+    padding: 0;
+    color: #FFF;
+    float: right;
+    position: relative;
+    transform: translateY(-25%);
+}
+.menu-dropdown-icon:before {
+    content: "\f078";
+    font-family: "FontAwesome";
+    display: none;
+    cursor: pointer;
+    float: right;
+    padding: 10px 20px;
+    margin: 10px;
+    background: #337AB7;
+    color: #FFF;
+    font-size: 20px;
+}
+.menu > ul {
+    margin: 0 auto;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+}
+.menu > ul:before,
+.menu > ul:after {
+    content: "";
+    display: table;
+}
+.menu > ul:after {
+    clear: both;
+}
+.menu > ul > li {
+    float: left;
+    background: #337AB7;
+    padding: 0;
+    margin: 0;
+    transition: .2s ease-in-out;
+}
+.menu > ul > li a,
+.menu-mobile {
+    text-decoration: none;
+    padding: 20px 30px;
+    display: block;
+    color: #FFF;
+    font-size: 20px;
+    line-height: 20px;
+    font-family: 'Roboto', sans-serif;
+    transition: .2s ease-in-out;
+}
+.menu-mobile {
+    display: none;
+}
+.menu > ul > li:hover {
+    background: #BFE2FF;
+}
+.menu > ul > li:hover a {
+    color: #000;
+}
+.menu > ul > li > ul {
+    display: none;
+    width: 100%;
+    background: #BFE2FF;
+    padding: 20px;
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+.menu > ul > li > ul:before,
+.menu > ul > li > ul:after {
+    content: "";
+    display: table;
+}
+.menu > ul > li > ul:after {
+    clear: both;
+}
+.menu > ul > li > ul > li {
+    margin: 0;
+    padding-bottom: 0;
+    list-style: none;
+    width: 25%;
+    background: none;
+    float: left;
+}
+.menu > ul > li > ul > li a {
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid #337AB7;
+}
+.menu > ul > li > ul > li a:hover {
+    color: #337AB7;
+    border-bottom: 1px solid #000;
+}
+.menu > ul > li > ul > li > ul {
+    display: block;
+    padding: 0;
+    margin: 10px 0 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+.menu > ul > li > ul > li > ul:before,
+.menu > ul > li > ul > li > ul:after {
+    content: "";
+    display: table;
+}
+.menu > ul > li > ul > li > ul:after {
+    clear: both;
+}
+.menu > ul > li > ul > li > ul > li {
+    float: left;
+    width: 100%;
+    margin: 0;
+}
+.menu > ul > li > ul > li > ul > li a {
+    border: 0;
+    padding: 10px 12px;
+    font-size: 18px;
+}
+.menu > ul > li > ul > li > ul > li a:hover {
+    border: 0;
+}
+.menu > ul > li > ul.normal-sub {
+    width: 300px;
+    left: auto;
+    padding: 20px;
+}
+.menu > ul > li > ul.normal-sub > li {
+    width: 100%;
+}
+.menu > ul > li > ul.normal-sub > li a {
+    border: 0;
+    padding: 10px;
+}
+@media only screen and (max-width: 768px) {
+    .menu-container {
+        width: 100%;
+    }
+    .menu-mobile {
+        display: block;
+    }
+    .menu-dropdown-icon:before {
+        display: block;
+    }
+    .menu > ul {
+        display: none;
+    }
+    .menu > ul > li {
+        width: 100%;
+        float: none;
+        display: block;
+        background: #BFE2FF;
+        border-top: 2px solid #FFF;
+        border-bottom: 2px solid #FFF;
+    }
+    .menu > ul > li a {
+        padding: 20px;
+        width: 100%;
+        display: block;
+        color: #000;
+    }
+    .menu > ul > li > ul {
+        position: relative;
+    }
+    .menu > ul > li > ul.normal-sub {
+        width: 100%;
+        
+    }
+    .menu > ul > li > ul > li {
+        float: none;
+        width: 100%;
+    }
+    .menu > ul > li > ul:not(.normal-sub) > li {
+        margin-top: 20px;
+    }  
+    .menu > ul > li > ul > li:first-child {
+        margin: 0;
+    }
+    .menu > ul > li > ul > li > ul {
+        position: relative;
+    }
+    .menu > ul > li > ul > li > ul > li {
+        float: none;
+    }
+    .menu .show-on-mobile {
+        display: block;
+    }
+}    
+
+/* Конец Адаптивного мега-меню */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.основная‑оболочка {
+  max-width: 1500px;                /* Ширина блока чтобы блок адаптировался на узких экранах*/
+  width: 100%;                  /* чтобы блок адаптировался на узких экранах*/
+  background-color: #f5f5f5;  /* Светло‑серый цвет фона (можно подобрать другой оттенок) */
+  margin-left: auto;          /* Автоматические отступы слева */
+  margin-right: auto;         /* Автоматические отступы справа */
+  padding: 0 5px;             /* Внутренние отступы (Минимум внутренних отступов) */
+  overflow: hidden; /* Если есть переполнение */
+ overflow-wrap: break-word; /* Перенос длинных слов */
+  word-break: break-word;   /* Альтернативный перенос */
+}
+
+
+
+/* Плагин jquery-bubble-text */
+#bubble-1 {
+  font-size: 16px;
+  color: #464451; /* Антрацитовый цвет текста */
+  font-family: Verdana, sans-serif;
+  line-height: 30px;
+  height: 140px;
+  min-width: 280px; /* Минимум для читаемости на телефонах */
+
+  /* Ключевые исправления: */
+  box-sizing: border-box; /* Учитываем padding в общей ширине */
+  padding: 20px 15px;   /* Одинаковые отступы слева и справа */
+  width: 90%;           /* По умолчанию — 90% для мобильных */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px; /* Отступ снизу 30 px */
+  text-align: left;
+}
+
+/* Для экранов шире 900px (ПК) */
+@media (min-width: 900px) {
+  #bubble-1 {
+    width: 900px;
+    padding: 20px 30px; /* Больше отступов на десктопе */
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  #bubble-1 {
+    width: 100%;
+    padding: 15px 10px; /* Меньше отступов */
+    font-size: 14px;  /* Уменьшаем шрифт */
+    margin-bottom: 15px;
+  }
+}
+
+
+/* Основной контейнер фиксированного подвала */
+
+.site-footer {
+  position: fixed;           /* Фиксируем подвал на экране */
+  bottom: 0;                 /* Прижимаем к нижнему краю */
+  left: 0;
+  width: 100%;               /* На всю ширину экрана */
+  background-color: #091520; /* Тёмный фон */
+  padding: 50px 20px;        /* Отступы внутри подвала */
+  box-sizing: border-box;   /* Учитываем padding в общей ширине */
+  z-index: 1000;           /* Чтобы подвал не перекрывался другими элементами */
+  line-height: 1.8; /* Увеличенный межстрочный интервал */
+}
+
+/* Внутренний контейнер с гибкой вёрсткой */
+.footer-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2px;                 /* Уменьшили промежуток для компактности */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1px 10px;
+}
+
+/* Блоки навигации и контактов */
+.footer-nav,
+.footer-contacts {
+  color: #DCDCDC; /* СЕРЕНЬКИЙ цвет текста */
+  margin: 0;
+  display: flex;             /* Делаем блоки flex-контейнерами */
+  flex-wrap: wrap;         /* Позволяем элементам переноситься */
+  gap: 5px;              /* Промежуток между элементами внутри блока */
+}
+
+.footer-nav li,
+.footer-contacts li {
+  list-style: none;
+  margin-bottom: 0;        /* Убираем вертикальный отступ */
+font-family: 'Arial', 'Helvetica', sans-serif; /* Добавьте запасные шрифты */
+}
+
+.footer-nav a,
+.footer-contacts a {
+  text-decoration: none;
+  color: #00FFFF; /* БИРЮЗОВЫЙ цвет текста */;
+}
+
+.footer-nav a:hover,
+.footer-contacts a:hover {
+  color: #FFA500; /* Оранжевый цвет при наведении */
+ text-decoration: underline;  /* Добавляем подчёркивание при наведении */
+}
+
+/* Тело страницы — добавляем отступ снизу, чтобы контент не перекрывался подвалом */
+body {
+  padding-bottom: 60px;    /* Высота подвала + запас */
+  min-height: 100vh;       /* Минимум на высоту экрана */
+  box-sizing: border-box;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .footer-nav,
+  .footer-contacts {
+    margin: 5px 0;
+    width: 100%;
+  }
+  .site-footer {
+    line-height: 1.4; /* Уменьшаем на мобильных */
+}

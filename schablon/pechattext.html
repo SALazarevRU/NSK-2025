@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Мой сайт</title>
+<link rel="stylesheet" href="pechattextstyles.css">
+      <!-- Подключение Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" crossorigin="anonymous">
+      <!-- Подключение QR кода -->
+<link rel="stylesheet" href="qr-code.css">
+<!-- Подключение карты -->
+<link rel="stylesheet" href="kapta.css">
+</head>
+
+<body>
+
+ <!-- Адаптивное мега-меню -->
+
+<div class="menu-container">
+    <div class="menu">
+        <ul>
+            <li><a href="#link">Главная</a></li>
+            <li><a href="#link">Мега-меню</a>
+                <ul>
+                    <li><a href="#link">Раздел 1</a>
+                        <ul>
+                            <li><a href="#link">Раздел 1.1</a></li>
+                            <li><a href="#link">Раздел 1.2</a></li>
+                            <li><a href="#link">Раздел 1.3</a></li>
+                            <li><a href="#link">Раздел 1.4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#link">Раздел 2</a>
+                        <ul>
+                            <li><a href="#link">Раздел 2.1</a></li>
+                            <li><a href="#link">Раздел 2.2</a></li>
+                            <li><a href="#link">Раздел 2.3</a></li>
+                            <li><a href="#link">Раздел 2.4</a></li>
+                            <li><a href="#link">Раздел 2.5</a></li>          
+                        </ul>
+                    </li>
+                    <li><a href="#link">Раздел 3</a>
+                        <ul>
+                            <li><a href="#link">Раздел 3.1</a></li>
+                            <li><a href="#link">Раздел 3.2</a></li>
+                            <li><a href="#link">Раздел 3.3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#link">Раздел 4</a>
+                        <ul>
+                            <li><a href="#link">Раздел 4.1</a></li>
+                            <li><a href="#link">Раздел 4.2</a></li>
+                            <li><a href="#link">Раздел 4.3</a></li>
+                            <li><a href="#link">Раздел 4.4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#link">Подменю</a>
+                <ul>
+                    <li><a href="#link">Раздел 1</a></li>
+                    <li><a href="#link">Раздел 2</a></li>
+                    <li><a href="#link">Раздел 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#link">Контакты</a></li>
+        </ul>
+    </div>
+</div>
+<!-- Конец Адаптивного мега-меню -->
+
+
+
+
+  <!-- Основное содержимое страницы -->
+
+<div class="основная‑оболочка">
+  <h1>Добро пожаловать на сайт</h1>
+  <p>Здесь будет какой-то контент.</p>
+  <div id="bubble-1"></div>
+
+    <div class="btn-wrapper">
+       <button class="qrcodebtn">QR-код для просмотра сайта на телефоне</button> 
+    </div>
+
+<div class="parent-container">
+  <div class="map-container">
+       <div class="map-draggable">
+         <img src="large-map.jpg" alt="Карта">
+       </div>
+     <div class="map-hint">Перетащите карту для просмотра</div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+  <!-- Подвал страницы -->
+ <footer class="site-footer">
+  <div class="footer-container">
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="#">О НАС</a></li>
+        <li><a href="#">КОНТАКТЫ</a></li>
+        <li><a href="#">ЛОКАЦИЯ</a></li>
+        <li><a href="#">ГЛАВНАЯ</a></li>
+      </ul>
+    </nav>
+    <div class="footer-contacts">
+      <ul>
+        <li>Телефон: +7 (XXX) XXX-XX-XX</li>
+        <li>Email: info@example.com</li>
+      </ul>
+    </div>
+    <div class="footer-contacts">
+      <ul>
+        <li>Телефон: +7 (XXX) XXX-XX-XX</li>
+        <li>Email: info@example.com</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  <!-- 1. Подключаем jQuery -->
+  <script src="jquery.min.js"></script>
+
+
+<!-- Адаптивное мега-меню) -->
+
+<script>
+$(document).ready(function() {
+    "use strict";
+    $('.menu > ul > li:has( > ul)').addClass('menu-dropdown-icon');
+    $('.menu > ul > li > ul:not(:has(ul))').addClass('normal-sub');
+    $(".menu > ul").before("<span class=\"menu-mobile\">Меню:</span>");
+    $(".menu > ul > li").hover(function(e) {
+        if ($(window).width() > 768) {
+            $(this).children("ul").stop(true, false).fadeToggle(150);
+            e.preventDefault();
+        }
+    });
+    $(".menu > ul > li").click(function(e) {
+        if (($(window).width() <= 768) && (($(".menu > ul > li").width() - e.offsetX) < 70)) {
+            $(this).children("ul").fadeToggle(150);
+        }
+    });
+    $(".menu-mobile").click(function(e) {
+        $(".menu > ul").toggleClass('show-on-mobile');
+        e.preventDefault();
+    });
+});    
+
+</script>
+
+
+
+  <!-- 2. Подключаем плагин bubble-text -->
+  <script src="jquery.bubble.text.js"></script>
+
+  <!-- 3. Плагин jquery-bubble-text код (можно в отдельном файле или тут) -->
+  <script>
+$(document).ready(function() {    
+  var $element = $('#bubble-1');
+  var newText = 'Сайт‑визитка Отдела АДХ создан разработчиком в информационно‑образовательных целях. Дизайн сайта адаптивный : одинаково хорошо выглядит на ПК и мобильных устройствах. Доступ к сайту предоставляется исключительно по ссылке.';
+
+
+  function startAnimation() {
+    // Очищаем элемент ПЕРЕД новой анимацией
+    $element.empty();
+
+    bubbleText({
+      element: $element,
+      newText: newText,
+      speed: 2000,
+      repeat: false,
+      callback: function() {
+        // Пауза 2 секунды перед следующим циклом
+        setTimeout(startAnimation, 7000);
+      }
+    });
+  }
+
+  startAnimation();
+});
+</script>
+
+ <!-- 3. Модальное окно с QR-кодом ссылки на текущую страницу -->
+  <script>
+ let qrok = false;     
+$('.qrcodebtn').on('click',function() {
+    if (qrok === false) {
+        qrok = true;    
+        $('body').append('\
+            <div class="qrcodebg"><div class="qrcodeexit">&#10006;</div></div>\
+            <div class="qrcodedata">\
+            <div class="qrcodetext">\
+            <p>Для перехода на эту страницу<br>в браузере телефона<br>отсканируйте QR-код</p>\
+            <div class="qrcodeloader"><div class="qrcodeload"></div></div>\
+            </div>\
+            </div>\
+        '); 
+    }
+    $('.qrcodebg').fadeIn();
+    $('.qrcodedata').css('top', '0');
+    var image = new Image(); 
+    var nric = document.location.href;
+    image.src = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=250x250';
+    setTimeout(function () {
+        if (image.width === 0) {
+            $('.qrcodeloader').html('Ошибка при создании QR-кода');
+            } else {
+            $('.qrcodeloader').html('<img src="'+ image.src +'" />'); 
+        }  
+    }, 1000);
+});
+$(document).on('click','.qrcodebg',function() {
+    $('.qrcodebg').fadeOut();
+    $('.qrcodedata').css('top', '-120vh');
+});
+$(document).keyup(function(e) {
+    if (e.key === "Escape" || e.keyCode === 27) {
+        $('.qrcodebg').fadeOut();
+        $('.qrcodedata').css('top', '-120vh');
+    }
+});
+  </script>
+
+<!-- 2. Подключаем плагин карты -->
+  <script src="kapta.js"></script>
+
+</body>
+</html>

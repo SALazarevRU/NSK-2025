@@ -1,0 +1,186 @@
+/* === БАЗОВЫЕ СТИЛИ === */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  color: #98a2a4;
+  line-height: 1.6;
+}
+
+/* === ОБЁРТКА ДЛЯ ПРИЖАТИЯ ФУТЕРА === */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+#footer {
+  flex: 0 0 auto;
+  margin-top: auto;
+}
+
+/* === СЕТКА (аналог Bootstrap grid) === */
+.container {
+  width: 100%;
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  /* Убираем отрицательные отступы */
+  margin: 0;
+  /* Добавляем промежуток между колонками */
+  gap: 30px; /* 30px между колонками и строками */
+}
+
+.col {
+  flex: 1 1 250px;
+  padding: 0 15px; /* Оставляем только внутренние отступы */
+}
+
+.privacy-link {
+  color: #00FFFF;
+  text-decoration: none; /* убирает подчёркивание (опционально) */
+}
+
+.privacy-link:hover {
+  color: #00CCCC; /* чуть темнее при наведении (опционально) */
+  text-decoration: underline;
+}
+
+
+
+/* Адаптация под мобильные */
+@media (max-width: 768px) {
+  .col {
+    flex: 1 1 100%; /* На мобильных — 1 колонка */
+    margin-bottom: 30px;
+  }
+}
+
+  .row {
+    gap: 20px; /* Уменьшаем отступы на мобильных */
+  }
+
+/* === ФУТЕР === */
+#footer {
+  background-color: #222831;
+  padding: 60px 0;
+}
+
+.footer-widgets {
+  margin-bottom: 40px;
+}
+
+.footer-widgets h5 {
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.footer-widgets p {
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* Социальные иконки */
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #393E46;
+  color: #fff;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  background-color: #00ADB5;
+  color: #fff;
+}
+
+/* Последние посты */
+.footer-posts {
+  margin-top: 10px;
+}
+
+.footer-entry {
+  margin-bottom: 15px;
+}
+
+.footer-entry h6 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-entry h6 a {
+  color: #98a2a4;
+  transition: color 0.3s ease;
+}
+
+.footer-entry h6 a:hover {
+  color: #00ADB5;
+}
+
+.footer-entry span {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+/* Список услуг */
+.footer-widgets ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-widgets ul li {
+  margin-bottom: 10px;
+}
+
+.footer-widgets ul li a {
+  color: #98a2a4;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-widgets ul li a:hover {
+  color: #00ADB5;
+}
+
+/* Контакты */
+.office-1,
+.office-2 {
+  margin-bottom: 20px;
+}
+.office-1 p,
+.office-2 p {
+  margin 0;
+
+
