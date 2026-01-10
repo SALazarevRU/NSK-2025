@@ -239,6 +239,7 @@
 
 
 /* Плагин jquery-bubble-text */
+
 #bubble-1 {
   font-size: 16px;
   color: #464451; /* Антрацитовый цвет текста */
@@ -268,12 +269,19 @@
 
 @media (max-width: 480px) {
   #bubble-1 {
-    width: 100%;
-    padding: 15px 10px; /* Меньше отступов */
-    font-size: 14px;  /* Уменьшаем шрифт */
+    min-height: 230px;
+    padding: 15px 10px;
+    font-size: 14px;
     margin-bottom: 15px;
+ transition: min-height 0.3s ease;  /* Для плавного появления (используется анимация) */
+    
+    /* Важные дополнения: */
+    box-sizing: border-box; /* Учитывает padding в общей ширине */
+    width: 100%; /* На всю ширину контейнера */
+    overflow: hidden; /* Скрывает излишек, если текст длиннее */
   }
 }
+
 
 
 /* Основной контейнер фиксированного подвала */
