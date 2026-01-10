@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+ 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Мой сайт</title>
 <link rel="stylesheet" href="pechattextstyles.css">
       <!-- Подключение Font Awesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" crossorigin="anonymous">
-      <!-- Подключение QR кода -->
-<link rel="stylesheet" href="qr-code.css">
-<!-- Подключение карты -->
-<link rel="stylesheet" href="kapta.css">
+      
 </head>
 
 <body>
@@ -79,32 +78,6 @@
 
 
 
-  <!-- Подвал страницы -->
- <footer class="site-footer">
-  <div class="footer-container">
-    <nav class="footer-nav">
-      <ul>
-        <li><a href="#">О НАС</a></li>
-        <li><a href="#">КОНТАКТЫ</a></li>
-        <li><a href="#">ЛОКАЦИЯ</a></li>
-        <li><a href="#">ГЛАВНАЯ</a></li>
-      </ul>
-    </nav>
-    <div class="footer-contacts">
-      <ul>
-        <li>Телефон: +7 (XXX) XXX-XX-XX</li>
-        <li>Email: info@example.com</li>
-      </ul>
-    </div>
-    <div class="footer-contacts">
-      <ul>
-        <li>Телефон: +7 (XXX) XXX-XX-XX</li>
-        <li>Email: info@example.com</li>
-      </ul>
-    </div>
-  </div>
-</footer>
-
   <!-- 1. Подключаем jQuery -->
   <script src="jquery.min.js"></script>
 
@@ -138,79 +111,7 @@ $(document).ready(function() {
 
 
 
-  <!-- 2. Подключаем плагин bubble-text -->
-  <script src="jquery.bubble.text.js"></script>
 
-  <!-- 3. Плагин jquery-bubble-text код (можно в отдельном файле или тут) -->
-  <script>
-$(document).ready(function() {    
-  var $element = $('#bubble-1');
-  var newText = 'Сайт‑визитка Отдела АДХ создан разработчиком в информационно‑образовательных целях. Дизайн сайта адаптивный : одинаково хорошо выглядит на ПК и мобильных устройствах. Доступ к сайту предоставляется исключительно по ссылке.';
-
-
-  function startAnimation() {
-    // Очищаем элемент ПЕРЕД новой анимацией
-    $element.empty();
-
-    bubbleText({
-      element: $element,
-      newText: newText,
-      speed: 2000,
-      repeat: false,
-      callback: function() {
-        // Пауза 2 секунды перед следующим циклом
-        setTimeout(startAnimation, 7000);
-      }
-    });
-  }
-
-  startAnimation();
-});
-</script>
-
- <!-- 3. Модальное окно с QR-кодом ссылки на текущую страницу -->
-  <script>
- let qrok = false;     
-$('.qrcodebtn').on('click',function() {
-    if (qrok === false) {
-        qrok = true;    
-        $('body').append('\
-            <div class="qrcodebg"><div class="qrcodeexit">&#10006;</div></div>\
-            <div class="qrcodedata">\
-            <div class="qrcodetext">\
-            <p>Для перехода на эту страницу<br>в браузере телефона<br>отсканируйте QR-код</p>\
-            <div class="qrcodeloader"><div class="qrcodeload"></div></div>\
-            </div>\
-            </div>\
-        '); 
-    }
-    $('.qrcodebg').fadeIn();
-    $('.qrcodedata').css('top', '0');
-    var image = new Image(); 
-    var nric = document.location.href;
-    image.src = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=250x250';
-    setTimeout(function () {
-        if (image.width === 0) {
-            $('.qrcodeloader').html('Ошибка при создании QR-кода');
-            } else {
-            $('.qrcodeloader').html('<img src="'+ image.src +'" />'); 
-        }  
-    }, 1000);
-});
-$(document).on('click','.qrcodebg',function() {
-    $('.qrcodebg').fadeOut();
-    $('.qrcodedata').css('top', '-120vh');
-});
-$(document).keyup(function(e) {
-    if (e.key === "Escape" || e.keyCode === 27) {
-        $('.qrcodebg').fadeOut();
-        $('.qrcodedata').css('top', '-120vh');
-    }
-});
-  </script>
-
-<!-- 2. Подключаем плагин карты -->
-  <script src="kapta.js"></script>
 
 </body>
 </html>
