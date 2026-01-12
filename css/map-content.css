@@ -1,0 +1,83 @@
+/* Основной блок "Карта" */
+.map-block {
+  background-color: #393E46;
+  padding: 20px 0;
+  color: #fff;
+}
+
+.map-block .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Заголовок карты */
+.map-block .map-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Ваши стили для карты (интеграция) */
+.map-container {
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #ccc;
+  background: #f0f0f0;
+}
+
+.map-draggable {
+  position: absolute;
+  cursor: grab;
+  left: 0;
+  top: 0;
+  transition: left 0.3s ease, top 0.3s ease;
+}
+
+.map-draggable:active {
+  cursor: grabbing;
+}
+
+.map-draggable img {
+  pointer-events: none;
+}
+
+.map-hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.parent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 480px) {
+  .map-container {
+    width: 100%; /* На мобильных занимает всю ширину */
+    height: 300px; /* Уменьшаем высоту */
+  }
+  
+  .map-hint {
+    font-size: 12px;
+    padding: 6px 10px;
+    bottom: 10px;
+  }
+}

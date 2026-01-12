@@ -1635,7 +1635,12 @@ ul.recent-works {
 
 .partners-violet {
   background-color: #393E46;
-  padding: 60px 0;
+   padding-top: 920px;    /* Только верхний отступ */
+  padding-bottom: 60px; /* Нижний оставляем как был */
+}
+
+.partners-violet h2 {
+  margin-top: 10px;  /* Уменьшаем отступ заголовка */
 }
 
 /*From Blog 3 Col*/
