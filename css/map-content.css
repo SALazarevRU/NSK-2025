@@ -39,9 +39,10 @@
   height: 400px;
   overflow: hidden;
   position: relative;
-  border: 7px solid #a1a1a5;
+  border: 7px solid #00ADB5;
   background: #f0f0f0;
 margin-top: -40px;
+ outline: 3px solid #fff; /* Добавляем внешнюю красную рамку */
 }
 
 /* Стили для перетаскивания карты */
