@@ -21,7 +21,7 @@
   position: relative;
   border: 7px solid #00ADB5;
   background: #f0f0f0;
-  margin-top: -40px;
+  margin-top: 40px;
   outline: 3px solid #fff; /* Внешняя белая рамка */
   
   /* Добавляем красную рамку через box-shadow */
