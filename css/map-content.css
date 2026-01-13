@@ -1,50 +1,66 @@
 /* Основной блок "Карта" */
 .map-block {
-  background-color: #393E46;
-  padding: 20px 0;
-  color: #fff;
+  background-color: #00ADB5;
+  padding: 60px 0; /* Добавляем отступ сверху и снизу для всего блока */
+  margin-bottom: 0px;  /* Можно сделать белую полосу после зеленого блока карты margin-bottom: 30px; */
+  position: relative;
 }
 
 .map-block .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
-/* Заголовок карты */
+/* Стили для заголовка */
 .map-block .map-title {
+  margin-bottom: -5px; /* Отступ после заголовка */
   font-size: 24px;
   font-weight: 600;
-  margin: 0 0 15px 0;
   text-align: center;
   color: #fff;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  position: sticky; /* Фиксируем заголовок */
+  top: 20px; /* Позиция от верха */
+  z-index: 1;
 }
 
-/* Ваши стили для карты (интеграция) */
+.map-block .parent-container {
+  margin-bottom: 20px; /*  Отступ после карты */
+}
+
 .map-container {
   width: 600px;
   height: 400px;
   overflow: hidden;
   position: relative;
-  border: 1px solid #ccc;
+  border: 7px solid #a1a1a5;
   background: #f0f0f0;
 }
 
+/* Стили для перетаскивания карты */
 .map-draggable {
+  width: 1895px;
+  height: 1188px;
   position: absolute;
   cursor: grab;
   left: 0;
   top: 0;
-  transition: left 0.3s ease, top 0.3s ease;
 }
 
-.map-draggable:active {
+.map-draggable:active,
+.map-draggable.dragging {
   cursor: grabbing;
 }
 
 .map-draggable img {
+  width: 100%;
+  height: 100%;
   pointer-events: none;
 }
 
@@ -63,21 +79,31 @@
 }
 
 .parent-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 80px; /* Дополнительный отступ для карты */
 }
 
-/* Адаптация для мобильных */
+/* Адаптация для мобильных устройств */
 @media (max-width: 480px) {
   .map-container {
-    width: 100%; /* На мобильных занимает всю ширину */
-    height: 300px; /* Уменьшаем высоту */
+    width: 100%;
+    height: 300px;
+  }
+  
+  .map-title {
+    font-size: 20px;
   }
   
   .map-hint {
     font-size: 12px;
     padding: 6px 10px;
     bottom: 10px;
+  }
+  
+  .map-block {
+    padding: 20px 0; /* Уменьшаем отступ на мобильных */
+  }
+  
+  .parent-container {
+    margin-bottom: 20px; /* Уменьшаем отступ на мобильных */
   }
 }

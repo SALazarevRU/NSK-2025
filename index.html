@@ -220,7 +220,7 @@
                                                          <i class="icon icon-Search"></i>
                                                     </div>
                                                          <h5>Локация</h5>
-                                                              <a href="#" class="highlight-link" >Подробнее (скоро)</a>
+                                                              <a href="#map-bsv" class="highlight-link" >Подробнее</a>
                                                 </div> <!-- end features item -->
 
 							<div class="features-item features-right text-right">
@@ -449,21 +449,24 @@
 
 
 <!-- Геолокация -->
-		<section class="map-block">
+		<section id="map-bsv" class="map-block">
   <div class="container">
-    <h2 class="map-title">Наша карта</h2>
+    <h2 class="map-title">Интерактивная карта</h2>
     
     <!-- Контейнер для интерактивной карты -->
     <div class="parent-container">
       <div class="map-container">
         <div class="map-draggable">
-          <img src="path/to/your/map-image.jpg" alt="Интерактивная карта">
+          <img src="img/map-image.jpg" alt="Интерактивная карта">
         </div>
         <div class="map-hint">Перетащите карту для просмотра</div>
       </div>
     </div>
   </div>
 </section>
+
+
+
  <!-- end Геолокация -->
 
 
@@ -495,7 +498,7 @@
 						<div class="col-md-4">
 							<div class="footer-about-us">
 								<h5 class="heading-white">О компании</h5>
-								<p>Общество с ограниченной ответственностью Профессиональная коллекторская организация «Бюро судебного взыскания» — организация, которая сопровождает судебное и исполнительное производство по задолженностям.</p>
+								<p>ООО ПКО «Бюро судебного взыскания» — организация, которая сопровождает судебное и исполнительное производство по задолженностям.</p>
 								<p>Отдел архива длительного хранения — базовый элемент структуры компании, гарантирующий непрерывность бизнес‑процессов.</p>
 								<div class="social-icons">
 									<a href="#"><i class="fa fa-facebook"></i></a>
@@ -557,7 +560,7 @@
       <div class="row">
         <div class="col-12 text-center">
           <p class="copyright">
-            © 2025 Вебсайт Лазарев С.А.
+            © 2025-2026 Отдел Архива ООО БСВ
             <a href="https://github.com/zaz/HTML6?ysclid=mhhf4lw079150708063" target="_blank" rel="noopener">HTML6.license</a>
           </p>
         </div> <!-- end col -->
@@ -667,9 +670,10 @@ document.getElementById('submit-message').addEventListener('click', async () => 
     btn.textContent = 'Отправить сейчас';
   }
 });
-
-
 </script>
+
+<!-- 8. Подключаем плагин карты -->
+  <script src="js/kapta.js"></script>
 
 </body>
 
