@@ -27,11 +27,14 @@
   <link rel="stylesheet" href="css/elegant-icons.css">
   <link rel="stylesheet" href="css/font-awesome.css">
 
+
   <!-- Пользовательские стили -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/pechattextstyles.css">
+  <link rel="stylesheet" href="css/qr-code.css">
    <link rel="stylesheet" href="css/map-content.css">
 
 
@@ -121,7 +124,7 @@
 				<div>
 					<h2>Добро пожаловать!</h2>
 					<p>или "Посторонним вход воспрещён"</p>
-					<a href="#site" class="cd-btn">Подробнее</a>
+					<a href="#111" class="cd-btn">Подробнее</a>
 				</div>
 			</li>				
 			<li><div><h2>Головной офис</h2>	<p>ул.Добролюбова, 10/2</p><a href="golovnoy.html#789" class="cd-btn">подробнее</a></div></li>
@@ -147,29 +150,16 @@
 	</section> <!-- .cd-slider-wrapper -->
 
 	<!-- About Web-Site -->
-		<section class="section-wrap services" id="site">
-			<div class="container">
-				<div class="row">
-<div class="col-lg-12 text-center mt40">
-					<p class="subheading text-center">Сайт‑визитка Отдела АДХ создан <a href="LazarevSA.html" class="highlight-link">разработчиком</a> в информационно‑образовательных целях.</p>
-                                         <p class="subheading text-center">Дизайн сайта адаптивный : одинаково хорошо выглядит на ПК и мобильных устройствах.</p>
-                                	<p class="subheading text-center">Доступ к сайту предоставляется исключительно по ссылке.</p>
-
-                                        <a href="otchet_po_saitu.html" id="cta-button-solid" class="btn btn-large btn-rounded btn-light-solid">Характеристики сайта</a>
-                                  </div> <!-- end container -->
-				</div> <!-- end row -->
-			</div> <!-- end container -->
-		</section> <!-- end About Web-Site -->
+	
+		
 
 	<!-- Call to Action -->
-		<section class="call-to-action">
+		<section id="111" class="section-wrap our-team bg-light">		
 			<div class="container">
-				<h3 class="cta-subheading text-center">Мы предлагаем только качественные услуги</h3>
-				<h2 class="text-center mt30">Выбор за Вами</h2>
-				<div class="col-lg-12 text-center mt40">
-					<a  id="cta-button-solid" href="snow\index.html" class="btn btn-large btn-rounded btn-light-solid">Новости</a>
-					<a  id="cta-button-stroke" class="btn btn-large btn-rounded btn-light-transparent">Подробнее</a>
-				</div>
+			 <div id="bubble-1"></div> <!-- эффект печати текста -->
+		       <div class="btn-wrapper">
+                             <button class="qrcodebtn">QR-код для просмотра на телефоне</button> 
+                       </div>	
 			</div> <!-- end container -->
 		</section> <!-- end call to action -->
 
@@ -526,27 +516,21 @@
 						</div> <!-- end stay in touch -->
 
 						<div class="col-md-4">
-							<h5 class="heading-white">Последние новости</h5>
-							<div class="footer-posts">
-								<div class="footer-entry">
-									<h6><a href="snow\index.html">Доброе утро!</a></h6>
-									<span>11 ноября, 2025 / <a href="blog-single.html">10 комментариев</a></span>
-								</div> <!-- end entry -->
-
-								<div class="footer-entry">
-									<h6><a href="blog-single.html">Независимые МФО</a></h6>
-									<span>08 октября, 2015 / <a href="blog-single.html">03 комментариев</a></span>
-								</div> <!-- end entry -->
-
-								<div class="footer-entry">
-									<h6><a href="blog-single.html"> Микрофинансам поправят показатели</a></h6>
-									<span>05 октября, 2015 / <a href="blog-single.html">05 комментариев</a></span>
-								</div> <!-- end entry -->
-							</div> <!-- end footer posts -->
+							
+                    
+							
+							
+							
 						</div> <!-- end latest posts конец последние публикации -->
 						
-						<h5 class="heading-white"><a href="policy.html" style="color:#fff; padding-left:17px;">Политика конфиденциальности</a></h5>
+				<h5 class="heading-white"><a href="snow\index.html" style="color:#fff; padding-left:17px; transition: color 0.3s;"
+                                     onmouseover="this.style.color='#00FFFF'" onmouseout="this.style.color='#fff'">Последние новости</a></h5>
 						
+				<h5 class="heading-white"><a href="policy.html" style="color:#fff; padding-left:17px; transition: color 0.3s;"
+                                    onmouseover="this.style.color='#00FFFF'" onmouseout="this.style.color='#fff'">Политика конфиденциальности</a></h5>
+			        <h5 class="heading-white">  <a href="otchet_po_saitu.html" style="color:#fff; padding-left:17px; transition: color 0.3s;"
+                                    onmouseover="this.style.color='#00FFFF'" onmouseout="this.style.color='#fff'">Характеристики сайта</a></h5>
+               
 
 					</div> <!-- end row -->
 				</div> <!-- end footer widgets виджеты конечного нижнего колонтитула-->
@@ -670,6 +654,38 @@ document.getElementById('submit-message').addEventListener('click', async () => 
 });
 </script>
 
+
+ <!-- 5. Плагин jquery-bubble-text код (можно в отдельном файле или тут) -->
+  <script>
+$(document).ready(function() {    
+  var $element = $('#bubble-1');
+  var newText = 'Сайт‑визитка Отдела АДХ создан разработчиком в информационно‑образовательных целях. Дизайн сайта адаптивный : одинаково хорошо выглядит на ПК и мобильных устройствах. Доступ к сайту предоставляется исключительно по ссылке.';
+
+
+  function startAnimation() {
+    // Очищаем элемент ПЕРЕД новой анимацией
+    $element.empty();
+
+    bubbleText({
+      element: $element,
+      newText: newText,
+      speed: 2000,
+      repeat: false,
+      callback: function() {
+        // Пауза 2 секунды перед следующим циклом
+        setTimeout(startAnimation, 7000);
+      }
+    });
+  }
+
+  startAnimation();
+});
+</script>
+
+<!-- 6. Подключаем плагин bubble-text -->
+  <script src="js/jquery.bubble.text.js"></script>
+  <!-- 7. Подключаем плагин qr-code -->
+  <script src="js/qr-code.js"></script>
 <!-- 8. Подключаем плагин карты -->
   <script src="js/kapta.js"></script>
 

@@ -1,0 +1,45 @@
+
+ 
+   
+
+ /* Плагин jquery-bubble-text */
+
+#bubble-1 {
+  font-size: 16px;
+  color: #464451; /* Антрацитовый цвет текста */
+  font-family: Verdana, sans-serif;
+  line-height: 30px;
+  min-height: 140px; /* Гибкая высота для адаптации контента */
+  min-width: 280px; /* Минимум для читаемости на телефонах */
+
+  box-sizing: border-box;
+  padding: 20px 15px; /* Стандартные отступы */
+  width: 100%; /* Занимает всю ширину родителя */
+  max-width: 870px; /* Ограничение для десктопа */
+  margin: 0 auto 40px; /* Центрирование + нижний отступ */
+  text-align: left; /* Текст строго слева */
+
+  /* Плавный переход для адаптивных изменений */
+  transition: 
+    font-size 0.3s ease,
+    padding 0.3s ease,
+    min-height 0.3s ease;
+}
+
+/* Для экранов шире 900px (десктоп) */
+@media (min-width: 900px) {
+  #bubble-1 {
+    padding: 20px 30px; /* Увеличенные отступы для десктопа */
+    margin: 0 auto 40px; /* Сохраняем центрирование */
+  }
+}
+
+/* Для мобильных устройств (до 480px) */
+@media (max-width: 480px) {
+  #bubble-1 {
+    min-height: 230px; /* Увеличенная высота для мобильников */
+    padding: 15px 10px; /* Уменьшенные отступы */
+    font-size: 14px; /* Меньший размер шрифта */
+    margin-bottom: 15px; /* Сокращённый нижний отступ */
+  }
+}
