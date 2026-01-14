@@ -113,6 +113,9 @@
     .qrcodetext {
         padding: 20px;
     }
+.qrcodebtn {
+    display: none;
+  }
 }
 /* Кнопка */
 .qrcodebtn {
