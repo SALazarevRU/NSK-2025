@@ -105,7 +105,7 @@
         transform: rotate(360deg);
     }
 } 
-@media (max-width:991px){
+@media (max-width: 1081px){
     .qrcodeexit {
         font-size: 20px;
         margin: 10px 20px;
