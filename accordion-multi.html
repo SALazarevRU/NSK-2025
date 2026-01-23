@@ -11,6 +11,7 @@
       <!-- Google Fonts -->
       <link href='https://fonts.googleapis.com/css?family=Arimo&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
       <link href='https://fonts.googleapis.com/css?family=Noto+Serif&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
       <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">
       <link rel="stylesheet" type="text/css" href="css/stroke-gap-icons.css" media="screen" />
       <link rel="stylesheet" type="text/css" href="css/pe-icon-7-stroke.css" media="screen" />
@@ -21,42 +22,9 @@
       <link rel="stylesheet" type="text/css" href="css/animate.css" media="screen" />
       <link rel="stylesheet" type="text/css" href="css/slider.css">
       <link rel="stylesheet" type="text/css" href="css/accordion-multi.css">
+
       <style>
-         /* Скрываем окно по умолчанию */
-         .popup {
-         display: none;
-         position: fixed;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         background-color: rgba(0, 0, 0, 0.5);
-         z-index: 1000;
-         justify-content: center;
-         align-items: center;
-         }
-         /* Стили содержимого окна */
-         .popup-content {
-         background-color: white;
-         padding: 20px;
-         border-radius: 8px;
-         max-width: 500px;
-         position: relative;
-         z-index: 1001;
-         }
-         /* Кнопка закрытия */
-         .close-popup {
-         display: block; /* Убедимся, что кнопка — блок */
-         margin: 0 auto; /* Центрируем по горизонтали */
-         margin-top: 15px; /* Сохраняем исходный отступ сверху */
-         padding: 8px 16px;
-         background-color: #00ADB5;
-         color: white;
-         border: none;
-         border-radius: 2px;
-         cursor: pointer;
-         height: 40px; /* Пример высоты (можно убрать, если не нужно) */
-         }
+        
 /* Для копирования текста содержимого аккордеонов */
 .copy-link {
   display: inline-block;
@@ -71,9 +39,66 @@
 }
 
 .copy-link:hover {
-  background-color: #DCDCDC; /* Ещё темнее при наведении #DCDCDC #F2F2F2 */
-  /* Цвет рамки не меняется — остаётся чёрным */
-color: #000000;                 /* Сохраняем чёрный цвет текста */
+ background: linear-gradient(135deg, #8A2BE2, #FF69B4); /* background-color: #C0C0C0;  /* Темнее при наведении #C0C0C0  #4CD5DA*/
+ color: white; 
+}
+
+/* стили для кнопки «Войти») */
+.clear-btn {
+  background-color: #eeeeee;    /* Серенький (как у «секции») */
+  color: #000000;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  border: 1px solid black; /* Чёрная рамка толщиной 1px */
+ font-family: 'Segoe UI', Tahoma, sans-serif; /* Добавляем шрифт */
+/* text-transform: uppercase; /* Все буквы заглавные */
+}
+
+.clear-btn:hover {
+  background: linear-gradient(135deg, #8A2BE2, #FF69B4); /* background-color: #C0C0C0;  /* Темнее при наведении #C0C0C0  #4CD5DA*/
+ color: white; 
+}
+
+/* для модального окна «Введите пароль») */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  text-align: center;
+}
+
+#passwordInput {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
       </style>
@@ -184,34 +209,44 @@ color: #000000;                 /* Сохраняем чёрный цвет те
       <ul id="AppAndroid" class="clearfix">
          <section id="AppAndroid-33" class="section-wrap our-team bg-light">
          <div class="container">
-            <section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-13b">
-               <h2 class="FuturisTitle FuturisContentSection-Title">Возможности</h2>
-               <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block" tabindex="0" data-pg4qxfhklesk="1_37mew02-0-13c">
-                  <div data-end-streaming-block="true">&nbsp;</div>
-                  <div class="FuturisMarkdown-Paragraph">С помощью VBA в Excel можно:</div>
-                  <ul class="FuturisMarkdown-UnorderedList">
-                     <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Автоматизировать повторяющиеся действия</strong>. Например, создать оглавление для Excel-файла, которое появляется после нажатия одной кнопки.</li>
-                     <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Расширить возможности Excel</strong>. С помощью VBA можно добавлять пользовательские функции, которых нет в стандартном приложении. Например, создать функцию, которая считает количество уникальных значений, &mdash; такой функции в Excel нет.</li>
-                     <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Взаимодействовать с другими программами Microsoft</strong>. Например, VBA позволяет объединить данные файлов разных программ MS Office: перенести данные из текстового документа, созданного в Word, в файл Excel и настроить связь между ними.</li>
-                     <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Создавать пользовательские формы</strong>&nbsp;для взаимодействия с пользователем.</li>
-                     <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Автоматизировать с использованием событий</strong>&nbsp;&mdash; Excel позволяет выполнять макросы автоматически при определённых событиях: Workbook_Open() &mdash; при открытии книги, Workbook_BeforeSave() &mdash; перед сохранением, Worksheet_Change() &mdash; при изменении ячеек и др..</li>
-                  </ul>
-                  <div class="FuturisMarkdown-Paragraph">&nbsp;<a class="Link FuturisFootnote FuturisFootnote_redesign" href="https://skillbox.ru/media/management/vba-v-excel-obyasnyaem-glavnye-ponyatiya-i-printsipy-raboty/" target="_blank" rel="nofollow noopener" data-counter="[&quot;b&quot;]" data-pg4qxfhklesk="1_37mew02-0-13f">skillbox.ru</a><a class="Link FuturisFootnote FuturisFootnote_redesign FuturisFootnote_lastFootnote" href="https://sky.pro/wiki/media/makrosy-v-excel-polnoe-rukovodstvo/" target="_blank" rel="nofollow noopener" data-counter="[&quot;b&quot;]" data-pg4qxfhklesk="1_37mew02-0-13h">sky.pro</a></div>
-               </div>
-            </section>
-            <section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-13i">
-               <h2 class="FuturisTitle FuturisContentSection-Title">Синтаксис</h2>
-               <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block" tabindex="0" data-pg4qxfhklesk="1_37mew02-0-13j">
-                  <div data-end-streaming-block="true">&nbsp;</div>
-                  <div class="FuturisMarkdown-Paragraph">VBA &mdash; процедурно-ориентированный язык, который использует переменные, условные операторы, циклы и функции. Некоторые конструкции:&nbsp;<a class="Link FuturisFootnote FuturisFootnote_redesign FuturisFootnote_lastFootnote" href="https://taurion.ru/article/vba-visual-basic-for-applications" target="_blank" rel="nofollow noopener" data-counter="[&quot;b&quot;]" data-pg4qxfhklesk="1_37mew02-0-13m">taurion.ru</a></div>
-                  <ul class="FuturisMarkdown-UnorderedList">
-                     <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Переменные и типы данных</strong>&nbsp;&mdash; в VBA используются разные типы данных: Integer &mdash; целые числа, Double &mdash; дробные числа, String &mdash; строки, Boolean &mdash; логические значения (True/False).</li>
-                     <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Условные операторы</strong>&nbsp;&mdash; используются для выполнения действий в зависимости от условий.</li>
-                     <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Циклы</strong>&nbsp;&mdash; в VBA можно использовать разные виды циклов: For&hellip;Next &mdash; для повторения действий заданное число раз, Do While &mdash; выполняется, пока условие истинно, For Each &mdash; перебирает все элементы в коллекции.</li>
-                  </ul>
-                  <div class="FuturisMarkdown-Paragraph">&nbsp;<a class="Link FuturisFootnote FuturisFootnote_redesign FuturisFootnote_lastFootnote" href="https://taurion.ru/article/vba-visual-basic-for-applications" target="_blank" rel="nofollow noopener" data-counter="[&quot;b&quot;]" data-pg4qxfhklesk="1_37mew02-0-13o">taurion.ru</a></div>
-               </div>
-            </section>
+<section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
+    <h2 class="FuturisTitle FuturisContentSection-Title">Преимущества готовых шаблонов ответов</h2>
+    <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block" tabindex="0" data-pg4qxfhklesk="1_37mew02-0-14b">
+        <div data-end-streaming-block="true">&nbsp;</div>
+        <div class="FuturisMarkdown-Paragraph">Готовые шаблоны ответов на часто встречающиеся вопросы обеспечивают:</div>
+        <ul class="FuturisMarkdown-UnorderedList">
+            <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0">
+                <strong>Экономию времени</strong>. Не требуется каждый раз формулировать ответ с нуля — достаточно выбрать шаблон и при необходимости адаптировать.
+            </li>
+            <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0">
+                <strong>Единообразие коммуникации</strong>. Все получают одинаково чёткие и структурированные ответы, что исключает разночтения.
+            </li>
+            <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0">
+                <strong>Снижение нагрузки на память</strong>. Нет необходимости держать в голове десятки стандартных формулировок — информация всегда доступна.
+            </li>
+            <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0">
+                <strong>Повышение качества ответов</strong>. Шаблоны заранее выверены: в них отсутствуют ошибки, лишние эмоции и неоднозначные формулировки.
+            </li>
+            <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0">
+                <strong>Скорость реакции</strong>. Возможность оперативно отвечать на рутинные вопросы без откладывания «на потом».
+            </li>
+            <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0">
+                <strong>Упрощение обучения новых сотрудников</strong>. Шаблоны служат готовым гидом по стандартным ситуациям, ускоряя адаптацию новичков.
+            </li>
+            <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0">
+                <strong>Защиту от стресса</strong>. Наличие «каркаса» ответа помогает сохранять спокойствие в напряжённых диалогах.
+            </li>
+            <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0">
+                <strong>Прозрачность процессов</strong>. Согласованные с руководством шаблоны закрепляют единые правила коммуникации в команде.
+            </li>
+        </ul>
+        <div class="FuturisMarkdown-Paragraph"><br>
+            
+            <strong>Итог:</strong> шаблоны — это инструмент профессиональной эффективности. Они освобождают ресурсы для решения нетривиальных задач, сохраняя качество рутинной переписки.
+        </div>
+    </div>
+</section>
+
             <div class="container">
             </div>
             <br>
@@ -222,11 +257,13 @@ color: #000000;                 /* Сохраняем чёрный цвет те
 <br><br>
             
             <div class="accordion-group">
-               <h3 class="accordion-header default-open">Руководителям отделов ООО ПКО БСВ</h3>
+               <h3 class="accordion-header">Руководителям отделов</h3>
                <div class="accordion-body">
                   <p>© 2026 Отдел Архива ООО ПКО БСВ</p>
                   <div class="accordion-group" data-multiple="true">
-                     <h3 class="f20 accordion-header">Смотреть форму ответа Руслану "Где найти сканы отлички" (требуется пароль)</h3>
+                      <h3 id="protected-accordion" class="accordion-header requires-password">
+        Смотреть форму ответа Руслану "Где найти сканы отлички" (требуется пароль)
+      </h3>
                      <div class="accordion-body">
                         <p id="content-to-copy">Сканы могут находиться где угодно (неопределённость). Следовательно, мы не можем прогнозировать их наличие и местонахождение. Причиной тому ряд факторов: 1. хаотизация структуры директорий, каталогов и папок на дисках. 2. сектора доступа в корпоративном ПО (ограничения и неинформативность) 3. наличие объёма незарегистрированных бумажных документов. 4. необходимость запросов в Благовещенск. 5. ошибки при загрузке сканов в ПО Коллекшен 2.0 (частично или вообще отсутствуют) 6. добавить факторы.</p>
 <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('content-to-copy')">
@@ -240,11 +277,11 @@ color: #000000;                 /* Сохраняем чёрный цвет те
                      </div>
                      <h3 class="f20 accordion-header">Смотреть форму ответа 1.3</h3>
                      <div class="accordion-body">
-                        <p>Текст 1.3</p>
+                        <p>Шрифт: Для лучшей читаемости используйте font-family: 'Segoe UI', Tahoma, sans-serif; в кнопках.Адаптивность: Для мобильных устройств добавьте touch-action: manipulation; чтобы избежать ложных срабатываний.</p>
                      </div>
                   </div>
                </div>
-               <h3 class="accordion-header default-open">Сотрудникам отделов ООО ПКО БСВ</h3>
+               <h3 class="accordion-header">Сотрудникам отделов</h3>
                <div class="accordion-body">
                   <p>Мы используем стороннюю компанию для предоставления технологий монетизации нашего сайта. Вы можете ознакомиться с их политикой конфиденциальности и использования файлов&nbsp;cookie.</p>
 <p>Вы можете изменить настройки конфиденциальности, нажав следующую кнопку:</p>
@@ -255,7 +292,15 @@ color: #000000;                 /* Сохраняем чёрный цвет те
   <button type="button" class="clear-btn">Очистить</button>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<div id="passwordModal" class="popup">
+  <div class="popup-content">
+    <h4>Введите пароль</h4>
+    <input type="password" id="passwordInput" placeholder="Пароль" />
+    <button type="button" class="clear-btn" onclick="checkPassword()">Войти</button>
+  </div>
+</div>
+
 <script>
 $('.clear-btn').click(function() {
   $('#myTextarea').val('').focus();
@@ -303,37 +348,40 @@ $('.clear-btn').click(function() {
       <script type="text/javascript" src="js/jquery.easing.min.js"></script>
       <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
       <script src="js/wow.min.js"></script>
-      <!-- Custom Theme JavaScript Пользовательская тема JavaScript -->
-      <script src="js/scripts.js"></script>
-      <script src="js/accordion-multi.js"></script>
+      
+<!-- Custom Theme JavaScript Пользовательская тема JavaScript -->
+      <script src="js/scripts.js"></script>      
 
 <script>
 function copyTextFromAccordion(elementId) {
-// Находим элемент по ID
-const textElement = document.getElementById(elementId);
+    const textElement = document.getElementById(elementId);
+    const textToCopy = textElement.textContent;
 
-if (!textElement) {
-alert('Элемент не найден!');
-return;
-}
-
-// Получаем текст из элемента
-const textToCopy = textElement.textContent;
-
-// Копируем в буфер обмена
-navigator.clipboard.writeText(textToCopy)
-.then(() => {
-// Успех: показываем сообщение
-alert('Текст скопирован в буфер обмена!');
-})
-.catch((err) => {
-// Ошибка: сообщаем пользователю
-console.error('Ошибка при копировании: ', err);
-alert('Не удалось скопировать текст. Попробуйте вручную.');
-});
+    navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+            // Успех: показываем Toastify вместо alert
+            Toastify({
+                text: "Текст скопирован в буфер обмена!",
+                duration: 2500, // Автозакрытие через 2 сек
+                close: true,
+                gravity: "top",
+                position: "center",
+                backgroundColor: "linear-gradient(to right, #8A2BE2, #FF69B4)", // Градиент цвет для успеха
+                className: "info",
+                stopOnFocus: true, // Не закрывается при наведении
+            }).showToast();
+        })
+       
 }
 </script>
 
+<script>
+$('.clear-btn').click(function() {
+  $('#myTextarea').val('').focus();
+});
+</script>
 
+<script src="js/accordion-multi.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
    </body>
 </html>
