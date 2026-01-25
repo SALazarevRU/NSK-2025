@@ -16,21 +16,26 @@
       <![endif]-->
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-      <!-- Google Fonts -->
-      <link href='https://fonts.googleapis.com/css?family=Arimo&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-      <link href='https://fonts.googleapis.com/css?family=Noto+Serif&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">
-      <link rel="stylesheet" type="text/css" href="css/stroke-gap-icons.css" media="screen" />
-      <link rel="stylesheet" type="text/css" href="css/pe-icon-7-stroke.css" media="screen" />
-      <link rel="stylesheet" type="text/css" href="css/elegant-icons.css" media="screen" />
-      <link rel="stylesheet" type="text/css" href="css/font-awesome.css" media="screen" />
-      <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
-      <link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen" />
-      <link rel="stylesheet" type="text/css" href="css/animate.css" media="screen" />
-      <link rel="stylesheet" type="text/css" href="css/slider.css">
-      <link rel="stylesheet" type="text/css" href="css/accordion-multi.css">
-      <link rel="stylesheet" href="css/font-awesome.css">
+      <!-- 1. Google Fonts (исправлены протоколы) -->
+  <link href="https://fonts.googleapis.com/css?family=Arimo&subset=latin,cyrillic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif&subset=latin,cyrillic" rel="stylesheet">
+
+
+  <!-- 2. Стили (в порядке зависимости) -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/stroke-gap-icons.css">
+  <link rel="stylesheet" href="css/pe-icon-7-stroke.css">
+  <link rel="stylesheet" href="css/elegant-icons.css">
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/slider.css">
+  <link rel="stylesheet" href="css/accordion-multi.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- 3. Toastify (только один вариант: локальный ИЛИ CDN) -->
+  <!-- Вариант A: локальная копия (рекомендуется) -->
+  <link rel="stylesheet" href="css/toastify.min.css">
 
 
       <style>
@@ -692,6 +697,7 @@ $('.clear-btn').click(function() {
 <script src="js/jquery.easing.min.js"></script>
 <script src="js/imagesloaded.pkgd.min.js"></script>
 <script src="js/wow.min.js"></script>
+<script src="js/toastify.min.js"></script>
 
 <!-- 3. Скрипт аккордеона (должен быть до вашего кода!) -->
 <script src="js/accordion-multi.js"></script>
