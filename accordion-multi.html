@@ -230,11 +230,19 @@ stopOnFocus: true, // Не закрывается при наведении
                            <div class="search-bar">
                               <div class="search-wrap">
                                  <form role="form">
-                                    <div class="form-group">
-                                       <input type="search" class="form-control searchbox" placeholder="Search">
-                                    </div>
-                                    <button type="submit" class="search-button"><i class="pe-7s-search"></i></button>
-                                 </form>
+  <div class="form-group">
+    <label for="search-input">Поиск:</label>
+    <input 
+      type="search"
+      id="search-input"
+      name="search"
+      class="form-control searchbox"
+      placeholder="Search"
+      autocomplete="off" <!-- или "on", если нужно автозаполнение -->
+    >
+  </div>
+  <button type="submit" class="search-button"><i class="pe-7s-search"></i></button>
+</form>
                               </div>
                            </div>
                         </li>
