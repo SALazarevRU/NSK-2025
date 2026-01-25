@@ -111,7 +111,12 @@ button {
   border-radius: 4px;
   cursor: pointer;
 }
-
+/* Для полной адаптивности section id="formy-otvetov-33"*/
+@media (max-width: 767px) {
+      .column {
+        flex: 1 1 100%;
+      }
+    }
       </style>
       <script>
          document.addEventListener('DOMContentLoaded', function() {
@@ -323,43 +328,107 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
 Копировать текст</a> 
                </div>
             </div>
- <div class="textarea-container" >
-  <textarea id="myTextarea" rows="8" cols="140" placeholder="Вставьте скопированный текст для проверки" style="  border-radius: 4px;  border: 1px solid #00ADB5 "></textarea>
-  <button type="button" class="clear-btn">Очистить</button>
+<div class="textarea-container" style="
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
+">
+  <textarea 
+    id="myTextarea"
+    rows="8"
+    style="
+      width: 100%;
+      min-height: 120px;
+      max-height: 300px;
+      padding: 12px;
+      border: 1px solid #00ADB5;
+      border-radius: 8px;
+      font-size: 16px;
+      line-height: 1.5;
+      resize: vertical;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    "
+    placeholder="Вставьте скопированный текст для проверки"
+  ></textarea>
+  <button
+    type="button"
+    class="clear-btn"
+    style="
+      align-self: flex-start;
+      padding: 8px 16px;
+      background-color: #00ADB5;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    "
+    onmouseover="this.style.backgroundColor='#008a96'"
+    onmouseout="this.style.backgroundColor='#00ADB5'"
+  >
+    Очистить
+  </button>
 </div>
+
 
 
 <br><br><br><h2 class="FuturisTitle FuturisContentSection-Title" >Заголовок</h2>
 
-<section id="formy-otvetov" class="section-wrap our-team bg-light" style="
-    width: 1140px;
+<section id="formy-otvetov-33" class="section-wrap our-team bg-light" style="
+    width: 100%;
+    max-width: 1140px;
     min-height: 600px;
     background: linear-gradient(135deg, #8A2BE2, #FF69B4, #8A2BE2);
-    margin: 10px 0;
+    margin: 10px auto;
     padding: 20px;
     box-sizing: border-box;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: relative;
-    display: flex;          /* Включаем flex-контейнер */
-    flex-wrap: wrap;       /* Перенос строк при нехватке места */
-    gap: 10px;             /* Отступы между колонками */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
     overflow: hidden;
-    color: white; /* Белый цвет текста для всей секции */
-  ">
-
-  <div class="column" style="flex: 1 1 20%; border: 1px solid #ccc; padding: 15px;">
+    color: white;
+">
+  <div class="column" style="
+        flex: 1 1 20%;
+        min-width: 200px;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 6px;
+    ">
     Левая колонка (узкая)
   </div>
-  
-<div class="column" style="  flex: 2 1 40%; padding: 15px;
-    background-color: rgba(255, 255, 255, 0.2); /* Белый с прозрачностью 10 % */ ">
+
+  <div class="column" style="
+        flex: 2 1 40%;
+        min-width: 300px;
+        padding: 15px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 6px;
+    ">
     Средняя колонка (широкая)
-</div>
-  <div class="column" style="flex: 1 1 20%; border: 1px solid #ccc; padding: 15px;">
+  </div>
+
+  <div class="column" style="
+        flex: 1 1 20%;
+        min-width: 200px;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 6px;
+    ">
     Правая колонка (узкая)
   </div>
 </section>
+
 
 
 
