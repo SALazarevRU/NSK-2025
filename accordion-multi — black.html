@@ -24,18 +24,19 @@
       <link rel="stylesheet" type="text/css" href="css/accordion-multi.css">
 
       <style>
-        
+/*  #3C3C3C АНТРАЦИТ, #00ADB5 - НАШ БАЗОВЫЙ) https://atuin.ru/tools/shades/ ГЕНЕРАТОР ОТТЕНКОВ*/        
 /* Для копирования текста содержимого аккордеонов */
 .copy-link {
   display: inline-block;
   margin-top: 10px;
   padding: 1px 10px;          /* Уменьшили вертикальные отступы */
-  background-color: #FFFFFF; /* Тёмно‑серый фон (было #F2F2F2) */
+  background-color: #FFF; /* Тёмно‑серый фон (было #F2F2F2) */
   color: #000000;
   text-decoration: none;
   border-radius: 4px;
   font-size: 12px;
-  border: 1px solid #000000; /* Чёрная рамка (ширина + стиль + цвет) */
+  color: #6a7984;  
+  border: 1px solid #6a7984; /* Чёрная рамка (ширина + стиль + цвет) */
 }
 
 .copy-link:hover {
@@ -204,21 +205,28 @@ button {
          </nav>
          <!-- End Navbar -->
       </header>
+
       <div class="main-wrapper основная оболочка">
       <!-- Приложение -->
       <ul id="AppAndroid" class="clearfix">
+
       <!-- <section id="AppAndroid-33" class="section-wrap our-team bg-light" style="background-image: url('./img/kirpich-chernyi.jpg');
                 background-repeat: repeat;
                 background-position: top left;
                 background-size: auto;"> --> <!-- Для бесшовного фонового рисунка секции -->
-         <section id="AppAndroid-33" class="section-wrap our-team bg-light">
+         
+      <section id="AppAndroid-33" class="section-wrap our-team bg-light">
          <div class="container">
+
 <section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
 
+<h2 class="text-center">Преимущества</h2>
+<p class="subheading text-center">готовых шаблонов ответов</p>
 
-    <h2 class="FuturisTitle FuturisContentSection-Title" >Преимущества готовых шаблонов ответов</h2>
+    <!--<h2 class="FuturisTitle FuturisContentSection-Title" >Преимущества готовых шаблонов ответов</h2> -->
+
     <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block" tabindex="0" data-pg4qxfhklesk="1_37mew02-0-14b"
-style="background: linear-gradient(135deg, #C0C0C0, #FFF) /*background-color: rgba(0, 0, 0, 0.1);  черный с прозрачностью 10 % */ ;  
+style="background: linear-gradient(135deg, #ededed, #FFF) /*background-color: rgba(0, 0, 0, 0.1);  черный с прозрачностью 10 % */ ;  
 color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.2)">
         <div data-end-streaming-block="true">&nbsp;</div>
         <div class="FuturisMarkdown-Paragraph">Готовые шаблоны ответов на часто встречающиеся вопросы обеспечивают:</div>
@@ -257,10 +265,10 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
 
             <div class="container">
             </div>
-            <br>
+            <br><br><br>
 
-<h2 class="text-center">Формы ответов</h2>
-<p class="subheading text-center">на часто задаваемые вопросы</p>
+<h2 class="text-center">Формы </h2>
+<p class="subheading text-center">ответов на часто задаваемые вопросы</p>
 <div class="main-border blue"></div>
 <br><br>
             
@@ -270,42 +278,54 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
                   <p>© 2026 Отдел Архива ООО ПКО БСВ</p>
                   <div class="accordion-group" data-multiple="true">
                       <h3 id="protected-accordion" class="accordion-header requires-password">
-        Смотреть форму ответа Руслану "Где найти сканы отлички" (требуется пароль "123")
+        Руслану "Где найти сканы отлички"  <span style="
+    margin-left: 8px;           /* Отступ слева */
+    font-size: 0.75em;         /* Чуть мельче, чем основной текст */
+    color: #FFF;               /* Серый цвет */
+    /*  font-style: italic;           Курсив */
+  ">(требуется пароль "123")</span>
       </h3>
                      <div class="accordion-body">
                         <p id="content-to-copy">Сканы могут находиться где угодно (неопределённость). Следовательно, мы не можем прогнозировать их наличие и местонахождение. Причиной тому ряд факторов: 1. хаотизация структуры директорий, каталогов и папок на дисках. 2. сектора доступа в корпоративном ПО (ограничения и неинформативность) 3. наличие объёма незарегистрированных бумажных документов. 4. необходимость запросов в Благовещенск. 5. ошибки при загрузке сканов в ПО Коллекшен 2.0 (частично или вообще отсутствуют) 6. добавить факторы.</p>
 <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('content-to-copy')">
-Копировать текст
-</a>
+Копировать текст</a>
                      </div>
-                     <h3 class="f20 accordion-header">Смотреть форму ответа 1.2</h3>
+                     <h3 class="f20 accordion-header">Добавить 1.2</h3>
                      <div class="accordion-body">
                         <p>5. Альтернатива prompt() — модальное окно Для лучшего UX заменить prompt() на кастомное модальное окно: HTML (добавить в конец страницы)
 </p>
+<a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('content-to-copy')">
+Копировать текст</a>
                      </div>
-                     <h3 class="f20 accordion-header">Смотреть форму ответа 1.3</h3>
+                     <h3 class="f20 accordion-header">Добавить 1.3</h3>
                      <div class="accordion-body">
                         <p>Шрифт: Для лучшей читаемости используйте font-family: 'Segoe UI', Tahoma, sans-serif; в кнопках.Адаптивность: Для мобильных устройств добавьте touch-action: manipulation; чтобы избежать ложных срабатываний.</p>
-                     </div>
+ <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('content-to-copy')">
+Копировать текст</a>                   
+ </div>
                   </div>
                </div>
                <h3 class="accordion-header">✔ Сотрудникам отделов</h3>
-               <div class="accordion-body">
+               <div class="accordion-body" style="background: #FFF">
                   <p>Мы используем стороннюю компанию для предоставления технологий монетизации нашего сайта. Вы можете ознакомиться с их политикой конфиденциальности и использования файлов&nbsp;cookie.</p>
 <p>Вы можете изменить настройки конфиденциальности, нажав следующую кнопку:</p>
+ <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('content-to-copy')">
+Копировать текст</a> 
                </div>
             </div>
- <div class="textarea-container">
-  <textarea id="myTextarea" rows="8" cols="140" placeholder="Вставьте скопированный текст для проверки"></textarea>
+ <div class="textarea-container" >
+  <textarea id="myTextarea" rows="8" cols="140" placeholder="Вставьте скопированный текст для проверки" style="  border-radius: 4px;  border: 1px solid #00ADB5 "></textarea>
   <button type="button" class="clear-btn">Очистить</button>
 </div>
 
+
+<br><br><br><h2 class="FuturisTitle FuturisContentSection-Title" >Заголовок</h2>
 
 <section id="formy-otvetov" class="section-wrap our-team bg-light" style="
     width: 1140px;
     min-height: 600px;
     background: linear-gradient(135deg, #8A2BE2, #FF69B4);
-    margin: 20px 0;
+    margin: 10px 0;
     padding: 20px;
     box-sizing: border-box;
     border-radius: 8px;
@@ -317,6 +337,7 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
     overflow: hidden;
     color: white; /* Белый цвет текста для всей секции */
   ">
+
   <div class="column" style="flex: 1 1 20%; border: 1px solid #ccc; padding: 15px;">
     Левая колонка (узкая)
   </div>
