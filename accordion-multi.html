@@ -1,0 +1,702 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+   <head>     
+      <meta charset="utf-8">  
+<!-- Фавикон -->
+   <link rel="icon" type="image/png" sizes="192x192" href="/NSK-2025/favicon-192.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/NSK-2025/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/NSK-2025/favicon-32.png">
+<link rel="icon" type="image/x-icon" href="/NSK-2025/favicon.ico">
+ 
+<title>Формы ответов</title>
+<!-- Адаптивность -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!--[if IE]>
+      <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+      <![endif]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+      <!-- Google Fonts -->
+      <link href='https://fonts.googleapis.com/css?family=Arimo&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Noto+Serif&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">
+      <link rel="stylesheet" type="text/css" href="css/stroke-gap-icons.css" media="screen" />
+      <link rel="stylesheet" type="text/css" href="css/pe-icon-7-stroke.css" media="screen" />
+      <link rel="stylesheet" type="text/css" href="css/elegant-icons.css" media="screen" />
+      <link rel="stylesheet" type="text/css" href="css/font-awesome.css" media="screen" />
+      <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+      <link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen" />
+      <link rel="stylesheet" type="text/css" href="css/animate.css" media="screen" />
+      <link rel="stylesheet" type="text/css" href="css/slider.css">
+      <link rel="stylesheet" type="text/css" href="css/accordion-multi.css">
+      <link rel="stylesheet" href="css/font-awesome.css">
+
+
+      <style>
+/*  #3C3C3C АНТРАЦИТ, #00ADB5 - НАШ БАЗОВЫЙ) https://atuin.ru/tools/shades/ ГЕНЕРАТОР ОТТЕНКОВ*/        
+/* Для копирования текста содержимого аккордеонов */
+.copy-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 1px 10px;          /* Уменьшили вертикальные отступы */
+  background-color: #FFF; /* Тёмно‑серый фон (было #F2F2F2) */
+  color: #000000;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #6a7984;  
+  border: 1px solid #6a7984; /* Чёрная рамка (ширина + стиль + цвет) */
+}
+
+.copy-link:hover {
+ background: linear-gradient(135deg, #8A2BE2, #FF69B4); /* background-color: #C0C0C0;  /* Темнее при наведении #C0C0C0  #4CD5DA*/
+ color: white; 
+}
+
+/* стили для кнопки «Войти») */
+.clear-btn {
+  background-color: #eeeeee;    /* Серенький (как у «секции») */
+  color: #000000;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  border: 1px solid black; /* Чёрная рамка толщиной 1px */
+ font-family: 'Segoe UI', Tahoma, sans-serif; /* Добавляем шрифт */
+/* text-transform: uppercase; /* Все буквы заглавные */
+}
+
+.clear-btn:hover {
+  background: linear-gradient(135deg, #8A2BE2, #FF69B4); /* background-color: #C0C0C0;  /* Темнее при наведении #C0C0C0  #4CD5DA*/
+ color: white; 
+}
+
+/* для модального окна «Введите пароль») */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  text-align: center;
+}
+
+#passwordInput {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* Для полной адаптивности section id="formy-otvetov-33"*/
+@media (max-width: 767px) {
+      .column {
+        flex: 1 1 100%;
+      }
+    }
+      </style>
+      <script>
+         document.addEventListener('DOMContentLoaded', function() {
+         // Обработчик для ссылок, открывающих окна
+         const openPopupLinks = document.querySelectorAll('.open-popup');
+         openPopupLinks.forEach(link => {
+         link.addEventListener('click', function(e) {
+         e.preventDefault(); // Отменяем переход по ссылке
+         
+         const targetId = this.getAttribute('data-target');
+         const popup = document.getElementById(targetId);
+         
+         if (popup) {
+         popup.style.display = 'flex'; // Показываем окно
+         }
+         });
+         });
+         
+         // Обработчик для кнопок закрытия
+         const closeButtons = document.querySelectorAll('.close-popup');
+         closeButtons.forEach(button => {
+         button.addEventListener('click', function() {
+         const popup = this.closest('.popup');
+         popup.style.display = 'none'; // Скрываем окно
+         });
+         });
+         
+         // Дополнительно: закрытие по клику на фон
+         const popups = document.querySelectorAll('.popup');
+         popups.forEach(popup => {
+         popup.addEventListener('click', function(e) {
+         if (e.target === popup) {
+         popup.style.display = 'none';
+         }
+         });
+         });
+         });
+      </script>
+   </head>
+   <body class="loading">
+      <!-- Preloader Устройство предварительной загрузки-->
+      <div id="preloader">
+         <div id="status">&nbsp;</div>
+      </div>
+      <header>
+         <!-- Navbar -->
+         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <nav class="navigation">
+               <div class="container">
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                     <span class="sr-only">Открыть меню</span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     </button>
+                     <!-- Logo -->
+                     <div class="logo">
+                        <a href="#" class="open-popup" data-target="popup2">
+                        Формы<i> ответов</i>
+                        </a>
+                     </div>
+                     <div class="popup" id="popup2">
+                        <div class="popup-content">
+                           <h3>App-</h3>
+                           <p>Приложение (программа) для различных устройств.</p>
+                           <button class="close-popup">Закрыть или клик на серое поле</button>
+                        </div>
+                     </div>
+                     <!-- Logo конец -->
+                  </div>
+                  <!-- end navbar-header -->
+                  <div class="collapse navbar-collapse" id="navbar-collapse">
+                     <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.html#preloader">Главная</a></li>
+                        <li><a href="index.html#222">Команда</a></li>
+                        <li><a href="LazarevSA.html#LazarevSA-33">Разработчик</a></li>
+                        <li><a href="ITProjects.html">IT Проекты</a></li>
+                        <li class="active"><a href="LazarevSA.html#LazarevSA-33">Ответы</a></li>
+                        <li>
+                           <div id="search"><i class="pe-7s-search search-trigger"></i></div>
+                           <div class="search-bar">
+                              <div class="search-wrap">
+                                 <form role="form">
+                                    <div class="form-group">
+                                       <input type="search" class="form-control searchbox" placeholder="Search">
+                                    </div>
+                                    <button type="submit" class="search-button"><i class="pe-7s-search"></i></button>
+                                 </form>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                     <!-- end menu -->
+                  </div>
+                  <!-- end collapse -->
+               </div>
+               <!-- end container -->
+            </nav>
+            <!-- end navigation -->
+         </nav>
+         <!-- End Navbar -->
+      </header>
+
+      <div class="main-wrapper основная оболочка">
+      <!-- Приложение -->
+      <ul id="AppAndroid" class="clearfix">
+
+      <!-- <section id="AppAndroid-33" class="section-wrap our-team bg-light" style="background-image: url('./img/kirpich-chernyi.jpg');
+                background-repeat: repeat;
+                background-position: top left;
+                background-size: auto;"> --> <!-- Для бесшовного фонового рисунка секции -->
+         
+      <section id="AppAndroid-33" class="section-wrap our-team bg-light">
+         <div class="container">
+
+<section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
+
+<h2 class="text-center">Преимущества</h2>
+<p class="subheading text-center">готовых шаблонов ответов</p>
+
+    <!--<h2 class="FuturisTitle FuturisContentSection-Title" >Преимущества готовых шаблонов ответов</h2> -->
+
+    <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block" tabindex="0" data-pg4qxfhklesk="1_37mew02-0-14b"
+style="background: linear-gradient(135deg, #ededed, #FFF, #ededed) /*background-color: rgba(0, 0, 0, 0.1);  черный с прозрачностью 10 % */ ;  
+color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.2)">
+        <div data-end-streaming-block="true">&nbsp;</div>
+        <div class="FuturisMarkdown-Paragraph">Готовые шаблоны ответов на часто встречающиеся вопросы обеспечивают:</div>
+        <ul class="FuturisMarkdown-UnorderedList">
+            <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0">
+                <strong>Экономию времени</strong>. Не требуется каждый раз формулировать ответ с нуля — достаточно выбрать шаблон и при необходимости адаптировать.
+            </li>
+            <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0">
+                <strong>Единообразие коммуникации</strong>. Все получают одинаково чёткие и структурированные ответы, что исключает разночтения.
+            </li>
+            <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0">
+                <strong>Снижение нагрузки на память</strong>. Нет необходимости держать в голове десятки стандартных формулировок — информация всегда доступна.
+            </li>
+            <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0">
+                <strong>Повышение качества ответов</strong>. Шаблоны заранее выверены: в них отсутствуют ошибки, лишние эмоции и неоднозначные формулировки.
+            </li>
+            <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0">
+                <strong>Скорость реакции</strong>. Возможность оперативно отвечать на рутинные вопросы без откладывания «на потом».
+            </li>
+            <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0">
+                <strong>Упрощение обучения новых сотрудников</strong>. Шаблоны служат готовым гидом по стандартным ситуациям, ускоряя адаптацию новичков.
+            </li>
+            <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0">
+                <strong>Защиту от стресса</strong>. Наличие «каркаса» ответа помогает сохранять спокойствие в напряжённых диалогах.
+            </li>
+            <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0">
+                <strong>Прозрачность процессов</strong>. Согласованные с руководством шаблоны закрепляют единые правила коммуникации в команде.
+            </li>
+        </ul>
+        <div class="FuturisMarkdown-Paragraph"><br>
+            
+            <strong>Итог:</strong> шаблоны — это инструмент профессиональной эффективности. Они освобождают ресурсы для решения нетривиальных задач, сохраняя качество рутинной переписки.
+        </div>
+    </div>
+</section>
+
+            <div class="container">
+            </div>
+            <br><br><br>
+
+<h2 class="text-center">Формы </h2>
+<p class="subheading text-center">ответов на часто задаваемые вопросы</p>
+<div class="main-border blue"></div>
+<br><br>
+            
+            <div class="accordion-group">
+               <h3 class="accordion-header">✔ Руководителям отделов</h3>
+               <div class="accordion-body">
+                  <p>© 2026 Отдел Архива ООО ПКО БСВ</p>
+                  <div class="accordion-group" data-multiple="true">
+                      <h3 id="protected-accordion" class="accordion-header requires-password">
+        Руслану "Где найти сканы отлички"  <span style="
+    margin-left: 8px;           /* Отступ слева */
+    font-size: 0.75em;         /* Чуть мельче, чем основной текст */
+    color: #FFF;               /* Серый цвет */
+    /*  font-style: italic;           Курсив */
+  ">(требуется пароль "123")</span>
+      </h3>
+                     <div class="accordion-body">
+                        <p id="content-to-copy">Сканы могут находиться где угодно (неопределённость). Следовательно, мы не можем прогнозировать их наличие и местонахождение. Причиной тому ряд факторов: 1. хаотизация структуры директорий, каталогов и папок на дисках. 2. сектора доступа в корпоративном ПО (ограничения и неинформативность) 3. наличие объёма незарегистрированных бумажных документов. 4. необходимость запросов в Благовещенск. 5. ошибки при загрузке сканов в ПО Коллекшен 2.0 (частично или вообще отсутствуют) 6. добавить факторы.</p>
+<a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('content-to-copy')">
+Копировать текст</a>
+                     </div>
+                     <h3 class="f20 accordion-header">Добавить 1.2</h3>
+                     <div class="accordion-body">
+                        <p>5. Альтернатива prompt() — модальное окно Для лучшего UX заменить prompt() на кастомное модальное окно: HTML (добавить в конец страницы)
+</p>
+<a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('content-to-copy')">
+Копировать текст</a>
+                     </div>
+                     <h3 class="f20 accordion-header">Добавить 1.3</h3>
+                     <div class="accordion-body">
+                        <p>Шрифт: Для лучшей читаемости используйте font-family: 'Segoe UI', Tahoma, sans-serif; в кнопках.Адаптивность: Для мобильных устройств добавьте touch-action: manipulation; чтобы избежать ложных срабатываний.</p>
+ <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('content-to-copy')">
+Копировать текст</a>                   
+ </div>
+                  </div>
+               </div>
+               <h3 class="accordion-header">✔ Сотрудникам отделов</h3>
+               <div class="accordion-body" style="background: #FFF">
+                  <p>Мы используем стороннюю компанию для предоставления технологий монетизации нашего сайта. Вы можете ознакомиться с их политикой конфиденциальности и использования файлов&nbsp;cookie.</p>
+<p>Вы можете изменить настройки конфиденциальности, нажав следующую кнопку:</p>
+ <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('content-to-copy')">
+Копировать текст</a> 
+               </div>
+            </div>
+<div class="textarea-container" style="
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
+">
+  <textarea 
+    id="myTextarea"
+    rows="8"
+    style="
+      width: 100%;
+      min-height: 120px;
+      max-height: 300px;
+      padding: 12px;
+      border: 1px solid #00ADB5;
+      border-radius: 8px;
+      font-size: 16px;
+      line-height: 1.5;
+      resize: vertical;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    "
+    placeholder="Вставьте скопированный текст для проверки"
+  ></textarea>
+  <button
+    type="button"
+    class="clear-btn"
+    style="
+      align-self: flex-start;
+      padding: 8px 16px;
+      background-color: #00ADB5;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    "
+    onmouseover="this.style.backgroundColor='#008a96'"
+    onmouseout="this.style.backgroundColor='#00ADB5'"
+  >
+    Очистить
+  </button>
+</div>
+
+
+
+<br><br><br><h2 class="FuturisTitle FuturisContentSection-Title" >Заголовок</h2>
+
+<section id="formy-otvetov-33" class="section-wrap our-team bg-light" style="
+    width: 100%;
+    max-width: 1140px;
+    min-height: 600px;
+    background: linear-gradient(135deg, #8A2BE2, #FF69B4, #8A2BE2);
+    margin: 10px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    overflow: hidden;
+    color: white;
+">
+  <div class="column" style="
+        flex: 1 1 20%;
+        min-width: 200px;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 6px;
+    ">
+    Левая колонка (узкая)
+  </div>
+
+  <div class="column" style="
+        flex: 2 1 40%;
+        min-width: 300px;
+        padding: 15px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 6px;
+    ">
+    Средняя колонка (широкая)
+  </div>
+
+  <div class="column" style="
+        flex: 1 1 20%;
+        min-width: 200px;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 6px;
+    ">
+    Правая колонка (узкая)
+  </div>
+</section>
+
+
+
+
+<br><br><br><h2 class="text-center">Заголовок</h2>
+
+<div id="forms-otvetov" class="features-promo mt70">
+					<div class="row">
+						<!-- start left column -->
+						<div class="col-lg-3 col-md-4 col-sm-6">
+
+                                                <div class="features-item features-right text-right">
+                                                    <div class="features-icon">
+                                                         <i class="icon icon-Search"></i>
+                                                    </div>
+                                                         <h5>Локация</h5>
+                                                              <a href="#map-bsv" class="highlight-link" >Подробнее</a>
+                                                </div> <!-- end features item -->
+
+							<div class="features-item features-right text-right">
+								<div class="features-icon">
+									<i class="icon icon-Layers"></i>
+								</div>
+								<h5>Взаимодействие</h5>
+								<a href="accordion-multi.html" class="highlight-link" >Подробнее</a>
+							</div> <!-- end features item -->
+
+							<div class="features-item features-right text-right">
+								<div class="features-icon">
+									<i class="icon icon-Drop"></i>
+								</div>
+								<h5>Яркая корпоративная жизнь</h5>
+								<a href="korporativnaja.html#789" class="highlight-link" ;">Подробнее</a>
+							</div> <!-- end features item -->
+
+							<div class="features-item features-right text-right">
+								<div class="features-icon">
+									<i class="icon icon-Drop"></i>
+								</div>
+								<h5>Добавить</h5>
+								<a href="korporativnaja.html#789" class="highlight-link" ;">Подробнее</a>
+							</div> <!-- end features item -->
+						</div> <!-- end left column-->
+
+						<div class="promo-img col-lg-6 col-md-4 hidden-sm hidden-xs text-center">
+							<img src="upload/core_features_img.jpg" alt="core-features-img">
+						</div>
+
+						<!-- start right column -->
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="features-item">
+								<div class="features-icon">
+									<i class="icon icon-Tools"></i>
+								</div>
+								<h5>Бонусы</h5>
+								<a href="#" class="highlight-link" ">Подробнее (скоро)</a>
+							</div> <!-- end features item -->
+
+							<div class="features-item">
+								<div class="features-icon">
+									<i class="icon icon-Timer"></i>
+								</div>
+								<h5>Функционал</h5>
+								<a href="#" class="highlight-link" >Подробнее (скоро)</a>
+							</div> <!-- end features item -->
+
+							<div class="features-item">
+								<div class="features-icon">
+									<i class="icon icon-Notes"></i>
+								</div>
+								<h5>Музычка в облаке</h5>
+								<a href="https://samply.app/p/VfLdNfGzUBzbLKSYpkPm" class="highlight-link" >Жмакай!</a>
+                                                              </div> <!-- end features item -->
+
+
+
+						</div> <!-- end right column-->
+					</div> <!-- end row -->
+				</div> <!-- end features promo -->
+			</div> <!-- end container -->
+
+
+
+
+
+<div id="passwordModal" class="popup">
+  <div class="popup-content">
+    <h4>Введите пароль</h4>
+    <input type="password" id="passwordInput" placeholder="Пароль" />
+    <button type="button" class="clear-btn" onclick="checkPassword()">Войти</button>
+  </div>
+</div>
+
+<script>
+$('.clear-btn').click(function() {
+  $('#myTextarea').val('').focus();
+});
+</script>          
+      </ul>
+      <!-- Call to Action -->
+      <section class="call-to-action22">
+      <div class="container22">
+      <div>
+      <a href="index.html#vzaimodeystvie" id="cta-button-stroke" class="btn btn-large btn-rounded btn-light-transparent">Вернуться</a>
+      <a href="oplata/oplata.html" id="cta-button-stroke" class="btn btn-large btn-rounded btn-light-transparent">Поддержать проект</a>
+      </div>
+
+      </div> <!-- end container -->
+      </section> <!-- end call to action -->
+
+
+<!-- Footer -->
+<footer id="footer">
+   <style>
+    /* 1. Принудительно задаём шрифт и размер для всего футера */
+    #footer,
+    #footer * {
+      font-family: Arial, sans-serif ;
+      font-size: 15px ;
+    }    
+  </style>
+
+  <div class="container">
+    <div class="footer-widgets">
+      <div class="row">
+        <!-- Колонка 1 -->
+        <div class="col-md-4">
+          <div class="footer-about-us">
+            <h5 class="heading-white">
+              <a href="policy.html">Политика конфиденциальности</a>
+            </h5>
+          </div>
+          <div class="footer-about-us">
+            <h5 class="heading-white">
+              <a href="https://pr-cy.ru/translit/?ysclid=mktjx9pevj432659482">Транслитерация онлайн</a>
+            </h5>
+          </div>
+          <div class="footer-about-us">
+            <h5 class="heading-white">
+              <a href="policy.html">Что-то ещё</a>
+            </h5>
+          </div>
+<div class="social-icons">
+									<a href="#"><img src="favicon-32.png" alt="Facebook" class="social-icon"></a>
+									
+									<a href="#"><i class="fa fa-google-plus"></i></a>
+									<a href="#"><i class="fa fa-linkedin"></i></a>
+									<a href="#"><i class="fa fa-pinterest-p"></i></a>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+								</div>
+        </div>
+
+        <!-- Колонка 2 -->
+        <div class="col-md-4">
+          <div class="footer-about-us">
+            <h5 class="heading-white">
+              <a href="policy.html">Политика конфиденциальности</a>
+            </h5>
+          </div>
+          <div class="footer-about-us">
+            <h5 class="heading-white">
+              <a href="https://pr-cy.ru/translit/?ysclid=mktjx9pevj432659482">Транслитерация онлайн</a>
+            </h5>
+          </div>
+          <div class="footer-about-us">
+            <h5 class="heading-white">
+              <a href="snow/index.html">Последние новости</a>
+            </h5>
+          </div>
+        </div>
+
+        <!-- Колонка 3 -->
+        <div class="col-md-4">
+          <div class="footer-about-us">
+           <h5 class="heading-white">
+            <a href="https://pr-cy.ru/translit/?ysclid=mktjx9pevj432659482">Транслитерация онлайн-2</a>
+          </div>
+          </h5>
+<div class="footer-about-us">
+           <h5 class="footer-about-us">
+            <a href="snow/index.html">Последние новости</a>
+          </div></h5>
+<div class="footer-about-us">
+          <h5 class="heading-white">
+            <a href="snow/index.html">Последние новости</a>
+          </div></h5>
+<div class="footer-about-us">
+          <h5 class="heading-white">
+            <a href="policy.html">Политика конфиденциальности</a>
+          </h5></div>
+<div class="footer-about-us">
+          <h5 class="heading-white">
+            <a href="otchet_po_saitu.html">Характеристики сайта</a>
+          </div></h5>
+        </div>
+      </div> <!-- end row -->
+    </div> <!-- end footer widgets -->
+  </div> <!-- end container -->
+</footer> <!-- end footer -->
+
+
+
+
+      <footer>
+      <div class="bottom-footer">
+      <div class="container">
+      <div class="row">
+      <div class="col-12 text-center">
+      <p class="copyright">
+      © 2026 Отдел Архива ООО ПКО БСВ
+      <a href="https://github.com/zaz/HTML6?ysclid=mhhf4lw079150708063" target="_blank" rel="noopener">HTML6.license</a>
+      </p>
+      </div> <!-- end col -->
+      </div> <!-- end row -->
+      </div> <!-- end container -->
+      </div> <!-- end bottom footer -->
+      </footer> <!-- end footer -->
+
+      <!-- Call to Возврат на верх -->
+      <div id="back-to-top">
+      <a href="#top"><i class="fa fa-angle-up"></i></a>
+      </div>
+      </div> <!-- end main-wrapper конечная основная оболочка-->
+      <!-- jQuery Scripts -->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/snap.svg-min.js"></script>
+      <script src="js/main.js"></script> <!-- Resource jQuery -->
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="js/jquery.countTo.js"></script>
+      <script type="text/javascript" src="js/jquery.appear.js"></script>
+      <script type="text/javascript" src="js/plugins-scroll.js"></script>
+      <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+      <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+      <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+      <script src="js/wow.min.js"></script>
+      
+<!-- Custom Theme JavaScript Пользовательская тема JavaScript -->
+      <script src="js/scripts.js"></script>      
+
+<script>
+function copyTextFromAccordion(elementId) {
+    const textElement = document.getElementById(elementId);
+    const textToCopy = textElement.textContent;
+
+    navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+            // Успех: показываем Toastify вместо alert
+            Toastify({
+                text: "Текст скопирован в буфер обмена!",
+                duration: 2500, // Автозакрытие через 2 сек
+                close: true,
+                gravity: "top",
+                position: "center",
+                backgroundColor: "linear-gradient(to right, #8A2BE2, #FF69B4)", // Градиент цвет для успеха
+                className: "info",
+                stopOnFocus: true, // Не закрывается при наведении
+            }).showToast();
+        })
+       
+}
+</script>
+
+<script>
+$('.clear-btn').click(function() {
+  $('#myTextarea').val('').focus();
+});
+</script>
+
+<script src="js/accordion-multi.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+   </body>
+</html>
