@@ -328,53 +328,9 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
 Копировать текст</a> 
                </div>
             </div>
-<div class="textarea-container" style="
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 16px;
-  box-sizing: border-box;
-">
-  <textarea 
-    id="myTextarea"
-    rows="8"
-    style="
-      width: 100%;
-      min-height: 120px;
-      max-height: 300px;
-      padding: 12px;
-      border: 1px solid #00ADB5;
-      border-radius: 8px;
-      font-size: 16px;
-      line-height: 1.5;
-      resize: vertical;
-      box-sizing: border-box;
-      transition: border-color 0.3s ease;
-    "
-    placeholder="Вставьте скопированный текст для проверки"
-  ></textarea>
-  <button
-    type="button"
-    class="clear-btn"
-    style="
-      align-self: flex-start;
-      padding: 8px 16px;
-      background-color: #00ADB5;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background-color 0.3s ease;
-    "
-    onmouseover="this.style.backgroundColor='#008a96'"
-    onmouseout="this.style.backgroundColor='#00ADB5'"
-  >
-    Очистить
-  </button>
+<div class="textarea-container" >
+<textarea id="myTextarea" rows="8" cols="140" placeholder="Вставьте скопированный текст для проверки" style=" border-radius: 4px; border: 1px solid #00ADB5 "></textarea>
+<button type="button" class="clear-btn">Очистить</button>
 </div>
 
 
