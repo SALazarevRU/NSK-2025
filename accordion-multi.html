@@ -155,6 +155,30 @@ button {
          });
          });
       </script>
+
+
+  /* Функция копирования текста*/
+<script>
+    function copyTextFromAccordion(elementId) {
+const textElement = document.getElementById(elementId);
+const textToCopy = textElement.textContent;
+
+navigator.clipboard.writeText(textToCopy)
+.then(() => {
+// Успех: показываем Toastify вместо alert
+Toastify({
+text: "Текст скопирован в буфер обмена!",
+duration: 2500, // Автозакрытие через 2 сек
+close: true,
+gravity: "top",
+position: "center",
+backgroundColor: "linear-gradient(to right, #8A2BE2, #FF69B4)", // Градиент цвет для успеха
+className: "info",
+stopOnFocus: true, // Не закрывается при наведении
+}).showToast();
+})
+
+}  </script>
    </head>
    <body class="loading">
       <!-- Preloader Устройство предварительной загрузки-->
@@ -288,46 +312,48 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
 <br><br>
             
             <div class="accordion-group">
-               <h3 class="accordion-header">✔ Руководителям отделов</h3>
-               <div class="accordion-body">
-                  <p>© 2026 Отдел Архива ООО ПКО БСВ</p>
-                  <div class="accordion-group" data-multiple="true">
-                      <h3 id="protected-accordion" class="accordion-header requires-password">
-        Руслану "Где найти сканы отлички"  <span style="
-    margin-left: 8px;           /* Отступ слева */
-    font-size: 0.75em;         /* Чуть мельче, чем основной текст */
-    color: #FFF;               /* Серый цвет */
-    /*  font-style: italic;           Курсив */
-  ">(требуется пароль "123")</span>
+  <h3 class="accordion-header">✔ Руководителям отделов</h3>
+  <div class="accordion-body">
+    <p>© 2026 Отдел Архива ООО ПКО БСВ</p>
+    
+    <div class="accordion-group" data-multiple="true">
+      <h3 id="protected-accordion" class="accordion-header requires-password">
+        Руслану "Где найти сканы отлички"
+        <span style="margin-left: 8px; font-size: 0.75em; color: #FFF;">(требуется пароль "123")</span>
       </h3>
-                     <div class="accordion-body">
-                        <p id="content-to-copy">Сканы могут находиться где угодно (неопределённость). Следовательно, мы не можем прогнозировать их наличие и местонахождение. Причиной тому ряд факторов: 1. хаотизация структуры директорий, каталогов и папок на дисках. 2. сектора доступа в корпоративном ПО (ограничения и неинформативность) 3. наличие объёма незарегистрированных бумажных документов. 4. необходимость запросов в Благовещенск. 5. ошибки при загрузке сканов в ПО Коллекшен 2.0 (частично или вообще отсутствуют) 6. добавить факторы.</p>
-<a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('content-to-copy')">
-Копировать текст</a>
-                     </div>
-                     <h3 class="f20 accordion-header">Добавить 1.2</h3>
-                     <div class="accordion-body">
-                        <p>5. Альтернатива prompt() — модальное окно Для лучшего UX заменить prompt() на кастомное модальное окно: HTML (добавить в конец страницы)
-</p>
-<a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('content-to-copy')">
-Копировать текст</a>
-                     </div>
-                     <h3 class="f20 accordion-header">Добавить 1.3</h3>
-                     <div class="accordion-body">
-                        <p>Шрифт: Для лучшей читаемости используйте font-family: 'Segoe UI', Tahoma, sans-serif; в кнопках.Адаптивность: Для мобильных устройств добавьте touch-action: manipulation; чтобы избежать ложных срабатываний.</p>
- <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('content-to-copy')">
-Копировать текст</a>                   
- </div>
-                  </div>
-               </div>
-               <h3 class="accordion-header">✔ Сотрудникам отделов</h3>
-               <div class="accordion-body" style="background: #FFF">
-                  <p>Мы используем стороннюю компанию для предоставления технологий монетизации нашего сайта. Вы можете ознакомиться с их политикой конфиденциальности и использования файлов&nbsp;cookie.</p>
-<p>Вы можете изменить настройки конфиденциальности, нажав следующую кнопку:</p>
- <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('content-to-copy')">
-Копировать текст</a> 
-               </div>
-            </div>
+      <div class="accordion-body">
+        <!-- Уникальный id для этого текста -->
+        <p id="text-1">Сканы могут находиться где угодно (неопределённость). Следовательно, мы не можем прогнозировать их наличие и местонахождение. Причиной тому ряд факторов: 1. хаотизация структуры директорий, каталогов и папок на дисках. 2. сектора доступа в корпоративном ПО (ограничения и неинформативность) 3. наличие объёма незарегистрированных бумажных документов. 4. необходимость запросов в Благовещенск. 5. ошибки при загрузке сканов в ПО Коллекшен 2.0 (частично или вообще отсутствуют) 6. добавить факторы.</p>
+        <!-- Передаём правильный id -->
+        <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-1')">Копировать текст</a>
+      </div>
+
+      <h3 class="f20 accordion-header">Добавить 1.2</h3>
+      <div class="accordion-body">
+        <p id="text-2">5. Альтернатива prompt() — модальное окно Для лучшего UX заменить prompt() на кастомное модальное окно: HTML (добавить в конец страницы)</p>
+        <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-2')">Копировать текст</a>
+      </div>
+
+      <h3 class="f20 accordion-header">Добавить 1.3</h3>
+      <div class="accordion-body">
+        <p id="text-3">Шрифт: Для лучшей читаемости используйте font-family: 'Segoe UI', Tahoma, sans-serif; в кнопках. Адаптивность: Для мобильных устройств добавьте touch-action: manipulation; чтобы избежать ложных срабатываний.</p>
+        <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-3')">Копировать текст</a>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="accordion-header">✔ Сотрудникам отделов</h3>
+<div class="accordion-body" style="background: #FFF">
+  <p id="text-combined">
+    Мы используем стороннюю компанию для предоставления технологий монетизации нашего сайта. 
+    Вы можете ознакомиться с их политикой конфиденциальности и использования файлов cookie.
+    Вы можете изменить настройки конфиденциальности, нажав следующую кнопку.
+  </p>
+  <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-combined')">
+    Копировать текст
+  </a>
+</div>
+
 <div class="textarea-container" style="
   display: flex;
   flex-direction: column;
@@ -651,7 +677,9 @@ $('.clear-btn').click(function() {
       <a href="#top"><i class="fa fa-angle-up"></i></a>
       </div>
       </div> <!-- end main-wrapper конечная основная оболочка-->
-     <!-- 1. jQuery -->
+     
+
+<!-- 1. jQuery (обязательно первым) -->
 <script src="js/jquery.min.js"></script>
 
 <!-- 2. Плагины, зависящие от jQuery -->
@@ -665,49 +693,32 @@ $('.clear-btn').click(function() {
 <script src="js/imagesloaded.pkgd.min.js"></script>
 <script src="js/wow.min.js"></script>
 
-<!-- 3. Основные скрипты темы -->
+<!-- 3. Скрипт аккордеона (должен быть до вашего кода!) -->
+<script src="js/accordion-multi.js"></script>
+
+<!-- 4. Основные скрипты темы -->
 <script src="js/main.js"></script>
 <script src="js/scripts.js"></script>
 
-<!-- 4. Внешние библиотеки (не зависящие от jQuery) -->
+<!-- 5. Внешние библиотеки -->
 <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
-<!-- 5. Ваш кастомный код (в конце, после всех зависимостей) -->
+
+<!-- 6. Ваш кастомный код (один раз, в конце) -->
 <script>
   $(document).ready(function() {
-    // Инициализация аккордеона
+    // 1. Инициализация аккордеона
     if (typeof initAccordion === 'function') {
       initAccordion();
     }
 
-    // Обработчик кнопки "Очистить"
+    // 2. Обработчик кнопки "Очистить"
     $('.clear-btn').click(function() {
       $('#myTextarea').val('').focus();
     });
 
-    // Функция копирования текста
-    window.copyTextFromAccordion = function(elementId) {
-      const textElement = document.getElementById(elementId);
-      const textToCopy = textElement.textContent;
-
-      navigator.clipboard.writeText(textToCopy)
-        .then(() => {
-          Toastify({
-            text: "Текст скопирован в буфер обмена!",
-            duration: 2500,
-            close: true,
-            gravity: "top",
-            position: "center",
-            backgroundColor: "linear-gradient(to right, #8A2BE2, #FF69B4)",
-            className: "info",
-            stopOnFocus: true,
-          }).showToast();
-        });
-    };
+    // 3. Другие ваши обработчики (если есть)
   });
 </script>
-
-<!-- 6. Скрипт аккордеона (если он не инициализируется автоматически) -->
-<script src="js/accordion-multi.js"></script>
 </body>
 </html>
