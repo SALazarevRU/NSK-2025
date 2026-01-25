@@ -1,27 +1,37 @@
-.accordion-group { 
-    margin: 16px 0; 
+.accordion-group {
+    margin: 16px 0;
 }
+
 .accordion-body {
     display: none;
     padding: 14px 20px;
-    background: #DCDCDC
+    background: #eeeeee;
     border-radius: 5px;
     margin: 8px 0;
     border: 1px solid #00ADB5;    
 }
+
 .accordion-body > * > .accordion-body {
     background: #FFF;
     margin: 0;
 }
+
 .accordion-header {
-    background: #BCEEF2;
+    /* Базовый градиент */
+    background: linear-gradient(90deg, #00ADB5, #00D6DE);
+    background-size: 200% 100%; /* Увеличиваем ширину градиента для анимации */
     margin: 8px 0;
     color: #000;
     padding: 8px 40px 8px 20px;
     cursor: pointer;
     border-radius: 5px;
     position: relative;
+
+    
+    /* Плавная анимация при изменении background-position */
+    transition: background-position 0.6s ease, color 0.3s ease;
 }
+
 .accordion-header::after {
     content: "+";
     right: 16px;
@@ -31,12 +41,21 @@
     font-weight: bold;
     color: #00ADB5;
     position: absolute;
+    transition: color 0.3s ease; /* Плавный переход цвета символа */
 }
+
+/* Анимация при наведении */
+.accordion-header:hover {
+    background-position: 100% 0; /* Сдвигаем градиент вправо */
+ 
+}
+
 .accordion-header.open {
-    background: #00ADB5;
+    background-position: 100% 0; /* Фиксируем сдвинутый градиент */
     color: #fff;
-    font-weight: bold
+    font-weight: bold;
 }
+
 .accordion-header.open::after {
     content: "-";
     color: #FFF;    
