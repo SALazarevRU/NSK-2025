@@ -651,52 +651,63 @@ $('.clear-btn').click(function() {
       <a href="#top"><i class="fa fa-angle-up"></i></a>
       </div>
       </div> <!-- end main-wrapper конечная основная оболочка-->
-      <!-- jQuery Scripts -->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/snap.svg-min.js"></script>
-      <script src="js/main.js"></script> <!-- Resource jQuery -->
-      <script type="text/javascript" src="js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="js/jquery.countTo.js"></script>
-      <script type="text/javascript" src="js/jquery.appear.js"></script>
-      <script type="text/javascript" src="js/plugins-scroll.js"></script>
-      <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
-      <script type="text/javascript" src="js/jquery.easing.min.js"></script>
-      <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
-      <script src="js/wow.min.js"></script>
-      
-<!-- Custom Theme JavaScript Пользовательская тема JavaScript -->
-      <script src="js/scripts.js"></script>      
+     <!-- 1. jQuery -->
+<script src="js/jquery.min.js"></script>
 
-<script>
-function copyTextFromAccordion(elementId) {
-    const textElement = document.getElementById(elementId);
-    const textToCopy = textElement.textContent;
+<!-- 2. Плагины, зависящие от jQuery -->
+<script src="js/snap.svg-min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.countTo.js"></script>
+<script src="js/jquery.appear.js"></script>
+<script src="js/plugins-scroll.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/wow.min.js"></script>
 
-    navigator.clipboard.writeText(textToCopy)
-        .then(() => {
-            // Успех: показываем Toastify вместо alert
-            Toastify({
-                text: "Текст скопирован в буфер обмена!",
-                duration: 2500, // Автозакрытие через 2 сек
-                close: true,
-                gravity: "top",
-                position: "center",
-                backgroundColor: "linear-gradient(to right, #8A2BE2, #FF69B4)", // Градиент цвет для успеха
-                className: "info",
-                stopOnFocus: true, // Не закрывается при наведении
-            }).showToast();
-        })
-       
-}
-</script>
+<!-- 3. Основные скрипты темы -->
+<script src="js/main.js"></script>
+<script src="js/scripts.js"></script>
 
-<script>
-$('.clear-btn').click(function() {
-  $('#myTextarea').val('').focus();
-});
-</script>
-
-<script src="js/accordion-multi.js"></script>
+<!-- 4. Внешние библиотеки (не зависящие от jQuery) -->
 <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-   </body>
+
+<!-- 5. Ваш кастомный код (в конце, после всех зависимостей) -->
+<script>
+  $(document).ready(function() {
+    // Инициализация аккордеона
+    if (typeof initAccordion === 'function') {
+      initAccordion();
+    }
+
+    // Обработчик кнопки "Очистить"
+    $('.clear-btn').click(function() {
+      $('#myTextarea').val('').focus();
+    });
+
+    // Функция копирования текста
+    window.copyTextFromAccordion = function(elementId) {
+      const textElement = document.getElementById(elementId);
+      const textToCopy = textElement.textContent;
+
+      navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+          Toastify({
+            text: "Текст скопирован в буфер обмена!",
+            duration: 2500,
+            close: true,
+            gravity: "top",
+            position: "center",
+            backgroundColor: "linear-gradient(to right, #8A2BE2, #FF69B4)",
+            className: "info",
+            stopOnFocus: true,
+          }).showToast();
+        });
+    };
+  });
+</script>
+
+<!-- 6. Скрипт аккордеона (если он не инициализируется автоматически) -->
+<script src="js/accordion-multi.js"></script>
+</body>
 </html>
