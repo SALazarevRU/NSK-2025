@@ -57,25 +57,34 @@
 .copy-link:hover {
  background: linear-gradient(135deg, #8A2BE2, #FF69B4); /* background-color: #C0C0C0;  /* Темнее при наведении #C0C0C0  #4CD5DA*/
  color: white; 
+  transform: translate(2px, -2px);
 }
 
-/* стили для кнопки «Войти») */
-.clear-btn {
-  background-color: #eeeeee;    /* Серенький (как у «секции») */
-  color: #000000;
-  padding: 10px 20px;
+/* стили для кнопки «Очистить») */
+.text-action-btn {
+  /* Внешний вид */
+  display: inline-block;
+  padding: 1px 35px;
+  background-color: #FFF;
+  color: #6a7984;
+  border: 1px solid #6a7984;
   border-radius: 4px;
+  font-size: 12px;
+  text-decoration: none;
   cursor: pointer;
-  font-size: 14px;
-  margin-top: 10px;
-  border: 1px solid black; /* Чёрная рамка толщиной 1px */
- font-family: 'Segoe UI', Tahoma, sans-serif; /* Добавляем шрифт */
-/* text-transform: uppercase; /* Все буквы заглавные */
+
+  /* Плавные переходы — КЛЮЧЕВОЙ момент */
+  transition: 
+    background 0.3s ease, 
+    color 0.3s ease, 
+    transform 0.2s ease;
 }
 
-.clear-btn:hover {
-  background: linear-gradient(135deg, #8A2BE2, #FF69B4); /* background-color: #C0C0C0;  /* Темнее при наведении #C0C0C0  #4CD5DA*/
- color: white; 
+/* Поведение при наведении */
+.text-action-btn:hover {
+  background: linear-gradient(135deg, #8A2BE2, #FF69B4);
+  color: white;
+  transform: translate(2px, -2px);
 }
 
 /* для модального окна «Введите пароль») */
@@ -360,53 +369,52 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
 </div>
 
 <div class="textarea-container" style="
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
   padding: 16px;
   box-sizing: border-box;
 ">
-  <textarea 
-    id="myTextarea"
-    rows="8"
-    style="
-      width: 100%;
-      min-height: 120px;
-      max-height: 300px;
-      padding: 12px;
-      border: 1px solid #00ADB5;
-      border-radius: 8px;
-      font-size: 16px;
-      line-height: 1.5;
-      resize: vertical;
-      box-sizing: border-box;
-      transition: border-color 0.3s ease;
-    "
-    placeholder="Вставьте скопированный текст для проверки"
-  ></textarea>
-  <button
-    type="button"
-    class="clear-btn"
-    style="
-      align-self: flex-start;
-      padding: 8px 16px;
-      background-color: #00ADB5;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background-color 0.3s ease;
-    "
-    onmouseover="this.style.backgroundColor='#008a96'"
-    onmouseout="this.style.backgroundColor='#00ADB5'"
-  >
-    Очистить
-  </button>
+  <!-- Обёртка с position: relative — чтобы кнопка позиционировалась от неё -->
+  <div style="
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  ">
+    <textarea 
+      id="myTextarea"
+      rows="8"
+      style="
+        width: 100%;
+        min-height: 120px;
+        max-height: 300px;
+        padding: 12px;
+        padding-bottom: 28px; /* Делаем место снизу для кнопки */
+        border: 1px solid #00ADB5;
+        border-radius: 8px;
+        font-size: 16px;
+        line-height: 1.5;
+        resize: vertical;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+      "
+      placeholder="Вставьте скопированный текст для проверки"
+    ></textarea>
+
+    <!-- Кнопка "Очистить" — поверх, в нижнем левом углу textarea -->
+    <button
+  type="button"
+  class="text-action-btn"
+  onclick="document.getElementById('myTextarea').value = ''"
+  style="position: absolute; bottom: 30px; left: 8px; z-index: 10;"
+>
+  Очистить
+</button>
+  </div>
 </div>
+
+
+
 
 
 
