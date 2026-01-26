@@ -47,9 +47,13 @@ font-size: 13 px; /* Немного меньше обычного, но чита
     color: #008080;
     position: absolute;
     transition: color 0.3s ease; /* Плавный переход цвета символа */
-
- 
 }
+
+.accordion-header:hover {
+    background-position: 100% 0;
+    font-weight: bold; /* жирный только при наведении */
+}
+
 
 /* Анимация при наведении */
 .accordion-header:hover {
