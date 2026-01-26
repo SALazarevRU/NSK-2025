@@ -40,18 +40,19 @@
 
 
 <style>
-   .highlight-link {
+  .highlight-link {
   color: #00ADB5;
-  transition: color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
-  /* Убрали box-shadow из основного состояния */
-  padding: 2px 4px; /* Необязательно: отступы для красоты фона */
-  border-radius: 4px; /* Необязательно: скругление углов фона */
+  padding: 2px 4px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .highlight-link:hover {
-  color: #00ADB5;
-  box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
-  background-color: rgba(0, 255, 255, 0.1); /* Полупрозрачный фон, согласующийся с цветом тени */
+  color: #008b91;
+  background-color: rgba(0, 173, 181, 0.1);
+  text-decoration: underline;
+  box-shadow: 0 0 6px rgba(0, 173, 181, 0.2);
 }
   </style>
 
@@ -100,10 +101,17 @@
 				            	</div>
 				            	<div class="search-bar">
 					            	<div class="search-wrap">
-										<form role="form">
-										    <div class="form-group">
-											    <input type="search" class="form-control searchbox" placeholder="Search">
-									    	</div>
+										<div class="form-group">
+    <label for="search-input">Поиск:</label>
+    <input 
+      type="search"
+      id="search-input"
+      name="search"
+      class="form-control searchbox"
+      placeholder="Search"
+      autocomplete="off" <!-- или "on", если нужно автозаполнение -->
+    >
+  </div>
 									    	<button type="submit" class="search-button"><i class="pe-7s-search"></i></button>
 									    </form>
 								    </div>
@@ -319,7 +327,7 @@
 						</div>
 						<div class="team-details text-center">
 							<h5 class="team-title">Оксана Ващенко</h5>
-							<span>Топ-менеджер</span>
+							<span>Экс-руководитель</span>
                                                            <br>
                                                         <a href="#" id="cta-button-solid" class="btn btn-large btn-rounded btn-light-solid">Подробнее</a>
 							<div class="team-socials">
@@ -337,7 +345,7 @@
 						</div>
 						<div class="team-details text-center">
 							<h5 class="team-title">Евгения Кондрашова</h5>
-                                                        <span>Эксперт</span>
+                                                        <span>Специалист</span>
                                                              <br>
                                                         <a href="#" id="cta-button-solid" class="btn btn-large btn-rounded btn-light-solid">Подробнее</a>
 							<div class="team-socials">
