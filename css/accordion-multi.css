@@ -51,7 +51,7 @@ font-size: 13 px; /* Немного меньше обычного, но чита
 
 .accordion-header:hover {
     background-position: 100% 0;
-    font-weight: bold; /* жирный только при наведении */
+   /*  font-weight: bold; жирный только при наведении */
 }
 
 
