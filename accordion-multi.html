@@ -61,31 +61,31 @@
 }
 
 /* стили для кнопки «Очистить») */
-.text-action-btn {
-  /* Внешний вид */
-  display: inline-block;
-  padding: 1px 35px;
-  background-color: #FFF;
-  color: #6a7984;
-  border: 1px solid #6a7984;
-  border-radius: 4px;
-  font-size: 12px;
-  text-decoration: none;
-  cursor: pointer;
+ .text-action-btn {
+      display: inline-block;
+      padding: 1px 35px;
+      background-color: #FFF;
+      color: #6a7984;
+      border: 1px solid #6a7984;
+      border-radius: 4px;
+      font-size: 12px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
 
-  /* Плавные переходы — КЛЮЧЕВОЙ момент */
-  transition: 
-    background 0.3s ease, 
-    color 0.3s ease, 
-    transform 0.2s ease;
-}
+    .text-action-btn:hover {
+      background: linear-gradient(135deg, #8A2BE2, #FF69B4);
+      color: white;
+      transform: translate(2px, -2px);
+    }
 
-/* Поведение при наведении */
-.text-action-btn:hover {
-  background: linear-gradient(135deg, #8A2BE2, #FF69B4);
-  color: white;
-  transform: translate(2px, -2px);
-}
+    #myTextarea {
+      width: 100%;
+      height: 200px;
+      margin-top: 20px;
+      font-family: monospace;
+    }
 
 /* для модального окна «Введите пароль») */
 .popup {
@@ -204,9 +204,27 @@ button {
 
         .col-md-3:nth-child(2) .footer-about-us {
             color: #fff; /* Цвет текста для второй колонки */
-        }
+        }   
         
-       @media (max-width: 768px) {
+        /* ПЕРЕОПРЕДЕЛЕНИЕ bottom-footer — должно быть в конце */
+    .bottom-footer-simple {
+    background-color: #16171a;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.copyright-text {
+    margin: 0;
+    color: #98a2a4;    /* Цвет обычного текста — серый */
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.company-name {
+    color: #fff;     /* Цвет названия компании — белый  font-weight: bold;  Можно добавить жирность для выделения */    
+}
+ 
+@media (max-width: 768px) {
     /* Сдвиг текстового содержимого (списков, абзацев) на 30px вправо */
      .col-md-3 .footer-about-us ul,
     .col-md-3 .footer-about-us p {
@@ -226,26 +244,6 @@ button {
         display: inline-block;
         margin: 0 5px;
     }
-}
-        
-        
-        /* ПЕРЕОПРЕДЕЛЕНИЕ bottom-footer — должно быть в конце */
-    .bottom-footer-simple {
-    background-color: #16171a;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.copyright-text {
-    margin: 0;
-    color: #98a2a4;    /* Цвет обычного текста — серый */
-    font-size: 14px;
-    font-family: Arial, sans-serif;
-}
-
-.company-name {
-    color: #fff;     /* Цвет названия компании — белый  font-weight: bold;  Можно добавить жирность для выделения */
-    
 }
       </style>
       <script>
@@ -395,11 +393,24 @@ stopOnFocus: true, // Не закрывается при наведении
       <section id="AppAndroid-33" class="section-wrap our-team bg-light">
          <div class="container">
 
+
+
 <section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
+    <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block" tabindex="0" data-pg4qxfhklesk="1_37mew02-0-14b"
+         style=" background: url(img/abstract-blue-bokeh.jpg); background-size: cover; background-position: center; height: 200px;
+            display: flex;                /* включаем Flexbox */
+            justify-content: center;      /* центрируем по горизонтали */
+            align-items: center;        /* центрируем по вертикали */
+            flex-direction: column;     /* располагаем элементы друг под другом (если их несколько) */
+         ">        
+        <h2 class="FuturisTitle FuturisContentSection-Title" style="color: white;">Преимущества</h2>
+        <h4 class="FuturisTitle FuturisContentSection-Title" style="color: white;">готовых шаблонов ответов</h4>
+    </div>
+</section>
 
-<h2 class="text-center">Преимущества</h2>
-<p class="subheading text-center">готовых шаблонов ответов</p>
 
+
+<section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
     <!--<h2 class="FuturisTitle FuturisContentSection-Title" >Преимущества готовых шаблонов ответов</h2> -->
 
     <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block" tabindex="0" data-pg4qxfhklesk="1_37mew02-0-14b"
@@ -426,11 +437,19 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
             </div>
             <br><br><br>
 
-<h2 class="text-center">Формы </h2>
-<p class="subheading text-center">ответов на часто задаваемые вопросы</p>
-<div class="main-border blue"></div>
 <br><br>
-            
+<section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
+    <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block" tabindex="0" data-pg4qxfhklesk="1_37mew02-0-14b"
+         style=" background: url(img/abstract-blue-bokeh.jpg); background-size: cover; background-position: center; height: 200px;
+            display: flex;                /* включаем Flexbox */
+            justify-content: center;      /* центрируем по горизонтали */
+            align-items: center;        /* центрируем по вертикали */
+            flex-direction: column;     /* располагаем элементы друг под другом (если их несколько) */
+         ">        
+        <h2 class="FuturisTitle FuturisContentSection-Title" style="color: white;">Формы</h2>
+        <h4 class="FuturisTitle FuturisContentSection-Title" style="color: white;">ответов на часто задаваемые вопросы</h4>
+    </div>
+</section>          
             <div class="accordion-group">
   <h3 class="accordion-header">Руководителям отделов</h3>
   <div class="accordion-body">
@@ -518,14 +537,19 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
     ></textarea>
 
     <!-- Кнопка "Очистить" — поверх, в нижнем левом углу textarea -->
-    <button
-  type="button"
-  class="text-action-btn"
-  onclick="document.getElementById('myTextarea').value = ''"
-  style="position: absolute; bottom: 30px; left: 8px; z-index: 10;"
->
-  Очистить
-</button>
+    <!-- Контейнер для кнопок -->
+<div class="buttons-container" style="position: absolute; bottom: 30px; left: 8px; z-index: 10; display: flex; flex-direction: column; gap: 8px;">
+  <!-- Кнопка "Очистить" -->
+  <button type="button" class="text-action-btn clear-btn">
+    Очистить
+  </button>
+
+  <!-- Кнопка "Сохранить в файл" -->
+  <button type="button" class="text-action-btn save-btn">
+    Сохранить в файл
+  </button>
+</div>
+
   </div>
 </div>
 
@@ -667,7 +691,6 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
 
 
 
-
 <div id="passwordModal" class="popup">
   <div class="popup-content">
     <h4>Введите пароль</h4>
@@ -748,6 +771,7 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
                     <p>Адрес: [ваш адрес]</p>
                     <p>Телефон: [номер телефона]</p>
                     <p>Email: [email]</p>
+                    <img src="img/yandex-metrica.png" alt="Карта проезда" style="margin-top: 15px ; border: 1px solid #ccc;">
                 </div>
             </div>
         </div>
@@ -797,21 +821,50 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
 <!-- 6. Ваш кастомный код (один раз, в конце) -->
 <script>
  $(document).ready(function() {
-    // Проверка на случай, если jQuery вдруг не загрузился
-    if (typeof jQuery === 'undefined') {
-      console.error('jQuery не загружен!');
-      return;
-    }
+      // Проверка загрузки jQuery
+      if (typeof jQuery === 'undefined') {
+        console.error('jQuery не загружен!');
+        return;
+      }
 
-    // Ваш код
-    if (typeof initAccordion === 'function') {
-      initAccordion();
-    }
+      // Инициализация аккордеона (если есть)
+      if (typeof initAccordion === 'function') {
+        initAccordion();
+      }
 
-    $('.clear-btn').click(function() {
-      $('#myTextarea').val('').focus();
+      // Кнопка "Очистить"
+      $('.clear-btn').click(function() {
+        $('#myTextarea').val('').focus();
+      });
+
+      // Кнопка "Сохранить в файл"
+      $('.save-btn').click(function() {
+        const text = $('#myTextarea').val();
+
+        // Проверка на пустой текст
+        if (!text) {
+          alert('Текст для сохранения отсутствует!');
+          return;
+        }
+
+        // Создаём Blob для файла
+        const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+
+        // Создаём скрытую ссылку для скачивания
+        const a = $('<a>')
+          .attr('href', url)
+          .attr('download', 'data.txt')
+          .appendTo('body');
+
+        // Имитируем клик
+        a[0].click();
+
+        // Удаляем ссылку
+        a.remove();
+        URL.revokeObjectURL(url);
+      });
     });
-  });
 </script>
 </body>
 </html>
