@@ -205,6 +205,30 @@ button {
         .col-md-3:nth-child(2) .footer-about-us {
             color: #fff; /* Цвет текста для второй колонки */
         }
+        
+        /* Адаптивность футера для мобильных устройств */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .col-md-3 {
+        text-align: center;
+    }
+
+    .social-icons {
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+        
+        
         /* ПЕРЕОПРЕДЕЛЕНИЕ bottom-footer — должно быть в конце */
     .bottom-footer-simple {
     background-color: #16171a;
