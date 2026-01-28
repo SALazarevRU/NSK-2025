@@ -216,15 +216,31 @@ button {
         flex: 0 0 100%;
         max-width: 100%;
         margin-bottom: 20px;
+        text-align: left; /* Текст по левому краю по умолчанию */
     }
 
-    .col-md-3 {
+    /* Заголовок h5 — по центру */
+    .col-md-3 h5 {
         text-align: center;
     }
 
-    .social-icons {
+    /* Убедимся, что меню и ссылки — слева */
+    .footer-about-us,
+    .footer-about-us ul,
+    .footer-about-us li,
+    .footer-about-us a {
         text-align: left;
-        margin-top: 10px;
+    }
+
+    /* Блок с иконками — центрируем */
+    .col-md-3 .social-icons {
+        text-align: center;
+    }
+
+    /* Иконки — инлайн-блоками, чтобы центрировались */
+    .social-icons a {
+        display: inline-block;
+        margin: 0 5px; /* Опционально: отступы между иконками */
     }
 }
         
