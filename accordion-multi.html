@@ -206,41 +206,37 @@ button {
             color: #fff; /* Цвет текста для второй колонки */
         }
         
-        /* Адаптивность футера для мобильных устройств */
-@media (max-width: 768px) {
-    .row {
-        flex-direction: column;
+       @media (max-width: 768px) {
+    /* Сдвиг текстового содержимого (списков, абзацев) на 30px вправо */
+    .col-md-3 .footer-about-us,
+    .col-md-3 .footer-about-us ul,
+    .col-md-3 .footer-about-us p,
+    .col-md-3 .footer-about-us li {
+        padding-left: 30px;
+        box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
     }
 
-    .col-md-3 {
-        flex: 0 0 100%;
-        max-width: 100%;
-        margin-bottom: 20px;
-        text-align: left; /* Текст по левому краю по умолчанию */
+    /* Или, если хотите использовать margin — тоже допустимо */
+    /*
+    .col-md-3 .footer-about-us ul,
+    .col-md-3 .footer-about-us p {
+        margin-left: 30px;
     }
+    */
 
-    /* Заголовок h5 — по центру */
+    /* При этом оставляем заголовки по центру */
     .col-md-3 h5 {
         text-align: center;
     }
 
-    /* Убедимся, что меню и ссылки — слева */
-    .footer-about-us,
-    .footer-about-us ul,
-    .footer-about-us li,
-    .footer-about-us a {
-        text-align: left;
-    }
-
-    /* Блок с иконками — центрируем */
+    /* Блок иконок — остаётся по центру, без сдвига */
     .col-md-3 .social-icons {
         text-align: center;
     }
 
-    /* Иконки — инлайн-блоками, чтобы центрировались */
     .social-icons a {
         display: inline-block;
-        margin: 0 5px; /* Опционально: отступы между иконками */
+        margin: 0 5px;
     }
 }
         
