@@ -205,7 +205,24 @@ button {
         .col-md-3:nth-child(2) .footer-about-us {
             color: #fff; /* Цвет текста для второй колонки */
         }
-        
+        /* ПЕРЕОПРЕДЕЛЕНИЕ bottom-footer — должно быть в конце */
+    .bottom-footer-simple {
+    background-color: #16171a;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.copyright-text {
+    margin: 0;
+    color: #98a2a4;    /* Цвет обычного текста — серый */
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.company-name {
+    color: #fff;     /* Цвет названия компании — белый  font-weight: bold;  Можно добавить жирность для выделения */
+    
+}
       </style>
       <script>
          document.addEventListener('DOMContentLoaded', function() {
@@ -651,112 +668,70 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
 
 
  <footer id="footer">
-        <div class="container">
-            <div class="row">
-                <!-- Колонка 1 -->
-                <div class="col-md-3">
-                    <div class="footer-about-us">
-                        <h5 class="heading-white">Контур-сервисы</h5>
-                        <ul>
-                            <li>
-                                <a href="https://auth.kontur.ru/">Контур-КЭДО</a>
-                            </li>
-                            <li>
-                                <a href="https://www.kontur-extern.ru/info/rubrika-instrumenty_buhgaltera">Контур-Экстерн</a>
-                            </li>
-                            <li>
-                                <a href="https://www.kontur-extern.ru/info/54749-kalendar_na_fevral">Календарь</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="social-icons" style="margin-top: 20px;">
-                        <a href="#">
-                            <img src="favicon-32.png" alt="Facebook" class="social-icon">
-                        </a>
-                        <a href="#">
-                            <i class="fa fa-google-plus"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa fa-linkedin"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa fa-pinterest-p"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-
-            <!-- Колонка 2 -->
-<div class="col-md-3">
-    <div class="footer-about-us">
-        <h5 class="heading-white">Полезные ссылки</h5>
-        <ul>
-            <li>
-                <a href="snow/index.html">Новости отдела Архива</a>
-            </li>
-            <li>
-                <a href="policy.html">Политика конфиденциальности</a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">Добавить ссылку</a>
-            </li>
-        </ul>
-    </div>
-</div>
-
-<!-- Колонка 3 -->
-<div class="col-md-3">
-    <div class="footer-about-us">
-        <h5 class="heading-white">Инструменты</h5>
-        <ul>
-            <li>
-                <a href="https://pr-cy.ru/translit/">Транслитерация</a>
-            </li>
-            <li>
-                <a href="https://colorscheme.ru/html-colors.html">HTML цвета</a>
-            </li>
-            <li>
-                <a href="https://atuin.ru/tools/shades/">Генератор оттенков</a>
-            </li>
-            <li>
-                <a href="https://webformatter.com/">Веб-Форматировщик</a>
-            </li>
-            <li>
-                <a href="https://tinypng.com/">Compressor</a>
-            </li>
-            <li>
-                <a href="https://atuin.ru/">Вебмастер</a>
-            </li>
-        </ul>
-    </div>
-</div>
-
-<!-- Колонка 4 -->
-<div class="col-md-3">
-    <div class="footer-about-us">
-        <h5 class="heading-white">Контакты</h5>
-        <p>Адрес: [ваш адрес]</p>
-        <p>Телефон: [номер телефона]</p>
-        <p>Email: [email]</p>
-    </div>
-</div>
-            </div>
-        </div>    
-    </footer>
-
-<div class="bottom-footer">
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center">
-                <p class="copyright">
-                    © 2026 Отдел Архива ООО ПКО БСВ
-                    <a href="https://github.com/zaz/HTML6" target="_blank" rel="noopener">HTML6.license</a>
-                </p>
+            <!-- Колонка 1 -->
+            <div class="col-md-3">
+                <div class="footer-about-us">
+                    <h5 class="heading-white">Контур-сервисы</h5>
+                    <ul>
+                        <li><a href="https://auth.kontur.ru/">Контур-КЭДО</a></li>
+                        <li><a href="https://www.kontur-extern.ru/info/rubrika-instrumenty_buhgaltera">Контур-Экстерн</a></li>
+                        <li><a href="https://www.kontur-extern.ru/info/54749-kalendar_na_fevral">Календарь</a></li>
+                    </ul>
+                </div>
+                <div class="social-icons" style="margin-top: 20px">
+                    <a href="#"> <img src="favicon-32.png" alt="Facebook" class="social-icon" /> </a>
+                    <a href="#"> <i class="fa fa-google-plus"></i> </a>
+                    <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                    <a href="#"> <i class="fa fa-pinterest-p"></i> </a>
+                    <a href="#"> <i class="fa fa-instagram"></i> </a>
+                </div>
+            </div>
+
+            <!-- Колонка 2 -->
+            <div class="col-md-3">
+                <div class="footer-about-us">
+                    <h5 class="heading-white">Полезные ссылки</h5>
+                    <ul>
+                        <li><a href="snow/index.html">Новости отдела Архива</a></li>
+                        <li><a href="policy.html">Политика конфиденциальности</a></li>
+                        <li><a href="javascript:void(0)">Добавить ссылку</a></li>
+                        <li><a href="https://free.drweb.ru/for+web+sites/">Проверка файлов и ссылок</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Колонка 3 -->
+            <div class="col-md-3">
+                <div class="footer-about-us">
+                    <h5 class="heading-white">Инструменты</h5>
+                    <ul>
+                        <li><a href="https://pr-cy.ru/translit/" title="Преобразуй кириллицу в латиницу и наоборот">Транслитерация</a></li>
+                        <li><a href="https://colorscheme.ru/html-colors.html">HTML цвета</a></li>
+                        <li><a href="https://atuin.ru/tools/shades/">Генератор оттенков</a></li>
+                        <li><a href="https://webformatter.com/" title="Отступы в коде онлайн">Веб-Форматировщик</a></li>
+                        <li><a href="https://tinypng.com/">Compressor</a></li>
+                        <li><a href="https://atuin.ru/">Вебмастер</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Колонка 4 -->
+            <div class="col-md-3">
+                <div class="footer-about-us">
+                    <h5 class="heading-white">Контакты</h5>
+                    <p>Адрес: [ваш адрес]</p>
+                    <p>Телефон: [номер телефона]</p>
+                    <p>Email: [email]</p>
+                </div>
             </div>
         </div>
     </div>
+</footer>
+
+<div class="bottom-footer-simple">
+    <p class="copyright-text">© 2026 Отдел Архива <span class="company-name">ООО ПКО БСВ</span></p>
 </div>
 
 
