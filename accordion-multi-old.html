@@ -39,7 +39,7 @@
 
 
       <style>
-/*  #3C3C3C АНТРАЦИТ, #00ADB5 - НАШ БАЗОВЫЙ, #2F4F4F- темнее базового) */        
+/*  #3C3C3C АНТРАЦИТ, #00ADB5 - НАШ БАЗОВЫЙ, #2F4F4F- темнее базового) https://atuin.ru/tools/shades/ ГЕНЕРАТОР ОТТЕНКОВ*/        
 /* Для копирования текста содержимого аккордеонов */
 .copy-link {
   display: inline-block;
@@ -139,11 +139,7 @@ button {
             font-family: Arial, sans-serif;
             color: #fff;
         }
-/* Стили для заголовков аккордеонов */
-.footer-accordion-title {
-    display: block;
-    color: #C0C0C0!important;    
-}
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -164,7 +160,7 @@ button {
 
         .heading-white {
             margin-bottom: 15px;
-            color: red;
+            color: #fff;
         }
 
         .footer-about-us ul {
@@ -244,76 +240,39 @@ button {
     filter: grayscale(0%); /* Цветное */
 }
  
-/* === Мобильные: аккордеон в футере === */
 @media (max-width: 768px) {
+    /* Каждая колонка — на всю ширину, одна под другой */
     .col-md-3 {
         flex: 0 0 100%;
         max-width: 100%;
         margin-bottom: 20px;
     }
 
-    .footer-accordion summary {
-        list-style: none;
-        cursor: pointer;
-        font-weight: bold;
-        color: #fff;
-        padding: 10px 0;
-        outline: none;
+    /* Все заголовки — по левому краю */
+    .col-md-3 h5 {
+        text-align: left;
     }
 
-    .footer-accordion summary::after {
-        content: " ▼";
-        font-size: 0.8em;
-        color: #777;
-        margin-left: 5px;
+    /* Списки, абзацы — без сдвига, по левому краю */
+    .footer-about-us ul,
+    .footer-about-us p {
+        margin-left: 0;
+        padding-left: 0;
+        text-align: left;
     }
 
-    .footer-accordion[open] summary::after {
-        content: " ▲";
+    /* Блок иконок — по левому краю */
+    .col-md-3 .social-icons {
+        text-align: left;
     }
-/* Контент внутри — с небольшим отступом margin-top */
-    .footer-accordion ul,
-    .footer-accordion p,
-    .footer-accordion .social-icons {
-        margin-top: 0px;
-        color: #777;
+
+    /* Иконки — компактно, без лишних отступов */
+    .social-icons a {
+        display: inline-block;
+        margin: 0 8px 8px 0; /* Отступы со всех сторон, как сетка */
     }
 }
 
-/* === Десктоп: отключаем аккордеон в футере — всё видно, даже если нет `open` === */
-@media (min-width: 769px) {
-    .col-md-3 {
-        flex: 0 0 25%;
-        max-width: 25%;
-    }
-
-    /* Принудительно РАСКРЫВАЕМ <details> на ПК */
-    .footer-accordion {
-        display: block;
-    }
-
-    /* Принудительно ПОКАЗЫВАЕМ всё, что внутри — кроме summary */
-    .footer-accordion > *:not(summary) {
-        display: block !important;
-        height: auto !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
-
-    /* Делаем заголовок видимым и статичным */
-    .footer-accordion summary {
-        display: block;
-        cursor: default;
-        user-select: none;
-        outline: none;
-        pointer-events: none;
-        font-weight: bold;
-        color: #ffffff;
-        font-size: 16px;
-        margin-bottom: 10px;
-        padding: 0;
-    }
-}
 
       </style>
       <script>
@@ -629,6 +588,61 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
 
   </div>
 </div>
+
+
+
+
+
+
+<br><br><br><h2 class="FuturisTitle FuturisContentSection-Title" >Заголовок</h2>
+
+<section id="formy-otvetov-33" class="section-wrap our-team bg-light" style="
+    width: 100%;
+    max-width: 1140px;
+    min-height: 600px;
+    background: linear-gradient(135deg, #8A2BE2, #FF69B4, #8A2BE2);
+    margin: 10px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    overflow: hidden;
+    color: white;
+">
+  <div class="column" style="
+        flex: 1 1 20%;
+        min-width: 200px;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 6px;
+    ">
+    Левая колонка (узкая)
+  </div>
+
+  <div class="column" style="
+        flex: 2 1 40%;
+        min-width: 300px;
+        padding: 15px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 6px;
+    ">
+    Средняя колонка (широкая)
+  </div>
+
+  <div class="column" style="
+        flex: 1 1 20%;
+        min-width: 200px;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 6px;
+    ">
+    Правая колонка (узкая)
+  </div>
+</section>
 			
 
 <div id="passwordModal" class="popup">
@@ -660,14 +674,12 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
             <!-- Колонка 1 -->
             <div class="col-md-3">
                 <div class="footer-about-us">
-                     <details class="footer-accordion">
-            <summary class="footer-accordion-title ">Контур-сервисы</summary>
+                    <h5 class="heading-white">Контур-сервисы</h5>
                     <ul>
                         <li><a href="https://auth.kontur.ru/">Контур-КЭДО</a></li>
                         <li><a href="https://www.kontur-extern.ru/info/rubrika-instrumenty_buhgaltera">Контур-Экстерн</a></li>
                         <li><a href="https://www.kontur-extern.ru/info/54749-kalendar_na_fevral">Календарь</a></li>
                     </ul>
-                    </details>
                 </div>
                 <div class="social-icons" style="margin-top: 20px">
                     <a href="#"> <img src="favicon-32.png" alt="Facebook" class="social-icon" /> </a>
@@ -680,48 +692,42 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
             <!-- Колонка 2 -->
             <div class="col-md-3">
                 <div class="footer-about-us">
-                    <details class="footer-accordion" >
-            <summary class="footer-accordion-title">Полезные ссылки</summary>
+                    <h5 class="heading-white">Полезные ссылки</h5>
                     <ul>
                         <li><a href="snow/index.html">Новости отдела Архива</a></li>
                         <li><a href="policy.html">Политика конфиденциальности</a></li>                       
                         <li><a href="javascript:void(0)">Добавить ссылку</a></li>
                     </ul>
-                    </details>
                 </div>
             </div>
 
             <!-- Колонка 3 -->
             <div class="col-md-3">
                 <div class="footer-about-us">
-                    <details class="footer-accordion" >
-            <summary class="footer-accordion-title">Инструменты</summary>
+                    <h5 class="heading-white">Инструменты</h5>
                     <ul>
                         <li><a href="https://pr-cy.ru/translit/" title="Преобразуй кириллицу в латиницу и наоборот">Транслитерация</a></li>
                         <li><a href="https://colorscheme.ru/html-colors.html">HTML цвета</a></li>
                         <li><a href="https://atuin.ru/tools/shades/">Генератор оттенков</a></li>
                         <li><a href="https://webformatter.com/" title="Расставить отступы в коде онлайн">Веб-Форматировщик</a></li>
-                        <li><a href="https://free.drweb.ru/for+web+sites/" title="Бесплатная проверка файлов и ссылок на вирусы с помощью Dr.Web">Проверка файлов и ссылок</a></li>
+                        <li><a href="https://free.drweb.ru/for+web+sites/">Проверка файлов и ссылок</a></li>
                         <li><a href="https://tinypng.com/">Compressor</a></li>
                         <li><a href="https://atuin.ru/">Вебмастер</a></li>
                     </ul>
-                    </details>
                 </div>
             </div>
 
             <!-- Колонка 4 -->
             <div class="col-md-3">
                 <div class="footer-about-us">
-                    <details class="footer-accordion">
-            <summary class="footer-accordion-title">О сайте</summary>
+                    <h5 class="heading-white">О Сайте</h5>
                     <ul>
-                    <li>Размещается на <a href="https://github.com" title="Этот сайт размещён на GitHub"><img src="./img/github.png" alt="GitHub" width="16" height="16" style="vertical-align: baseline;"> GitHub</a></li>
-                        <li><a href="otchet_po_saitu.html" title="Характеристики этого сайта">Характеристики сайта</a></li>
+                    <li>Размещается на <a href="https://github.com"><img src="./img/github.png" alt="GitHub" width="16" height="16" style="vertical-align: baseline;"> GitHub</a></li>
+                        <li><a href="otchet_po_saitu.html">Характеристики сайта</a></li>
                         <li><a href="javascript:void(0)">Добавить ссылку</a></li>
                     <!-- <li><img src="img/yandex-metrica-color.png" alt="Яндекс метрика" style="margin-top: 15px ; border: 1px solid #ccc;"></li>    -->
-                    <li class="ym-logo"><a href="https://metrika.yandex.ru/" title="На сайте присутствует сервис Яндекс.Метрика" target="_blank"><img src="img/yandex-metrica-color.png" alt="Яндекс.Метрика" class="ym-image" style="margin-top: 10px ; border: 1px solid #777;"></a></li>
+                    <li class="ym-logo"><a href="https://metrika.yandex.ru/" target="_blank"><img src="img/yandex-metrica-color.png" alt="Яндекс.Метрика" class="ym-image" style="margin-top: 10px ; border: 1px solid #ccc;"></a></li>
                     </ul>
-                     </details>
                 </div>
             </div>
         </div>
@@ -815,26 +821,6 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
         URL.revokeObjectURL(url);
       });
     });
-</script>
-<!-- 7. Аккордеон в футере(без скрипта на ПК аккор-н изначально закрыт) -->
-<script>
-    function toggleAccordionState() {
-        const accordions = document.querySelectorAll('.footer-accordion');
-        
-        if (window.innerWidth > 768) {
-            // На ПК — принудительно открыто
-            accordions.forEach(acc => acc.setAttribute('open', ''));
-        } else {
-            // На мобиле — убираем open, чтобы было закрыто по умолчанию
-            accordions.forEach(acc => acc.removeAttribute('open'));
-        }
-    }
-
-    // Запуск при загрузке
-    toggleAccordionState();
-
-    // Запуск при изменении размера окна (поворот, ресайз)
-    window.addEventListener('resize', toggleAccordionState);
 </script>
 </body>
 </html>
