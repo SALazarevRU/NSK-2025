@@ -1207,6 +1207,7 @@ ul.recent-works {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
+border: 1px solid #c2cbcd; /* Добавлена рамка */
 }
 
 #back-to-top i {
@@ -1229,6 +1230,7 @@ ul.recent-works {
 
 #back-to-top:hover {
   background-color: #00ADB5;
+border-color: #00ADB5; /* Цвет рамки при наведении */
 }
 
 #back-to-top:hover i {
