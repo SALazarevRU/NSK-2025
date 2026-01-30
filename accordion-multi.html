@@ -39,7 +39,10 @@
 
 
       <style>
-/*  #3C3C3C АНТРАЦИТ, #00ADB5 - НАШ БАЗОВЫЙ, #2F4F4F- темнее базового) */        
+/*  #3C3C3C АНТРАЦИТ, #00ADB5 - НАШ БАЗОВЫЙ 
+padding → внутренний отступ (между краем блока и его содержимым). 
+margin-bottom → внешний отступ (между этим блоком и следующим элементом).*/ 
+       
 /* Для копирования текста содержимого аккордеонов */
 .copy-link {
   display: inline-block;
@@ -483,6 +486,7 @@ stopOnFocus: true, // Не закрывается при наведении
             justify-content: center;      /* центрируем по горизонтали */
             align-items: center;        /* центрируем по вертикали */
             flex-direction: column;     /* располагаем элементы друг под другом (если их несколько) */
+            border-radius: 8px;             margin-bottom: 5px; /* Внешний отступ снизу 5px */ 
          ">        
         <h2 class="FuturisTitle FuturisContentSection-Title" style="color: white;">Преимущества</h2>
         <h4 class="FuturisTitle FuturisContentSection-Title" style="color: white;">готовых шаблонов ответов</h4>
@@ -516,9 +520,8 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
 
             <div class="container">
             </div>
-            <br><br><br>
+            <br><br><br><br><br>
 
-<br><br>
 <section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
     <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block" tabindex="0" data-pg4qxfhklesk="1_37mew02-0-14b"
          style=" background: url(img/abstract-blue-bokeh.jpg); background-size: cover; background-position: center; height: 200px;
@@ -526,12 +529,14 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
             justify-content: center;      /* центрируем по горизонтали */
             align-items: center;        /* центрируем по вертикали */
             flex-direction: column;     /* располагаем элементы друг под другом (если их несколько) */
+            border-radius: 8px;           
          ">        
         <h2 class="FuturisTitle FuturisContentSection-Title" style="color: white;">Формы</h2>
-        <h4 class="FuturisTitle FuturisContentSection-Title" style="color: white;">ответов на часто задаваемые вопросы</h4>
+        <h4 class="FuturisTitle FuturisContentSection-Title" style="color: white; text-align: center;">ответов на часто задаваемые вопросы</h4>
     </div>
-</section>          
-            <div class="accordion-group">
+</section> 
+         
+  <div class="accordion-group">
   <h3 class="accordion-header">Руководителям</h3>
   <div class="accordion-body">
     <p>Временный пароль "123"</p>
@@ -560,79 +565,135 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
 
       <h3 class="f20 accordion-header">Добавить 1.2</h3>
       <div class="accordion-body">
-        <p id="text-2">5. Альтернатива prompt() — модальное окно Для лучшего UX заменить prompt() на кастомное модальное окно: HTML (добавить в конец страницы)</p>
+        <p id="text-2">Текст - 2</p>
         <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-2')">Копировать текст</a>
       </div>
 
-      <h3 class="f20 accordion-header">Добавить 1.3</h3>
+         <!-- Второй вложенный аккордеон -->
+    <h3 class="f20 accordion-header">Добавить 1.3</h3>
+    <div class="accordion-body">
+      <p id="text-3">Текст - 3   </p>
+      <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-3')">Копировать текст</a>
+    </div>
+
+    <!-- Третий вложенный аккордеон -->
+    <h3 class="f20 accordion-header">Добавить 1.4</h3>
+    <div class="accordion-body">
+      <p id="text-4">Текст - 4 </p>
+      <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-4')">Копировать текст</a>
+    </div>      
+   </div>
+  </div>
+            
+  <h3 class="accordion-header">Сотрудникам</h3>
+  <div class="accordion-body">
+    <p>Временный пароль "123"</p>
+    
+    <div class="accordion-group" data-multiple="true">
+      <h3 id="protected-accordion" class="accordion-header requires-password">
+        "Где взять шаблон актов приёма-передачи документов?"
+        <span style="margin-left: 8px; font-size: 0.75em; ">(требуется пароль)</span>
+      </h3>
       <div class="accordion-body">
-        <p id="text-3">Шрифт: Для лучшей читаемости используйте font-family: 'Segoe UI', Tahoma, sans-serif; в кнопках. Адаптивность: Для мобильных устройств добавьте touch-action: manipulation; чтобы избежать ложных срабатываний.</p>
-        <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-3')">Копировать текст</a>
+        <!-- Уникальный id для этого текста -->
+        <p id="text-5">  Текст-5 </p>
+        <!-- Передаём правильный id -->
+        <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-5')">Копировать текст</a>
+      </div>
+
+      <h3 class="f20 accordion-header">Добавить 2.2</h3>
+      <div class="accordion-body">
+        <p id="text-6">Текст-6</p>
+        <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-6')">Копировать текст</a>
+      </div>
+
+         <!-- Второй вложенный аккордеон -->
+    <h3 class="f20 accordion-header">Добавить 2.3</h3>
+    <div class="accordion-body">
+      <p id="text-7">  Текст-7  </p>
+      <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-7')">Копировать текст</a>
+    </div>
+
+    <!-- Третий вложенный аккордеон -->
+    <h3 class="f20 accordion-header">Добавить 2.4</h3>
+    <div class="accordion-body">
+      <p id="text-8"> Текст-8  </p>
+      <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-8')">Копировать текст</a>
+    </div>
+
+      <div class="accordion-body">
+        <p id="text-9">Текст-9 </p>
+        <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-9')">Копировать текст</a>
       </div>
     </div>
   </div>
 
-  <h3 class="accordion-header">Сотрудникам</h3>
-<div class="accordion-body" style="background: #FFF">
-  <p id="text-combined">
-    Мы используем стороннюю компанию для предоставления технологий монетизации нашего сайта. 
-    Вы можете ознакомиться с их политикой конфиденциальности и использования файлов cookie.
-    Вы можете изменить настройки конфиденциальности, нажав следующую кнопку.
-  </p>
-  <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-combined')">
-    Копировать текст
-  </a>
-</div><br><br>
+  <br><br>
+</div>
 
-<div class="textarea-container" style="
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 16px;
-  box-sizing: border-box;
-">
-  <!-- Обёртка с position: relative — чтобы кнопка позиционировалась от неё -->
-  <div style="
-    position: relative;
-    display: inline-block;
-    width: 100%;
-  ">
-    <textarea 
-      id="myTextarea"
-      rows="8"
-      style="
-        width: 100%;
-        min-height: 120px;
-        max-height: 300px;
-        padding: 12px;
-        padding-bottom: 28px; /* Делаем место снизу для кнопки */
-        border: 1px solid #00ADB5;
-        border-radius: 8px;
-        font-size: 16px;
-        line-height: 1.5;
-        resize: vertical;
+
+
+<section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
+  <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block"
+         style="
+         position: relative;
+         background: url(img/abstract-blue-bokeh.jpg);
+         background-size: cover;
+         background-position: center;
+         height: 21vh;
+         min-height: 250px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         border-radius: 8px;
+     ">
+    
+    <!-- Контейнер поверх секции -->
+    <div class="textarea-container" style="
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        width: 90%;
+        max-width: 800px;
+        padding: 16px;
         box-sizing: border-box;
-        transition: border-color 0.3s ease;
-      "
-      placeholder="Вставьте скопированный текст для проверки"
-    ></textarea>
+    ">
+      <div style="position: relative; width: 100%;">
+        <textarea id="myTextarea" rows="8" style="
+            width: 100%;
+            min-height: 120px;
+            max-height: 300px;
+            padding: 12px;
+            padding-bottom: 28px;
+            border: 1px solid #00ADB5;
+            border-radius: 8px;
+            font-size: 16px;
+            line-height: 1.5;
+            resize: vertical;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        " placeholder="Вставьте скопированный текст для проверки"></textarea>
 
-    <!-- Кнопка "Очистить" — поверх, в нижнем левом углу textarea -->
-    <!-- Контейнер для кнопок -->
-<div class="buttons-container" style="position: absolute; bottom: 30px; left: 8px; z-index: 10; display: flex; flex-direction: column; gap: 8px;">
-  <!-- Кнопка "Очистить" -->
-  <button type="button" class="text-action-btn clear-btn">
-    Очистить
-  </button>
-
-  <!-- Кнопка "Сохранить в файл" -->
-  <button type="button" class="text-action-btn save-btn">
-    Сохранить в файл
-  </button>
-</div>
-
+        <div class="buttons-container" style="
+            position: absolute;
+            bottom: 30px;
+            left: 8px;
+            z-index: 11;  /* выше, чем у textarea */
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        ">
+          <button type="button" class="text-action-btn clear-btn">Очистить</button>
+          <button type="button" class="text-action-btn save-btn">Сохранить в файл</button>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
 			
 
 <div id="passwordModal" class="popup">
@@ -642,8 +703,6 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
     <button type="button" class="text-action-btn" onclick="checkPassword()">Войти</button>
   </div>
 </div>
-
-
          
       </ul>
       <!-- Call to Action -->
