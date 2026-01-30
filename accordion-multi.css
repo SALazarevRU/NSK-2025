@@ -1,0 +1,74 @@
+.accordion-group {
+    margin: 16px 0;
+}
+
+.accordion-body {
+    display: none;
+    padding: 14px 20px;
+    background: #eeeeee;
+    border-radius: 5px;
+    margin: 8px 0;
+ 
+ font-family: 'Arial', Tahoma, sans-serif;
+ font-size: 13 px; /* Размер текста в панели — чуть меньше стандартного */ 
+ 
+}
+
+.accordion-body > * > .accordion-body {
+    background: #FFF;
+    margin: 0;
+}
+
+.accordion-header {
+    /* Базовый градиент */
+    background: linear-gradient(135deg, #023A5B , #006CAB);
+    background-size: 200% 100%; /* Увеличиваем ширину градиента для анимации */
+    margin: 8px 0;
+    color: #C0C0C0;
+    padding: 8px 40px 8px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+ font-family: 'Arial', Tahoma, sans-serif; 
+font-size: 13 px; /* Немного меньше обычного, но читаемо */
+    font-weight: normal; /* можно убрать жирность, если слишком "тяжёло" */ 
+    
+    /* Плавная анимация при изменении background-position */
+    transition: background-position 0.6s ease, color 0.3s ease;
+}
+
+.accordion-header::after {
+    content: "+";
+    right: 16px;
+    font-family: Courier;
+    font-size: 28px;
+    line-height: 30px;
+    font-weight: normal;
+    color: #FFF;
+    position: absolute;
+    transition: color 0.3s ease; /* Плавный переход цвета символа */
+}
+
+.accordion-header:hover {
+    background-position: 100% 0;
+color: #fff;
+   /*  font-weight: bold; жирный только при наведении */
+}
+
+
+/* Анимация при наведении */
+.accordion-header:hover {
+    background-position: 100% 0; /* Сдвигаем градиент вправо */
+ 
+}
+
+.accordion-header.open {
+    background-position: 100% 0; /* Фиксируем сдвинутый градиент */
+    color: #fff;
+    font-weight: normal;
+}
+
+.accordion-header.open::after {
+    content: "-";
+    color: #FFF;    
+}
