@@ -703,7 +703,7 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
     <p>Временный пароль "123"</p>
     
     <div class="accordion-group" data-multiple="true">
-      <h3 id="protected-accordion" class="accordion-header requires-password">
+      <h3 id="protected-accordion-2" class="accordion-header requires-password">
         "Где взять шаблон актов приёма-передачи документов?"
         <span style="margin-left: 8px; font-size: 0.75em; ">(требуется пароль)</span>
       </h3>
@@ -820,11 +820,12 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
 </div><!-- Конец Мой флекс контейнер-888 -->
 			
 
-<div id="passwordModal" class="popup">
-  <div class="popup-content">
-    <h4>Введите пароль</h4>
-    <input type="password" id="passwordInput" placeholder="Пароль" />
-    <button type="button" class="text-action-btn" onclick="checkPassword()">Войти</button>
+<div id="passwordModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 9999;">
+  <div style="background: white; padding: 20px; border-radius: 5px;">
+    <p>Введите пароль:</p>
+    <input type="password" id="passwordInput" style="margin: 10px 0;">
+    <button onclick="window.checkLinkPassword()">Войти</button>
+    <button id="cancelPassword">Отмена</button>
   </div>
 </div>
          
@@ -871,7 +872,7 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
                     <details class="footer-accordion" >
             <summary class="footer-accordion-title">Полезные ссылки</summary>
                     <ul>
-                        <li><a href="snow/index.html">Новости отдела Архива</a></li>
+                        <li> <a href="snow/index.html" class="requires-password">Новости отдела Архива</a></li>
                         <li><a href="policy.html">Политика конфиденциальности</a></li>                       
                         <li><a href="https://roundcube.net/"> Switch theme </a></li>
                         <li><a href="javascript:void(0)" title="Добавить ещё одну ссылку">Добавить ссылку</a></li>
