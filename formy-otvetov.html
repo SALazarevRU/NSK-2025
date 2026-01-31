@@ -52,13 +52,15 @@ margin-bottom → внешний отступ (между этим блоком 
 .theme-light .section-wrap {
   background: #DCDCDC;
 }
+.theme-light .TextoviyBlock{
+text-align: left;
+padding: 30px;
+}
 
 /* Тёмная тема */
 .theme-dark .section-wrap {
   background: linear-gradient(180deg, #3D495B, #000000);
 }
-
-
 .left-column,
 .right-column {
   flex: 0 0 17%;
@@ -74,7 +76,13 @@ margin-bottom → внешний отступ (между этим блоком 
 /* Тёмная тема: меняем фон колонок */
 .theme-dark .left-column,
 .theme-dark .right-column {
-  background-color: rgba(255, 255, 255, 0.1); /* белый с прозрачностью 10% */
+background-color: rgba(255, 255, 255, 0.1); /* белый с прозрачностью 10% */
+}
+/* Тёмная тема: меняем фон блока с текстом*/
+.theme-dark .TextoviyBlock{
+color: #e0e0e0;
+text-align: left;
+padding: 30px;
 }
         /*Конец для "CSS-классы для светлой и тёмной темы".*/
        
@@ -623,42 +631,39 @@ stopOnFocus: true, // Не закрывается при наведении
 <!-- Мой флекс контейнер-888 -->
 
 <div class="flex-container-888">
-  <div class="left-column">Левая колонка</div>
+  <div class="left-column"><div style="text-align: left;"><p>ООО ПКО «Бюро судебного взыскания» — организация, которая сопровождает судебное и исполнительное производство по задолженностям.
+Отдел архива длительного хранения — базовый элемент структуры компании, гарантирующий непрерывность бизнес‑процессов.</p> 
+<img src="upload/core_features_img.jpg" alt="core-features-img" style="border: 1px solid #A9A9A9;">
+</div></div>
 
   <div class="center-column">
 <section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
     <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block" tabindex="0" data-pg4qxfhklesk="1_37mew02-0-14b"
-         style=" background: url(img/abstract-blue-bokeh.jpg); background-size: cover; background-position: center; height: 200px;
+         style=" border-radius: 8px; background: url(img/abstract-blue-bokeh.jpg); background-size: cover; background-position: center; height: 200px;
             display: flex;                /* включаем Flexbox */
             justify-content: center;      /* центрируем по горизонтали */
             align-items: center;        /* центрируем по вертикали */
             flex-direction: column;     /* располагаем элементы друг под другом (если их несколько) */
-         ">        
-        <h2 class="FuturisTitle FuturisContentSection-Title" style="color: white;">Формы</h2>
-        <h4 class="FuturisTitle FuturisContentSection-Title" style="color: white;">ответов на часто задаваемые вопросы</h4>
+         "> 
+
+       
+        <h2 class="FuturisTitle FuturisContentSection-Title" style="color: white;">Преимущества</h2>
+        <h4 class="FuturisTitle FuturisContentSection-Title" style="color: white;">готовых шаблонов ответов</h4>
     </div>
 </section>  
-<section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
-    <!--<h2 class="FuturisTitle FuturisContentSection-Title" >Преимущества готовых шаблонов ответов</h2> -->
-
-    <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block" tabindex="0" data-pg4qxfhklesk="1_37mew02-0-14b"
-style=" text-align: left; background: linear-gradient(135deg, #ededed, #FFF, #ededed) /*background-color: rgba(0, 0, 0, 0.1);  черный с прозрачностью 10 % */ ;  
-color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.2)">
-        <div data-end-streaming-block="true">&nbsp;</div>
-        <div class="FuturisMarkdown-Paragraph">Готовые шаблоны ответов на часто встречающиеся вопросы обеспечивают:</div>
-<ul class="FuturisMarkdown-UnorderedList" style="list-style-type: disc; padding-left: 40px; margin: 0;">
-  <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Экономию времени</strong>. Не требуется каждый раз формулировать ответ с нуля — достаточно выбрать шаблон и при необходимости адаптировать.</li>
-  <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Единообразие коммуникации</strong>. Все получают одинаково чёткие и структурированные ответы, что исключает разночтения.</li>
-  <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Снижение нагрузки на память</strong>. Нет необходимости держать в голове десятки стандартных формулировок — информация всегда доступна.</li>
-  <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Повышение качества ответов</strong>. Шаблоны заранее выверены: в них отсутствуют ошибки, лишние эмоции и неоднозначные формулировки.</li>
-  <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Скорость реакции</strong>. Возможность оперативно отвечать на рутинные вопросы без откладывания «на потом».</li>
-  <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Упрощение обучения новых сотрудников</strong>. Шаблоны служат готовым гидом по стандартным ситуациям, ускоряя адаптацию новичков.</li>
-  <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Защиту от стресса</strong>. Наличие «каркаса» ответа помогает сохранять спокойствие в напряжённых диалогах.</li>
-  <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Прозрачность процессов</strong>. Согласованные с руководством шаблоны закрепляют единые правила коммуникации в команде.</li>
+<section class="TextoviyBlock">
+ <div class="FuturisMarkdown-Paragraph">Готовые шаблоны ответов на часто встречающиеся вопросы обеспечивают:</div>
+<ul class="FuturisMarkdown-UnorderedList">
+<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Экономию времени</strong>. Не требуется каждый раз формулировать ответ с нуля &mdash; достаточно выбрать шаблон и при необходимости адаптировать.</li>
+<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Единообразие коммуникации</strong>. Все получают одинаково чёткие и структурированные ответы, что исключает разночтения.</li>
+<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Снижение нагрузки на память</strong>. Нет необходимости держать в голове десятки стандартных формулировок &mdash; информация всегда доступна.</li>
+<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Повышение качества ответов</strong>. Шаблоны заранее выверены: в них отсутствуют ошибки, лишние эмоции и неоднозначные формулировки.</li>
+<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Скорость реакции</strong>. Возможность оперативно отвечать на рутинные вопросы без откладывания &laquo;на потом&raquo;.</li>
+<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Упрощение обучения новых сотрудников</strong>. Шаблоны служат готовым гидом по стандартным ситуациям, ускоряя адаптацию новичков.</li>
+<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Защиту от стресса</strong>. Наличие &laquo;каркаса&raquo; ответа помогает сохранять спокойствие в напряжённых диалогах.</li>
+<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Прозрачность процессов</strong>. Согласованные с руководством шаблоны закрепляют единые правила коммуникации в команде.</li>
 </ul>
-<div class="FuturisMarkdown-Paragraph"><br /><strong>Итог:</strong>&nbsp;шаблоны — это инструмент профессиональной эффективности. Они освобождают ресурсы для решения нетривиальных задач, сохраняя качество рутинной переписки.</div>
-
-    </div>
+<div class="FuturisMarkdown-Paragraph"><br /><strong>Итог:</strong>&nbsp;шаблоны &mdash; это инструмент профессиональной эффективности. Они освобождают ресурсы для решения нетривиальных задач, сохраняя качество рутинной переписки.</div>
 </section>
 
 
@@ -669,12 +674,11 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
 
 <section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
     <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block" tabindex="0" data-pg4qxfhklesk="1_37mew02-0-14b"
-         style=" background: url(img/abstract-blue-bokeh.jpg); background-size: cover; background-position: center; height: 200px;
+         style=" border-radius: 8px; background: url(img/abstract-blue-bokeh.jpg); background-size: cover; background-position: center; height: 200px;
             display: flex;                /* включаем Flexbox */
             justify-content: center;      /* центрируем по горизонтали */
             align-items: center;        /* центрируем по вертикали */
-            flex-direction: column;     /* располагаем элементы друг под другом (если их несколько) */
-            border-radius: 8px;           
+            flex-direction: column;     /* располагаем элементы друг под другом (если их несколько) */                      
          ">        
         <h2 class="FuturisTitle FuturisContentSection-Title" style="color: white;">Формы</h2>
         <h4 class="FuturisTitle FuturisContentSection-Title" style="color: white; text-align: center;">ответов на часто задаваемые вопросы</h4>
@@ -845,8 +849,13 @@ color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0,
   <div class="right-column">
       <div class="button-group"> <!-- группа для регулировки расстояния между кнопок -->
         <a href="index.html#vzaimodeystvie" class="my-button-123">Вернуться</a>
-        <button id="toggleTheme" title="Смена темы со светлой на тёмную и наоборот" class="my-button-123">Сменить на тёмную тему</button>
+        <button id="toggleTheme" class="my-button-123">Сменить на тёмную тему</button>
         <button class="qrcodebtn as-mybutton">QR-код для просмотра на телефоне</button> 
+<div style="text-align: left;"><p>О компании
+ООО ПКО «Бюро судебного взыскания» — организация, которая сопровождает судебное и исполнительное производство по задолженностям.</p> 
+<img src="upload/firefox.gif" alt="Анимированный элемент" loading="lazy" style="border: 1px solid #A9A9A9;">
+<p>Отдел архива длительного хранения — базовый элемент структуры компании, гарантирующий непрерывность бизнес‑процессов.</p> 
+</div>
       </div>
   </div>
 </div><!-- Конец Мой флекс контейнер-888 -->
@@ -1075,9 +1084,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Функция для обновления текста кнопки
   function updateButtonText() {
     if (body.classList.contains('theme-dark')) {
-      toggleButton.textContent = '☀️ Вернуть светлый режим';
+      toggleButton.textContent = '☀️  Вернуть светлый режим';
     } else {
-      toggleButton.textContent = '🌙 Включить тёмный режим';
+      toggleButton.textContent = '🌙  Включить тёмный режим';
     }
   }
 
