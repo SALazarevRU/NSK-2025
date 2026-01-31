@@ -1,0 +1,1084 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+   <head>     
+      <meta charset="utf-8">  
+<!-- Фавикон -->
+   <link rel="icon" type="image/png" sizes="192x192" href="/NSK-2025/favicon-192.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/NSK-2025/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/NSK-2025/favicon-32.png">
+<link rel="icon" type="image/x-icon" href="/NSK-2025/favicon.ico">
+ 
+<title>Формы ответов</title>
+<!-- Адаптивность -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!--[if IE]>
+      <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+      <![endif]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+      <!-- 1. Google Fonts (исправлены протоколы) -->
+  <link href="https://fonts.googleapis.com/css?family=Arimo&subset=latin,cyrillic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif&subset=latin,cyrillic" rel="stylesheet">
+
+
+  <!-- 2. Стили (в порядке зависимости) -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/stroke-gap-icons.css">
+  <link rel="stylesheet" href="css/pe-icon-7-stroke.css">
+  <link rel="stylesheet" href="css/elegant-icons.css">
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/slider.css">
+  <link rel="stylesheet" href="css/accordion-multi.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/qr-code-lazarev.css">
+
+  <!-- 3. Toastify (только один вариант: локальный ИЛИ CDN) -->
+  <!-- Вариант A: локальная копия (рекомендуется) -->
+  <link rel="stylesheet" href="./css/toastify.min.css">
+
+
+      <style>
+
+
+/*  #3C3C3C АНТРАЦИТ, #00ADB5 - НАШ БАЗОВЫЙ 
+padding → внутренний отступ (между краем блока и его содержимым). 
+margin-bottom → внешний отступ (между этим блоком и следующим элементом).*/ 
+       
+/* Для копирования текста содержимого аккордеонов */
+.copy-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 1px 10px;          /* Уменьшили вертикальные отступы */
+  background-color: #FFF; /* Тёмно‑серый фон (было #F2F2F2) */
+  color: #000000;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #6a7984;  
+  border: 1px solid #6a7984; /* Чёрная рамка (ширина + стиль + цвет) */
+}
+
+.copy-link:hover {
+ background: linear-gradient(135deg, #8A2BE2, #FF69B4); /* background-color: #C0C0C0;  /* Темнее при наведении #C0C0C0  #4CD5DA*/
+ color: white; 
+  transform: translate(2px, -2px);
+}
+
+/* стили для кнопки «Очистить») */
+ .text-action-btn {
+      display: inline-block;
+      padding: 1px 35px;
+      background-color: #FFF;
+      color: #6a7984;
+      border: 1px solid #6a7984;
+      border-radius: 4px;
+      font-size: 12px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+
+    .text-action-btn:hover {
+      background: linear-gradient(135deg, #8A2BE2, #FF69B4);
+      color: white;
+      transform: translate(2px, -2px);
+    }
+/* Конец кода стили для кнопки «Очистить») */
+
+/* стили для кнопки «Моя кнопка-123») */
+ .my-button-123 {
+      display: inline-block;
+      min-width: 260px; /* кнопки не станут меньше 180 px */
+       padding: 7px 24px; /* сбалансированный отступ */
+       line-height: 1.4; /* комфортный межстрочный интервал */
+       text-align: center; /* текст по центру */
+  /*     white-space: nowrap; /* Если текст длинный, чтобы он не переносился: */
+      background: linear-gradient(180deg, #e1f1ff, #002d51);
+      color: white;
+      border: 1px solid #6a7984;
+      border-radius: 4px;
+      font-size: 12px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+.button-group {
+  display: flex;
+ flex-direction: column; /* Кнопки — вертикально */
+  gap: 20px; /* единое расстояние между кнопками */
+}
+    .my-button-123:hover {
+      background: linear-gradient(180deg, #e1f1ff, #002d51);
+      color: white;
+      transform: translate(2px, -2px);
+    }
+
+@media (max-width: 768px) {
+  .my-button-123 {
+    min-width: 140px;
+    padding: 8px 16px;
+ .button-group { gap: 15px; }
+  .my-button-123 { padding: 8px 16px; }
+  }
+}
+/* Конец кода стили для кнопки «Моя кнопка-123») */
+
+    #myTextarea {
+      width: 100%;
+      height: 200px;
+      margin-top: 20px;
+      font-family: monospace;
+    }
+
+/* для модального окна «Введите пароль») */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  text-align: center;
+}
+
+#passwordInput {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* Для полной адаптивности section id="formy-otvetov-33"*/
+@media (max-width: 767px) {
+      .column {
+        flex: 1 1 100%;
+      }
+    }
+    
+ /* Основные стили футера */
+        #footer {
+            background-color: #222831;
+            padding: 40px 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+/* Стили для заголовков аккордеонов */
+.footer-accordion-title {
+    display: block;
+    color: #C0C0C0!important;    
+}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -15px;
+        }
+
+        .col-md-3 {
+            margin-bottom: 30px;
+            flex: 0 0 25%; /* Равномерное распределение колонок */
+            padding: 0 15px;
+        }
+
+        .heading-white {
+            margin-bottom: 15px;
+            color: red;
+        }
+
+        .footer-about-us ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-about-us li {
+            margin-bottom: 5px;
+        }
+
+        .social-icons a {
+            margin-right: 10px;
+        }
+
+        .social-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* Стили для ссылок в футере */
+        .footer-about-us a {
+            text-decoration: none;
+            color: #777;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .footer-about-us a:hover {
+            color: #00FFFF;
+        }
+
+        .social-icons i {
+            font-size: 20px;
+        }
+
+        /* Дополнительные стили для колонок */
+        .col-md-3 .footer-about-us {
+            color: #777; /* Цвет текста для первой колонки */
+        }
+
+        .col-md-3:nth-child(2) .footer-about-us {
+            color: #fff; /* Цвет текста для второй колонки */
+        }   
+        
+        /* ПЕРЕОПРЕДЕЛЕНИЕ bottom-footer — должно быть в конце */
+    .bottom-footer-simple {
+    background-color: #16171a;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.copyright-text {
+    margin: 0;
+    color: #98a2a4;    /* Цвет обычного текста — серый */
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.company-name {
+    color: #fff;     /* Цвет названия компании — белый  font-weight: bold;  Можно добавить жирность для выделения */    
+}
+
+ /* ДЛЯ СМЕНЫ НА ЦВЕТН ИЗОБРАЖЕНИЕ ЯНДЕКС МЕТРИКИ */
+.ym-logo {
+    display: inline-block;
+}
+
+.ym-image {
+    width: 80px;
+    height: auto;
+    filter: grayscale(100%); /* Чёрно-белое */
+    transition: filter 0.3s ease; /* ВАЖНО: transition для filter, а не opacity */
+}
+
+.ym-image:hover {
+    filter: grayscale(0%); /* Цветное */
+}
+ 
+/* === Мобильные: аккордеон в футере === */
+@media (max-width: 768px) {
+    .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-accordion summary {
+        list-style: none;
+        cursor: pointer;
+        font-weight: bold;
+        color: #fff;
+        padding: 10px 0;
+        outline: none;
+    }
+
+    .footer-accordion summary::after {
+        content: " ▼";
+        font-size: 0.8em;
+        color: #777;
+        margin-left: 5px;
+    }
+
+    .footer-accordion[open] summary::after {
+        content: " ▲";
+    }
+/* Контент внутри — с небольшим отступом margin-top */
+    .footer-accordion ul,
+    .footer-accordion p,
+    .footer-accordion .social-icons {
+        margin-top: 0px;
+        color: #777;
+    }
+}
+
+/* === Десктоп: отключаем аккордеон в футере — всё видно, даже если нет `open` === */
+@media (min-width: 769px) {
+    .col-md-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    /* Принудительно РАСКРЫВАЕМ <details> на ПК */
+    .footer-accordion {
+        display: block;
+    }
+
+    /* Принудительно ПОКАЗЫВАЕМ всё, что внутри — кроме summary */
+    .footer-accordion > *:not(summary) {
+        display: block !important;
+        height: auto !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    /* Делаем заголовок видимым и статичным */
+    .footer-accordion summary {
+        display: block;
+        cursor: default;
+        user-select: none;
+        outline: none;
+        pointer-events: none;
+        font-weight: bold;
+        color: #ffffff;
+        font-size: 16px;
+        margin-bottom: 10px;
+        padding: 0;
+    }
+}
+
+
+
+/* Ощие настройки Флекс контейнер-888 */ 
+/* Глобальные настройки */
+ * { box-sizing: border-box; } /* Учитываем padding/border в общей ширине */
+
+/* Флекс контейнер-888 */
+.flex-container-888 {
+  display: flex;
+  max-width: 1838px;      /* Фиксированная ширина контейнера */ 
+  width: 100%;            /* Занимает всю ширину на мобильных */
+  margin: 0 auto;         /* Центрирование контейнера (опционально) */
+
+  height: auto; /* Или удалите height */
+  align-items: flex-start; /* Или center, stretch */
+  justify-content: center;
+  text-align: center;
+  gap: 10px; /* Равномерные отступы между всеми колонками */
+}
+
+.left-column,
+.right-column {
+  flex: 0 0 17%;   /* Не растёт, не сжимается, ширина = 17 от 1800px */
+  background-color: rgba(20,47,71, 0.05); /* #0415FD с прозрачностью 50% */
+  /*border: 1px solid #ccc;*/
+  padding: 20px;
+  box-sizing: border-box; 
+ /* Если нужно вертикальное расположение внутри колонки */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* расстояние между элементами (например-кнопками) */
+}
+
+.center-column {
+  flex: 1 1 auto;  /* Растёт и сжимается, занимает оставшееся пространство */
+/*background-color: rgba(0, 0, 0, 0.05); /* Чёрный с прозрачностью 10 % */
+/*  border: 1px solid #ccc; */
+  box-sizing: border-box;
+}
+
+/* Адаптация Флекс контейнер-888 На экранах < 768px */
+
+@media (max-width: 768px) {
+  .flex-container-888 {
+    flex-direction: column;
+    padding: 0 15px; /* Отступы от края экрана */
+  }
+
+  .left-column,
+  .center-column,
+  .right-column {
+    flex: none;        /* Отключаем Flexbox */
+    width: 100%;       /* На всю ширину */
+    max-width: none;   /* Снимаем ограничения */
+    margin-bottom: 15px;
+    border: 1px solid #eee; /* Для наглядности */
+  }
+}
+
+/*  Адаптация Флекс контейнер-888 для мобильных:
+  - Скрываем левую и правую колонки
+  - Средняя занимает всю ширину
+*/
+/* 
+@media (max-width: 768px) {
+  .left-column, .right-column { display: none; }
+  .center-column { width: 100%; margin: 0; box-sizing: border-box; }
+}
+*/
+
+      </style>
+      <script>
+         document.addEventListener('DOMContentLoaded', function() {
+         // Обработчик для ссылок, открывающих окна
+         const openPopupLinks = document.querySelectorAll('.open-popup');
+         openPopupLinks.forEach(link => {
+         link.addEventListener('click', function(e) {
+         e.preventDefault(); // Отменяем переход по ссылке
+         
+         const targetId = this.getAttribute('data-target');
+         const popup = document.getElementById(targetId);
+         
+         if (popup) {
+         popup.style.display = 'flex'; // Показываем окно
+         }
+         });
+         });
+         
+         // Обработчик для кнопок закрытия
+         const closeButtons = document.querySelectorAll('.close-popup');
+         closeButtons.forEach(button => {
+         button.addEventListener('click', function() {
+         const popup = this.closest('.popup');
+         popup.style.display = 'none'; // Скрываем окно
+         });
+         });
+         
+         // Дополнительно: закрытие по клику на фон
+         const popups = document.querySelectorAll('.popup');
+         popups.forEach(popup => {
+         popup.addEventListener('click', function(e) {
+         if (e.target === popup) {
+         popup.style.display = 'none';
+         }
+         });
+         });
+         });
+      </script>
+
+
+  /* Функция копирования текста*/
+<script>
+    function copyTextFromAccordion(elementId) {
+const textElement = document.getElementById(elementId);
+const textToCopy = textElement.textContent;
+
+navigator.clipboard.writeText(textToCopy)
+.then(() => {
+// Успех: показываем Toastify вместо alert
+Toastify({
+text: "Текст скопирован в буфер обмена!",
+duration: 2500, // Автозакрытие через 2 сек
+close: true,
+gravity: "top",
+position: "center",
+background: "linear-gradient(to right, #8A2BE2, #FF69B4)", // Градиент цвет для успеха
+className: "info",
+stopOnFocus: true, // Не закрывается при наведении
+}).showToast();
+})
+
+}  </script>
+   </head>
+   <body class="loading">
+      <!-- Preloader Устройство предварительной загрузки-->
+      <div id="preloader">
+         <div id="status">&nbsp;</div>
+      </div>
+      <header>
+         <!-- Navbar -->
+         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <nav class="navigation">
+               <div class="container">
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                     <span class="sr-only">Открыть меню</span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     </button>
+       <!-- Logo -->
+<div class="logo">
+  <a href="#" class="open-popup" data-target="popup2" title="Логотип">
+    <img src="bsv-siniy-664.svg" alt="logo-shar" class="social-icon" style="width:64px;height:auto;vertical-align:-5px;margin-right:6px;border:1px solid #006CAB;border-radius:4px;">
+    ФОРМЫ<i><span style=" background: #006CAB; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; ">ответов</span></i></a>
+</div>
+                     <div class="popup" id="popup2">
+                        <div class="popup-content">
+                           <h3>Преимущества и Формы</h3>
+                           <p>готовых шаблонов ответов.</p>
+                           <button class="close-popup">Закрыть или клик на серое поле</button>
+                        </div>
+                     </div>
+                     <!-- Logo конец -->
+                  </div>
+                  <!-- end navbar-header -->
+
+                  <div class="collapse navbar-collapse" id="navbar-collapse">
+                     <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.html#preloader">Главная</a></li>
+                        <li><a href="index.html#222">Команда</a></li>
+                        <li><a href="LazarevSA.html#LazarevSA-33">Разработчик</a></li>
+                        <li><a href="ITProjects.html">IT Проекты</a></li>
+                        <li class="active"><a href="LazarevSA.html#LazarevSA-33">Ответы</a></li>
+                        <li>
+                           <div id="search"><i class="pe-7s-search search-trigger"></i></div>
+                           <div class="search-bar">
+                              <div class="search-wrap">
+                                 <form role="form">
+  <div class="form-group">
+    <label for="search-input">Поиск:</label>
+    <input 
+      type="search"
+      id="search-input"
+      name="search"
+      class="form-control searchbox"
+      placeholder="Search"
+      autocomplete="off" <!-- или "on", если нужно автозаполнение -->
+    >
+  </div>
+  <button type="submit" class="search-button"><i class="pe-7s-search"></i></button>
+</form>
+
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                     <!-- end menu -->
+                  </div>
+                  <!-- end collapse -->
+               </div>
+               <!-- end container -->
+            </nav>
+
+<div id="forms-otv" style="background: linear-gradient(180deg, #3D495B, #303947); text-align: center; padding: 3px;">
+<a href="#"> <img src="favicon-32.png" title="Тупо наверх" alt="logo-shar" class="social-icon" /> </a>
+  <a href="index.html#preloader" style="color: white; text-decoration: none; margin: 0 10px;">Главная</a>
+  <span style="color: white;">|</span>
+  <a href="index.html#222" style="color: white; text-decoration: none; margin: 0 10px;">Команда</a>
+  <span style="color: white;">|</span>
+<a href="LazarevSA.html#LazarevSA-33" style="color: white; text-decoration: none; margin: 0 10px;">Разработчик</a>
+</div>
+            <!-- end navigation -->
+         </nav>
+         <!-- End Navbar -->
+      </header>
+
+      <div class="main-wrapper основная оболочка">
+      <!-- Приложение -->
+      <ul id="AppAndroid" class="clearfix">
+
+              
+      <section id="AppAndroid-33" class="section-wrap our-team bg-light">
+         
+
+
+<br><br><br><h2 class="FuturisTitle FuturisContentSection-Title" style=" text-align: center;  margin-bottom: 30px;">Заголовок</h2>
+
+<section id="formy-otvetov-33" class="section-wrap our-team bg-light" style="
+    width: 100%;
+    max-width: 1840px;   /* max-ширина */ 
+    min-height: 600px;    /* min-высота */
+    background: #fff;    /*linear-gradient(135deg, #8A2BE2, #FF69B4, #8A2BE2);*/
+    margin: 10px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+     /*box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);*/ 
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    overflow: hidden;
+    color: black/*white;*/
+">
+  <div class="column" style="
+        flex: 1 1 10%;
+        min-width: 200px;  /* min-ширина */ 
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 6px;
+    ">
+    Левая колонка (узкая)
+  </div>
+
+  <div class="column" style="
+        flex: 2 1 50%;
+        min-width: 200px;  /* min-ширина */ 
+        padding: 15px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    ">
+    Средняя колонка (широкая)
+<p>Главные отличия в одном списке<br />Оси:<br />Flexbox: одна ось (либо строка, либо столбец).<br />Grid: две оси (строки и столбцы одновременно).<br />Позиционирование:<br />Flexbox: элементы идут последовательно, &laquo;в линию&raquo;.<br />Grid: можно явно задать координаты элемента (например, &laquo;занять 2‑ю и 3‑ю колонку в 1‑й строке&raquo;).<br />Сложность макетов:<br />Flexbox: проще для линейных раскладок.<br />Grid: мощнее для сложных структур с пересекающимися элементами.<br />Как выбрать?<br />Нужен простой ряд кнопок/карточек? &rarr; Flexbox.<br />Требуется разместить элементы в &laquo;клетках&raquo; с точными координатами? &rarr; CSS Grid.<br />Делаете макет страницы с хедером, сайдбаром и контентом? &rarr; CSS Grid.<br />Выравниваете иконки в футере? &rarr; Flexbox.<br />Совет: Часто используют оба инструмента вместе. Например, Grid для общей структуры страницы, а Flexbox &mdash; для выравнивания элементов внутри отдельных блоков.</p>
+  </div>
+
+  <div class="column" style="
+        flex: 1 1 10%;
+        min-width: 200px;  /* min-ширина */ 
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 6px;
+    ">
+    Правая колонка (узкая)
+  </div>
+</section>
+
+<!-- Мой флекс контейнер-888 -->
+
+<div class="flex-container-888">
+  <div class="left-column">Левая колонка</div>
+
+  <div class="center-column">
+<section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
+    <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block" tabindex="0" data-pg4qxfhklesk="1_37mew02-0-14b"
+         style=" background: url(img/abstract-blue-bokeh.jpg); background-size: cover; background-position: center; height: 200px;
+            display: flex;                /* включаем Flexbox */
+            justify-content: center;      /* центрируем по горизонтали */
+            align-items: center;        /* центрируем по вертикали */
+            flex-direction: column;     /* располагаем элементы друг под другом (если их несколько) */
+         ">        
+        <h2 class="FuturisTitle FuturisContentSection-Title" style="color: white;">Формы</h2>
+        <h4 class="FuturisTitle FuturisContentSection-Title" style="color: white;">ответов на часто задаваемые вопросы</h4>
+    </div>
+</section>  
+<section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
+    <!--<h2 class="FuturisTitle FuturisContentSection-Title" >Преимущества готовых шаблонов ответов</h2> -->
+
+    <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block" tabindex="0" data-pg4qxfhklesk="1_37mew02-0-14b"
+style=" text-align: left; background: linear-gradient(135deg, #ededed, #FFF, #ededed) /*background-color: rgba(0, 0, 0, 0.1);  черный с прозрачностью 10 % */ ;  
+color:  #3C3C3C; padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.2)">
+        <div data-end-streaming-block="true">&nbsp;</div>
+        <div class="FuturisMarkdown-Paragraph">Готовые шаблоны ответов на часто встречающиеся вопросы обеспечивают:</div>
+<ul class="FuturisMarkdown-UnorderedList" style="list-style-type: disc; padding-left: 40px; margin: 0;">
+  <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Экономию времени</strong>. Не требуется каждый раз формулировать ответ с нуля — достаточно выбрать шаблон и при необходимости адаптировать.</li>
+  <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Единообразие коммуникации</strong>. Все получают одинаково чёткие и структурированные ответы, что исключает разночтения.</li>
+  <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Снижение нагрузки на память</strong>. Нет необходимости держать в голове десятки стандартных формулировок — информация всегда доступна.</li>
+  <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Повышение качества ответов</strong>. Шаблоны заранее выверены: в них отсутствуют ошибки, лишние эмоции и неоднозначные формулировки.</li>
+  <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Скорость реакции</strong>. Возможность оперативно отвечать на рутинные вопросы без откладывания «на потом».</li>
+  <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Упрощение обучения новых сотрудников</strong>. Шаблоны служат готовым гидом по стандартным ситуациям, ускоряя адаптацию новичков.</li>
+  <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Защиту от стресса</strong>. Наличие «каркаса» ответа помогает сохранять спокойствие в напряжённых диалогах.</li>
+  <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Прозрачность процессов</strong>. Согласованные с руководством шаблоны закрепляют единые правила коммуникации в команде.</li>
+</ul>
+<div class="FuturisMarkdown-Paragraph"><br /><strong>Итог:</strong>&nbsp;шаблоны — это инструмент профессиональной эффективности. Они освобождают ресурсы для решения нетривиальных задач, сохраняя качество рутинной переписки.</div>
+
+    </div>
+</section>
+
+
+
+<div class="container">
+            </div>
+            <br><br><br><br><br>
+
+<section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
+    <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block" tabindex="0" data-pg4qxfhklesk="1_37mew02-0-14b"
+         style=" background: url(img/abstract-blue-bokeh.jpg); background-size: cover; background-position: center; height: 200px;
+            display: flex;                /* включаем Flexbox */
+            justify-content: center;      /* центрируем по горизонтали */
+            align-items: center;        /* центрируем по вертикали */
+            flex-direction: column;     /* располагаем элементы друг под другом (если их несколько) */
+            border-radius: 8px;           
+         ">        
+        <h2 class="FuturisTitle FuturisContentSection-Title" style="color: white;">Формы</h2>
+        <h4 class="FuturisTitle FuturisContentSection-Title" style="color: white; text-align: center;">ответов на часто задаваемые вопросы</h4>
+    </div>
+</section> 
+         
+  <div class="accordion-group">
+  <h3 class="accordion-header">Руководителям</h3>
+  <div class="accordion-body">
+    <p>Временный пароль "123"</p>
+    
+    <div class="accordion-group" data-multiple="true">
+      <h3 id="protected-accordion" class="accordion-header requires-password">
+        "Где найти сканы отлички?"
+        <span style="margin-left: 8px; font-size: 0.75em; ">(требуется пароль)</span>
+      </h3>
+      <div class="accordion-body">
+        <!-- Уникальный id для этого текста -->
+        <p id="text-1">
+        Сканы могут находиться где угодно (неопределённость). 
+        Следовательно, мы не можем прогнозировать их наличие и местонахождение. 
+        Причиной тому ряд факторов: 
+        1. хаотизация структуры директорий, каталогов и папок на дисках. 
+        2. сектора доступа в корпоративном ПО (ограничения и неинформативность) 
+        3. наличие объёма незарегистрированных бумажных документов. 
+        4. необходимость запросов в Благовещенск. 
+        5. ошибки при загрузке сканов в ПО "collection 2.0" (частично или вообще отсутствуют) 
+        6. добавить факторы.
+        </p>
+        <!-- Передаём правильный id -->
+        <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-1')">Копировать текст</a>
+      </div>
+
+      <h3 class="f20 accordion-header">Добавить 1.2</h3>
+      <div class="accordion-body">
+        <p id="text-2">Текст - 2</p>
+        <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-2')">Копировать текст</a>
+      </div>
+
+         <!-- Второй вложенный аккордеон -->
+    <h3 class="f20 accordion-header">Добавить 1.3</h3>
+    <div class="accordion-body">
+      <p id="text-3">Текст - 3   </p>
+      <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-3')">Копировать текст</a>
+    </div>
+
+    <!-- Третий вложенный аккордеон -->
+    <h3 class="f20 accordion-header">Добавить 1.4</h3>
+    <div class="accordion-body">
+      <p id="text-4">Текст - 4 </p>
+      <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-4')">Копировать текст</a>
+    </div>      
+   </div>
+  </div>
+            
+  <h3 class="accordion-header">Сотрудникам</h3>
+  <div class="accordion-body">
+    <p>Временный пароль "123"</p>
+    
+    <div class="accordion-group" data-multiple="true">
+      <h3 id="protected-accordion" class="accordion-header requires-password">
+        "Где взять шаблон актов приёма-передачи документов?"
+        <span style="margin-left: 8px; font-size: 0.75em; ">(требуется пароль)</span>
+      </h3>
+      <div class="accordion-body">
+        <!-- Уникальный id для этого текста -->
+        <p id="text-5">  Текст-5 </p>
+        <!-- Передаём правильный id -->
+        <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-5')">Копировать текст</a>
+      </div>
+
+      <h3 class="f20 accordion-header">Добавить 2.2</h3>
+      <div class="accordion-body">
+        <p id="text-6">Текст-6</p>
+        <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-6')">Копировать текст</a>
+      </div>
+
+         <!-- Второй вложенный аккордеон -->
+    <h3 class="f20 accordion-header">Добавить 2.3</h3>
+    <div class="accordion-body">
+      <p id="text-7">  Текст-7  </p>
+      <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-7')">Копировать текст</a>
+    </div>
+
+    <!-- Третий вложенный аккордеон -->
+    <h3 class="f20 accordion-header">Добавить 2.4</h3>
+    <div class="accordion-body">
+      <p id="text-8"> Текст-8  </p>
+      <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-8')">Копировать текст</a>
+    </div>
+
+      <div class="accordion-body">
+        <p id="text-9">Текст-9 </p>
+        <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-9')">Копировать текст</a>
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+</div>
+
+
+<section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
+  <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block"
+         style="
+         position: relative;
+         background: url(img/abstract-blue-bokeh.jpg);
+         background-size: cover;
+         background-position: center;
+         height: 21vh;
+         min-height: 250px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         border-radius: 8px;
+     ">
+    
+    <!-- Контейнер поверх секции -->
+    <div class="textarea-container" style="
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        width: 90%;
+        max-width: 800px;
+        padding: 16px;
+        box-sizing: border-box;
+    ">
+      <div style="position: relative; width: 100%;">
+        <textarea id="myTextarea" rows="8" style="
+            width: 100%;
+            min-height: 120px;
+            max-height: 300px;
+            padding: 12px;
+            padding-bottom: 28px;
+            border: 1px solid #00ADB5;
+            border-radius: 8px;
+            font-size: 16px;
+            line-height: 1.5;
+            resize: vertical;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        " placeholder="Вставьте скопированный текст для проверки"></textarea>
+
+        <div class="buttons-container" style="
+            position: absolute;
+            bottom: 30px;
+            left: 8px;
+            z-index: 11;  /* выше, чем у textarea */
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        ">
+          <button type="button" class="text-action-btn clear-btn">Очистить</button>
+          <button type="button" class="text-action-btn save-btn">Сохранить в файл</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+</div>
+  <div class="right-column">
+      <div class="button-group"> <!-- группа для регулировки расстояния ме5жду кнопок -->
+        <a href="index.html#vzaimodeystvie" class="my-button-123">Вернуться</a>
+        <a href="index.html#vzaimodeystvie" class="my-button-123">Добавить</a>
+        <button class="qrcodebtn as-mybutton">QR-код для просмотра на телефоне</button> 
+      </div>
+  </div>
+</div><!-- Конец Мой флекс контейнер-888 -->
+			
+
+<div id="passwordModal" class="popup">
+  <div class="popup-content">
+    <h4>Введите пароль</h4>
+    <input type="password" id="passwordInput" placeholder="Пароль" />
+    <button type="button" class="text-action-btn" onclick="checkPassword()">Войти</button>
+  </div>
+</div>
+         
+      </ul>
+      <!-- Call to Action -->
+      <section class="call-to-action22" style=" background: linear-gradient(180deg, #3D495B , #303947);"> 
+      <div class="container22">
+      <div>
+      <a href="index.html#vzaimodeystvie" id="cta-button-stroke" class="btn btn-large btn-rounded btn-light-transparent" onmouseover="this.style.color='#303947'" onmouseout="this.style.color=''">Вернуться</a>
+      <a href="oplata/oplata.html" id="cta-button-stroke" class="btn btn-large btn-rounded btn-light-transparent" onmouseover="this.style.color='#303947'" onmouseout="this.style.color=''">Поддержать проект</a>
+      </div>
+
+     
+      </section> <!-- end call to action -->
+
+
+ <footer id="footer">
+    <div class="container">
+        <div class="row">
+            <!-- Колонка 1 -->
+            <div class="col-md-3">
+                <div class="footer-about-us">
+                     <details class="footer-accordion">
+            <summary class="footer-accordion-title ">Контур-сервисы</summary>
+                    <ul>
+                        <li><a href="https://auth.kontur.ru/">Контур-КЭДО</a></li>
+                        <li><a href="https://www.kontur-extern.ru/info/rubrika-instrumenty_buhgaltera">Контур-Экстерн</a></li>
+                        <li><a href="https://www.kontur-extern.ru/info/54749-kalendar_na_fevral">Календарь</a></li>
+                        <li><a href="javascript:void(0)" title="Добавить ещё одну ссылку">Добавить ссылку</a></li>
+                    </ul>
+                    </details>
+                </div>
+                <div class="social-icons" style="margin-top: 20px">
+                    <a href="#"> <img src="favicon-32.png" title="Тупо наверх" alt="Facebook" class="social-icon" /> </a>
+                    <a href="#"> <i class="fa fa-google-plus"></i> </a>
+                    <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                    <a href="#"> <i class="fa fa-instagram"></i> </a>
+                </div>
+            </div>
+
+            <!-- Колонка 2 -->
+            <div class="col-md-3">
+                <div class="footer-about-us">
+                    <details class="footer-accordion" >
+            <summary class="footer-accordion-title">Полезные ссылки</summary>
+                    <ul>
+                        <li><a href="snow/index.html">Новости отдела Архива</a></li>
+                        <li><a href="policy.html">Политика конфиденциальности</a></li>                       
+                        <li><a href="https://roundcube.net/"> Switch theme </a></li>
+                        <li><a href="javascript:void(0)" title="Добавить ещё одну ссылку">Добавить ссылку</a></li>
+                    </ul>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Колонка 3 -->
+            <div class="col-md-3">
+                <div class="footer-about-us">
+                    <details class="footer-accordion" >
+            <summary class="footer-accordion-title">Инструменты</summary>
+                    <ul>
+                        <li><a href="https://free.drweb.ru/for+web+sites/" title="Бесплатная проверка файлов и ссылок на вирусы с помощью Dr.Web">Проверка файлов и ссылок</a></li>
+                        <li><a href="https://pr-cy.ru/translit/" title="Преобразуй кириллицу в латиницу и наоборот">Транслитерация</a></li>
+                        <li><a href="https://colorscheme.ru/html-colors.html">HTML цвета</a></li>
+                        <li><a href="https://atuin.ru/tools/shades/">Генератор оттенков</a></li>
+                        <li><a href="https://webformatter.com/" title="Расставить отступы в коде онлайн">Веб-Форматировщик</a></li>                        
+                        <li><a href="https://tinypng.com/" title="Умная компрессия AVIF, WebP, PNG и JPEG для более быстрых сайтов">Compressor</a></li>
+                        <li><a href="https://atuin.ru/" title="atuin.ru -Создание и оформление сайтов">Вебмастер</a></li>
+                        <li><a href="https://editorhtmlonline.com/ru/" title="HTML редактор и конвертер онлайн">HTML редактор</a></li> 
+                    </ul>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Колонка 4 -->
+            <div class="col-md-3">
+                <div class="footer-about-us">
+                    <details class="footer-accordion">
+            <summary class="footer-accordion-title">О сайте</summary>
+                    <ul>
+                    <li>Размещается на <a href="https://github.com" title="Этот сайт размещён на GitHub"><img src="./img/github.png" alt="GitHub" width="16" height="16" style="vertical-align: baseline;"> GitHub</a></li>
+                        <li><a href="otchet_po_saitu.html" title="Характеристики этого сайта">Характеристики сайта</a></li>
+                        <li><a href="javascript:void(0)">Добавить ссылку</a></li>
+                    <!-- <li><img src="img/yandex-metrica-color.png" alt="Яндекс метрика" style="margin-top: 15px ; border: 1px solid #ccc;"></li>    -->
+                    <li class="ym-logo"><a href="https://metrika.yandex.ru/" title="На сайте присутствует сервис Яндекс.Метрика" target="_blank"><img src="./img/yandex-metrica.svg" alt="Яндекс.Метрика" class="ym-image" style="margin-top: 10px ; border: 1px solid #777;"></a></li>
+                    </ul>
+                     </details>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="bottom-footer-simple">
+    <p class="copyright-text">© 2026 Отдел Архива <span class="company-name">ООО ПКО БСВ</span></p>
+</div>
+
+
+      <!-- Call to Возврат на верх -->
+      <div id="back-to-top">
+      <a href="#top"><i class="fa fa-angle-up"></i></a>
+      </div>
+      </div> <!-- end main-wrapper конечная основная оболочка-->
+     
+
+<!-- 1. jQuery (обязательно первым) -->
+<script src="./js/jquery.min.js"></script> 
+
+<!-- 2. Плагины, зависящие от jQuery -->
+<script src="js/snap.svg-min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.countTo.js"></script>
+<script src="js/jquery.appear.js"></script>
+<script src="js/plugins-scroll.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="./js/toastify.min.js"></script>
+<script src="js/qr-code.js"></script>
+
+<!-- 3. Скрипт аккордеона (должен быть до вашего кода!) -->
+<script src="./js/accordion-multi.js"></script>
+
+
+<!-- 4. Основные скрипты темы -->
+<script src="./js/main.js"></script>
+<script src="./js/scripts.js"></script>
+
+<!-- 5. Внешние библиотеки -->
+<script src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+
+
+
+<!-- 6. Ваш кастомный код (один раз, в конце) -->
+<script>
+ $(document).ready(function() {
+      // Проверка загрузки jQuery
+      if (typeof jQuery === 'undefined') {
+        console.error('jQuery не загружен!');
+        return;
+      }
+
+      // Инициализация аккордеона (если есть)
+      if (typeof initAccordion === 'function') {
+        initAccordion();
+      }
+
+      // Кнопка "Очистить"
+      $('.clear-btn').click(function() {
+        $('#myTextarea').val('').focus();
+      });
+
+      // Кнопка "Сохранить в файл"
+      $('.save-btn').click(function() {
+        const text = $('#myTextarea').val();
+
+        // Проверка на пустой текст
+        if (!text) {
+          alert('Текст для сохранения отсутствует!');
+          return;
+        }
+
+        // Создаём Blob для файла
+        const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+
+        // Создаём скрытую ссылку для скачивания
+        const a = $('<a>')
+          .attr('href', url)
+          .attr('download', 'data.txt')
+          .appendTo('body');
+
+        // Имитируем клик
+        a[0].click();
+
+        // Удаляем ссылку
+        a.remove();
+        URL.revokeObjectURL(url);
+      });
+    });
+</script>
+<!-- 7. Аккордеон в футере(без скрипта на ПК аккор-н изначально закрыт) -->
+<script>
+    function toggleAccordionState() {
+        const accordions = document.querySelectorAll('.footer-accordion');
+        
+        if (window.innerWidth > 768) {
+            // На ПК — принудительно открыто
+            accordions.forEach(acc => acc.setAttribute('open', ''));
+        } else {
+            // На мобиле — убираем open, чтобы было закрыто по умолчанию
+            accordions.forEach(acc => acc.removeAttribute('open'));
+        }
+    }
+
+    // Запуск при загрузке
+    toggleAccordionState();
+
+    // Запуск при изменении размера окна (поворот, ресайз)
+    window.addEventListener('resize', toggleAccordionState);
+</script>
+</body>
+</html>

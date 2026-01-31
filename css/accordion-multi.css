@@ -1,5 +1,6 @@
 .accordion-group {
     margin: 16px 0;
+text-align: left;
 }
 
 .accordion-body {
@@ -11,12 +12,13 @@
  
  font-family: 'Arial', Tahoma, sans-serif;
  font-size: 13 px; /* Размер текста в панели — чуть меньше стандартного */ 
- 
+
 }
 
 .accordion-body > * > .accordion-body {
     background: #FFF;
     margin: 0;
+
 }
 
 .accordion-header {

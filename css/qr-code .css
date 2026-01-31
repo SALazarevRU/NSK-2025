@@ -1,0 +1,136 @@
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  width: 100%;
+}
+
+/* Единый блок .qrcodebtn — только один раз! */
+.qrcodebtn {
+  display: inline-flex;
+  margin: 10px;
+  text-decoration: none;
+  position: relative;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 12px 30px;
+  color: #00ADB5;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Roboto', Тahoma, sans-serif;
+  background: #FFF;
+  cursor: pointer;
+  border: 2px solid #00ADB5;
+  border-radius: 32px;
+  transition: all 0.3s ease;
+}
+
+.qrcodebtn:hover {
+  color: #FFF;
+  background-color: #00ADB5;
+  border-color: #FFF;
+}
+
+.qrcodebg,
+.qrcodedata {
+  position: fixed;
+  z-index: 9999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+}
+
+.qrcodedata {
+  background: transparent;
+  top: -120vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  transition: top 0.3s;
+  pointer-events: none;
+}
+
+.qrcodeexit {
+  color: #FFF;
+  float: right;
+  font-size: 40px;
+  margin: 20px 40px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.qrcodetext {
+  background: #FFF;
+  pointer-events: auto;
+  padding: 40px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.qrcodetext p {
+  line-height: 1.3;
+  margin: 0 0 40px 0;
+}
+
+.qrcodeloader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 250px;
+  position: relative;
+}
+
+.qrcodeload {
+  width: 88px;
+  height: 88px;
+  border: 4px solid #6ebeff;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.qrcodeload:after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 6px solid;
+  border-color: #337AB7 transparent;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Медиа-запрос — ПОСЛЕ всех основных стилей */
+@media (max-width: 1081px) {
+  .qrcodeexit {
+    font-size: 20px;
+    margin: 10px 20px;
+  }
+  .qrcodetext {
+    padding: 20px;
+  }
+  /* Скрываем кнопку на экранах ≤1081px */
+  .qrcodebtn {
+    display: none;
+  }
+}
