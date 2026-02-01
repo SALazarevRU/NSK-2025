@@ -42,7 +42,9 @@
       <style>
 
 /*CSS-классы для .*/
-
+.content-10 p {
+   font-size: 16px;
+}
 /*  #3C3C3C АНТРАЦИТ, #00ADB5 #FFFAFA - НАШ БАЗОВЫЙ 
 padding → внутренний отступ (между краем блока и его содержимым). 
 margin-bottom → внешний отступ (между этим блоком и следующим элементом).*/ 
@@ -654,7 +656,26 @@ stopOnFocus: true, // Не закрывается при наведении
 <img src="upload/core_features_img.jpg" alt="core-features-img" style="margin-bottom: 15px;">
 <p>ООО ПКО «Бюро судебного взыскания» — организация, которая сопровождает судебное и исполнительное производство по задолженностям.</p> <br>
 <p>Отдел архива длительного хранения — базовый элемент структуры компании, гарантирующий непрерывность бизнес‑процессов.</p> 
-<!-- <img src="./upload/lazarev-s.jpg" alt="core-features-img"  style="margin-top: 15px;">  -->
+<div class="my-accordion" style="margin-top: 35px">
+  <details>
+    <summary>Адрес</summary>
+    <div class="content-10" style="margin-top: 0px; text-align: left; ">            
+      <div>
+        <p>Россия, Новосибирск</p>
+        <p>Офис: ул. Добролюбова</p>
+        <p>Телефон: 8‒800‒600‒48‒87</p>
+        <p>Email:&nbsp;<a href="mailto:info@bsv.legal">info@bsv.legal</a></p>
+        <p>Россия, Новосибирск</p>
+        <p>Архив: ул. Электрозаводская 2/7</p>
+        <p>Филиал: ул. Королёва, 40 к128</p>
+        <p>Телефон: +7 953 888 123 65</p>
+      </div>
+    </div>
+  </details>
+</div>
+<!-- Конец блока my-accordion -->
+
+<!-- <img src="./upload/kubok.jpg" alt="core-features-img"  style="margin-top: 15px;">  -->
 </div></div>
 
   <div class="center-column">
@@ -866,6 +887,7 @@ stopOnFocus: true, // Не закрывается при наведении
 
 
   <div class="right-column">
+<img src="upload/kubok.jpg" alt="core-features-img" style="margin-top: 0px; margin-bottom: 15px;">
       <div class="button-group"> <!-- группа для регулировки расстояния между кнопок -->
         <a href="index.html#vzaimodeystvie" class="my-button-123">Вернуться</a>
         <button id="toggleTheme" class="my-button-123">Сменить на тёмную тему</button>
@@ -881,14 +903,15 @@ stopOnFocus: true, // Не закрывается при наведении
   <details>
     <summary>Дополнительно</summary>
     <div class="content">      
-       <div class="button-group"> <!-- группа для регулировки расстояния между кнопок -->
-            <a href="index.html#vzaimodeystvie"  style="color: #C0C0C0;">Добавить</a>      
-            <a href="index.html#vzaimodeystvie"  style="color: #A9A9A9;">Добавить</a>  
-            <a href="index.html#vzaimodeystvie"  style="color: #808080;">Добавить</a>   
+       <div class="button-group" style="text-align: left;"> <!-- группа для регулировки расстояния между кнопок -->
+            <a href="index.html#vzaimodeystvie"  style="color: #C0C0C0;">Добавить любой текст</a>      
+            <a href="index.html#vzaimodeystvie"  style="color: #A9A9A9;">Добавить любой текст</a>  
+            <a href="index.html#vzaimodeystvie"  style="color: #808080;">Добавить любой текст</a>   
       </div>
     </div>
   </details>
 </div><!-- Конец блока my-accordion -->
+
 
 
       </div>
