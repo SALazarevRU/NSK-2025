@@ -130,13 +130,14 @@ padding: 30px;
 /* стили для кнопки «Моя кнопка-123») */
  .my-button-123 {
       display: inline-block;
-      min-width: 260px; /* кнопки не станут меньше 180 px */
-       padding: 7px 24px; /* сбалансированный отступ */
+      min-width: 30px; /* кнопки не станут меньше 180 px */
+       padding: 7px 20px; /* сбалансированный отступ */
        line-height: 1.4; /* комфортный межстрочный интервал */
        text-align: center; /* текст по центру */
   /*     white-space: nowrap; /* Если текст длинный, чтобы он не переносился: */
       background: linear-gradient(180deg, #e1f1ff, #002d51);
       color: white;
+   /*  width: 250px; */
   /*      border: 1px solid #6a7984; */
       border-radius: 4px;
       font-size: 12px;
@@ -175,41 +176,20 @@ padding: 30px;
 
 /* для модального окна «Введите пароль») */
 .popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+  display: none;  position: fixed;  top: 0;  left: 0;  width: 100%;  height: 100%;  background-color: rgba(0, 0, 0, 0.5);  justify-content: center;
+  align-items: center;  z-index: 1000;
 }
 
 .popup-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 400px;
-  text-align: center;
+  background-color: white;  padding: 20px;  border-radius: 8px;  max-width: 400px;  text-align: center;
 }
 
 #passwordInput {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  width: 100%;  padding: 10px;  margin: 10px 0;  border: 1px solid #ccc;  border-radius: 4px;
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  padding: 10px 20px;  background-color: #007BFF;  color: white;  border: none;  border-radius: 4px;  cursor: pointer;
 }
 /* Для полной адаптивности section id="formy-otvetov-33"*/
 @media (max-width: 767px) {
@@ -415,7 +395,7 @@ button {
   margin: 0 auto;         /* Центрирование контейнера (опционально) */
 
   height: auto; /* Или удалите height */
-  align-items: flex-start; /* Или center, stretch */
+  align-items: stretch /* align-items: flex-start; /* Или center, stretch */
   justify-content: center;
   text-align: center;
   gap: 10px; /* Равномерные отступы между всеми колонками */
@@ -433,6 +413,7 @@ button {
   flex-direction: column;
   align-items: center;
   gap: 20px; /* расстояние между элементами (например-кнопками) */
+*/ min-height: 1325px; /* минимум 400px */  height: auto; /* подстраивается под контент */
 }
 
 .center-column {
@@ -471,6 +452,42 @@ button {
   .center-column { width: 100%; margin: 0; box-sizing: border-box; }
 }
 
+ /* МОЙ АККОРДЕОН */
+.my-accordion {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+color: #808080
+}
+.my-accordion summary {
+  display: block;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.3);  
+  cursor: pointer;
+  
+  font-weight: bold;
+
+  border-radius: 4px;
+  list-style: none;
+}
+
+.my-accordion summary::after {
+  content: '+';
+  float: right;
+}
+
+.my-accordion[open] summary::after {
+  content: '−';
+}
+
+.my-accordion .content {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  animation: my-accordion-slide-down 0.3s ease-out;
+}
 
       </style>
       <script>
@@ -612,7 +629,7 @@ stopOnFocus: true, // Не закрывается при наведении
   <span style="color: white;">|</span>
   <a href="index.html#222" style="color: white; text-decoration: none; margin: 0 10px;">Команда</a>
   <span style="color: white;">|</span>
-<a href="LazarevSA.html#LazarevSA-33" style="color: white; text-decoration: none; margin: 0 10px;">Разработчик</a>
+  <label for="toggleTheme" style="cursor: pointer; color: white; font-weight: normal;">&nbsp;&nbsp;Тема</label>
 </div>
             <!-- end navigation -->
          </nav>
@@ -631,9 +648,12 @@ stopOnFocus: true, // Не закрывается при наведении
 <!-- Мой флекс контейнер-888 -->
 
 <div class="flex-container-888">
-  <div class="left-column"><div style="text-align: left;"><p>ООО ПКО «Бюро судебного взыскания» — организация, которая сопровождает судебное и исполнительное производство по задолженностям.
+  <div class="left-column">
+<div style="text-align: left;">
+<img src="upload/core_features_img.jpg" alt="core-features-img" style="margin-bottom: 15px;">
+<p>ООО ПКО «Бюро судебного взыскания» — организация, которая сопровождает судебное и исполнительное производство по задолженностям.
 Отдел архива длительного хранения — базовый элемент структуры компании, гарантирующий непрерывность бизнес‑процессов.</p> 
-<img src="upload/core_features_img.jpg" alt="core-features-img" style="border: 1px solid #A9A9A9;">
+<!-- <img src="./upload/lazarev-s.jpg" alt="core-features-img"  style="margin-top: 15px;">  -->
 </div></div>
 
   <div class="center-column">
@@ -688,7 +708,7 @@ stopOnFocus: true, // Не закрывается при наведении
   <div class="accordion-group">
   <h3 class="accordion-header">Руководителям</h3>
   <div class="accordion-body">
-    <p>Временный пароль "123"</p>
+    <p>Временный пароль: "Год канонизации святого Доминика Григорием IX"</p>
     
     <div class="accordion-group" data-multiple="true">
       <h3 id="protected-accordion" class="accordion-header requires-password">
@@ -736,8 +756,7 @@ stopOnFocus: true, // Не закрывается при наведении
             
   <h3 class="accordion-header">Сотрудникам</h3>
   <div class="accordion-body">
-    <p>Временный пароль "123"</p>
-    
+    <p>Временный пароль: "Год канонизации святого Доминика Григорием IX"</p>    
     <div class="accordion-group" data-multiple="true">
       <h3 id="protected-accordion-2" class="accordion-header requires-password">
         "Где взять шаблон актов приёма-передачи документов?"
@@ -851,11 +870,25 @@ stopOnFocus: true, // Не закрывается при наведении
         <a href="index.html#vzaimodeystvie" class="my-button-123">Вернуться</a>
         <button id="toggleTheme" class="my-button-123">Сменить на тёмную тему</button>
         <button class="qrcodebtn as-mybutton">QR-код для просмотра на телефоне</button> 
+
 <div style="text-align: left;"><p>О компании
 ООО ПКО «Бюро судебного взыскания» — организация, которая сопровождает судебное и исполнительное производство по задолженностям.</p> 
 <img src="upload/firefox.gif" alt="Анимированный элемент" loading="lazy" style="border: 1px solid #A9A9A9;">
 <p>Отдел архива длительного хранения — базовый элемент структуры компании, гарантирующий непрерывность бизнес‑процессов.</p> 
 </div>
+
+<div class="my-accordion">
+  <details>
+    <summary>Дополнительно</summary>
+    <div class="content">      
+       <div class="button-group"> <!-- группа для регулировки расстояния между кнопок -->
+            <a href="index.html#vzaimodeystvie"  style="color: #C0C0C0;">Добавить</a>      
+            <a href="index.html#vzaimodeystvie"  style="color: #A9A9A9;">Добавить</a>  
+            <a href="index.html#vzaimodeystvie"  style="color: #808080;">Добавить</a>   
+      </div>
+    </div>
+  </details>
+</div><!-- Конец блока my-accordion -->
       </div>
   </div>
 </div><!-- Конец Мой флекс контейнер-888 -->
@@ -916,7 +949,9 @@ stopOnFocus: true, // Не закрывается при наведении
                         <li> <a href="snow/index.html" class="requires-password">Новости отдела Архива</a></li>
                         <li><a href="policy.html">Политика конфиденциальности</a></li>                       
                         <li><a href="https://roundcube.net/" class="requires-password"> Switch theme </a></li>
+                        <li><a href="https://atuin.ru/blog/oformlenie-ssylok-v-tekste-dokumenta/">Оформление ссылок</a></li>  
                         <li><a href="javascript:void(0)" title="Добавить ещё одну ссылку">Добавить ссылку</a></li>
+
                     </ul>
                     </details>
                 </div>
