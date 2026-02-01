@@ -33,14 +33,15 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/qr-code-lazarev.css">
-
+  
   <!-- 3. Toastify (только один вариант: локальный ИЛИ CDN) -->
   <!-- Вариант A: локальная копия (рекомендуется) -->
   <link rel="stylesheet" href="./css/toastify.min.css">
-
+ 
 
       <style>
 
+/*CSS-классы для .*/
 
 /*  #3C3C3C АНТРАЦИТ, #00ADB5 #FFFAFA - НАШ БАЗОВЫЙ 
 padding → внутренний отступ (между краем блока и его содержимым). 
@@ -139,7 +140,7 @@ padding: 30px;
       color: white;
    /*  width: 250px; */
   /*      border: 1px solid #6a7984; */
-      border-radius: 4px;
+      border-radius: 0px;
       font-size: 12px;
       text-decoration: none;
       cursor: pointer;
@@ -623,11 +624,11 @@ stopOnFocus: true, // Не закрывается при наведении
                <!-- end container -->
             </nav>
 
-<div id="forms-otv" style="background: linear-gradient(180deg, #3D495B, #303947); text-align: center; padding: 3px;">
+<div id="forms-otv" style="background: linear-gradient(180deg, #4a6d8c, #121a21); text-align: center; padding: 3px;">
 <a href="#"> <img src="favicon-32.png" title="Тупо наверх" alt="logo-shar" class="social-icon" /> </a>
   <a href="index.html#preloader" style="color: white; text-decoration: none; margin: 0 10px;">Главная</a>
   <span style="color: white;">|</span>
-  <a href="index.html#222" style="color: white; text-decoration: none; margin: 0 10px;">Команда</a>
+  <a href="#formy" style="color: white; text-decoration: none; margin: 0 10px;">Формы</a>
   <span style="color: white;">|</span>
   <label for="toggleTheme" style="cursor: pointer; color: white; font-weight: normal;">&nbsp;&nbsp;Тема</label>
 </div>
@@ -651,8 +652,8 @@ stopOnFocus: true, // Не закрывается при наведении
   <div class="left-column">
 <div style="text-align: left;">
 <img src="upload/core_features_img.jpg" alt="core-features-img" style="margin-bottom: 15px;">
-<p>ООО ПКО «Бюро судебного взыскания» — организация, которая сопровождает судебное и исполнительное производство по задолженностям.
-Отдел архива длительного хранения — базовый элемент структуры компании, гарантирующий непрерывность бизнес‑процессов.</p> 
+<p>ООО ПКО «Бюро судебного взыскания» — организация, которая сопровождает судебное и исполнительное производство по задолженностям.</p> <br>
+<p>Отдел архива длительного хранения — базовый элемент структуры компании, гарантирующий непрерывность бизнес‑процессов.</p> 
 <!-- <img src="./upload/lazarev-s.jpg" alt="core-features-img"  style="margin-top: 15px;">  -->
 </div></div>
 
@@ -665,13 +666,12 @@ stopOnFocus: true, // Не закрывается при наведении
             align-items: center;        /* центрируем по вертикали */
             flex-direction: column;     /* располагаем элементы друг под другом (если их несколько) */
          "> 
-
        
         <h2 class="FuturisTitle FuturisContentSection-Title" style="color: white;">Преимущества</h2>
         <h4 class="FuturisTitle FuturisContentSection-Title" style="color: white;">готовых шаблонов ответов</h4>
     </div>
 </section>  
-<section class="TextoviyBlock">
+<section   class="TextoviyBlock">
  <div class="FuturisMarkdown-Paragraph">Готовые шаблоны ответов на часто встречающиеся вопросы обеспечивают:</div>
 <ul class="FuturisMarkdown-UnorderedList">
 <li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Экономию времени</strong>. Не требуется каждый раз формулировать ответ с нуля &mdash; достаточно выбрать шаблон и при необходимости адаптировать.</li>
@@ -688,7 +688,7 @@ stopOnFocus: true, // Не закрывается при наведении
 
 
 
-<div class="container">
+<div id="formy" class="container">
             </div>
             <br><br><br><br><br>
 
@@ -873,8 +873,8 @@ stopOnFocus: true, // Не закрывается при наведении
 
 <div style="text-align: left;"><p>О компании
 ООО ПКО «Бюро судебного взыскания» — организация, которая сопровождает судебное и исполнительное производство по задолженностям.</p> 
-<img src="upload/firefox.gif" alt="Анимированный элемент" loading="lazy" style="border: 1px solid #A9A9A9;">
-<p>Отдел архива длительного хранения — базовый элемент структуры компании, гарантирующий непрерывность бизнес‑процессов.</p> 
+<img src="upload/firefox.gif" alt="Анимированный элемент" loading="lazy" style="border: 1px solid #A9A9A9; margin-top: 10px;">
+<p style="margin-top: 30px;">Отдел архива длительного хранения — базовый элемент структуры компании, гарантирующий непрерывность бизнес‑процессов.</p> 
 </div>
 
 <div class="my-accordion">
@@ -889,8 +889,11 @@ stopOnFocus: true, // Не закрывается при наведении
     </div>
   </details>
 </div><!-- Конец блока my-accordion -->
+
+
       </div>
   </div>
+
 </div><!-- Конец Мой флекс контейнер-888 -->
 			
 
@@ -1034,7 +1037,7 @@ stopOnFocus: true, // Не закрывается при наведении
 
 <!-- 5. Внешние библиотеки -->
 <script src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
-
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/dist/index.global.min.js"></script>
 
 
 <!-- 6. Ваш кастомный код (один раз, в конце) -->
@@ -1148,7 +1151,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 </script>
-
 
 </body>
 </html>
