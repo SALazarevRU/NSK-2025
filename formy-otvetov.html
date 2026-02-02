@@ -59,6 +59,11 @@ margin-bottom → внешний отступ (между этим блоком 
 text-align: left;
 padding: 30px;
 }
+.theme-dark .textarea-container textarea {
+  background: #3D495B;
+  border: none; /* Убираем стандартную границу */
+  color: #000000; /* Цвет текста */
+}
 
 /* Тёмная тема */
 .theme-dark .section-wrap {
@@ -86,6 +91,14 @@ background-color: rgba(255, 255, 255, 0.1); /* белый с прозрачно�
 color: #e0e0e0;
 text-align: left;
 padding: 30px;
+}
+.theme-dark .textarea-container textarea {
+  background-color: rgba(255, 255, 255, 0.2); /* белый с прозрачностью 10% */
+/*border: 1px solid rgba(255, 255, 255, 0.9);*/
+  color: #fff; /* Основной текст — белый */
+}
+.theme-dark .textarea-container textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5); /* Белый с прозрачностью 50% */
 }
         /*Конец для "CSS-классы для светлой и тёмной темы".*/
        
@@ -824,7 +837,8 @@ stopOnFocus: true, // Не закрывается при наведении
   <br><br>
 </div>
 
-
+ <!-- Секция для текстового поля вставки скопированного текста -->
+    
 <section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
   <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block"
          style="
@@ -838,10 +852,11 @@ stopOnFocus: true, // Не закрывается при наведении
          justify-content: center;
          align-items: center;
          flex-direction: column;
-         border-radius: 8px;
+         border-radius: 8px; 
+
      ">
     
-    <!-- Контейнер поверх секции -->
+    <!-- Контейнер для текстового поля поверх секции -->
     <div class="textarea-container" style="
         position: absolute;
         top: 50%;
@@ -860,7 +875,7 @@ stopOnFocus: true, // Не закрывается при наведении
             max-height: 300px;
             padding: 12px;
             padding-bottom: 28px;
-            border: 1px solid #00ADB5;
+
             border-radius: 8px;
             font-size: 16px;
             line-height: 1.5;
