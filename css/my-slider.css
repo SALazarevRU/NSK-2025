@@ -1,0 +1,32 @@
+.simple-slider {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  touch-action: pan-x;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slider-track {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px;
+  will-change: scroll-position;
+  contain: layout;
+  height: fit-content;
+  min-height: 1px;
+  /* scroll-snap-type: x proximity; */ /* Включить при необходимости */
+}
+
+.simple-slider .slider-track img {
+  flex: 0 0 22%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 8px;
+  pointer-events: none;
+  cursor: default;
+  image-rendering: optimizeQuality;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}

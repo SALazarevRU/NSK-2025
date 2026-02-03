@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/qr-code-lazarev.css">
+ <link rel="stylesheet" href="css/my-slider.css">
   
   <!-- 3. Toastify (только один вариант: локальный ИЛИ CDN) -->
   <!-- Вариант A: локальная копия (рекомендуется) -->
@@ -41,7 +42,13 @@
 
       <style>
 
-/*CSS-классы для .*/
+/*CSS-классы для .Полноэкранный просмотр изображений*/
+.img-class {
+  cursor: url(img/plus_cursor.png) 25 25, pointer;  
+}
+
+/*CSS-классы для    */
+
 .content-10 p {
    font-size: 16px;
 }
@@ -454,7 +461,7 @@ button {
     width: 100%;       /* На всю ширину */
     max-width: none;   /* Снимаем ограничения */
     margin-bottom: 15px;
-    border: 1px solid #eee; /* Для наглядности */
+     /* border: 1px solid #eee; /* Для наглядности */
   }
 }
 
@@ -901,6 +908,28 @@ stopOnFocus: true, // Не закрывается при наведении
   </div>
 </section>
 
+<div id="foto-mini"  class="foto-container" style="background-color: rgba(255, 255, 255, 0.1); margin-top: 20px; border-radius: 8px; ">
+   <img class="img-class" style="margin: 20px 10px 20px 10px; border-radius: 8px; " src="upload/mini-carskiydvor.jpg" data-image="upload/carskiydvor.jpg" data-title="Царский двор" data-caption="12.10.2025" />
+   <img class="img-class" style="margin: 20px 10px 20px 10px; border-radius: 8px; " src="upload/mini-carskiydvor.jpg" data-image="upload/carskiydvor.jpg" data-title="Царский двор" data-caption="12.10.2025" />
+   <img class="img-class" style="margin: 20px 10px 20px 10px; border-radius: 8px; " src="upload/mini-carskiydvor.jpg" data-image="upload/carskiydvor.jpg" data-title="Царский двор" data-caption="12.10.2025" />
+   <img class="img-class" style="margin: 20px 10px 20px 10px; border-radius: 8px; " src="upload/mini-carskiydvor.jpg" data-image="upload/carskiydvor.jpg" data-title="Царский двор" data-caption="12.10.2025" />
+</div><!-- " end foto-container"  -->
+
+
+<div class="simple-slider">
+  <div class="slider-track">
+    <img src="upload/mini-carskiydvor.jpg"  />
+<img src="upload/mini-carskiydvor.jpg"  />
+<img src="upload/mini-carskiydvor.jpg"  />
+<img src="upload/mini-carskiydvor.jpg"  />
+<img src="upload/mini-carskiydvor.jpg"  />
+<img src="upload/mini-carskiydvor.jpg"  />
+<img src="upload/mini-carskiydvor.jpg"  />
+<img src="upload/mini-carskiydvor.jpg"  />
+<img src="upload/mini-carskiydvor.jpg"  />
+<img src="upload/mini-carskiydvor.jpg"  />
+  </div>
+</div>
 
 </div><!-- Конец блока. Не удалять! -->
 
@@ -938,7 +967,6 @@ stopOnFocus: true, // Не закрывается при наведении
 
 </div><!-- Конец Мой флекс контейнер-888 -->
 			
-
 <div id="passwordModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 9999;">
   <div style="background: white; padding: 20px; border-radius: 5px;">
     <p>Введите пароль:</p>
@@ -1077,10 +1105,19 @@ stopOnFocus: true, // Не закрывается при наведении
 <script src="./js/main.js"></script>
 <script src="./js/scripts.js"></script>
 
+
+
 <!-- 5. Внешние библиотеки -->
 <script src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/dist/index.global.min.js"></script>
 
+<!-- 5.1. Внешние библиотеки -->
+<script src="./js/intense.js"></script>
+<!-- подключаем скрипт intense.js и назначаем для миниатюры или блока: -->
+<script>
+var elements = document.querySelectorAll( '.img-class' );
+Intense( elements );
+</script>
 
 <!-- 6. Ваш кастомный код (один раз, в конце) -->
 <script>
@@ -1190,9 +1227,78 @@ document.addEventListener('DOMContentLoaded', function() {
     updateButtonText();
   });
 });
-
-
 </script>
 
+<!-- 5.1. Внешние библиотеки -->
+<script src="./js/intense.js"></script>
+<!-- подключаем скрипт intense.js и назначаем для миниатюры или блока: -->
+<script>
+var elements = document.querySelectorAll( '.img-class' );
+Intense( elements );
+</script>
+
+<!-- 8. ваша функция слайдера  -->
+
+<script>
+function initSlider() {
+  const track = document.querySelector('.slider-track');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+  let rafId = null; // Для requestAnimationFrame
+
+
+  track.addEventListener('mousedown', (e) => {
+    if (!e.target.closest('.slider-track')) return;
+
+
+    isDown = true;
+    track.classList.add('active');
+    
+    const rect = track.getBoundingClientRect();
+    startX = e.clientX - rect.x;
+    scrollLeft = track.scrollLeft;
+    e.preventDefault();
+  });
+
+  track.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+
+    const rect = track.getBoundingClientRect();
+    const x = e.clientX - rect.x;
+    const delta = x - startX;
+    const walk = delta * 1.8;
+
+    // Обновляем scrollLeft только один раз за кадр
+    if (rafId === null) {
+      rafId = requestAnimationFrame(() => {
+        track.scrollLeft = scrollLeft - walk;
+        rafId = null;
+      });
+    }
+  });
+
+  ['mouseleave', 'mouseup'].forEach(evt => {
+    track.addEventListener(evt, () => {
+      isDown = false;
+      track.classList.remove('active');
+      // Отмена pending-запроса
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+    });
+  });
+
+  track.addEventListener('contextmenu', (e) => {
+    if (isDown) e.preventDefault();
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initSlider);
+
+document.addEventListener('DOMContentLoaded', initSlider);
+
+</script>
 </body>
 </html>
