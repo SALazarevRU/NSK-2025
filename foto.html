@@ -8,18 +8,15 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/NSK-2025/favicon-32.png">
 <link rel="icon" type="image/x-icon" href="/NSK-2025/favicon.ico">
  
-<title>Формы ответов</title>
+<title>Фоточки</title>
 <!-- Адаптивность -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!--[if IE]>
-      <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-      <![endif]-->
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
 
       <!-- 1. Google Fonts (исправлены протоколы) -->
   <link href="https://fonts.googleapis.com/css?family=Arimo&subset=latin,cyrillic" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif&subset=latin,cyrillic" rel="stylesheet">
-
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.min.css" rel="stylesheet">
 
   <!-- 2. Стили (в порядке зависимости) -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -36,15 +33,29 @@
  <link rel="stylesheet" href="css/my-slider.css">
   
   <!-- 3. Toastify (только один вариант: локальный ИЛИ CDN) -->
-  <!-- Вариант A: локальная копия (рекомендуется) -->
-  <link rel="stylesheet" href="./css/toastify.min.css">
+   <link rel="stylesheet" href="./css/toastify.min.css">
  
 
       <style>
 
-/*CSS-классы для .Полноэкранный просмотр изображений*/
-.img-class {
-  cursor: url(img/plus_cursor.png) 25 25, pointer;  
+/*CSS-класс для Галереи  */
+.overlay-caption {
+  position: absolute;
+  bottom: 20px;          /* Отступ снизу */
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный фон */
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  z-index: 10;
+}
+
+/* Позиционирование для родительского элемента */
+a[data-lightbox] {
+  position: relative;
+  display: inline-block;
 }
 
 /*CSS-классы для    */
@@ -600,7 +611,7 @@ stopOnFocus: true, // Не закрывается при наведении
 <div class="logo">
   <a href="#" class="open-popup" data-target="popup2" title="Логотип с заголовком" >
     <img src="bsv-siniy-664.svg" alt="logo-shar" class="social-icon" style="width:64px;height:auto;vertical-align:-5px;margin-right:6px;border:1px solid #006CAB;border-radius:4px;">
-    <span style="color: #00CED1;">ФОРМЫ</span><i><span style=" background: #006CAB; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; ">ответов</span></i></a>
+    <span style="color: #00CED1;">ФОТО</span><i><span style=" background: #006CAB; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; ">чки</span></i></a>
 </div>
                      <div class="popup" id="popup2">
                         <div class="popup-content">
@@ -617,9 +628,9 @@ stopOnFocus: true, // Не закрывается при наведении
                      <ul class="nav navbar-nav navbar-right">
                         <li><a href="index.html#preloader">Главная</a></li>
                         <li><a href="index.html#222">Команда</a></li>
+                        <li><a href="LazarevSA.html#LazarevSA-33">Разработчик</a></li>
                         <li><a href="formy-otvetov.html">Формы ответов</a></li>
-                        <li><a href="foto.html">Галерея</a></li>
-                        <li class="active"><a href="LazarevSA.html#LazarevSA-33">Ответы</a></li>
+                        <li class="active"><a href="LazarevSA.html#LazarevSA-33">Фото</a></li>
                         <li>
                            <div id="search"><i class="pe-7s-search search-trigger"></i></div>
                            <div class="search-bar">
@@ -702,236 +713,20 @@ stopOnFocus: true, // Не закрывается при наведении
 <!-- <img src="./upload/kubok.jpg" alt="core-features-img"  style="margin-top: 15px;">  -->
 </div></div>
 
-  <div class="center-column">
-<section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
-    <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block" tabindex="0" data-pg4qxfhklesk="1_37mew02-0-14b"
-         style=" border-radius: 8px; background: url(img/abstract-blue-bokeh.jpg); background-size: cover; background-position: center; height: 200px;
-            display: flex;                /* включаем Flexbox */
-            justify-content: center;      /* центрируем по горизонтали */
-            align-items: center;        /* центрируем по вертикали */
-            flex-direction: column;     /* располагаем элементы друг под другом (если их несколько) */
-         "> 
-       
-        <h2 class="FuturisTitle FuturisContentSection-Title" style="color: white;">Преимущества</h2>
-        <h4 class="FuturisTitle FuturisContentSection-Title" style="color: white;">готовых шаблонов ответов</h4>
-    </div>
-</section>  
-<section   class="TextoviyBlock">
- <div class="FuturisMarkdown-Paragraph">Готовые шаблоны ответов на часто встречающиеся вопросы обеспечивают:</div>
-<ul class="FuturisMarkdown-UnorderedList">
-<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Экономию времени</strong>. Не требуется каждый раз формулировать ответ с нуля &mdash; достаточно выбрать шаблон и при необходимости адаптировать.</li>
-<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Единообразие коммуникации</strong>. Все получают одинаково чёткие и структурированные ответы, что исключает разночтения.</li>
-<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Снижение нагрузки на память</strong>. Нет необходимости держать в голове десятки стандартных формулировок &mdash; информация всегда доступна.</li>
-<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Повышение качества ответов</strong>. Шаблоны заранее выверены: в них отсутствуют ошибки, лишние эмоции и неоднозначные формулировки.</li>
-<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Скорость реакции</strong>. Возможность оперативно отвечать на рутинные вопросы без откладывания &laquo;на потом&raquo;.</li>
-<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Упрощение обучения новых сотрудников</strong>. Шаблоны служат готовым гидом по стандартным ситуациям, ускоряя адаптацию новичков.</li>
-<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Защиту от стресса</strong>. Наличие &laquo;каркаса&raquo; ответа помогает сохранять спокойствие в напряжённых диалогах.</li>
-<li class="FuturisMarkdown-ListItem" data-value="" data-shift="0"><strong>Прозрачность процессов</strong>. Согласованные с руководством шаблоны закрепляют единые правила коммуникации в команде.</li>
-</ul>
-<div class="FuturisMarkdown-Paragraph"><br /><strong>Итог:</strong>&nbsp;шаблоны &mdash; это инструмент профессиональной эффективности. Они освобождают ресурсы для решения нетривиальных задач, сохраняя качество рутинной переписки.</div>
-</section>
-
-
-
-<div id="formy" class="container">
-            </div>
-            <br><br><br><br><br>
-
-<section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
-    <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block" tabindex="0" data-pg4qxfhklesk="1_37mew02-0-14b"
-         style=" border-radius: 8px; background: url(img/abstract-blue-bokeh.jpg); background-size: cover; background-position: center; height: 200px;
-            display: flex;                /* включаем Flexbox */
-            justify-content: center;      /* центрируем по горизонтали */
-            align-items: center;        /* центрируем по вертикали */
-            flex-direction: column;     /* располагаем элементы друг под другом (если их несколько) */                      
-         ">        
-        <h2 class="FuturisTitle FuturisContentSection-Title" style="color: white;">Формы</h2>
-        <h4 class="FuturisTitle FuturisContentSection-Title" style="color: white; text-align: center;">ответов на часто задаваемые вопросы</h4>
-    </div>
-</section> 
-         
-  <div class="accordion-group">
-  <h3 class="accordion-header">Руководителям</h3>
-  <div class="accordion-body">
-    <p>Временный пароль: "Год канонизации святого Доминика Григорием IX"</p>
-    
-    <div class="accordion-group" data-multiple="true">
-      <h3 id="protected-accordion" class="accordion-header requires-password">
-        "Где найти сканы отлички?"
-        <span style="margin-left: 8px; font-size: 0.75em; ">(требуется пароль)</span>
-      </h3>
-      <div class="accordion-body">
-        <!-- Уникальный id для этого текста -->
-        <p id="text-1">
-        Сканы могут находиться где угодно (неопределённость). 
-        Следовательно, мы не можем прогнозировать их наличие и местонахождение. 
-        Причиной тому ряд факторов: 
-        1. хаотизация структуры директорий, каталогов и папок на дисках. 
-        2. сектора доступа в корпоративном ПО (ограничения и неинформативность) 
-        3. наличие объёма незарегистрированных бумажных документов. 
-        4. необходимость запросов в Благовещенск. 
-        5. ошибки при загрузке сканов в ПО "collection 2.0" (частично или вообще отсутствуют) 
-        6. добавить факторы.
-        </p>
-        <!-- Передаём правильный id -->
-        <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-1')">Копировать текст</a>
-      </div>
-
-      <h3 class="f20 accordion-header">Добавить 1.2</h3>
-      <div class="accordion-body">
-        <p id="text-2">Текст - 2</p>
-        <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-2')">Копировать текст</a>
-      </div>
-
-         <!-- Второй вложенный аккордеон -->
-    <h3 class="f20 accordion-header">Добавить 1.3</h3>
-    <div class="accordion-body">
-      <p id="text-3">Текст - 3   </p>
-      <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-3')">Копировать текст</a>
-    </div>
-
-    <!-- Третий вложенный аккордеон -->
-    <h3 class="f20 accordion-header">Добавить 1.4</h3>
-    <div class="accordion-body">
-      <p id="text-4">Текст - 4 </p>
-      <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-4')">Копировать текст</a>
-    </div>      
-   </div>
-  </div>
-            
-  <h3 class="accordion-header">Сотрудникам</h3>
-  <div class="accordion-body">
-    <p>Временный пароль: "Год канонизации святого Доминика Григорием IX"</p>    
-    <div class="accordion-group" data-multiple="true">
-      <h3 id="protected-accordion-2" class="accordion-header requires-password">
-        "Где взять шаблон актов приёма-передачи документов?"
-        <span style="margin-left: 8px; font-size: 0.75em; ">(требуется пароль)</span>
-      </h3>
-      <div class="accordion-body">
-        <!-- Уникальный id для этого текста -->
-        <p id="text-5">  Текст-5 </p>
-        <!-- Передаём правильный id -->
-        <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-5')">Копировать текст</a>
-      </div>
-
-      <h3 class="f20 accordion-header">Добавить 2.2</h3>
-      <div class="accordion-body">
-        <p id="text-6">Текст-6</p>
-        <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-6')">Копировать текст</a>
-      </div>
-
-         <!-- Второй вложенный аккордеон -->
-    <h3 class="f20 accordion-header">Добавить 2.3</h3>
-    <div class="accordion-body">
-      <p id="text-7">  Текст-7  </p>
-      <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-7')">Копировать текст</a>
-    </div>
-
-    <!-- Третий вложенный аккордеон -->
-    <h3 class="f20 accordion-header">Добавить 2.4</h3>
-    <div class="accordion-body">
-      <p id="text-8"> Текст-8  </p>
-      <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-8')">Копировать текст</a>
-    </div>
-
-      <div class="accordion-body">
-        <p id="text-9">Текст-9 </p>
-        <a href="javascript:void(0);" class="copy-link" onclick="copyTextFromAccordion('text-9')">Копировать текст</a>
-      </div>
-    </div>
-  </div>
-
-  <br><br>
+  <div class="center-column" >
+<div class="content photo-row" style="margin-top: 0px; margin-bottom: 15px;  display: flex;  flex-wrap: wrap;  gap: 15px; justify-content: center;"> 
+<a href="img-foto/new-good (7).JPG" data-lightbox="НГ-2026"><img src="img-foto/new-good-7-mini.jpg"><div class="overlay-caption">НГ-2026-Domina</div></a>
+<a href="img-foto/new-good (9).JPG" data-lightbox="НГ-2026"><img src="img-foto/new-good-9-mini.jpg"><div class="overlay-caption">НГ-2026-Domina</div></a>
+<a href="img-foto/new-good (1).JPG" data-lightbox="НГ-2026"><img src="img-foto/new-good-1-mini.jpg"><div class="overlay-caption">НГ-2026-Domina</div></a>
+<a href="upload/carskiydvor.jpg" data-lightbox="Корпоратив"><img src="upload/mini-carskiydvor.jpg"><div class="overlay-caption">Царский двор</div></a>
+<a href="upload/carskiydvor.jpg" data-lightbox="Корпоратив"><img src="upload/mini-carskiydvor.jpg"><div class="overlay-caption">Царский двор</div></a>
 </div>
-
- <!-- Секция для текстового поля вставки скопированного текста -->
-    
-<section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
-  <div class="FuturisMarkdown FuturisMarkdown_theme_common FuturisRSRContent-Block"
-         style="
-         position: relative;
-         background: url(img/abstract-blue-bokeh.jpg);
-         background-size: cover;
-         background-position: center;
-         height: 21vh;
-         min-height: 250px;
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         flex-direction: column;
-         border-radius: 8px; 
-
-     ">
-    
-    <!-- Контейнер для текстового поля поверх секции -->
-    <div class="textarea-container" style="
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 10;
-        width: 90%;
-        max-width: 800px;
-        padding: 16px;
-        box-sizing: border-box;
-    ">
-      <div style="position: relative; width: 100%;">
-        <textarea id="myTextarea" rows="8" style="
-            width: 100%;
-            min-height: 120px;
-            max-height: 300px;
-            padding: 12px;
-            padding-bottom: 28px;
-
-            border-radius: 8px;
-            font-size: 16px;
-            line-height: 1.5;
-            resize: vertical;
-            box-sizing: border-box;
-            transition: border-color 0.3s ease;
-        " placeholder="Вставьте скопированный текст для проверки"></textarea>
-
-        <div class="buttons-container" style="
-            position: absolute;
-            bottom: 30px;
-            left: 8px;
-            z-index: 11;  /* выше, чем у textarea */
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        ">
-          <button type="button" class="text-action-btn clear-btn">Очистить</button>
-          <button type="button" class="text-action-btn save-btn">Сохранить в файл</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div id="foto-mini"  class="foto-container" style="background-color: rgba(255, 255, 255, 0.1); margin-top: 20px; border-radius: 8px; ">
-   <img class="img-class" style="margin: 20px 10px 20px 10px; border-radius: 8px; " src="upload/mini-carskiydvor.jpg" data-image="upload/carskiydvor.jpg" data-title="Царский двор" data-caption="12.10.2025" />
-   <img class="img-class" style="margin: 20px 10px 20px 10px; border-radius: 8px; " src="upload/mini-carskiydvor.jpg" data-image="upload/carskiydvor.jpg" data-title="Царский двор" data-caption="12.10.2025" />
-   <img class="img-class" style="margin: 20px 10px 20px 10px; border-radius: 8px; " src="upload/mini-carskiydvor.jpg" data-image="upload/carskiydvor.jpg" data-title="Царский двор" data-caption="12.10.2025" />
-   <img class="img-class" style="margin: 20px 10px 20px 10px; border-radius: 8px; " src="upload/mini-carskiydvor.jpg" data-image="upload/carskiydvor.jpg" data-title="Царский двор" data-caption="12.10.2025" />
-</div><!-- " end foto-container"  -->
-
-
-<div class="simple-slider">
-  <div class="slider-track">
-    <img src="upload/mini-carskiydvor.jpg"  />
-<img src="upload/mini-carskiydvor.jpg"  />
-<img src="upload/mini-carskiydvor.jpg"  />
-<img src="upload/mini-carskiydvor.jpg"  />
-<img src="upload/mini-carskiydvor.jpg"  />
-<img src="upload/mini-carskiydvor.jpg"  />
-<img src="upload/mini-carskiydvor.jpg"  />
-<img src="upload/mini-carskiydvor.jpg"  />
-<img src="upload/mini-carskiydvor.jpg"  />
-<img src="upload/mini-carskiydvor.jpg"  />
-  </div>
+<div class="content photo-row" style="margin-top: 0px; padding: 30px; margin-bottom: 15px;  display: flex;  flex-wrap: wrap;  gap: 15px; justify-content: center;"> 
+<a href="upload/carskiydvor.jpg" data-lightbox="Корпоратив"><img src="upload/mini-carskiydvor.jpg"><div class="overlay-caption">Царский двор</div></a>
+<a href="upload/carskiydvor.jpg" data-lightbox="Корпоратив"><img src="upload/mini-carskiydvor.jpg"><div class="overlay-caption">Царский двор</div></a>
+<a href="upload/carskiydvor.jpg" data-lightbox="Корпоратив"><img src="upload/mini-carskiydvor.jpg"><div class="overlay-caption">Царский двор</div></a>
 </div>
-
-</div><!-- Конец блока. Не удалять! -->
+</div><!-- Конец center-column -->
 
 
   <div class="right-column">
@@ -1112,20 +907,17 @@ stopOnFocus: true, // Не закрывается при наведении
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/dist/index.global.min.js"></script>
 
 <!-- 5.1. Внешние библиотеки -->
-<script src="./js/intense.js"></script>
-<!-- подключаем скрипт intense.js и назначаем для миниатюры или блока: -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js"></script>
+
+
+<!-- 5.2. Lightbox2 Галерея -->
 <script>
-jQuery(document).ready(function($) {
-  var elements = document.querySelectorAll('.img-class');
-  if (elements.length > 0) {
-    Intense(elements);
-    
-    // Для мобильных устройств
-    $('.intense-container').on('touchstart', function(e) {
-      e.stopPropagation();
-    });
-  }
-});
+  lightbox.option({
+    'resizeDuration': 200,      // анимация изменения размера (мс)
+    'fadeDuration': 300,     // анимация появления (мс)
+    'wrapAround': true,       // циклическая навигация
+    'disableScrolling': false // разрешить скролл страницы при открытом лайтбоксе
+  })
 </script>
 
 <!-- 6. Ваш кастомный код (один раз, в конце) -->
@@ -1246,68 +1038,6 @@ var elements = document.querySelectorAll( '.img-class' );
 Intense( elements );
 </script>
 
-<!-- 8. ваша функция слайдера  -->
 
-<script>
-function initSlider() {
-  const track = document.querySelector('.slider-track');
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-  let rafId = null; // Для requestAnimationFrame
-
-
-  track.addEventListener('mousedown', (e) => {
-    if (!e.target.closest('.slider-track')) return;
-
-
-    isDown = true;
-    track.classList.add('active');
-    
-    const rect = track.getBoundingClientRect();
-    startX = e.clientX - rect.x;
-    scrollLeft = track.scrollLeft;
-    e.preventDefault();
-  });
-
-  track.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-
-    const rect = track.getBoundingClientRect();
-    const x = e.clientX - rect.x;
-    const delta = x - startX;
-    const walk = delta * 1.8;
-
-    // Обновляем scrollLeft только один раз за кадр
-    if (rafId === null) {
-      rafId = requestAnimationFrame(() => {
-        track.scrollLeft = scrollLeft - walk;
-        rafId = null;
-      });
-    }
-  });
-
-  ['mouseleave', 'mouseup'].forEach(evt => {
-    track.addEventListener(evt, () => {
-      isDown = false;
-      track.classList.remove('active');
-      // Отмена pending-запроса
-      if (rafId !== null) {
-        cancelAnimationFrame(rafId);
-        rafId = null;
-      }
-    });
-  });
-
-  track.addEventListener('contextmenu', (e) => {
-    if (isDown) e.preventDefault();
-  });
-}
-
-document.addEventListener('DOMContentLoaded', initSlider);
-
-document.addEventListener('DOMContentLoaded', initSlider);
-
-</script>
 </body>
 </html>
