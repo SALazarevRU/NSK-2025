@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Анимация цвета</title>
+    <style>
+        @keyframes ptei-bg-color {
+            0% { background-color: #4682B4; } /* Синий */
+            100% { background-color: #87CEFA; } /* Красный */
+        }
+
+        .pluck_the_eyes_inscription {
+            text-align: center;
+            font-weight: bold;
+            font-size: x-large;
+            padding: 20px;
+            border-radius: 10px;
+            animation: ptei-bg-color 1s ease-in-out infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    <div id="divInfoForCredit" class="Panels pluck_the_eyes_inscription">
+        <span id="lblInfoForCredit">Текст с анимацией фона</span>
+    </div>
+</body>
+</html>
