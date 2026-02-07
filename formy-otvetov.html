@@ -512,6 +512,29 @@ color: #808080
   animation: my-accordion-slide-down 0.3s ease-out;
 }
 
+/* ПЛАВАЮЩАЯ КНОПКА */
+.sticky-button {
+  position: fixed;
+  top: 190px;
+  right: 5px;
+  z-index: 1000;
+
+ /* Стили кнопки */
+  padding: 12px 16px;
+  /*background: linear-gradient(90deg, #000000, #3D495B, #000000);*/
+  /*background-color: rgba(255, 255, 255, 0.2); /* белый с прозрачностью 10% */
+background: linear-gradient(135deg, #2d3543,transparent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+}
+/* Скрываем на экранах < 768px (типичные мобильные) */
+@media (max-width: 767px) {
+  .sticky-button {
+    display: none; /* Полностью убираем */
+  }
+}
       </style>
       <script>
          document.addEventListener('DOMContentLoaded', function() {
@@ -665,7 +688,11 @@ stopOnFocus: true, // Не закрывается при наведении
               
       <section id="AppAndroid-33" class="section-wrap our-team bg-light">
          
+                                                                    <!-- ПЛАВАЮЩИЕ КНОПКИ -->
 
+  <button id="toggleTheme" class="sticky-button">Моя кнопка</button>
+  <!-- <button class="sticky-button">QR-код для просмотра на телефоне</button>  -->
+  <!-- <button class="qrcodebtn as-mybutton">QR-код для просмотра на телефоне</button>  -->
 
 <!-- Мой флекс контейнер-888 -->
 
