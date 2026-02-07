@@ -51,7 +51,18 @@
   font-size: 16px;
   z-index: 10;
 }
+/* Скрываем стрелки, но сохраняем навигацию */
+.lightbox .lb-nav a {
+  opacity: 0 !important;        /* Полностью прозрачно */
+  background-color: transparent !important;
+  background-image: none !important;
+}
 
+/* Рамка для изображения в лайтбоксе */
+.lightbox .lb-image {
+  border: 1px solid #fff;
+  border-radius: 0; /* если нужно убрать скругление */
+}
 /* Позиционирование для родительского элемента */
 a[data-lightbox] {
   position: relative;
@@ -906,17 +917,20 @@ stopOnFocus: true, // Не закрывается при наведении
 <script src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/dist/index.global.min.js"></script>
 
-<!-- 5.1. Внешние библиотеки -->
+<!-- 5.1. Внешние библиотеки Галерея Lightbox2 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js"></script>
 
 
-<!-- 5.2. Lightbox2 Галерея -->
+<!-- 5.1.1. Настройки Lightbox2 Галерея -->
 <script>
   lightbox.option({
     'resizeDuration': 200,      // анимация изменения размера (мс)
     'fadeDuration': 300,     // анимация появления (мс)
     'wrapAround': true,       // циклическая навигация
-    'disableScrolling': false // разрешить скролл страницы при открытом лайтбоксе
+    'disableScrolling': false, // разрешить скролл страницы при открытом лайтбоксе
+// Переопределяем текстовые метки
+  'albumLabel': 'Клик для следующего фото %1 из %2', // Основной текст
+  'imageLabel': '' // Убираем "image" (если нужно)
   })
 </script>
 
