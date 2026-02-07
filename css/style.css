@@ -466,18 +466,18 @@ p {
 }
 
 .navbar-toggle .icon-bar {
-  background-color: #45464b !important;
+  background-color: #FF0000 !important;
   width: 18px;
 }
 
 .navbar-toggle:focus .icon-bar,
 .navbar-toggle:hover .icon-bar {
-  background-color: #00ADB5 !important;
+  background-color:  #45464b !important;
 }
 
 .navbar-toggle:focus,
 .navbar-toggle:hover {
-  background-color: #EEEEEE !important;
+  background-color: #FF0000  !important;
 }
 
 
