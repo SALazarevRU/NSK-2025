@@ -44,7 +44,6 @@ margin-bottom → внешний отступ (между этим блоком 
 /* padding: 10px 20px ;  Первое значение (10) → отступ (верх-низ). Второе значение (20px) → отступ (право-лево).*/
 /* padding: 10px; /* везде 10px */
 /* padding-top: 5px; padding-right: 10px; padding-bottom: 15px; padding-left: 20px;*/
-<!--  <div style="width: 100%; height: 1px; background-color: #ccc; margin: 10px 0;"></div> <!-- ЛИНИЯ -->
 
 /*CSS-класс для Панели с анимацией цвета */
  @keyframes ptei-bg-color {
@@ -768,7 +767,7 @@ color: #808080
 </div></div>
 
   <div class="center-column" >
-<div id="divInfoForCredit" class="Panels pluck_the_eyes_inscription" style="margin-bottom: 30px;"><span id="lblInfoForCredit">Галереи<p>Для просмотра именованной галереи клик на фото</p></span></div>
+<div id="divInfoForCredit" class="Panels pluck_the_eyes_inscription" style="margin-bottom: 30px;"><span id="lblInfoForCredit">Галереи<p >Для просмотра именованной галереи клик на фото</p></span></div>
 
 <div class="content photo-row" style="margin-top: 0px; margin-bottom: 15px;  display: flex;  flex-wrap: wrap;  gap: 15px; justify-content: center;"> 
 <a href="img-foto/new-good (7).JPG" data-lightbox="НГ-2026"><img src="img-foto/new-good-7-mini.jpg"><div class="overlay-caption">НГ-2026-Domina</div></a>
@@ -777,21 +776,23 @@ color: #808080
 <a href="img-foto/1770371704405.jpg" data-lightbox="НГ-2026"><img src="img-foto/mini-1770371704405.jpg"><div class="overlay-caption">НГ-2026-Domina</div></a>
 <a href="img-foto/1770371704413.jpg" data-lightbox="НГ-2026"><img src="img-foto/mini-1770371704413.jpg"><div class="overlay-caption">НГ-2026-Domina</div></a>
 <a href="img-foto/1770371704430.jpg" data-lightbox="НГ-2026"><img src="img-foto/mini-1770371704430.jpg"><div class="overlay-caption">НГ-2026-Domina</div></a>
+
 <a href="upload/carskiydvor.jpg" data-lightbox="Корпоратив"><img src="upload/mini-carskiydvor.jpg"><div class="overlay-caption">Царский двор</div></a>
 <a href="upload/carskiydvor2.jpg" data-lightbox="Корпоратив"><img src="upload/mini-carskiydvor2.jpg"><div class="overlay-caption">Царский двор</div></a>
 </div>
-
 <div class="content photo-row" style="margin-top: 0px; padding: 30px; margin-bottom: 15px;  display: flex;  flex-wrap: wrap;  gap: 15px; justify-content: center;"> 
 <a href="upload/carskiydvor.jpg" data-lightbox="Корпоратив"><img src="upload/mini-carskiydvor.jpg"><div class="overlay-caption">Царский двор</div></a>
 <a href="upload/carskiydvor2.jpg" data-lightbox="Корпоратив"><img src="upload/mini-carskiydvor2.jpg"><div class="overlay-caption">Царский двор</div></a>
 <a href="upload/carskiydvor.jpg" data-lightbox="Корпоратив"><img src="upload/mini-carskiydvor.jpg"><div class="overlay-caption">Царский двор</div></a>
 </div>
 
+<!--  <div style="width: 100%; height: 1px; background-color: #ccc; margin: 10px 0;"></div> <!-- ЛИНИЯ -->
 
-<div id="Lenta-1" style=" width: 300px; margin-top: 10px; margin-bottom: 10px;  background-color: rgba(255, 255, 255, 0.1);  font-family: 'Arial', sans-serif; text-align: left; color: #e0e0e0;  font-weight: normal; font-size: x-large; padding-left: 12px; border-radius: 6px;"><span id="lblInfoForCredit">Лента НГ-2026-Domina</span></div>
+<div id="Lenta-1" style=" width: 280px; margin-top: 70px; margin-bottom: 10px;  background: linear-gradient(135deg, #2d3543,transparent);  font-family: 'Arial', sans-serif; text-align: left; color: #e0e0e0;  font-weight: normal; font-size: 18px; padding-left: 12px; border-radius: 6px;"><span id="lblInfoForCredit">Лента&nbsp; &nbsp; <p>НГ-2026-Domina</p></span></div>
 
 <div class="simple-slider">
-    <div class="slider-track">        
+    <div class="slider-track">
+        <!-- <img src="upload/mini-carskiydvor.jpg"  />  -->
         <img src="img-foto/new-good (10).JPG" />
         <img src="img-foto/new-good (11).JPG" />
         <img src="img-foto/new-good (12).JPG" />
@@ -1121,8 +1122,7 @@ document.addEventListener('DOMContentLoaded', function() {
 var elements = document.querySelectorAll( '.img-class' );
 Intense( elements );
 </script>
-
-<!-- 8. Функция слайдера  -->
+<!-- 8. ваша функция слайдера  -->
 
 <script>
 function initSlider() {
