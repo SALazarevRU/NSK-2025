@@ -40,6 +40,9 @@
 
 /* padding: 10px 20px 0px 30px;  сверху: 10 справа: 20px снизу: 0 слева: 30px*/
 /* padding: 10px 20px ;  Первое значение (10) → отступ (верх-низ). Второе значение (20px) → отступ (право-лево).*/
+/* padding: 10px; /* везде 10px */
+/* padding-top: 5px; padding-right: 10px; padding-bottom: 15px; padding-left: 20px;*/
+
 
 /*CSS-класс для Галереи  */
 .overlay-caption {
@@ -561,67 +564,67 @@ color: #808080
 }
 
       </style>
-      <script>
-         document.addEventListener('DOMContentLoaded', function() {
-         // Обработчик для ссылок, открывающих окна
-         const openPopupLinks = document.querySelectorAll('.open-popup');
-         openPopupLinks.forEach(link => {
-         link.addEventListener('click', function(e) {
-         e.preventDefault(); // Отменяем переход по ссылке
-         
-         const targetId = this.getAttribute('data-target');
-         const popup = document.getElementById(targetId);
-         
-         if (popup) {
-         popup.style.display = 'flex'; // Показываем окно
-         }
-         });
-         });
-         
-         // Обработчик для кнопок закрытия
-         const closeButtons = document.querySelectorAll('.close-popup');
-         closeButtons.forEach(button => {
-         button.addEventListener('click', function() {
-         const popup = this.closest('.popup');
-         popup.style.display = 'none'; // Скрываем окно
-         });
-         });
-         
-         // Дополнительно: закрытие по клику на фон
-         const popups = document.querySelectorAll('.popup');
-         popups.forEach(popup => {
-         popup.addEventListener('click', function(e) {
-         if (e.target === popup) {
-         popup.style.display = 'none';
-         }
-         });
-         });
-         });
-      </script>
+     <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Обработчик для ссылок, открывающих окна
+        const openPopupLinks = document.querySelectorAll(".open-popup");
+        openPopupLinks.forEach((link) => {
+            link.addEventListener("click", function (e) {
+                e.preventDefault(); // Отменяем переход по ссылке
+
+                const targetId = this.getAttribute("data-target");
+                const popup = document.getElementById(targetId);
+
+                if (popup) {
+                    popup.style.display = "flex"; // Показываем окно
+                }
+            });
+        });
+
+        // Обработчик для кнопок закрытия
+        const closeButtons = document.querySelectorAll(".close-popup");
+        closeButtons.forEach((button) => {
+            button.addEventListener("click", function () {
+                const popup = this.closest(".popup");
+                popup.style.display = "none"; // Скрываем окно
+            });
+        });
+
+        // Дополнительно: закрытие по клику на фон
+        const popups = document.querySelectorAll(".popup");
+        popups.forEach((popup) => {
+            popup.addEventListener("click", function (e) {
+                if (e.target === popup) {
+                    popup.style.display = "none";
+                }
+            });
+        });
+    });
+</script>
 
 
-  /* Функция копирования текста*/
+/* Функция копирования текста*/
 <script>
     function copyTextFromAccordion(elementId) {
-const textElement = document.getElementById(elementId);
-const textToCopy = textElement.textContent;
+        const textElement = document.getElementById(elementId);
+        const textToCopy = textElement.textContent;
 
-navigator.clipboard.writeText(textToCopy)
-.then(() => {
-// Успех: показываем Toastify вместо alert
-Toastify({
-text: "Текст скопирован в буфер обмена!",
-duration: 2500, // Автозакрытие через 2 сек
-close: true,
-gravity: "top",
-position: "center",
-background: "linear-gradient(to right, #8A2BE2, #FF69B4)", // Градиент цвет для успеха
-className: "info",
-stopOnFocus: true, // Не закрывается при наведении
-}).showToast();
-})
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            // Успех: показываем Toastify вместо alert
+            Toastify({
+                text: "Текст скопирован в буфер обмена!",
+                duration: 2500, // Автозакрытие через 2 сек
+                close: true,
+                gravity: "top",
+                position: "center",
+                background: "linear-gradient(to right, #8A2BE2, #FF69B4)", // Градиент цвет для успеха
+                className: "info",
+                stopOnFocus: true, // Не закрывается при наведении
+            }).showToast();
+        });
+    }
+</script>
 
-}  </script>
    </head>
    <body class="theme-light"  style="background: linear-gradient(180deg, #000000, #3D495B);">
       <!-- Preloader Устройство предварительной загрузки-->
@@ -720,10 +723,11 @@ stopOnFocus: true, // Не закрывается при наведении
 
 <div class="flex-container-888">
   <div class="left-column">
-<div style="text-align: left;">
-<img src="upload/core_features_img.jpg" alt="core-features-img" style="margin-bottom: 15px;">
-<p>ООО ПКО «Бюро судебного взыскания» — организация, которая сопровождает судебное и исполнительное производство по задолженностям.</p> <br>
-<p>Отдел архива длительного хранения — базовый элемент структуры компании, гарантирующий непрерывность бизнес‑процессов.</p> 
+    <div style="text-align: left;">
+      <img src="upload/core_features_img.jpg" alt="core-features-img" style="margin-bottom: 15px;">
+       <p>ООО ПКО «Бюро судебного взыскания» — организация, которая сопровождает судебное и исполнительное производство по задолженностям.</p>        <br>
+       <p>Отдел архива длительного хранения — базовый элемент структуры компании, гарантирующий непрерывность бизнес‑процессов.</p> 
+
 <div class="my-accordion" style="margin-top: 35px">
   <details>
     <summary>Адрес</summary>
@@ -767,10 +771,8 @@ stopOnFocus: true, // Не закрывается при наведении
         <img src="img-foto/new-good (10).JPG" />
         <img src="img-foto/new-good (11).JPG" />
         <img src="img-foto/new-good (12).JPG" />
-        <img src="img-foto/new-good (13).JPG" />
         <img src="img-foto/new-good (14).JPG" />
         <img src="img-foto/new-good (15).JPG" />
-        <img src="img-foto/new-good (16).JPG" />
         <img src="img-foto/new-good (17).JPG" />
         <img src="img-foto/new-good (18).JPG" />
     </div>
