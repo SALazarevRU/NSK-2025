@@ -37,12 +37,31 @@
  
 
       <style>
-
+/*  #3C3C3C АНТРАЦИТ, #00ADB5 #FFFAFA - НАШ БАЗОВЫЙ 
+padding → внутренний отступ (между краем блока и его содержимым). 
+margin-bottom → внешний отступ (между этим блоком и следующим элементом).*/ 
 /* padding: 10px 20px 0px 30px;  сверху: 10 справа: 20px снизу: 0 слева: 30px*/
 /* padding: 10px 20px ;  Первое значение (10) → отступ (верх-низ). Второе значение (20px) → отступ (право-лево).*/
 /* padding: 10px; /* везде 10px */
 /* padding-top: 5px; padding-right: 10px; padding-bottom: 15px; padding-left: 20px;*/
 
+/*CSS-класс для Панели с анимацией цвета */
+ @keyframes ptei-bg-color {
+            0% { background-color: transparent; } /* Прозрачный */
+            100% { background-color: #313a49; } /* Красный */
+        }
+
+        .pluck_the_eyes_inscription {
+            font-family: 'Arial', sans-serif;
+            text-align: left;
+            color: #e0e0e0;
+            font-weight: normal;
+            font-size: x-large;
+            padding-left: 12px; 
+            border-radius: 0px;
+            
+            animation: ptei-bg-color 1s ease-in-out infinite alternate;
+        }
 
 /*CSS-класс для Галереи  */
 .overlay-caption {
@@ -99,9 +118,6 @@ a[data-lightbox] {
 .content-10 p {
    font-size: 16px;
 }
-/*  #3C3C3C АНТРАЦИТ, #00ADB5 #FFFAFA - НАШ БАЗОВЫЙ 
-padding → внутренний отступ (между краем блока и его содержимым). 
-margin-bottom → внешний отступ (между этим блоком и следующим элементом).*/ 
 
         /*CSS-классы для светлой и тёмной темы.*/
 
@@ -751,6 +767,8 @@ color: #808080
 </div></div>
 
   <div class="center-column" >
+<div id="divInfoForCredit" class="Panels pluck_the_eyes_inscription" style="margin-bottom: 30px;"><span id="lblInfoForCredit">Галереи<p >Для просмотра именованной галереи клик на фото</span></p></div>
+
 <div class="content photo-row" style="margin-top: 0px; margin-bottom: 15px;  display: flex;  flex-wrap: wrap;  gap: 15px; justify-content: center;"> 
 <a href="img-foto/new-good (7).JPG" data-lightbox="НГ-2026"><img src="img-foto/new-good-7-mini.jpg"><div class="overlay-caption">НГ-2026-Domina</div></a>
 <a href="img-foto/new-good (9).JPG" data-lightbox="НГ-2026"><img src="img-foto/new-good-9-mini.jpg"><div class="overlay-caption">НГ-2026-Domina</div></a>
@@ -768,6 +786,9 @@ color: #808080
 <a href="upload/carskiydvor.jpg" data-lightbox="Корпоратив"><img src="upload/mini-carskiydvor.jpg"><div class="overlay-caption">Царский двор</div></a>
 </div>
 
+<!--  <div style="width: 100%; height: 1px; background-color: #ccc; margin: 10px 0;"></div> <!-- ЛИНИЯ -->
+
+<div id="Lenta-1" style=" width: 160px; margin-top: 10px; margin-bottom: 10px;  background-color: rgba(255, 255, 255, 0.1);  font-family: 'Arial', sans-serif; text-align: left; color: #e0e0e0;  font-weight: normal; font-size: x-large; padding-left: 12px; border-radius: 6px;"><span id="lblInfoForCredit">Лента</span></div>
 
 <div class="simple-slider">
     <div class="slider-track">
