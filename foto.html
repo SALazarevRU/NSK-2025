@@ -737,6 +737,27 @@ stopOnFocus: true, // Не закрывается при наведении
 <a href="upload/carskiydvor.jpg" data-lightbox="Корпоратив"><img src="upload/mini-carskiydvor.jpg"><div class="overlay-caption">Царский двор</div></a>
 <a href="upload/carskiydvor.jpg" data-lightbox="Корпоратив"><img src="upload/mini-carskiydvor.jpg"><div class="overlay-caption">Царский двор</div></a>
 </div>
+
+<section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
+</section>
+<div class="simple-slider">
+    <div class="slider-track">
+        <!-- <img src="upload/mini-carskiydvor.jpg"  />  -->
+        <img src="img-foto/new-good (10).JPG" />
+        <img src="img-foto/new-good (11).JPG" />
+        <img src="img-foto/new-good (12).JPG" />
+        <img src="img-foto/new-good (13).JPG" />
+        <img src="img-foto/new-good (14).JPG" />
+        <img src="img-foto/new-good (15).JPG" />
+        <img src="img-foto/new-good (16).JPG" />
+        <img src="img-foto/new-good (17).JPG" />
+        <img src="img-foto/new-good (18).JPG" />
+        <img src="img-foto/new-good (19).JPG" />
+    </div>
+</div>
+
+
+
 </div><!-- Конец center-column -->
 
 
@@ -934,6 +955,8 @@ stopOnFocus: true, // Не закрывается при наведении
   })
 </script>
 
+
+
 <!-- 6. Ваш кастомный код (один раз, в конце) -->
 <script>
  $(document).ready(function() {
@@ -1051,7 +1074,69 @@ document.addEventListener('DOMContentLoaded', function() {
 var elements = document.querySelectorAll( '.img-class' );
 Intense( elements );
 </script>
+<!-- 8. ваша функция слайдера  -->
 
+<script>
+function initSlider() {
+  const track = document.querySelector('.slider-track');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+  let rafId = null; // Для requestAnimationFrame
+
+
+  track.addEventListener('mousedown', (e) => {
+    if (!e.target.closest('.slider-track')) return;
+
+
+    isDown = true;
+    track.classList.add('active');
+    
+    const rect = track.getBoundingClientRect();
+    startX = e.clientX - rect.x;
+    scrollLeft = track.scrollLeft;
+    e.preventDefault();
+  });
+
+  track.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+
+    const rect = track.getBoundingClientRect();
+    const x = e.clientX - rect.x;
+    const delta = x - startX;
+    const walk = delta * 1.8;
+
+    // Обновляем scrollLeft только один раз за кадр
+    if (rafId === null) {
+      rafId = requestAnimationFrame(() => {
+        track.scrollLeft = scrollLeft - walk;
+        rafId = null;
+      });
+    }
+  });
+
+  ['mouseleave', 'mouseup'].forEach(evt => {
+    track.addEventListener(evt, () => {
+      isDown = false;
+      track.classList.remove('active');
+      // Отмена pending-запроса
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+    });
+  });
+
+  track.addEventListener('contextmenu', (e) => {
+    if (isDown) e.preventDefault();
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initSlider);
+
+document.addEventListener('DOMContentLoaded', initSlider);
+
+</script>
 
 </body>
 </html>
