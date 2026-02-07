@@ -38,6 +38,9 @@
 
       <style>
 
+/* padding: 10px 20px 0px 30px;  сверху: 10 справа: 20px снизу: 0 слева: 30px*/
+/* padding: 10px 20px ;  Первое значение (10) → отступ (верх-низ). Второе значение (20px) → отступ (право-лево).*/
+
 /*CSS-класс для Галереи  */
 .overlay-caption {
   position: absolute;
@@ -69,7 +72,8 @@ a[data-lightbox] {
   display: inline-block;
 }
 
-/*CSS-класс для Галереи для слайдера в мобилке */
+/*CSS-класс для Галереи ДЛЯ СЛАЙДЕРА */
+/*CSS-класс для Галереи ДЛЯ СЛАЙДЕРА !!! - в мобилке */
 /* Скрываем текст на десктопах */
 .slider-caption {
   display: none;
@@ -77,7 +81,7 @@ a[data-lightbox] {
   text-align: center;
   color: #666; /* серый цвет текста */
   font-size: 12px;
-  padding: 10 0px;
+  padding: 1px 0px 0px 0px;
 }
 
 /* Показываем текст на мобильных (ширина ≤ 768px) */
