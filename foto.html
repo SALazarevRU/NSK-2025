@@ -569,7 +569,6 @@ color: #808080
 .my-accordion[open] summary::after {
   content: '−';
 }
-
 .my-accordion .content {
   padding: 15px;
   border: 1px solid #ddd;
@@ -578,6 +577,28 @@ color: #808080
   border-bottom-right-radius: 4px;
   animation: my-accordion-slide-down 0.3s ease-out;
 }
+/* ПЛАВАЮЩАЯ КНОПКА */
+.sticky-button {
+  position: fixed;
+  top: 190px;
+  right: 5px;
+  z-index: 1000;
+
+ /* Стили кнопки */
+  padding: 12px 16px;
+  background: linear-gradient(90deg, #000000, #3D495B, #000000);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+}
+/* Скрываем на экранах < 768px (типичные мобильные) */
+@media (max-width: 767px) {
+  .sticky-button {
+    display: none; /* Полностью убираем */
+  }
+}
+
 
       </style>
      <script>
@@ -680,8 +701,8 @@ color: #808080
                      <ul class="nav navbar-nav navbar-right">
                         <li><a href="index.html#preloader">Главная</a></li>
                         <li><a href="index.html#222">Команда</a></li>
-                        <li><a href="foto.html">Галерея</a></li>
-                        <li class="active" ><a href="LazarevSA.html#LazarevSA-33" style="color: #FFF;">Ответы</a></li>
+                        <li><a href="formy-otvetov.html">Формы ответов</a></li>
+                        <li class="active" ><a href="#AppAndroid" style="color: #FFF;">Галерея</a></li>
                         <li>
                            <div id="search"><i class="pe-7s-search search-trigger" style="color: #FFF;"></i></div>
                            <div class="search-bar">
@@ -725,13 +746,17 @@ color: #808080
          <!-- End Navbar -->
       </header>
 
-      <div class="main-wrapper основная оболочка">
+      <div  id="Nachalo-stranitsy" class="main-wrapper основная оболочка">
       <!-- Приложение -->
       <ul id="AppAndroid" class="clearfix">
-
               
-      <section id="AppAndroid-33" class="section-wrap our-team bg-light">
-         
+      <section id="AppAndroid-33" class="section-wrap our-team bg-light">  
+ 
+                       <!-- ПЛАВАЮЩИЕ КНОПКИ -->
+
+  <button id="toggleTheme" class="sticky-button">Моя кнопка</button>
+  <!-- <button class="sticky-button">QR-код для просмотра на телефоне</button>  -->
+  <!-- <button class="qrcodebtn as-mybutton">QR-код для просмотра на телефоне</button>  -->
 
 
 <!-- Мой флекс контейнер-888 -->
