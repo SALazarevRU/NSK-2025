@@ -69,6 +69,25 @@ a[data-lightbox] {
   display: inline-block;
 }
 
+/*CSS-класс для Галереи для слайдера в мобилке */
+/* Скрываем текст на десктопах */
+.slider-caption {
+  display: none;
+  margin-top: 10px;
+  text-align: center;
+  color: #666; /* серый цвет текста */
+  font-size: 14px;
+  padding: 0 15px;
+}
+
+/* Показываем текст на мобильных (ширина ≤ 768px) */
+@media (max-width: 768px) {
+  .slider-caption {
+    display: block;
+  }
+}
+
+
 /*CSS-классы для    */
 
 .content-10 p {
@@ -738,8 +757,7 @@ stopOnFocus: true, // Не закрывается при наведении
 <a href="upload/carskiydvor.jpg" data-lightbox="Корпоратив"><img src="upload/mini-carskiydvor.jpg"><div class="overlay-caption">Царский двор</div></a>
 </div>
 
-<section class="FuturisContentSection FuturisRSRContent-CompositionBlock" data-pg4qxfhklesk="1_37mew02-0-14a">
-</section>
+
 <div class="simple-slider">
     <div class="slider-track">
         <!-- <img src="upload/mini-carskiydvor.jpg"  />  -->
@@ -755,7 +773,7 @@ stopOnFocus: true, // Не закрывается при наведении
         <img src="img-foto/new-good (19).JPG" />
     </div>
 </div>
-
+ <p class="slider-caption">Для просмотра фото в слайдере перематывайте фото </p> 
 
 
 </div><!-- Конец center-column -->
