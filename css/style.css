@@ -466,7 +466,7 @@ p {
 }
 
 .navbar-toggle .icon-bar {
-  background-color: #FF0000 !important;
+  background-color: #00FFFF !important;
   width: 18px;
 }
 
@@ -477,7 +477,7 @@ p {
 
 .navbar-toggle:focus,
 .navbar-toggle:hover {
-  background-color: #FF0000  !important;
+  background-color: #00FFFF  !important;
 }
 
 
