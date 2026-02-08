@@ -3968,7 +3968,7 @@ h3.cta-subheading22.text-center {
   object-fit: cover;
 }
 
-/* Основной стиль видеоконтейнера */
+                                               /* Основной стиль видеоконтейнера */
 .glavniyofis-video {
   position: relative;
   grid-column: 1 / -1; /* На всю ширину сетки */
@@ -3977,13 +3977,13 @@ h3.cta-subheading22.text-center {
   margin: 40px auto 0 auto; /* Отступ сверху 20px, по бокам авто */
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.94); /* Основная тень */
-  border: 4px solid #fff; /* Белая обводка */
+  /*box-shadow: 0 8px 24px rgba(0, 0, 0, 0.94); /* Основная тень */
+  border: 1px solid #fff; /* Белая обводка */
   background-color: #000; /* Чёрный фон контейнера */
 
   
   /* Дополнительная тень поверх обводки для объёмного эффекта */
-  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.99));
+  /*filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.99));*/
 }
 
 /* Стиль видео внутри контейнера */
