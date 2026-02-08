@@ -119,8 +119,7 @@ a[data-lightbox] {
    font-size: 16px;
 }
 
-        /*CSS-классы для светлой и тёмной темы.*/
-
+                                                /*CSS-классы для светлой и тёмной темы.*/
 /* Светлая тема */
 .theme-light .section-wrap {
   background: #DCDCDC;
@@ -172,7 +171,7 @@ padding: 30px;
 }
         /*Конец для "CSS-классы для светлой и тёмной темы".*/
        
-/* Для копирования текста содержимого аккордеонов */
+                                                /* CSS-классы  Для копирования текста содержимого аккордеонов */
 .copy-link {
   display: inline-block;
   margin-top: 10px;
@@ -213,10 +212,10 @@ padding: 30px;
     }
 /* Конец кода стили для кнопки «Очистить») */
 
-/* стили для кнопки «Моя кнопка-123») */
+                                                                /* стили для кнопки «Моя кнопка-123») */
  .my-button-123 {
       display: inline-block;
-      min-width: 30px; /* кнопки не станут меньше 180 px */
+      min-width: 180px; /* кнопки не станут меньше 180 px */
        padding: 7px 20px; /* сбалансированный отступ */
        line-height: 1.4; /* комфортный межстрочный интервал */
        text-align: center; /* текст по центру */
@@ -754,7 +753,7 @@ background: linear-gradient(135deg, #2d3543,transparent);
               
       <section id="AppAndroid-33" class="section-wrap our-team bg-light">  
  
-                       <!-- ПЛАВАЮЩИЕ КНОПКИ -->
+                                                                              <!-- ПЛАВАЮЩИЕ КНОПКИ -->
 
   <button id="toggleTheme" class="sticky-button">Моя кнопка</button>
   <!-- <button class="sticky-button">QR-код для просмотра на телефоне</button>  -->
@@ -1099,19 +1098,22 @@ background: linear-gradient(135deg, #2d3543,transparent);
     // Запуск при изменении размера окна (поворот, ресайз)
     window.addEventListener('resize', toggleAccordionState);
 </script>
-
+                                                               <!-- 8. theme-dark -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const toggleButton = document.getElementById('toggleTheme');
   const body = document.body;
 
-  // Загружаем сохранённую тему
+  // 1. Определяем начальную тему
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme) {
     body.classList.add(savedTheme);
+  } else {
+    // Если темы нет в localStorage — ставим тёмную по умолчанию
+    body.classList.add('theme-dark');
   }
 
-  // Функция для обновления текста кнопки
+  // 2. Функция обновления текста кнопки
   function updateButtonText() {
     if (body.classList.contains('theme-dark')) {
       toggleButton.textContent = '☀️  Вернуть светлый режим';
@@ -1120,21 +1122,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Обновляем текст при загрузке страницы
+  // 3. Обновляем текст при загрузке
   updateButtonText();
 
-  // Обработчик клика
+  // 4. Обработчик клика
   toggleButton.addEventListener('click', function() {
     if (body.classList.contains('theme-dark')) {
-      body.classList.remove('theme-dark');
-      body.classList.add('theme-light');
+      body.classList.replace('theme-dark', 'theme-light');
       localStorage.setItem('theme', 'theme-light');
     } else {
-      body.classList.remove('theme-light');
-      body.classList.add('theme-dark');
+      body.classList.replace('theme-light', 'theme-dark');
       localStorage.setItem('theme', 'theme-dark');
     }
-
+    
     // Обновляем текст кнопки после переключения
     updateButtonText();
   });
