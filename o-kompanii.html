@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/qr-code-lazarev.css">
  <link rel="stylesheet" href="css/my-slider.css">
+ <link rel="stylesheet" href="css/my-vertikal-taby.css">
   
   <!-- 3. Toastify (только один вариант: локальный ИЛИ CDN) -->
    <link rel="stylesheet" href="./css/toastify.min.css">
@@ -701,10 +702,10 @@ background: linear-gradient(135deg, #2d3543,transparent);
                    <div class="collapse navbar-collapse" id="navbar-collapse" >
                      <ul class="nav navbar-nav navbar-right">
                         <li><a href="index.html#preloader">Главная</a></li>
+                        <li class="active" ><a href="#AppAndroid" style="color: #FFF;">О Компании</a></li>
                         <li><a href="index.html#222">Команда</a></li>
                         <li><a href="formy-otvetov.html">Формы ответов</a></li>
-                        <li class="active" ><a href="#AppAndroid" style="color: #FFF;">О Компании</a></li>
- <li><a href="index.html#svjaz">Контакты</a></li>
+                         <li><a href="index.html#svjaz">Контакты</a></li>
                         <li>
                            <div id="search"><i class="pe-7s-search search-trigger" style="color: #FFF;"></i></div>
                            <div class="search-bar">
@@ -787,13 +788,68 @@ background: linear-gradient(135deg, #2d3543,transparent);
     </div>
   </details>
 </div>
+
+<img src="img/mini-afisha-fevral-2026.jpg" alt="mini-afisha-fevral-2026" style="margin-bottom: 15px; margin-top: 50px; border: 1px solid #fff;">
+
 <!-- Конец блока my-accordion -->
 
 <!-- <img src="./upload/kubok.jpg" alt="core-features-img"  style="margin-top: 15px;">  -->
 </div></div>
 
   <div class="center-column" >
-<div id="divInfoForCredit" class="Panels pluck_the_eyes_inscription" style="margin-bottom: 30px;"><span id="lblInfoForCredit">О компании<p >ООО ПКО «Бюро судебного взыскания» — организация, которая сопровождает судебное и исполнительное производство по задолженностям.</p></span></div>
+<div id="divInfoForCredit" class="Panels pluck_the_eyes_inscription" style="margin-bottom: 30px;"><span id="lblInfoForCredit">О компании</span></div>
+
+                                           <!-- Мои вкадки/табы -->
+<div id="tabs">
+	<!-- Кнопки -->
+	<ul class="tabs-nav">
+		<li><a href="#tab-1">ООО БСВ</a></li>
+		<li><a href="#tab-2">Адрес</a></li>
+		<li><a href="#tab-3">Контакты</a></li>
+	</ul>	
+	
+	<!-- Контент -->
+	<div class="tabs-items" style="margin-bottom: 80px;">
+		<div class="tabs-item" id="tab-1">
+			<strong>ООО ПКО «Бюро судебного взыскания»</strong> 
+<p> — организация,которая сопровождает судебное и исполнительное производство по задолженностям. </p>
+<p style=" text-align: left;">Отдел архива длительного хранения — базовый элемент структуры компании, гарантирующий непрерывность бизнес‑процессов. — представляет собой фундамент корпоративной памяти и является неотъемлемым элементом организационной структуры.
+— обладает приоритетным значением в системе управления компанией, выступая ключевым звеном в обеспечении сохранности стратегически важной информации.
+— базовая составляющая инфраструктуры компании, без которой невозможно стабильное функционирование и долгосрочное развитие бизнеса.
+— занимает центральное место в корпоративной архитектуре, выполняя критически важные функции по сохранению исторического и документального наследия организации.
+— является опорным элементом структуры компании, гарантирующим непрерывность бизнес‑процессов и юридическую защищённость организации.
+— занимает ведущее положение в структуре компании, обеспечивая базовую потребность в надёжном хранении и систематизации информации.
+— выполняет первостепенные функции в организационной системе, являясь основным хранителем корпоративных данных и документов. Роль отдела архива длительного хранения можно охарактеризовать как системообразующую: он обеспечивает основу для принятия управленческих решений и соблюдения нормативных требований.</p>
+		</div>
+		<div class="tabs-item" id="tab-2">
+			<strong>Россия, Новосибирск
+Офис: ул. Добролюбова
+Телефон: 8‒800‒600‒48‒87
+Email: info@bsv.legal
+Россия, Новосибирск
+Архив: ул. Электрозаводская 2/7
+Филиал: ул. Королёва, 40 к128
+Телефон: +7 953 888 123 65
+
+BSV Corporation
+ATTN: Main Department
+Novjsibirsk, Dobrolyubova St.
+Russia</strong>
+		</div>
+		<div class="tabs-item" id="tab-3">
+			<strong>Россия, Новосибирск
+Офис: ул. Добролюбова
+Телефон: 8‒800‒600‒48‒87
+Email: info@bsv.legal
+Россия, Новосибирск
+Архив: ул. Электрозаводская 2/7
+Филиал: ул. Королёва, 40 к128
+Телефон: +7 953 888 123 65</strong>
+		</div>		
+	</div>
+</div>  
+
+
 
 
 
@@ -1206,6 +1262,35 @@ document.addEventListener('DOMContentLoaded', initSlider);
 
 document.addEventListener('DOMContentLoaded', initSlider);
 
+</script>
+
+                                         <!-- 8. функция Табы/вкладки на jQuery  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$(function() {
+	var tab = $('#tabs .tabs-items > div'); 
+	tab.hide().filter(':first').show(); 
+	
+	// Клики по вкладкам.
+	$('#tabs .tabs-nav a').click(function(){
+		tab.hide(); 
+		tab.filter(this.hash).show(); 
+		$('#tabs .tabs-nav a').removeClass('active');
+		$(this).addClass('active');
+		return false;
+	}).filter(':first').click();
+ 
+	// Клики по якорным ссылкам.
+	$('.tabs-target').click(function(){
+		$('#tabs .tabs-nav a[href=' + $(this).attr('href')+ ']').click();
+	});
+	
+	// Отрытие вкладки из хеша URL
+	if(window.location.hash){
+		$('#tabs-nav a[href=' + window.location.hash + ']').click();
+		window.scrollTo(0, $("#" . window.location.hash).offset().top);
+	}
+});
 </script>
 
 </body>
