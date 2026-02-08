@@ -147,10 +147,17 @@ margin-top: 15px; /* Внешний отступ сверху — 10px */
     background-color: #3b7cd8;
     text-decoration: none;
     padding: 12px 24px;
-    border-radius: 6px;
+    border-radius: 0px;
     font-family: Arial, sans-serif;
     font-size: 16px;
     text-align: center;
+                                                               /* Добавляем фоновое изображение */
+    background-image: url('../img/knopka-1.png');
+    background-size: contain;          /* Масштабируем без искажения */
+    background-position: center;      /* Центрируем картинку */
+    background-repeat: no-repeat;   /* Не повторяем */
+    padding-left: 40px;             /* Отступ слева для картинки */
+    padding-right: 40px;          /* Отступ справа для картинки */
 }
 
 
