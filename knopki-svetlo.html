@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Стили кнопок: плоские и объёмные</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 5px;
+        }
+
+        /* Ваша кнопка — частичная рамка */
+        .btn-mine {
+            padding: 12px 24px;
+            border-style: none solid solid none;
+            border-width: 2px;
+            border-color: #000;
+            background: #fff;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Объёмная кнопка 1 — классический 3D */
+        .btn-3d {
+            padding: 12px 24px;
+            background: linear-gradient(#f0f0f0, #d0d0d0);
+            border: 1px solid;
+            border-color: #ccc #999 #999 #ccc;
+            border-radius: 6px;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.1s ease;
+        }
+        .btn-3d:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Объёмная кнопка 2 — с тенью и градиентом сверху */
+        .btn-shadow {
+            padding: 14px 26px;
+            background: linear-gradient(to bottom, #4CAF50, #388E3C);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.2s;
+        }
+        .btn-shadow:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+        }
+        .btn-shadow:active {
+            transform: translateY(3px);
+        }
+
+        /* Объёмная кнопка 3 — стеклянный глитч */
+        .btn-glass {
+            padding: 14px 28px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border-bottom: 4px solid rgba(0, 0, 0, 0.3);
+        }
+        .btn-glass:active {
+            border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+            transform: translateY(2px);
+        }
+
+        /* Объёмная кнопка 4 — металлик */
+        .btn-metal {
+            padding: 13px 25px;
+            background: linear-gradient(to bottom, #c0c0c0, #808080);
+            border: 1px solid #606060;
+            border-radius: 7px;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+            text-shadow: 0 1px 1px #fff;
+        }
+        .btn-metal:active {
+            transform: translateY(2px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Объёмная кнопка 5 — мягкий пресс (soft press) */
+        .btn-soft {
+            padding: 15px 30px;
+            background: #e0e0e0;
+            border: none;
+            border-radius: 10px;
+            color: #444;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 6px #b0b0b0;
+            transition: all 0.1s;
+        }
+        .btn-soft:active {
+            box-shadow: 0 2px #b0b0b0;
+            transform: translateY(4px);
+        }
+
+        /* Общие стили для блоков */
+        .example {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .example button {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Ваша кнопка — с частичной рамкой</h2>
+        <div class="example">
+            <button class="btn-mine">Моя кнопка</button>
+            <p><small>Эффект рамки только справа и снизу — минимализм, но не объём.</small></p>
+        </div>
+
+        <h2>Объёмные кнопки</h2>
+        <div class="example">
+            <button class="btn-3d">Классический 3D</button>
+            <p><small>Градиент + разные цвета границ + тень.</small></p>
+        </div>
+
+        <div class="example">
+            <button class="btn-shadow" style="background: linear-gradient(to bottom, #4CAF50, #388E3C);">С тенью</button>
+            <p><small>Яркая тень и нажатие вниз — создаёт объём.</small></p>
+        </div>
+
+        <div class="example">
+            <button class="btn-glass" style="background: rgba(255,255,255,0.2); color: white;">Стекло</button>
+            <p><small>Прозрачность, бэкдроп и нижняя граница — эффект толщины.</small></p>
+        </div>
+
+        <div class="example">
+            <button class="btn-metal">Металлик</button>
+            <p><small>Серебристый градиент и текстурная тень.</small></p>
+        </div>
+
+        <div class="example">
+            <button class="btn-soft">Мягкое нажатие</button>
+            <p><small>Толстая тень снизу — как будто кнопка приподнята.</small></p>
+        </div>
+    </div>
+</body>
+</html>
