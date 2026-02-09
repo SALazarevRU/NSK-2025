@@ -1,3 +1,23 @@
+/* === 1. Базовый стиль для плавающих кнопок (из o-kompanii.html) === */
+.sticky-button {
+  position: fixed;
+  z-index: 1000;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #2d3543, transparent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'Roboto', Тahoma, sans-serif;
+}
+
+/* Позиционирование плавающей кнопки #button2 */
+#button2 {
+  top: 240px;
+  right: 20px;
+}
+
+/* === 2. Стили для обычной QR-кнопки (как в оригинальном файле) === */
 .btn-wrapper {
   display: flex;
   justify-content: center;
@@ -6,7 +26,7 @@
   width: 100%;
 }
 
-/* Единый блок .qrcodebtn — только один раз! */
+/* Единый стиль для обычной QR-кнопки (без .as-mybutton) */
 .qrcodebtn:not(.as-mybutton) {
   display: inline-flex;
   margin: 10px;
@@ -26,14 +46,28 @@
   transition: all 0.3s ease;
 }
 
-
 .qrcodebtn:not(.as-mybutton):hover {
   color: #FFF;
   background-color: #00ADB5;
   border-color: #FFF;
 }
 
+/* === 3. Стили для плавающей QR-кнопки (.as-mybutton) === */
+/* Применяется только к кнопкам с классом .as-mybutton */
+.qrcodebtn.as-mybutton {
+  /* Наследуем базовый стиль плавающей кнопки */
+  position: fixed;
+  z-index: 1000;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #2d3543, transparent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'Roboto', Тahoma, sans-serif;
+}
 
+/* === 4. Стили модального окна QR-кода (без изменений) === */
 .qrcodebg,
 .qrcodedata {
   position: fixed;
@@ -42,7 +76,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
   display: none;
 }
 
@@ -114,46 +148,26 @@
 }
 
 @keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-
-  /* Копируем стили из .my-button-123 */
-  .qrcodebtn.as-mybutton {
-  display: inline-block;
-  min-width: 260px;
-  padding: 7px 24px;
-  line-height: 1.4;
-  text-align: center;
-  background: linear-gradient(180deg, #e1f1ff, #002d51);
-  color: white;
- /*  border: 1px solid #6a7984; */
-  border-radius: 0px;
-  font-size: 12px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.qrcodebtn.as-mybutton:hover {
-  background: linear-gradient(180deg, #e1f1ff, #002d51);
-  color: white;
-  transform: translate(2px, -2px);
-}
-
-/* Медиа-запрос — ПОСЛЕ всех основных стилей */
+/* === 5. Медиа-запросы (в конце) === */
 @media (max-width: 1081px) {
-  .as-mybutton {
+  /* Для обычной QR-кнопки */
+  .qrcodebtn:not(.as-mybutton) {
     min-width: 140px;
     padding: 8px 16px;
-    display: none; /* <-- СКРЫВАЕМ КНОПКУ */
+    font-size: 16px;
   }
+
+  /* Для плавающей кнопки (.as-mybutton) */
+  .qrcodebtn.as-mybutton,
+  #button2 {
+    display: none; /* Скрываем на узких экранах */
+  }
+
+  /* Корректировка модального окна */
   .qrcodeexit {
     font-size: 20px;
     margin: 10px 20px;
@@ -161,12 +175,13 @@
   .qrcodetext {
     padding: 20px;
   }
-  .qrcodebtn {
-    min-width: 140px;
-    padding: 8px 16px;
-  }
-  /* Скрываем кнопку на экранах ≤1081px */
+}
+
+@media (max-width: 767px) {
+  /* Дополнительное скрытие для очень узких экранов */
+  .sticky-button,
   .qrcodebtn {
     display: none;
   }
 }
+
