@@ -1,6 +1,7 @@
 let qrok = false;
 
-$('#qr-trigger').on('click', function(e) {
+// Меняем селектор: было #qr-trigger → стало #button2
+$('#button2').on('click', function(e) {
   e.preventDefault();
 
   if (!qrok) {
@@ -19,9 +20,9 @@ $('#qr-trigger').on('click', function(e) {
       '</div>'
     );
 
-     $('.qrcodebg')
-    .fadeIn()
-    .css('pointer-events', 'auto');
+    $('.qrcodebg')
+      .fadeIn()
+      .css('pointer-events', 'auto');
     $('.qrcodedata').css('top', '0');
 
     var image = new Image();
@@ -42,6 +43,7 @@ $('#qr-trigger').on('click', function(e) {
   }
 });
 
+// Остальные обработчики остаются без изменений
 $(document).on('click', '.qrcodebg', function() {
   $('.qrcodebg').fadeOut();
   $('.qrcodedata').css('top', '-120vh');
@@ -62,5 +64,3 @@ $(document).on('click', '.qrcodeexit', function() {
   qrok = false;
   $('body').css('overflow', 'auto');
 });
-
-
