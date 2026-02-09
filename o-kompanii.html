@@ -534,8 +534,13 @@ button {
 */
 
 @media (max-width: 768px) {
-  .left-column, .right-column { display: none; }
-  .center-column { width: 100%; margin: 0; box-sizing: border-box; }
+  .flex-container-888 {flex-direction: column; padding: 0 15px;}
+
+/* Скрываем левую и правую */
+  .left-column,
+  .right-column {display: none; }
+
+  .center-column { width: 100%; margin: 0; box-sizing: border-box;}
 }
 
  /* МОЙ АККОРДЕОН */
@@ -577,29 +582,57 @@ color: #808080
   border-bottom-right-radius: 4px;
   animation: my-accordion-slide-down 0.3s ease-out;
 }
-/* ПЛАВАЮЩАЯ КНОПКА */
+                                                   /* Базовый стиль для плавающих кнопок */
 .sticky-button {
   position: fixed;
-  top: 190px;
-  right: 5px;
   z-index: 1000;
-
- /* Стили кнопки */
   padding: 12px 16px;
-  /*background: linear-gradient(90deg, #000000, #3D495B, #000000);*/
-  /*background-color: rgba(255, 255, 255, 0.2); /* белый с прозрачностью 10% */
-background: linear-gradient(135deg, #2d3543,transparent);
+  background: linear-gradient(135deg, #2d3543, transparent);
   color: white;
   border: none;
   border-radius: 6px;
   font-size: 14px;
 }
-/* Скрываем на экранах < 768px (типичные мобильные) */
+
+/* Позиционирование первой кнопки */
+#toggleTheme {
+  top: 190px;
+  right: 20px; /* 20px от правого края */
+}
+
+/* Позиционирование второй кнопки */
+#button2 {
+  top: 240px;
+  right: 20px; /* 20px от правого края (было 5px — меняем на 20px для отступа) */
+}
+
+/* Скрываем на мобильных */
 @media (max-width: 767px) {
-  .sticky-button {
-    display: none; /* Полностью убираем */
+  .sticky-button,
+  .qrcodebtn {
+    display: none;
   }
 }
+
+                                                       /* Объёмная кнопка 4 — металлик */
+        .btn-metal {
+            min-width: 275px; /* кнопка не станет меньше 150px */
+            padding: 5px 0px;
+            background: linear-gradient(to bottom, #c0c0c0, #606060);
+            border: 1px solid #606060;
+            border-radius: 3px;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+            text-shadow: 0 1px 1px #fff;
+        }
+        .btn-metal:active {
+            transform: translateY(2px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+
 
 
       </style>
@@ -758,9 +791,8 @@ background: linear-gradient(135deg, #2d3543,transparent);
  
                                                                               <!-- ПЛАВАЮЩИЕ КНОПКИ -->
 
-  <button id="toggleTheme" class="sticky-button">Моя кнопка</button>
-  <!-- <button class="sticky-button">QR-код для просмотра на телефоне</button>  -->
-  <!-- <button class="qrcodebtn as-mybutton">QR-код для просмотра на телефоне</button>  -->
+  <button id="toggleTheme" class="sticky-button">Кнопка 1</button>
+<button id="button2" class="sticky-button qrcodebtn as-mybutton">QR-код для телефона</button>  
 
 
 <!-- Мой флекс контейнер-888 -->
@@ -852,9 +884,8 @@ Email: info@bsv.legal
 
 
 
-    <h2 class="heading-white" style="color: #a9acaf; text-align: center;">Главный офис</h2>
-    <p class="glavniyofis-subtitle text-center">ул. Добролюбова, 12</p>
-    
+    <h2 class="heading-white" style="color: #a9acaf; text-align: center;  margin-bottom: 30px;">Главный офис</h2>
+     
       <!-- Фото (4 одинаковых) -->
       <div class="content photo-row" style="margin-top: 0px; margin-bottom: 15px;  display: flex;  flex-wrap: wrap;  gap: 15px; justify-content: center;"> 
 <a href="upload/kontora.jpg" data-lightbox="НГ-2026"><img src="upload/mini-kontora.jpg"><div class="overlay-caption">Офис</div></a>
@@ -886,16 +917,16 @@ Email: info@bsv.legal
 
 
   <div class="right-column">
-<img src="upload/kubok.jpg" alt="core-features-img" style="margin-top: 0px; margin-bottom: 15px;">
+      <img src="upload/kubok.jpg" alt="core-features-img" style="margin-top: 0px; margin-bottom: 15px;">
       <div class="button-group"> <!-- группа для регулировки расстояния между кнопок -->
-        <a href="index.html#vzaimodeystvie" class="my-button-123">Вернуться</a>
-        <button id="toggleTheme" class="my-button-123">Сменить на тёмную тему</button>
-        <button class="qrcodebtn as-mybutton">QR-код для просмотра на телефоне</button> 
+        <a href="index.html#vzaimodeystvie" ><button class="btn-metal">Вернуться</button></a>
+        <a href="#0" ><button class="btn-metal">Кнопка-2</button></a>
+        <a href="#0" class="example"><button class="btn-metal">Кнопка-3</button></a>       
+</div>
 
-<div style="text-align: left;"><p>О компании
-ООО ПКО «Бюро судебного взыскания» — организация, которая сопровождает судебное и исполнительное производство по задолженностям.</p> 
-<img src="upload/firefox.gif" alt="Анимированный элемент" loading="lazy" style="border: 1px solid #A9A9A9; margin-top: 10px;">
-<p style="margin-top: 30px;">Отдел архива длительного хранения — базовый элемент структуры компании, гарантирующий непрерывность бизнес‑процессов.</p> 
+<div style="text-align: left;"><p>О компании. ООО ПКО «Бюро судебного взыскания» — организация, которая сопровождает судебное и исполнительное производство по задолженностям.</p> 
+       <img src="upload/firefox.gif" alt="Анимированный элемент" loading="lazy" style="border: 1px solid #A9A9A9; margin-top: 10px;">
+       <p style="margin-top: 30px;">Отдел архива длительного хранения — базовый элемент структуры компании, гарантирующий непрерывность бизнес‑процессов.</p> 
 </div>
 
 <div class="my-accordion">
