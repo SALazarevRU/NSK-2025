@@ -795,7 +795,7 @@ color: #808080
 <button id="button2" class="sticky-button qrcodebtn as-mybutton">QR-код для телефона</button>  
 
 
-<!-- Мой флекс контейнер-888 -->
+                                                                           <!-- Мой флекс контейнер-888 -->
 
 <div class="flex-container-888">
   <div class="left-column">
@@ -897,15 +897,21 @@ Email: info@bsv.legal
 
 
  
-      <!-- Видео -->
-      <div class="glavniyofis-video" style="margin-top: 80px;">
-        <video controls><source src="video/chuchuk.mp4" type="video/mp4">Ваш браузер не поддерживает видео.</video>
-      </div>
+  <!-- Видеоконтейнер -->
+  <div class="glavniyofis-video">
+    <video id="myVideo" controls poster="img/placeholder-chubuk.jpg">
+      <source src="video/chuchuk.mp4" type="video/mp4">
+      Ваш браузер не поддерживает видео.
+    </video>
 
-  <p style="margin-top: 70px; margin-bottom: 0px; color: #a9acaf; font-size: 15px; text-align: center;">Обратите внимание: в офисной сети сторонние видео могут быть заблокированы.</p>
-<p style="margin-top: 0px; margin-bottom: 10px; color: #a9acaf; font-size: 15px; text-align: center;">Чтобы смотреть видео, воспользуйтесь гостевым Wi‑Fi или мобильным интернетом.</p>
+    <!-- Плейсхолдер-текст -->
+    <div id="placeholderText" class="placeholder-text">
+       <p>Обратите внимание: в офисной сети сторонние видео могут быть заблокированы.</p>
+  <p>Чтобы смотреть видео, воспользуйтесь гостевым Wi‑Fi или мобильным интернетом.</p>
+    </div>
+  </div>
        
-   
+   <p>Чтобы смотреть видео, воспользуйтесь гостевым Wi‑Fi или мобильным интернетом.</p>
   
 
 
@@ -920,7 +926,7 @@ Email: info@bsv.legal
       <img src="upload/kubok.jpg" alt="core-features-img" style="margin-top: 0px; margin-bottom: 15px;">
       <div class="button-group"> <!-- группа для регулировки расстояния между кнопок -->
         <a href="index.html#vzaimodeystvie" ><button class="btn-metal">Вернуться</button></a>
-        <a href="#0" ><button class="btn-metal">Кнопка-2</button></a>
+        <a href="#0" ><button class="btn-metal">Новости</button></a>
         <a href="#0" class="example"><button class="btn-metal">Кнопка-3</button></a>       
 </div>
 
@@ -1321,6 +1327,47 @@ $(function() {
 		window.scrollTo(0, $("#" . window.location.hash).offset().top);
 	}
 });
+</script>
+
+
+ <!-- 8.  для плавного появления/скрытия текстового плейсхолдера над видео   -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('1. Скрипт запущен');
+
+  const video = document.getElementById('myVideo');
+  const placeholderText = document.getElementById('placeholderText');
+
+  console.log('2. Видео:', video);
+  console.log('3. Плейсхолдер:', placeholderText);
+
+  if (!video) {
+    console.error('4. ОШИБКА: #myVideo не найден!');
+    return;
+  }
+  if (!placeholderText) {
+    console.error('5. ОШИБКА: #placeholderText не найден!');
+    return;
+  }
+
+  video.addEventListener('play', () => {
+    console.log('6. Событие play: скрываем плейсхолдер');
+    placeholderText.classList.add('hidden');
+  });
+
+  video.addEventListener('pause', () => {
+    console.log('7. Событие pause: показываем плейсхолдер');
+    placeholderText.classList.remove('hidden');
+    setTimeout(() => placeholderText.style.opacity = '1', 10);
+  });
+
+  video.addEventListener('ended', () => {
+    console.log('8. Событие ended: показываем плейсхолдер');
+    placeholderText.classList.remove('hidden');
+    setTimeout(() => placeholderText.style.opacity = '1', 10);
+  });
+});
+
 </script>
 
 </body>
