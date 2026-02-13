@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>PDF Viewer с управлением</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <style>
+   
+
+/* Ощие настройки Флекс контейнер-888 */ 
+/* Глобальные настройки */
+ * { box-sizing: border-box; } /* Учитываем padding/border в общей ширине */
+
+/* Флекс контейнер-888 */
+.flex-container-888 {
+  display: flex;
+  max-width: 1838px;      /* Фиксированная ширина контейнера */ 
+  width: 100%;            /* Занимает всю ширину на мобильных */
+  margin: 0 auto;         /* Центрирование контейнера (опционально) */
+
+  height: auto; /* Или удалите height */
+  align-items: stretch /* align-items: flex-start; /* Или center, stretch */
+  justify-content: center;
+  text-align: center;
+  gap: 10px; /* Равномерные отступы между всеми колонками */
+flex-wrap: wrap;          /* Разрешаем перенос колонок */
+}
+
+.left-column,
+.right-column {
+  flex: 0 0 17%;   /* Не растёт, не сжимается, ширина = 17 от 1800px */
+  background-color: rgba(20,47,71, 0.05); /* #0415FD с прозрачностью 50% */
+  /*border: 1px solid #ccc;*/
+  padding: 20px;
+  box-sizing: border-box; 
+ /* Если нужно вертикальное расположение внутри колонки */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* расстояние между элементами (например-кнопками) */
+*/ min-height: 1325px; /* минимум 400px */  height: auto; /* подстраивается под контент */
+}
+
+.center-column {
+  flex: 1 1 auto;  /* Растёт и сжимается, занимает оставшееся пространство */
+/*background-color: rgba(0, 0, 0, 0.05); /* Чёрный с прозрачностью 10 % */
+/*  border: 1px solid #ccc; */
+  box-sizing: border-box;
+}
+
+
+
+/* Адаптация для экранов ≤ 768px */
+@media (max-width: 768px) {
+  .flex-container-888 {
+    flex-direction: column;    /* Колонки — одна под другой */
+    padding: 0 15px;
+    gap: 15px;
+  }
+
+  .left-column,
+  .center-column,
+  .right-column {
+    flex: none;              /* Отключаем flex-сжатие */
+    width: 100%;             /* Занимают всю ширину */
+    max-width: none;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    min-height: auto;        /* Снимаем жёсткий min-height */
+  }
+
+  /* Дополнительно: можно скрыть правую колонку на мобильных */
+  .right-column {
+    display: none;
+  }
+}
+                                                       /* Объёмная кнопка 4 — металлик */
+ .btn-metal {
+    font-size: 17px; min-width: 275px; padding: 8px 0; background: linear-gradient(to bottom, #c0c0c0, #606060);
+    border: 1px solid #606060; border-radius: 3px; color: #333; font-weight: bold; cursor: pointer; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 1px 1px #fff; transition: color 0.2s ease; position: relative; overflow: hidden; /* Важно: обрежет блик по границам кнопки */
+    z-index: 0; /* Для корректной работы псевдоэлемента */}
+ .btn-metal::before {
+    content: ''; position: absolute; top: 0;left: -100%; /* Начинаем за пределами кнопки (более естественный старт) */
+    width: 50%; height: 100%; background: 
+    linear-gradient(120deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2)); /* Градиентный блик вместо однотонного */
+    transform: skewX(-25deg) translateX(-5px); /* Небольшой сдвиг для естественности */
+    transition: left 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Плавная замедленная анимация */
+    pointer-events: none;
+    z-index: -1; /* Чтобы блик был под текстом */}
+ .btn-metal:hover {color: #ff0000;}
+ .btn-metal:hover::before {left: 120%; /* Выезжает за пределы кнопки — создаёт эффект пролёта */}
+ .button-group {display: flex; flex-direction: column; /* Кнопки — вертикально */  gap: 20px; /* единое расстояние между кнопками */}
+        .btn-metal:active {transform: translateY(2px); box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);}
+
+  </style>
+</head>
+
+<body style="background: linear-gradient(180deg, #3D495B, #000000);">        
+    
+
+<div class="flex-container-888">
+  <!-- Левая колонка с ссылками на PDF -->
+  <div class="left-column">   
+  <div class="button-group">
+    <button type="button" data-pdf="pdf/hot-key.pdf" class="btn-metal pdf-control">hot-key</button>
+    <button type="button" data-pdf="pdf/kode-klavish.pdf" class="btn-metal pdf-control">kode-klavish</button>
+    <button type="button" data-pdf="pdf-clikman/poisk-objektov.pdf" class="btn-metal pdf-control">poisk-objektov</button>        
+ 
+</div>
+
+  </div><!-- конец left-column -->
+
+  <!-- Центральная колонка с просмотром PDF -->
+  <div class="center-column">
+    <!-- Контейнер для PDF -->
+    <div style="max-width: 1511px; margin: 40px auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 0px; overflow: hidden; border: 0px solid #e0e0e0;">
+      <!-- Заголовок -->
+      <div style="background: #15212b; color: white; padding: 20px; text-align: center;">
+        <h2 style="margin: 0; font-size: 24px;">📄 poisk-objektov</h2>
+        <p style="margin: 8px 0 0; opacity: 0.9; font-size: 14px;">Документация</p>
+      </div>
+
+      <!-- Просмотр PDF -->
+      <div style="background: #f9f9f9; padding: 10px;">
+        <iframe
+          id="pdf-viewer"
+          src="pdf/hot-key.pdf"
+          width="100%"
+          height="899">
+        </iframe>
+      </div>
+
+      <!-- Кнопка "Скачать" -->
+<div class="actions" style="margin: 30px;">
+  <!-- Только кнопка для скачивания ZIP -->
+  <button type="button" class="btn-metal download-btn">Скачать в архив</button>
+</div>
+
+
+    </div>
+  </div><!-- Конец center-column -->
+</div><!-- Конец Мой флекс контейнер-888 -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const controls = document.querySelectorAll('.pdf-control');
+  const pdfViewer = document.getElementById('pdf-viewer');
+  const downloadZipBtn = document.querySelector('.download-btn');
+
+
+  // Проверка ключевых элементов
+  if (!pdfViewer) {
+    console.error('Элемент #pdf-viewer не найден!');
+    return;
+  }
+  if (!downloadZipBtn) {
+    console.warn('Кнопка .download-btn не найдена (скачивание ZIP отключено)');
+  }
+
+  // 1. Переключение PDF
+  controls.forEach(control => {
+    control.addEventListener('click', function() {
+      const pdfPath = this.getAttribute('data-pdf');
+      if (!pdfPath) {
+        console.error('Атрибут data-pdf не указан!');
+        return;
+      }
+      pdfViewer.src = pdfPath;
+    });
+  });
+
+  // 2. Скачивание ZIP с проверкой существования
+  if (downloadZipBtn) {
+    downloadZipBtn.addEventListener('click', async function() {
+      const pdfUrl = pdfViewer.src;
+      if (!pdfUrl) {
+        alert('Нет активного PDF для скачивания.');
+        return;
+      }
+
+      // Формируем URL ZIP (учитываем параметры после .pdf)
+      const zipUrl = pdfUrl.replace(/(\.pdf)(\?.*)?$/i, '.zip');
+
+        // Если файл есть — начинаем скачивание
+        const link = document.createElement('a');
+        link.href = zipUrl;
+        link.download = zipUrl.split('/').pop();
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+    });
+  }
+});
+
+</script>
+</body>
+</html>
+                                                                       
+                                                                            
