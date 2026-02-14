@@ -117,7 +117,8 @@
     <nav class="sidebar" id="sidebar">
         <ul class="menu">
             <li><a href="#">📄 Справочник программы</a></li>
-            <li><button type="button" data-pdf="pdf/hot-key.pdf" class="btn-metal pdf-control">Справочник программы</button></li>
+            <li><button type="button" class="btn-metal pdf-control" data-goto="pdf-00">Справочник программы</button></li>
+            <li><button type="button" class="btn-metal pdf-control" data-goto="pdf-01">Инструкции</button></li>
             <li><a href="#">Услуги</a></li>
             <li><a href="#">Контакты</a></li>
         </ul>
@@ -129,7 +130,7 @@
 
        
  
-<div class="flex-container-888" style="margin-top: 120px; margin-bottom: 20px;">
+<div  id="pdf-00" class="flex-container-888" style="margin-top: 120px; margin-bottom: 20px;">
  <div style="background-color: rgba(0, 0, 0, 0.2); color: white; padding: 20px; text-align: center; width: 100%; ">
         <h2 style="margin: 0; font-size: 24px;">📄 Справка по программе</h2>
         <p style="margin: 8px 0 0; opacity: 0.9; font-size: 14px;">по состоянию на <span id="current-date"></span> </p>
@@ -160,13 +161,22 @@
 
                                         <!-- Кнопка "Скачать ZIP" -->
           
-          <button type="button" class="btn-metal download-btn" style="margin-top: 40px; margin-bottom: 390px;"  >Скачать в архив</button> 
+          <button type="button" class="btn-metal download-btn" style="margin-top: 40px; margin-bottom: 60px;"  >Скачать в архив</button> 
     </div>
 
+
+<iframe
+  id="pdf-01"
+  src="https://docs.google.com/viewer?url=https://github.com/SALazarevRU/pdf/raw/59ae3a41777af11f30874d0619ac555eed00635d/primer-01.pdf&embedded=true"
+  width="100%"
+  height="800"
+  style="border: none; margin-top: 60px; margin-bottom: 80px;">
+</iframe>
+
+
+
+
   </div><!-- Конец center-column -->
-
-
-
 </div><!-- Конец Мой флекс контейнер-888 -->
 
 
@@ -234,6 +244,29 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+</script>
+
+<!-- скрипт, для для плавного перехода к элементам страницы -->
+<script>
+  // Находим все кнопки с атрибутом data-goto
+  const scrollButtons = document.querySelectorAll('button[data-goto]');
+
+  // Для каждой кнопки добавляем обработчик клика
+  scrollButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Получаем ID целевого элемента из атрибута data-goto
+      const targetId = this.getAttribute('data-goto');
+      const targetElement = document.getElementById(targetId);
+
+      // Если элемент найден — выполняем скролл
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',  // Плавный скролл
+          block: 'start'       // Выравниваем по верхнему краю
+        });
+      }
+    });
+  });
 </script>
 
 </body>
