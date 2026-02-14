@@ -1,6 +1,6 @@
 
 
-/* настройки для родитльского Флекс контейнер-888 ДЛЯ ЭТОЙ страницы!*/
+/* настройки для родитльского Флекс контейнер-888 ДЛЯ ЭТОЙ страницы! pdf-Viewer-demo.html*/
 .flex-containers-wrapper {
   display: flex;
   flex-direction: column; /* Порядок: 1 → 2 → 3 */
@@ -22,20 +22,20 @@
   max-width: 1838px;      /* Фиксированная ширина контейнера */
   width: 100%;            /* Занимает всю ширину на мобильных */
   margin: 0 auto;         /* Центрирование контейнера (опционально) */
-  height: auto;           /* Или удалите height */
-  align-items: stretch;   /* Выравнивание по вертикали */
-  justify-content: center;
+  height: auto;           /* Важно: не ограничивать высоту */
+  align-items: flex-start; /* Ключевое изменение! */
+  /* align-items: stretch;   Выравнивание по вертикали */
+   justify-content: flex-start; 
   text-align: center;
   gap: 10px;              /* Равномерные отступы между всеми колонками */
   flex-wrap: wrap;       /* Разрешаем перенос колонок */
 }
 
-.flex-container-888 .left-column {
-  width: 100%;
-}
+
 .left-column,
 .right-column {
-  flex: 0 0 17%;          /* Не растёт, не сжимается, ширина = 17% от 1800px */
+  flex: 0 0 17%;   /* Рост и сжатие по высоте не разрешены */  
+ min-height: 900px;
   background-color: rgba(0, 0, 0, 0.1); /* Чёрный с прозрачностью 10% */
   padding: 20px;
   box-sizing: border-box;
@@ -43,8 +43,6 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;             /* Расстояние между элементами (например, кнопками) */
-  /*min-height: 1325px;    Минимум 1325px */
-  height: auto;            /* Подстраивается под контент */
 }
 
 .center-column {
