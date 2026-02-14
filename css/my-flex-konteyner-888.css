@@ -59,8 +59,8 @@
   }
   
   .flex-container-888:nth-child(1) { order: 1; } /* Первый становится первым */
-  .flex-container-888:nth-child(2) { order: 3; } /* Второй становится третьим */
-  .flex-container-888:nth-child(3) { order: 2; } /* Третий остаётся вторым */
+  .flex-container-888:nth-child(2) { order: 2; } /* Второй становится третьим */
+  .flex-container-888:nth-child(3) { order: 3; } /* Третий остаётся вторым */
 
   .flex-container-888 {
     flex-direction: column;
@@ -82,9 +82,7 @@
   /* Явно задаём порядок колонок внутри контейнеров */
   .left-column    { order: 1; }
   .center-column  { order: 2; }
-  .right-column   { 
-    order: 3;
-    display: none; /* Скрываем правую колонку */
+  .right-column   { order: 3; display: none; /* Скрываем правую колонку */
   }
 
   /* скрываем левый столбец в первом контейнере */
