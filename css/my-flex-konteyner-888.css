@@ -84,11 +84,11 @@
   .center-column  { order: 2; }
   .right-column   { 
     order: 3;
-    display: none; /* Скрываем правую колонку (как у вас) */
+    display: none; /* Скрываем правую колонку */
   }
 
-  /* НОВОЕ: скрываем левый столбец ВО ВТОРОМ контейнере */
-  .flex-container-888:nth-child(2) .left-column {
+  /* скрываем левый столбец в первом контейнере */
+  .flex-container-888:nth-child(3) .left-column {
     display: none;
   }
 }
