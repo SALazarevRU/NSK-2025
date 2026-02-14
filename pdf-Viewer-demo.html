@@ -6,6 +6,8 @@
   <title>PDF Viewer с управлением</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- встроить шрифт Roboto от Google -->
+<link rel="stylesheet" href="css/font-awesome.css">
+   <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/my-menu-left.css">
    <link rel="stylesheet" href="css/my-flex-konteyner-888.css">
 
@@ -45,27 +47,28 @@
     </div>
 </div>
 
-    <nav class="sidebar" id="sidebar">
+<nav class="sidebar" id="sidebar">
+    <ul class="menu">
+        <li><p style="color: #ffffff; font-family: &quot;Roboto&quot;; font-size: 13px">Навигация по странице</p></li>
+        <li><button type="button" class="btn-metal pdf-control" data-goto="pdf-00">Справочник программы</button></li>
+        <li><button type="button" class="btn-metal pdf-control" data-goto="pdf-01">Инструкции</button></li>
+    </ul>
+    <ul class="menu">
+        <li><p style="color: #ffffff; font-family: &quot;Roboto&quot;; font-size: 13px">Навигация по сайту</p></li>
+        <li><button type="button" class="btn-metal pdf-control" onclick="window.location.href = 'index.html';">Главная</button></li>
+        <li><button type="button" class="btn-metal pdf-control" onclick="window.location.href = 'formy-otvetov.html';">Взаимодействие</button></li>
+        <li><button type="button" class="btn-metal pdf-control" onclick="window.location.href = 'ITProjects.html';">Технологии</button></li>
+        <li><button type="button" class="btn-metal pdf-control" onclick="window.location.href = 'foto.html';">Галерея</button></li>
+    </ul>
+</nav>
 
-  <ul class="menu">
-  <li><p style="color: #ffffff;font-family: 'Roboto';  font-size: 13px;" >Навигация по сайту</p></li> 
-      <li><button type="button" class="btn-metal pdf-control" onclick="window.location.href = 'index.html';">Главная</button></li>       
-      <li><button type="button" class="btn-metal pdf-control" onclick="window.location.href = 'index.html';">Главная</button></li>
-  </ul>
-
-        <ul class="menu">
-<li><p style="color: #ffffff; font-family: 'Roboto';  font-size: 13px;" >Навигация по странице</p></li>        
-            <li><button type="button" class="btn-metal pdf-control" data-goto="pdf-00">Справочник программы</button></li>
-            <li><button type="button" class="btn-metal pdf-control" data-goto="pdf-01">Инструкции</button></li>            
-        </ul>
-    </nav> 
        
  
 <div class="flex-containers-wrapper"> <!-- Родительский контейнер для flex-container-888 -->
                                                           <!-- первый flex-container-888 -->
     <div  id="pdf-00" class="flex-container-888" style="margin-top: 120px; margin-bottom: 20px;"> 
-      <div style="background-color: rgba(0, 0, 0, 0.2); color: white; padding: 20px; text-align: center; width: 100%; ">
-          <h2 style=" margin: 0; font-size: 24px;">📄 Справка по программе</h2>
+      <div style=" background-color: rgba(0, 0, 0, 0.2); color: white; padding: 20px; text-align: center; width: 100%; ">
+          <h2 style=" font-family: 'Roboto', sans-serif;color: white; margin: 0; font-size: 24px;">📄 Справка по программе</h2>
           <p style="margin: 8px 0 0; opacity: 0.9; font-size: 14px;">по состоянию на <span id="current-date"></span> </p>
       </div>
     </div> <!-- конец первого flex-container-888 --> 
@@ -108,15 +111,22 @@
                      </div><!-- Конец center-column 3-го flex-container-888 -->    
      </div><!-- Конец 3-го flex-container-888 -->
 </div> <!-- конец Родительский контейнер 888 -->
-
-
   
 
          <div style="background: linear-gradient(180deg, #3D495B, #000000); margin-top: 80px; margin-bottom: 0px; padding: 40px; width: 100%; text-align: center;">
               <button type="button" onclick="history.back()" class="btn-metal pdf-control"> ← Вернуться</button>
          </div>
    
+  <!-- Call to Возврат на верх -->
+                <div id="back-to-top">
+			<a href="#top"><i class="fa fa-angle-up"></i></a>
+		</div>
 
+
+
+<!-- jQuery Scripts -->
+	<script src="js/jquery.min.js"></script>	
+        <script src="js/scripts.js"></script> <!-- Call to Возврат на верх -->
 
  <!-- Выезжающее меню -->
     <script src="js/my-menu-left.js"></script>
