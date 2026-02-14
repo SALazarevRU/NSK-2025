@@ -21,9 +21,9 @@
 
 .menu-label {
     font-family: 'Roboto', sans-serif;
-    font-size: 26px;
-    color: #1E90FF;
-    margin-right: 50px;         /* Отступ между надписью и гамбургером — 10px */
+    font-size: 22px;
+    color: #DCDCDC;
+    margin-right: 40px;         /* Отступ между надписью и гамбургером — 10px */
     white-space: nowrap;
     user-select: none;
 }
@@ -65,7 +65,7 @@
 .sidebar {
     position: fixed;
     top: 0;
-    left: -300px; /* Скрываем меню за левым краем */
+    right: -300px; /* Скрываем меню за левым краем */
     width: 300px;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.1); /* Чёрный с прозрачностью 10% */
@@ -75,7 +75,7 @@
 }
 
 .sidebar.active {
-    left: 0; /* Выезжаем на экран */
+    right: 0; /* Выезжаем на экран */
 }
 
 .menu {
@@ -104,4 +104,14 @@
 .content {
     padding: 80px 20px 20px;
     min-height: 100vh;
+}
+@media (max-width: 320px) {
+    .sidebar {
+        width: 100%;
+        right: -100%;
+        background-color: #3D495B
+    }
+    .sidebar.active {
+        right: 0;
+    }
 }
