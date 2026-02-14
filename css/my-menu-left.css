@@ -105,11 +105,11 @@
     padding: 80px 20px 20px;
     min-height: 100vh;
 }
-@media (max-width: 320px) {
+@media (min-width: 320px) and (max-width: 760px) {
     .sidebar {
-        width: 100%;
-        right: -100%;
-        background-color: #3D495B
+        width: 75%;
+        right: -75%;
+        background-color: #313a49;
     }
     .sidebar.active {
         right: 0;
