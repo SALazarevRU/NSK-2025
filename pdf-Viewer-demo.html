@@ -106,7 +106,7 @@
 
 
  <div class="header">
-    <span class="menu-label">Меню</span>
+    <span class="menu-label">Боковое меню</span>
     <div class="menu-toggle" id="menuToggle">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -115,24 +115,24 @@
 </div>
 
     <nav class="sidebar" id="sidebar">
+
+  <ul class="menu">
+  <li><p style="color: #ffffff;" >Навигация по сайту</p></li> 
+      <li><button type="button" class="btn-metal pdf-control" onclick="window.location.href = 'index.html';">Главная</button></li>       
+      <li><button type="button" class="btn-metal pdf-control" onclick="window.location.href = 'index.html';">Главная</button></li>
+  </ul>
+
         <ul class="menu">
-            <li><a href="#">📄 Справочник программы</a></li>
+<li><p style="color: #ffffff;" >Навигация по странице</p></li>        
             <li><button type="button" class="btn-metal pdf-control" data-goto="pdf-00">Справочник программы</button></li>
-            <li><button type="button" class="btn-metal pdf-control" data-goto="pdf-01">Инструкции</button></li>
-            <li><a href="#">Услуги</a></li>
-            <li><a href="#">Контакты</a></li>
+            <li><button type="button" class="btn-metal pdf-control" data-goto="pdf-01">Инструкции</button></li>            
         </ul>
-    </nav>
-
-   
-
-
-
+    </nav> 
        
  
 <div  id="pdf-00" class="flex-container-888" style="margin-top: 120px; margin-bottom: 20px;">
  <div style="background-color: rgba(0, 0, 0, 0.2); color: white; padding: 20px; text-align: center; width: 100%; ">
-        <h2 style="margin: 0; font-size: 24px;">📄 Справка по программе</h2>
+        <h2 style=" margin: 0; font-size: 24px;">📄 Справка по программе</h2>
         <p style="margin: 8px 0 0; opacity: 0.9; font-size: 14px;">по состоянию на <span id="current-date"></span> </p>
       </div>
  </div>  
@@ -163,21 +163,33 @@
           
           <button type="button" class="btn-metal download-btn" style="margin-top: 40px; margin-bottom: 60px;"  >Скачать в архив</button> 
     </div>
+ </div><!-- Конец center-column -->
+
+<div class="flex-container-888">    <!-- Второй -->
+    <!-- Левая колонка с ссылками на PDF -->
+    <div class="left-column"></div>
+    <!-- конец left-column -->
+    <!-- Центральная колонка  -->
+    <div class="center-column">
+        <div style="max-width: 1511px">
+            <iframe id="pdf-01" src="https://docs.google.com/viewer?url=https://github.com/SALazarevRU/pdf/raw/59ae3a41777af11f30874d0619ac555eed00635d/primer-01.pdf&embedded=true"
+                width="100%" height="800" style="border: none; margin-top: 60px; margin-bottom: 80px">
+            </iframe>
+        </div>
+    </div>
+    <!-- Конец center-column второго flex-container-888 -->
+</div>
+<!-- Конец Мой флекс контейнер-888 второй -->
 
 
-<iframe
-  id="pdf-01"
-  src="https://docs.google.com/viewer?url=https://github.com/SALazarevRU/pdf/raw/59ae3a41777af11f30874d0619ac555eed00635d/primer-01.pdf&embedded=true"
-  width="100%"
-  height="800"
-  style="border: none; margin-top: 60px; margin-bottom: 80px;">
-</iframe>
 
 
+  </div>
 
-
-  </div><!-- Конец center-column -->
-</div><!-- Конец Мой флекс контейнер-888 -->
+         <div style="background: linear-gradient(180deg, #3D495B, #000000); margin-top: 80px; margin-bottom: 0px; padding: 40px; width: 100%; text-align: center;">
+              <button type="button" onclick="history.back()" class="btn-metal pdf-control"> ← Вернуться</button>
+         </div>
+   
 
 
  <!-- Выезжающее меню -->
