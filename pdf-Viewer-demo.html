@@ -5,10 +5,11 @@
  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PDF Viewer с управлением</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+   <link rel="stylesheet" href="css/my-menu-left.css">
   <style>
    
 
-/* Общие настройки Флекс контейнер-888 */
+/* Общие настройки Флекс контейнер-888 ДЛЯ ЭТОЙ страницы!*/
 /* Глобальные настройки */
 * {
   box-sizing: border-box; /* Учитываем padding/border в общей ширине */
@@ -100,9 +101,35 @@
   </style>
 </head>
 
-<body style="background: linear-gradient(180deg, #3D495B, #000000);">        
+<body style="background: linear-gradient(180deg, #3D495B, #000000);"> 
+
+
+
+ <div class="header">
+    <span class="menu-label">Меню</span>
+    <div class="menu-toggle" id="menuToggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+</div>
+
+    <nav class="sidebar" id="sidebar">
+        <ul class="menu">
+            <li><a href="#">📄 Справочник программы</a></li>
+            <li><button type="button" data-pdf="pdf/hot-key.pdf" class="btn-metal pdf-control">Справочник программы</button></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </nav>
+
+   
+
+
+
+       
  
-<div class="flex-container-888" style="margin-top: 60px; margin-bottom: 20px;">
+<div class="flex-container-888" style="margin-top: 120px; margin-bottom: 20px;">
  <div style="background-color: rgba(0, 0, 0, 0.2); color: white; padding: 20px; text-align: center; width: 100%; ">
         <h2 style="margin: 0; font-size: 24px;">📄 Справочник программы</h2>
         <p style="margin: 8px 0 0; opacity: 0.9; font-size: 14px;">по состоянию на <span id="current-date"></span> </p>
@@ -142,6 +169,11 @@
 
 </div><!-- Конец Мой флекс контейнер-888 -->
 
+
+ <!-- Выезжающее меню -->
+    <script src="js/my-menu-left.js"></script>
+
+
 <!-- скрипт, который динамически подставит дату в нужный элемент: -->
 <script>
     const dateElement = document.getElementById('current-date');
@@ -150,7 +182,6 @@
 </script>
 
 <!-- скрипт, для ПДФ: -->
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const controls = document.querySelectorAll('.pdf-control');
@@ -204,6 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 </script>
+
 </body>
 </html>
                                                                        
