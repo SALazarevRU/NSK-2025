@@ -1,0 +1,94 @@
+
+
+/* настройки для родитльского Флекс контейнер-888 ДЛЯ ЭТОЙ страницы!*/
+.flex-containers-wrapper {
+  display: flex;
+  flex-direction: column; /* Порядок: 1 → 2 → 3 */
+  width: 100%;
+  margin: 0 auto;
+  gap: 20px; /* Отступы между контейнерами */
+}
+
+
+/* Общие настройки Флекс контейнер-888 ДЛЯ ЭТОЙ страницы!*/
+/* Глобальные настройки */
+* {
+  box-sizing: border-box; /* Учитываем padding/border в общей ширине */
+}
+
+/* Флекс контейнер-888 */
+.flex-container-888 {
+  display: flex;
+  max-width: 1838px;      /* Фиксированная ширина контейнера */
+  width: 100%;            /* Занимает всю ширину на мобильных */
+  margin: 0 auto;         /* Центрирование контейнера (опционально) */
+  height: auto;           /* Или удалите height */
+  align-items: stretch;   /* Выравнивание по вертикали */
+  justify-content: center;
+  text-align: center;
+  gap: 10px;              /* Равномерные отступы между всеми колонками */
+  flex-wrap: wrap;       /* Разрешаем перенос колонок */
+}
+
+.flex-container-888 .left-column {
+  width: 100%;
+}
+.left-column,
+.right-column {
+  flex: 0 0 17%;          /* Не растёт, не сжимается, ширина = 17% от 1800px */
+  background-color: rgba(0, 0, 0, 0.1); /* Чёрный с прозрачностью 10% */
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;             /* Расстояние между элементами (например, кнопками) */
+  /*min-height: 1325px;    Минимум 1325px */
+  height: auto;            /* Подстраивается под контент */
+}
+
+.center-column {
+  flex: 1 1 auto;        /* Растёт и сжимается, занимает оставшееся пространство */
+  box-sizing: border-box;
+}
+
+/* Адаптация для экранов ≤ 768px */
+@media (max-width: 768px) {
+  .flex-containers-wrapper {
+    flex-direction: column; /* Оставляем стандартный */
+  }
+  
+  .flex-container-888:nth-child(1) { order: 1; } /* Первый становится первым */
+  .flex-container-888:nth-child(2) { order: 3; } /* Второй становится третьим */
+  .flex-container-888:nth-child(3) { order: 2; } /* Третий остаётся вторым */
+
+  .flex-container-888 {
+    flex-direction: column;
+    padding: 0 15px;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .left-column,
+  .center-column,
+  .right-column {
+    flex: none;
+    width: 100%;
+    max-width: none;
+    margin-bottom: 0;
+    min-height: auto;
+  }
+
+  /* Явно задаём порядок колонок внутри контейнеров */
+  .left-column    { order: 1; }
+  .center-column  { order: 2; }
+  .right-column   { 
+    order: 3;
+    display: none; /* Скрываем правую колонку (как у вас) */
+  }
+
+  /* НОВОЕ: скрываем левый столбец ВО ВТОРОМ контейнере */
+  .flex-container-888:nth-child(2) .left-column {
+    display: none;
+  }
+}
