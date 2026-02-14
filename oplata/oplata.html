@@ -165,6 +165,7 @@
             
              /* Запрещаем перенос текста */
   white-space: nowrap;
+cursor: pointer;
   
   /* Обрезаем текст, если он слишком длинный (опционально) */
   overflow: hidden;
@@ -248,7 +249,8 @@
         </div>
       
         <div class="payment-buttons"> 
-            <a href="../index.html#preloader" class="btn btn-light-transparent">На Главную</a>             
+          
+<button id="cta-button-stroke" class="btn btn-light-transparent" onclick="history.back()" onmouseover="this.style.color='#303947'" onmouseout="this.style.color=''">Вернуться</button>             
         </div>
     </div>
 
