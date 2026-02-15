@@ -1,0 +1,40 @@
+
+/* стили для плейсхолдера второго пдф просмотровщика */
+
+
+
+.pdf-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #555;
+  z-index: 10;
+  max-width: 300px;
+  display: block; /* Изначально видим */
+}
+
+.pdf-loader p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.pdf-loader button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pdf-loader button:hover {
+  background-color: #0056b3;
+}

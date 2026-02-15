@@ -10,6 +10,7 @@
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/my-menu-left.css">
    <link rel="stylesheet" href="css/my-flex-konteyner-888.css">
+   <link rel="stylesheet" href="css/my-pdf-playsholder.css">
 
   <style> 
                                                        /* Объёмная кнопка 4 — металлик */
@@ -106,12 +107,16 @@
          <!-- конец left-column -->
               <!-- Центральная колонка  -->
                      <div class="center-column">
-                       <div style="max-width: 1511px">
-                           <iframe id="pdf-01" src="https://docs.google.com/viewer?url=https://github.com/SALazarevRU/pdf/raw/59ae3a41777af11f30874d0619ac555eed00635d/primer-01.pdf&embedded=true"
-                width="100%" height="800" style="border: 2px solid #606060; margin-top: 60px; margin-bottom: 80px">
-                           </iframe>
+                       <div style="max-width: 1511px; position: relative;">
+<!-- Плейсхолдер, скрипт js внизу, ссылка на css вверху  -->
+ <div id="pdf-loader" class="pdf-loader">
+      <p>PDF-файл пока не загрузился. <br>Попробуйте обновить страницу.</p> <button onclick="location.reload()">Обновить страницу</button>
+    </div> <!-- конец Плейсхолдер  -->
+                        <iframe id="pdf-01" src="https://docs.google.com/viewer?url=https://github.com/SALazarevRU/pdf/raw/59ae3a41777af11f30874d0619ac555eed00635d/primer-01.pdf&embedded=true"
+width="100%" height="800" style="border: 2px solid #606060; margin-top: 60px; margin-bottom: 80px">
+</iframe>
                        </div>
-                     </div><!-- Конец center-column 3-го flex-container-888 -->    
+                     </div><!-- Конец center-column 3-го flex-container-888 javascript:void(0)  --> 
      </div><!-- Конец 3-го flex-container-888 -->
 </div> <!-- конец Родительский контейнер 888 -->
   
@@ -199,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </script>
 
-<!-- скрипт, для для плавного перехода к элементам страницы -->
+<!-- скрипт для плавного перехода к элементам страницы -->
 <script>
   // Находим все кнопки с атрибутом data-goto
   const scrollButtons = document.querySelectorAll('button[data-goto]');
@@ -220,6 +225,41 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+</script>
+
+<!-- скрипт для плейсхолдера второго пдф просмотровщика -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const iframe = document.getElementById('pdf-01');
+  const loader = document.getElementById('pdf-loader');
+
+  // Проверка, что элементы существуют
+  if (!iframe || !loader) {
+    console.error('PDF iframe или плейсхолдер не найдены');
+    return;
+  }
+
+  // Успешная загрузка
+  iframe.addEventListener('load', function() {
+    loader.style.display = 'none';
+    console.log('PDF загружен успешно');
+  });
+
+  // Ошибка загрузки
+  iframe.addEventListener('error', function() {
+    loader.style.display = 'block';
+    console.warn('Ошибка загрузки PDF');
+  });
+
+  // Резервная проверка через 5 сек
+  setTimeout(function() {
+    if (iframe.offsetHeight < 10) {
+      loader.style.display = 'block';
+      console.warn('PDF не отобразился (высота iframe < 10px)');
+    }
+  }, 5000);
+});
+
 </script>
 
 </body>
