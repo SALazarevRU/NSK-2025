@@ -34,6 +34,7 @@
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/qr-code-lazarev.css">
  <link rel="stylesheet" href="css/my-slider.css">
+ <link rel="stylesheet" href="css/my-futer.css">
   
   <!-- 3. Toastify (только один вариант: локальный ИЛИ CDN) -->
   <!-- Вариант A: локальная копия (рекомендуется) -->
@@ -216,189 +217,7 @@ button {
       }
     }
     
- /* Основные стили футера */
-        #footer {
-            background-color: #222831;
-            padding: 40px 0;
-            font-family: Arial, sans-serif;
-            color: #fff;
-        }
-/* Стили для заголовков аккордеонов */
-.footer-accordion-title {
-    display: block;
-    color: #C0C0C0!important;    
-}
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            margin: -15px;
-        }
-
-        .col-md-3 {
-            margin-bottom: 30px;
-            flex: 0 0 25%; /* Равномерное распределение колонок */
-            padding: 0 15px;
-        }
-
-        .heading-white {
-            margin-bottom: 15px;
-            color: red;
-        }
-
-        .footer-about-us ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .footer-about-us li {
-            margin-bottom: 5px;
-        }
-
-        .social-icons a {
-            margin-right: 10px;
-        }
-
-        .social-icon {
-            width: 32px;
-            height: 32px;
-        }
-
-        /* Стили для ссылок в футере */
-        .footer-about-us a {
-            text-decoration: none;
-            color: #777;
-            transition: color 0.3s ease;
-            cursor: pointer;
-        }
-
-        .footer-about-us a:hover {
-            color: #00FFFF;
-        }
-
-        .social-icons i {
-            font-size: 20px;
-        }
-
-        /* Дополнительные стили для колонок */
-        .col-md-3 .footer-about-us {
-            color: #777; /* Цвет текста для первой колонки */
-        }
-
-        .col-md-3:nth-child(2) .footer-about-us {
-            color: #fff; /* Цвет текста для второй колонки */
-        }   
-        
-        /* ПЕРЕОПРЕДЕЛЕНИЕ bottom-footer — должно быть в конце */
-    .bottom-footer-simple {
-    background-color: #16171a;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.copyright-text {
-    margin: 0;
-    color: #98a2a4;    /* Цвет обычного текста — серый */
-    font-size: 14px;
-    font-family: Arial, sans-serif;
-}
-
-.company-name {
-    color: #fff;     /* Цвет названия компании — белый  font-weight: bold;  Можно добавить жирность для выделения */    
-}
-
- /* ДЛЯ СМЕНЫ НА ЦВЕТН ИЗОБРАЖЕНИЕ ЯНДЕКС МЕТРИКИ */
-.ym-logo {
-    display: inline-block;
-}
-
-.ym-image {
-    width: 80px;
-    height: auto;
-    filter: grayscale(100%); /* Чёрно-белое */
-    transition: filter 0.3s ease; /* ВАЖНО: transition для filter, а не opacity */
-}
-
-.ym-image:hover {
-    filter: grayscale(0%); /* Цветное */
-}
  
-/* === Мобильные: аккордеон в футере === */
-@media (max-width: 768px) {
-    .col-md-3 {
-        flex: 0 0 100%;
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .footer-accordion summary {
-        list-style: none;
-        cursor: pointer;
-        font-weight: bold;
-        color: #fff;
-        padding: 10px 0;
-        outline: none;
-    }
-
-    .footer-accordion summary::after {
-        content: " ▼";
-        font-size: 0.8em;
-        color: #777;
-        margin-left: 5px;
-    }
-
-    .footer-accordion[open] summary::after {
-        content: " ▲";
-    }
-/* Контент внутри — с небольшим отступом margin-top */
-    .footer-accordion ul,
-    .footer-accordion p,
-    .footer-accordion .social-icons {
-        margin-top: 0px;
-        color: #777;
-    }
-}
-
-/* === Десктоп: отключаем аккордеон в футере — всё видно, даже если нет `open` === */
-@media (min-width: 769px) {
-    .col-md-3 {
-        flex: 0 0 25%;
-        max-width: 25%;
-    }
-
-    /* Принудительно РАСКРЫВАЕМ <details> на ПК */
-    .footer-accordion {
-        display: block;
-    }
-
-    /* Принудительно ПОКАЗЫВАЕМ всё, что внутри — кроме summary */
-    .footer-accordion > *:not(summary) {
-        display: block !important;
-        height: auto !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
-
-    /* Делаем заголовок видимым и статичным */
-    .footer-accordion summary {
-        display: block;
-        cursor: default;
-        user-select: none;
-        outline: none;
-        pointer-events: none;
-        font-weight: bold;
-        color: #ffffff;
-        font-size: 16px;
-        margin-bottom: 10px;
-        padding: 0;
-    }
-}
-
 
 
 /* Ощие настройки Флекс контейнер-888 */ 
@@ -1123,6 +942,7 @@ stopOnFocus: true, // Не закрывается при наведении
 <!-- 4. Основные скрипты темы -->
 <script src="./js/main.js"></script>
 <script src="./js/scripts.js"></script>
+<script src="./js/my-futer-akkordion.js"></script><!-- мой скрипт футер аккордеон -->
 
 
 
@@ -1194,26 +1014,6 @@ jQuery(document).ready(function($) {
         URL.revokeObjectURL(url);
       });
     });
-</script>
-<!-- 7. Аккордеон в футере(без скрипта на ПК аккор-н изначально закрыт) -->
-<script>
-    function toggleAccordionState() {
-        const accordions = document.querySelectorAll('.footer-accordion');
-        
-        if (window.innerWidth > 768) {
-            // На ПК — принудительно открыто
-            accordions.forEach(acc => acc.setAttribute('open', ''));
-        } else {
-            // На мобиле — убираем open, чтобы было закрыто по умолчанию
-            accordions.forEach(acc => acc.removeAttribute('open'));
-        }
-    }
-
-    // Запуск при загрузке
-    toggleAccordionState();
-
-    // Запуск при изменении размера окна (поворот, ресайз)
-    window.addEventListener('resize', toggleAccordionState);
 </script>
 
 
