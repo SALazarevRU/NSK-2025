@@ -32,6 +32,25 @@
  .button-group {display: flex; flex-direction: column; /* Кнопки — вертикально */  gap: 20px; /* единое расстояние между кнопками */}
         .btn-metal:active {transform: translateY(2px); box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);}
 
+
+                              /* пульсация текста*/
+h2 {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  margin: 0;
+  font-size: 24px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.pulse-5s {
+  animation: pulseOpacity 8s infinite;
+}
+@keyframes pulseOpacity {
+  0%    { opacity: 1; }
+  50%   { opacity: 0.3; }  /* Минимальная прозрачность */
+  100%  { opacity: 1; }
+}
   </style>
 </head>
 
@@ -73,7 +92,8 @@
                                                           <!-- первый flex-container-888 -->
     <div  id="pdf-00" class="flex-container-888"> 
       <div style=" background-color: rgba(0, 0, 0, 0.1); color: white; padding: 20px; text-align: center; width: 100%; margin-top: 70px; margin-bottom: 0px;">
-          <h2 style=" font-family: 'Roboto', sans-serif; color: white; margin: 0; font-size: 24px;">📄 Справка по "Name.exe"</h2>
+          <h2 class="pulse-5s">📄 Справка по "Name.exe"</h2>
+</h2>
           <p style="margin: 8px 0 0; opacity: 0.9; font-size: 14px;">Версия от <span id="current-date"></span> </p>
       </div>
     </div> <!-- конец первого flex-container-888 --> 
@@ -125,7 +145,7 @@
  <div class="center-column" style="max-height: 550px; overflow-y: hidden;">
    <div class="my-table"  style="width: auto;   max-width: 750px; margin: 0 auto; height: 450px; overflow-y: auto; border: 5px solid;  border-color: #363636 gray  white gray;">
   <div style="background-color: #3D495B; color: white; padding: 20px; text-align: center; width: 100%;">
-    <h2 style="font-family: 'Roboto', sans-serif; color: white; margin: 0; font-size: 24px;">📄 Ресурсы</h2>
+    <h2 class="animated-shadow" style="font-family: 'Roboto', sans-serif; color: white; margin: 0; font-size: 24px;">📄 Ресурсы</h2>
     <table style="width: 100%; margin-top: 20px; border-collapse: collapse;">
       <thead><tr><th style="text-align: left; padding: 10px; border-bottom: 1px solid #556677;">Ссылка</th>
           <th style="text-align: left; padding: 10px; border-bottom: 1px solid #556677;">Описание</th></tr></thead>
