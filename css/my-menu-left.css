@@ -1,4 +1,4 @@
-/* Выезжает МЕНЮ на экран слева*/
+/* Выезжает МЕНЮ на экран справа*/
 * {
     margin: 0;
     padding: 0;
@@ -8,8 +8,10 @@
 .header {
     position: fixed;
     top: 0;
-    left: 0;
+    left: auto;
+    right: 0;     /* прижимаем к правому краю */
     width: 100%;
+max-width: 260px;   
     height: 40px;
     background-color: rgba(0, 0, 0, 0.1);
     display: flex;
