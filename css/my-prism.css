@@ -1,0 +1,168 @@
+/* подсветить синтаксис в HTML-коде. с номерами строк */
+
+/* PrismJS 1.30.0 https://prismjs.com/download.html#themes=prism-dark&languages=markup+css+clike+javascript&plugins=line-numbers */
+
+/* === ОБЩИЕ СТИЛИ ДЛЯ КОДА И ПРЕФОРМАТИРОВАННОГО ТЕКСТА === */
+code[class*=language-],
+pre[class*=language-] {
+  color: #fff;
+  background: 0 0;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Для печати: убираем тень текста */
+@media print {
+  code[class*=language-],
+  pre[class*=language-] {
+    text-shadow: none;
+  }
+}
+
+/* Фон для встроенного кода и блоков кода */
+:not(pre)>code[class*=language-],
+pre[class*=language-] {
+  background: #335479; /* Тёмно-синий фон */
+}
+
+/* Стили для блоков кода (pre) */
+pre[class*=language-] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto; /* Полоса прокрутки при переполнении */
+}
+
+/* Стили для встроенного кода (не внутри pre) */
+:not(pre)>code[class*=language-] {
+  padding: 0.15em 0.2em 0.05em;
+  white-space: normal; /* Перенос строк разрешён */
+}
+
+/* === ЦВЕТОВАЯ СХЕМА ДЛЯ ТОКЕНОВ СИНТАКСИСА === */
+
+.token.cdata,
+.token.comment,
+.token.doctype,
+.token.prolog {
+  color: #997f66; /* Серо-коричневый для комментариев */
+}
+
+.token.punctuation {
+  opacity: 0.7; /* Полупрозрачные знаки препинания */
+}
+
+.token.namespace {
+  opacity: 0.7; /* Полупрозрачные пространства имён */
+}
+
+.token.boolean,
+.token.constant,
+.token.number,
+.token.property,
+.token.symbol,
+.token.tag {
+  color: #d1939e; /* Розовато-красный для булевых, чисел, тегов */
+}
+
+.token.attr-name,
+.token.builtin,
+.token.char,
+.token.inserted,
+.token.selector,
+.token.string {
+  color: #bce051; /* Ярко-зелёный для строк и селекторов */
+}
+
+.language-css .token.string,
+.style .token.string,
+.token.entity,
+.token.operator,
+.token.url,
+.token.variable {
+  color: #f4b73d; /* Оранжево-жёлтый для CSS-строк и переменных */
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #d1939e; /* Розовато-красный для ключевых слов */
+}
+
+.token.important,
+.token.regex {
+  color: #e90; /* Яркий оранжевый для важных элементов и regex */
+}
+
+/* Жирное и курсивное начертание */
+.token.bold,
+.token.important {
+  font-weight: 700; /* Жирный шрифт */
+}
+
+.token.italic {
+  font-style: italic; /* Курсив */
+}
+
+/* Курсор для entity */
+.token.entity {
+  cursor: help; /* Курсор-подсказка */
+}
+
+/* Цвет для удалённых элементов */
+.token.deleted {
+  color: red; /* Красный для удалённых фрагментов */
+}
+
+
+/* === СТИЛИ ДЛЯ НОМЕРОВ СТРОК === */
+pre[class*=language-].line-numbers {
+  position: relative;
+  padding-left: 3.8em; /* Отступ для колонки номеров */
+  counter-reset: linenumber; /* Сброс счётчика строк */
+}
+
+pre[class*=language-].line-numbers > code {
+  position: relative;
+  white-space: inherit; /* Сохраняем переносы из HTML */
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none; /* Не реагирует на клики */
+  top: 0;
+  font-size: 100%;
+  left: -3.8em; /* Сдвиг влево на ширину отступа */
+  width: 3em; /* Ширина колонки номеров */
+  letter-spacing: -1px; /* Уплотнение букв */
+  border-right: 1px solid #999; /* Тонкая граница справа */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; /* Запрет выделения текста */
+}
+
+.line-numbers-rows > span {
+  display: block;
+  counter-increment: linenumber; /* Увеличение счётчика на 1 */
+}
+
+.line-numbers-rows > span::before {
+  content: counter(linenumber); /* Вывод номера строки */
+  color: #999; /* Цвет номера */
+  display: block;
+  padding-right: 0.8em; /* Отступ справа */
+  text-align: right; /* Выравнивание по правому краю */
+}
