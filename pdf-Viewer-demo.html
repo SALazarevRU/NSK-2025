@@ -13,6 +13,7 @@
    <link rel="stylesheet" href="css/my-futer.css">
    <link rel="stylesheet" href="css/my-ssylka.css">
    <link rel="stylesheet" href="css/my-tabs-gorizont.css">
+   <link rel="stylesheet" href="css/my-prism.css"><!-- подсветить синтаксис в HTML-коде -->
 
   <style> 
                                                        /* Объёмная кнопка 4 — металлик */
@@ -211,10 +212,34 @@ h2 {
     codepen.io&ensp;&ensp;<a href="https://codepen.io">codepen.io</a>
        </div>
  
-        <div class="tab_block" id="tabs-3"><p style="text-align: left; color: #000; font-family: Courier New;">&amp;ensp;&amp;ensp; пробел широкий<br />width: auto; max-width: 600px; min-width: 275px; ширина<br />padding: 20px;<br />background-color: #f0f0f0; - светлосерый<br />border: 1px solid #ccc; border-radius: 8px;<br />background: linear-gradient(180deg, #3D495B, #000000); <br />cursor: pointer; - указатель рука<br />font-family: 'Roboto', sans-serif; <br />color: white; - цвет текста белый<br />text-align: center; (left) <br />margin: 0;<br />margin-top: 70px; margin-top: 5px; margin-bottom: 0px; margin-bottom: 0px;<br />margin: 0 auto; /* центрирует контейнер по горизонтали */<br />&lt;li&gt;&lt;a href="javascript:void(0);"&gt;текст&lt;/a&gt;&lt;/li&gt;</p></div>
-        
-<div class="tab_block" id="tabs-4">Контент для вкладки 4</div>
-    </div>
+
+<div class="tab_block" id="tabs-3">  
+
+<!-- Блок с подсветкой синтаксиса (только текст кода!) -->
+<pre><code class="language-html line-numbers">
+&lt;div class="tab_block" id="tabs-3"&gt;
+  &lt;p style="text-align: left; color: #000; font-family: Courier New;"&gt;
+    &amp;ensp;&amp;ensp; пробел широкий&lt;br /&gt;
+    width: auto; max-width: 600px; min-width: 275px; ширина&lt;br /&gt;
+    padding: 20px;&lt;br /&gt;
+    background-color: #f0f0f0; - светлосерый&lt;br /&gt;
+    border: 1px solid #ccc; border-radius: 8px;&lt;br /&gt;
+    background: linear-gradient(180deg, #3D495B, #000000); &lt;br /&gt;
+    cursor: pointer; - указатель рука&lt;br /&gt;
+    font-family: 'Roboto', sans-serif; &lt;br /&gt;
+    color: white; - цвет текста белый&lt;br /&gt;
+    text-align: center; (left) &lt;br /&gt;
+    margin: 0;&lt;br /&gt;
+    margin-top: 70px; margin-top: 5px; margin-bottom: 0px; margin-bottom: 0px;&lt;br /&gt;
+    margin: 0 auto; /* центрирует контейнер по горизонтали */&lt;br /&gt;
+    &lt;li&gt;&lt;a href="javascript:void(0);"&gt;текст&lt;/a&gt;&lt;/li&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>  <!-- end language-html подсветка синтаксиса -->
+  </div>    
+<div class="tab_block" id="tabs-4" style="text-align: left; padding: 8px 16px;">Контент для вкладки 4</div>
+</div>  
+    
   </div><!-- end id="tabs" -->
 </div><!-- end center-column -->
  </div>  <!-- end id="pdf-05" flex-container-888 -->
@@ -330,6 +355,9 @@ h2 {
 <!-- <!-- горизонтальные вкладки с анимированным выводом их содержимого --> -->
     <script src="js/my-tabs-gorizont.js"></script>
 
+<!-- подсветить синтаксис в HTML-коде -->
+<script src="js/my-prism.js"></script
+<script src="js/my-prism-line-numbers.min.js"></script> 
 
 
 <!-- скрипт, который динамически подставит дату в нужный элемент: -->
