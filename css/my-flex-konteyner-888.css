@@ -58,10 +58,13 @@
   }
   
   .flex-container-888:nth-child(1) { order: 1; } /* Первый становится первым */
-  .flex-container-888:nth-child(2) { order: 2; } /* Второй становится третьим */
-  .flex-container-888:nth-child(3) { order: 3; } /* Третий остаётся вторым */
-  .flex-container-888:nth-child(4) { order: 4; } /* Третий остаётся вторым */
-  .flex-container-888:nth-child(5) { order: 5; } /* Третий остаётся вторым */
+  .flex-container-888:nth-child(2) { order: 2; } /* Второй становится вторым */
+  .flex-container-888:nth-child(3) { order: 3; } /* Третий остаётся третьим */
+  .flex-container-888:nth-child(4) { order: 4; } 
+  .flex-container-888:nth-child(5) { order: 5; } 
+  .flex-container-888:nth-child(6) { order: 6; } 
+  .flex-container-888:nth-child(7) { order: 7; } 
+  .flex-container-888:nth-child(8) { order: 8; } 
 
   .flex-container-888 {
     flex-direction: column;
