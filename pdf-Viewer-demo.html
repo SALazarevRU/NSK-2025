@@ -16,6 +16,23 @@
    <link rel="stylesheet" href="css/my-prism.css"><!-- подсветить синтаксис в HTML-коде -->
 
   <style> 
+                      /* мои вертикальные вкладки  tab-02 */
+* {  box-sizing: border-box;}
+body {  font-family: "Lato", sans-serif;  margin: 0;  padding: 20px;}
+/* Контейнер для вкладок — используем Flexbox */
+.tab-container {  display: flex;  min-height: 300px; border: 1px solid #ccc; }
+/* Блок с кнопками вкладок */
+.tab {  width: 30%;  border-right: 1px solid #ccc;  background-color: #f1f1f1;  display: flex;  flex-direction: column; }
+/* Кнопки внутри вкладок */
+.tab button {  display: block;  background-color: inherit;  color: black;  padding: 22px 16px;  width: 100%;  border: none;
+  outline: none;  text-align: left;  cursor: pointer;  transition: 0.3s;  font-size: 17px;  flex-shrink: 0; }
+/* Наведение на кнопки */
+.tab button:hover {  background-color: #ddd; }
+/* Активная кнопка */
+.tab button.active {  background-color: #ccc; }
+/* Содержимое вкладок */
+.tabcontent { width: 70%; background-color: #f0f0f0; text-align: left; padding: 12px; flex: 1; }
+/* /вертикальные табы */
                                                        /* Объёмная кнопка 4 — металлик */
  .btn-metal {
     font-size: 17px; min-width: 275px; padding: 8px 0; background: linear-gradient(to bottom, #c0c0c0, #606060);
@@ -96,9 +113,10 @@ h2 {
                                                           <!-- первый flex-container-888 -->
     <div  id="pdf-00" class="flex-container-888"> 
       <div style=" background-color: rgba(0, 0, 0, 0.1); color: white; padding: 20px; text-align: center; width: 100%; margin-top: 70px; margin-bottom: 0px;">
+<div class="container-4"><p>(Пример pdf-viewer для нескольких документов)</p> </div>  
           <h2 class="pulse-5s">📄 Справка по "Name.exe"</h2>
             <div class="container-4"><a href="#">Версия от <span id="current-date"></span></a></div> 
-            <div class="container-4"><p>(Пример pdf-viewer для нескольких документов)</p> </div>  
+            
           <!-- <p style="margin: 8px 0 0; opacity: 0.9; font-size: 14px;">Версия от <span id="current-date"></span> </p> -->
       </div>
     </div> <!-- конец первого flex-container-888 --> 
@@ -209,8 +227,15 @@ h2 {
 </div> <!-- end flex-container-888 -->
 
 
+  <div id="pdf-05" class="flex-container-888" style="display: flex; min-height: 30px; margin-bottom: -11px;">
+  <div class="left-column" style="min-height: 20px; background: transparent; align-items: flex-start; flex: 0 0 17%;"></div><!-- Левая колонка пустая -->
+  <div class="center-column" style="background: transparent; text-align: left; flex: 1;  min-height: 30px;">
+  <div class="container-4"><p>&nbsp;Пример viewport (окна просмотра) горизонтальных вкладок с высотой по содержимому, анимацией и подсветкой синтаксиса</p> </div>  
+  </div></div></div> <!-- конец id="pdf-05" flex-container-888 --> 
 
-<div id="pdf-05" class="flex-container-888" style="min-height: 50px; margin-bottom: 20px; margin-top: 2px; ">
+
+
+<div id="pdf-06" class="flex-container-888" style="min-height: 50px; margin-bottom: 20px; margin-top: 2px; ">
  <div class="left-column" style=" min-height: 80px; background: transparent; align-items: flex-start; flex: 0 0 17%;"></div><!-- Левая колонка пустая -->
  <div class="center-column" style="min-height: 50px; overflow-y: hidden; margin-top: 2px;">
 <div id="tabs"> <!-- горизонтальные вкладки с анимированным выводом их содержимого -->
@@ -235,7 +260,7 @@ h2 {
 <pre><code class="language-html line-numbers">
 &lt;div class="tab_block" id="tabs-3"&gt;
   &lt;p style="text-align: left; color: #000; font-family: Courier New;"&gt;
-    &amp;ensp;&amp;ensp; пробел широкий
+    &amp;ensp;&amp;ensp; пробел широкий, &amp;nbsp; -узкий
     width: auto; max-width: 600px; min-width: 275px; ширина
     max-height: 300px; высота
     padding: 20px;
@@ -263,8 +288,55 @@ h2 {
 </div>  
     
   </div><!-- end id="tabs" -->
+
+
+
+
 </div><!-- end center-column -->
- </div>  <!-- end id="pdf-05" flex-container-888 -->
+ </div>  <!-- end id="pdf-06" flex-container-888 -->
+
+  <div id="pdf-07" class="flex-container-888" style="display: flex; min-height: 50px; margin-bottom: -11px; margin-top: 90px;">
+  <div class="left-column" style="min-height: 80px; background: transparent; align-items: flex-start; flex: 0 0 17%;"></div><!-- Левая колонка пустая -->
+  <div class="center-column" style="  background-color: rgba(225, 225, 225, 0.2); flex: 1;  min-height: 50px;">
+  <div class="container-4"><p style="text-align: left;" >Пример viewport (окна просмотра) вертикальных вкладок с высотой по содержимому</p> </div>  
+  <h2 class="pulse-5s">📄 Наименование</h2></div></div></div> <!-- конец id="pdf-07" flex-container-888 --> 
+
+
+<div id="pdf-08" class="flex-container-888" style="display: flex; min-height: 50px; margin-bottom: 60px; margin-top: 0px;">
+  <div class="left-column" style="min-height: 80px; background: transparent; align-items: flex-start; flex: 0 0 17%;"></div><!-- Левая колонка пустая -->
+  <div class="center-column" style="  flex: 1;  min-height: 50px;  margin-top: 2px;">
+<!-- начало мои вертикальные вкладки  tab-02-->
+    <div id="tab-02" class="tab-container">
+      <div class="tab">
+        <button class="active" onclick="openTab(event, 'tab1')">Вкладка 1</button>
+        <button onclick="openTab(event, 'tab2')">Вкладка 2</button>
+        <button onclick="openTab(event, 'tab3')">Вкладка 3 (много текста)</button>
+      </div>
+      <div class="tabcontent">
+        <div id="tab1">
+          <h3>Заголовок содержимого вкладки 1</h3>
+          <p>Контент вкладки 1</p>
+        </div>
+        <div id="tab2">
+          <h3>Заголовок содержимого вкладки 2</h3>
+          <p>Контент вкладки 2</p>
+        </div>
+        <div id="tab3">
+          <h3>Заголовок содержимого вкладки 3</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </div>
+
+</div><!-- end center-column -->
+ </div>  <!-- end id="pdf-08" flex-container-888 -->
+
+
+
+
+
 
 </div> <!-- конец Родительский контейнер 888 -->
   
@@ -465,6 +537,27 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+</script>
+                                            <!-- мои вертикальные вкладки  tab-02 --> 
+   <script>
+function openTab(evt, tabId) {
+  const tabContents = document.querySelectorAll('.tabcontent > div');
+  tabContents.forEach(content => {
+    content.style.display = 'none';
+  });
+  const tabButtons = document.querySelectorAll('.tab button');
+  tabButtons.forEach(button => {
+    button.classList.remove('active');
+  });
+  document.getElementById(tabId).style.display = 'block';
+  evt.currentTarget.classList.add('active');
+}
+document.addEventListener('DOMContentLoaded', function() {
+  const firstActiveButton = document.querySelector('.tab button.active');
+  if (firstActiveButton) {
+    firstActiveButton.click();
+  }
+});
 </script>
 
 </body>
