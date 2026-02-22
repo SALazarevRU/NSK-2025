@@ -125,9 +125,9 @@ h2 {
   <!-- Левая колонка с ссылками на PDF -->
   <div class="left-column">   
      <div class="button-group">
-         <button type="button" data-pdf="pdf/hot-key.pdf" class="btn-metal pdf-control">Горячие клавиши</button>
-         <button type="button" data-pdf="pdf/kode-klavish.pdf" class="btn-metal pdf-control">Коды клавиш</button>
-         <button type="button" data-pdf="pdf-clikman/poisk-objektov.pdf" class="btn-metal pdf-control">Поиск объектов</button> 
+         <button id="lbFizName0"type="button" data-pdf="pdf/hot-key.pdf" class="btn-metal pdf-control">Горячие клавиши</button>
+         <button id="lbFizName1" type="button" data-pdf="pdf/kode-klavish.pdf" class="btn-metal pdf-control">Коды клавиш</button>
+         <button id="lbFizName2" type="button" data-pdf="pdf-clikman/poisk-objektov.pdf" class="btn-metal pdf-control">Поиск объектов</button> 
      </div>
   </div><!-- конец left-column -->
 
@@ -140,7 +140,7 @@ h2 {
              <iframe  id="pdf-viewer" src="pdf/hot-key.pdf"  width="100%"  height="899"  style="border: 2px solid #606060;"> </iframe>     
 
                                         <!-- Кнопка "Скачать ZIP" -->          
-          <button type="button" class="btn-metal download-btn" style="margin-top: 40px; margin-bottom: 60px;"  >Скачать в архив</button> 
+          <button id="download-zip" type="button" class="btn-metal download-btn" style="margin-top: 40px; margin-bottom: 60px;"  >Скачать в архив</button> 
          </div>
      </div><!-- конец center-column второго flex-container-888 --> 
  </div><!-- конец второго flex-container-888 --> 
@@ -231,16 +231,15 @@ h2 {
  <div class="left-column" style=" min-height: 80px; background: transparent; align-items: flex-start; flex: 0 0 17%;"></div><!-- Левая колонка пустая -->
  <div class="center-column" style="min-height: 50px; overflow-y: hidden; margin-top: 2px;">
 <p style="text-align: left;" >&nbsp;Пример viewport (окна просмотра) горизонтальных вкладок с высотой по содержимому, анимацией и подсветкой синтаксиса</p> 
-<h2 class="pulse-5s">📄 Наименование</h2> 
 <div id="tabs"> <!-- горизонтальные вкладки с анимированным выводом их содержимого -->
     <ul>
-        <li><a href="#tabs-1">Вкладка 1</a></li>
+        <li><a href="#tabs-1">Задачи</a></li>
         <li><a href="#tabs-2">Полезные сервисы</a></li>
         <li><a href="#tabs-3">CSS-шпаргалка</a></li>  
        <li><a href="#tabs-4">Доделать</a></li> 
     </ul>
     <div id="tabs_container">
-        <div class="tab_block" id="tabs-1" style="text-align: left; padding: 8px 16px;">Контент для вкладки 1</div>
+        <div class="tab_block" id="tabs-1" style="text-align: left; padding: 8px 16px;"><strong>На сайте:</strong><br>Контент для вкладки 1</div>
         <div class="tab_block" id="tabs-2" style="text-align: left;">
     Сайт отдела Архива ООО БСВ - Технологии&ensp;&ensp;<a href="https://salazarevru.github.io/NSK-2025/ITProjects.html">salazarevru.github.io</a><br>
     Генератор оттенков&ensp;&ensp;<a href="https://atuin.ru/tools/shades/">atuin.ru/tools/shades</a><br>
@@ -274,8 +273,7 @@ h2 {
 &lt;/div&gt;
 </code></pre>  <!-- end language-html подсветка синтаксиса -->
   </div>    
-<div class="tab_block" id="tabs-4" style="text-align: left; padding: 8px 16px;">
-Доделать позже второстепенные детали: <br>
+<div class="tab_block" id="tabs-4" style="text-align: left; padding: 8px 16px;"><strong>Второстепенные детали сайта:</strong><br>
 Медиазапрос для iframe id="pdf-01". уменьшить высоту контейнера max-height: 300px; padding: 0px 60px 5px; <br>
 Боковое меню на этой и других стр-х в медиазапросах - слева.<br>
 Увеличить ход кнопки "Вверх" в CSSS</div>
